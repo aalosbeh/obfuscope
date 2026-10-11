@@ -11,11 +11,6 @@ trained and that refuses a corpus whose accuracy would be meaningless, together
 with a measurement showing that the open set result on a single label space is
 decided by how a novel class is defined.
 
-> **Read this first.** The current manuscript is
-> [`docs/ObfuScope_manuscript_revised_2.docx`](docs/ObfuScope_manuscript_revised_2.docx).
-> It withdraws nine claims made in earlier versions of this work, including the
-> headline accuracy that the previous README advertised. If you have seen an
-> earlier draft or an earlier README, the numbers below supersede it.
 
 ## Important corrections to earlier descriptions of this project
 
