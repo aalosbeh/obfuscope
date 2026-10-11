@@ -98,16 +98,6 @@ obfuscope/
 └── requirements.txt, environment.yml, pyproject.toml, LICENSE
 ```
 
-## Documents
-
-| File | What it is |
-| --- | --- |
-| `docs/ObfuScope_manuscript_revised_2.docx` | **Current manuscript.** 35 tables, 61 references |
-| `docs/ObfuScope_manuscript_revised.docx` | Previous revision, kept for comparison |
-| `docs/review_v1_peer_review.docx` | Peer review of version 1 that prompted the rebuild |
-| `docs/design_multitool_corpus.md` | Design note on the multiple backend corpus |
-| `docs/RUNNING_ON_CHTC_OSPOOL.md` | Running the workflow at scale |
-
 ## Quickstart
 
 ```bash
