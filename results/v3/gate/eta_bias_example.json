@@ -1,0 +1,45 @@
+{
+  "description": "One synthetic class with no program effect: k programs, rows_per_program rows each, iid N(0, 1) features. Statistics from diversity_gate._eta_squared, averaged over features.",
+  "settings": {
+    "programs_k": 30,
+    "rows_per_program": 10,
+    "rows_n": 300,
+    "features": 5,
+    "permutations": 200,
+    "seed": 0,
+    "permutation": "program labels shuffled among all rows of the class"
+  },
+  "raw_eta_squared": {
+    "observed": 0.105019,
+    "permutation_null_mean": 0.096781,
+    "permutation_null_sd": 0.01074,
+    "analytic_null_expectation": 0.09699,
+    "analytic_formula": "(k - 1) / (n - 1)"
+  },
+  "omega_squared": {
+    "observed": 0.008864,
+    "permutation_null_mean": -0.000229,
+    "permutation_null_sd": 0.011855,
+    "permutation_p_value": 0.23383
+  },
+  "per_feature_eta_squared_observed": {
+    "f0": 0.128852,
+    "f1": 0.088154,
+    "f2": 0.123309,
+    "f3": 0.119993,
+    "f4": 0.064786
+  },
+  "gate_diagnostic_1b": {
+    "note": "diversity_gate._input_dependence on the same table: its own permutation stream (seed 0, 200 permutations) and omega squared null only",
+    "raw_eta_squared": 0.105019,
+    "omega_squared": 0.008864,
+    "permutation": {
+      "n_permutations": 200,
+      "null_mean": -0.00044,
+      "null_sd": 0.01183,
+      "null_p95": 0.017725,
+      "z_score": 0.787,
+      "p_value": 0.22388
+    }
+  }
+}

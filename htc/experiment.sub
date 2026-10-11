@@ -1,0 +1,48 @@
+# ObfuScope experiment grid -- one HTCondor job per (task,protocol,model,fset,seed)
+# cell. This is the embarrassingly-parallel core of the study: each job is a few
+# CPU-minutes, fully independent, and retry-safe. Submitting the whole grid is a
+# single `condor_submit experiment.sub`.
+#
+# The cell arguments are supplied by a manifest generated with make_manifest.py:
+#   condor_submit experiment.sub
+# which expands `queue ... from grid.txt`.
+
+universe                = container
+container_image         = osdf:///ospool/ap40/data/$ENV(USER)/obfuscope.sif
+
+executable              = experiment.sh
+arguments               = $(task) $(protocol) $(model) $(feature_set) $(seed) features.csv
+
+# Ship the code and the (small) feature table with every job. The feature table
+# is a few MB; for very large tables stage via OSDF instead (see features.sub).
+# Path is relative to the htc/ submit directory, matching merge.sub's own
+# output remap ("features.csv = data/features.csv") -- both stages keep their
+# artifacts under htc/data/, independent of the repo-root data/ used by local
+# (non-HTC) runs.
+transfer_input_files    = obfuscope_src.tar.gz, data/features.csv
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+
+# Bring back exactly the one result JSON this cell produced.
+transfer_output_files   = $(task)__$(protocol)__$(model)__$(feature_set)__s$(seed).json
+transfer_output_remaps  = "$(task)__$(protocol)__$(model)__$(feature_set)__s$(seed).json = results/cells/$(task)__$(protocol)__$(model)__$(feature_set)__s$(seed).json"
+
+# Resource request: a single cell is small. Tree ensembles use in-process
+# threads, so ask for a few cores and modest memory.
+request_cpus            = 4
+request_memory          = 4GB
+request_disk            = 2GB
+
+# OSPool scheduling hint: these cells finish well within the short category.
++JobDurationCategory    = "Medium"
+
+# Robustness: transient EP failures should simply re-run the (idempotent) cell.
+max_retries             = 5
+requirements            = (HAS_SINGULARITY == True) || (HasContainer == True)
+
+# Per-job logs, keyed by cell id.
+output                  = logs/exp_$(Cluster)_$(Process).out
+error                   = logs/exp_$(Cluster)_$(Process).err
+log                     = logs/exp.log
+
+queue task, protocol, model, feature_set, seed from grid.txt

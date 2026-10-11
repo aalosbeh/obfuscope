@@ -1,0 +1,12 @@
+== gate_selfcontained_technique 00:44:35
+   exit=1 00:45:30
+== gate_selfcontained_subtechnique 00:45:30
+   exit=1 00:46:15
+== gate_selfcontained_v1 00:46:15
+   exit=1 00:49:30
+== gate_supplied_technique 00:49:30
+   exit=1 00:49:58
+== gate_supplied_subtechnique 00:49:58
+   exit=1 00:52:02
+== gate_supplied_v1 00:52:02
+   exit=1 00:53:53

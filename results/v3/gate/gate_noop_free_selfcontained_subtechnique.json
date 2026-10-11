@@ -1,0 +1,301 @@
+{
+  "features_path": "/Users/anasalsobeh/Downloads/manar/ofuScope/submission_package/code/obfuscope-corrected/results/v3/gate/features_pilot_no_noop.csv",
+  "label": "sub_technique",
+  "group": "sample_id",
+  "per_class": [
+    {
+      "class": "ref_lit_mixed",
+      "n": 240,
+      "distinct_vectors": 240,
+      "distinct_ratio": 1.0,
+      "constant_features": 18,
+      "constant_fraction": 0.2951,
+      "input_dependence": 0.9821,
+      "dependence_omega2": 0.9796,
+      "n_groups": 30,
+      "seed_sensitivity": 0.0179,
+      "dependence_null_mean": -0.000976,
+      "dependence_z": 92.788,
+      "dependence_p": 0.00498
+    },
+    {
+      "class": "ref_lit_sum",
+      "n": 240,
+      "distinct_vectors": 240,
+      "distinct_ratio": 1.0,
+      "constant_features": 18,
+      "constant_fraction": 0.2951,
+      "input_dependence": 0.9986,
+      "dependence_omega2": 0.9984,
+      "n_groups": 30,
+      "seed_sensitivity": 0.0014,
+      "dependence_null_mean": -0.000886,
+      "dependence_z": 100.572,
+      "dependence_p": 0.00498
+    },
+    {
+      "class": "ref_lit_xor",
+      "n": 240,
+      "distinct_vectors": 240,
+      "distinct_ratio": 1.0,
+      "constant_features": 18,
+      "constant_fraction": 0.2951,
+      "input_dependence": 0.9993,
+      "dependence_omega2": 0.9992,
+      "n_groups": 30,
+      "seed_sensitivity": 0.0007,
+      "dependence_null_mean": -0.001089,
+      "dependence_z": 91.558,
+      "dependence_p": 0.00498
+    },
+    {
+      "class": "ref_opq_both",
+      "n": 240,
+      "distinct_vectors": 240,
+      "distinct_ratio": 1.0,
+      "constant_features": 18,
+      "constant_fraction": 0.2951,
+      "input_dependence": 0.8786,
+      "dependence_omega2": 0.8615,
+      "n_groups": 30,
+      "seed_sensitivity": 0.1214,
+      "dependence_null_mean": -0.00026,
+      "dependence_z": 70.584,
+      "dependence_p": 0.00498
+    },
+    {
+      "class": "ref_opq_junk",
+      "n": 240,
+      "distinct_vectors": 240,
+      "distinct_ratio": 1.0,
+      "constant_features": 18,
+      "constant_fraction": 0.2951,
+      "input_dependence": 0.9593,
+      "dependence_omega2": 0.9535,
+      "n_groups": 30,
+      "seed_sensitivity": 0.0407,
+      "dependence_null_mean": -0.001606,
+      "dependence_z": 73.669,
+      "dependence_p": 0.00498
+    },
+    {
+      "class": "ref_opq_true",
+      "n": 240,
+      "distinct_vectors": 240,
+      "distinct_ratio": 1.0,
+      "constant_features": 18,
+      "constant_fraction": 0.2951,
+      "input_dependence": 0.9948,
+      "dependence_omega2": 0.994,
+      "n_groups": 30,
+      "seed_sensitivity": 0.0052,
+      "dependence_null_mean": -0.001323,
+      "dependence_z": 94.148,
+      "dependence_p": 0.00498
+    },
+    {
+      "class": "ref_ren_hex",
+      "n": 224,
+      "distinct_vectors": 224,
+      "distinct_ratio": 1.0,
+      "constant_features": 18,
+      "constant_fraction": 0.2951,
+      "input_dependence": 0.9995,
+      "dependence_omega2": 0.9994,
+      "n_groups": 28,
+      "seed_sensitivity": 0.0005,
+      "dependence_null_mean": -0.000854,
+      "dependence_z": 95.155,
+      "dependence_p": 0.00498
+    },
+    {
+      "class": "ref_ren_long",
+      "n": 224,
+      "distinct_vectors": 224,
+      "distinct_ratio": 1.0,
+      "constant_features": 17,
+      "constant_fraction": 0.2787,
+      "input_dependence": 0.976,
+      "dependence_omega2": 0.9726,
+      "n_groups": 28,
+      "seed_sensitivity": 0.024,
+      "dependence_null_mean": -0.00086,
+      "dependence_z": 93.683,
+      "dependence_p": 0.00498
+    },
+    {
+      "class": "ref_str_add",
+      "n": 240,
+      "distinct_vectors": 240,
+      "distinct_ratio": 1.0,
+      "constant_features": 19,
+      "constant_fraction": 0.3115,
+      "input_dependence": 0.9983,
+      "dependence_omega2": 0.9981,
+      "n_groups": 30,
+      "seed_sensitivity": 0.0017,
+      "dependence_null_mean": -0.001475,
+      "dependence_z": 102.058,
+      "dependence_p": 0.00498
+    },
+    {
+      "class": "ref_str_xor",
+      "n": 240,
+      "distinct_vectors": 240,
+      "distinct_ratio": 1.0,
+      "constant_features": 19,
+      "constant_fraction": 0.3115,
+      "input_dependence": 0.998,
+      "dependence_omega2": 0.9977,
+      "n_groups": 30,
+      "seed_sensitivity": 0.002,
+      "dependence_null_mean": -0.001484,
+      "dependence_z": 102.563,
+      "dependence_p": 0.00498
+    }
+  ],
+  "cross_group_duplicates": {
+    "group_column": "sample_id",
+    "duplicate_clusters_spanning_groups": 0,
+    "rows_in_those_clusters": 0,
+    "fraction_of_corpus": 0.0,
+    "total_rows": 2368,
+    "distinct_vectors_overall": 2368
+  },
+  "cross_class_duplicates": {
+    "label_column": "sub_technique",
+    "duplicate_clusters_spanning_labels": 0,
+    "rows_in_those_clusters": 0,
+    "fraction_of_corpus": 0.0,
+    "irreducible_errors": 0,
+    "irreducible_error_rate": 0.0,
+    "accuracy_ceiling": 1.0,
+    "worst_clusters": []
+  },
+  "single_feature": {
+    "n_classes": 10,
+    "chance_macro_f1": 0.1,
+    "best_feature": "identifier_digit_ratio",
+    "best_macro_f1": 0.2672,
+    "macro_f1_by_k": {
+      "1": 0.2672,
+      "2": 0.5353,
+      "3": 0.8277
+    },
+    "greedy_trace": [
+      {
+        "k": 1,
+        "features": [
+          "identifier_digit_ratio"
+        ],
+        "macro_f1": 0.2672
+      },
+      {
+        "k": 2,
+        "features": [
+          "identifier_digit_ratio",
+          "hex_to_int_ratio"
+        ],
+        "macro_f1": 0.5353
+      },
+      {
+        "k": 3,
+        "features": [
+          "identifier_digit_ratio",
+          "hex_to_int_ratio",
+          "n_xor_op"
+        ],
+        "macro_f1": 0.8277
+      }
+    ],
+    "candidate_pool_size": 24,
+    "full_set_shallow_depth3": 0.4545,
+    "full_set_macro_f1": 0.7884,
+    "full_set_source": "probe tree on all features",
+    "headroom_R": 0.7571,
+    "top_five": [
+      {
+        "feature": "identifier_digit_ratio",
+        "macro_f1": 0.2672
+      },
+      {
+        "feature": "n_xor_op",
+        "macro_f1": 0.2427
+      },
+      {
+        "feature": "obf_xor_key",
+        "macro_f1": 0.224
+      },
+      {
+        "feature": "hex_to_int_ratio",
+        "macro_f1": 0.2166
+      },
+      {
+        "feature": "n_hex_const",
+        "macro_f1": 0.1796
+      }
+    ],
+    "threshold_absolute_f1": 0.7,
+    "threshold_min_headroom": 0.5,
+    "headroom_status": "pass",
+    "headroom_note": "R 0.7571 at or above 0.50",
+    "headroom_gap": 0.6884,
+    "headroom_reference": {
+      "full_set_source": "probe tree on all features",
+      "full_set_value": 0.7884,
+      "full_set_protocol": "DecisionTreeClassifier(max_depth=8, random_state=0) on all 61 features, mean macro F1 over GroupShuffleSplit(n_splits=3, test_size=0.3, random_state=0) grouped by 'sample_id'",
+      "best_k_protocol": "DecisionTreeClassifier(max_depth=8, random_state=0) on the feature subset, mean macro F1 over GroupShuffleSplit(n_splits=3, test_size=0.3, random_state=0) grouped by 'sample_id'",
+      "same_protocol_as_best_k": true
+    },
+    "full_set_probe_macro_f1": 0.7884,
+    "headroom_R_probe_reference": 0.7571,
+    "probe_settings": {
+      "tree_depth": 8,
+      "depth_rule": "min(8, n_classes + 2)",
+      "splitter": "GroupShuffleSplit(n_splits=3, test_size=0.3, random_state=0) grouped by 'sample_id'",
+      "seed": 0,
+      "k_values": [
+        1,
+        2,
+        3
+      ],
+      "k1_search": "exhaustive over all features",
+      "k_above_1_search": "greedy forward selection from the 24 strongest single features",
+      "selection_and_scoring_on_same_splits": true
+    }
+  },
+  "permuted_labels": {
+    "real_macro_f1": 0.8515,
+    "permuted_macro_f1": 0.1195,
+    "chance_macro_f1": 0.1,
+    "excess_over_chance": 0.0195,
+    "tolerance": 0.08
+  },
+  "failures": [
+    "the best 3 features together reach macro F1 0.828 (above 0.70) with a depth 8 tree. A 3 feature rule settles the label, so the corpus is separable without the representation the paper is arguing for."
+  ],
+  "passed": false,
+  "inconclusive": [],
+  "gate_settings": {
+    "seed": 0,
+    "repeats": 1,
+    "min_distinct_ratio": 0.8,
+    "max_constant_fraction": 0.5,
+    "max_cross_group_fraction": 0.05,
+    "max_single_feature_f1": 0.7,
+    "permutation_tolerance": 0.08,
+    "max_cross_class_fraction": 0.005,
+    "min_headroom": 0.5,
+    "min_input_dependence": 0.2,
+    "input_dependence_alpha": 0.05,
+    "input_dependence_permutations": 200,
+    "input_dependence_seed": 0,
+    "vector_round_decimals": 9,
+    "probe_depth_rule": "min(8, n_classes + 2)",
+    "greedy_pool_size": 24,
+    "probe_splits": "GroupShuffleSplit(n_splits=3, test_size=0.3, random_state=seed)",
+    "full_macro_f1": null,
+    "full_macro_f1_protocol": null,
+    "skip_single_feature": false
+  }
+}

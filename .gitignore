@@ -1,0 +1,29 @@
+__pycache__/
+*.pyc
+*.sif
+.DS_Store
+paper.zip
+# Personal runbook with real SSH login / OSDF namespace baked in; the generic,
+# public-safe equivalent is docs/RUNNING_ON_CHTC_OSPOOL.md
+docs/QUICKSTART_UPLOAD.md
+# Live-malware corpus and derived variants are never committed
+data/corpus/
+data/shards/
+mal/
+*.tar.gz
+# Regenerable Parquet mirror of the tracked feature CSVs
+data/features*.parquet
+results/cells/*.json
+results/cells/*.fail
+results/_preview*
+htc/logs/
+htc/grid.txt
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.bbl
+paper/*.blg
+paper/*.pdf
+data/_*.csv
+results/*.log
+results/prev_*.png

@@ -1,0 +1,132 @@
+{
+  "runner": "AUDIT-GENERATED results/v3/run_openset_instrumented.py",
+  "script": "/Users/anasalsobeh/Downloads/manar/ofuScope/submission_package/code/obfuscope-corrected/scripts/openset_baselines.py",
+  "argv": [
+    "--data",
+    "data/features_pilot.csv",
+    "--models",
+    "random_forest",
+    "extra_trees",
+    "logreg",
+    "svm_rbf",
+    "knn",
+    "mlp",
+    "--knn-k",
+    "5",
+    "--label",
+    "sub_technique",
+    "--holdout-col",
+    "technique",
+    "--novel-programs",
+    "heldout",
+    "--split",
+    "program_kfold",
+    "--seeds",
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "--report",
+    "results/v3/openset_C_kfold.json"
+  ],
+  "runtime_seconds": 2584.7,
+  "python": "3.9.6",
+  "env": {
+    "LOKY_MAX_CPU_COUNT": "4",
+    "OMP_NUM_THREADS": "1",
+    "PYTHONPATH": "/Users/anasalsobeh/Downloads/manar/ofuScope/submission_package/code/obfuscope-corrected/src"
+  },
+  "fits": {
+    "random_forest": 100,
+    "extra_trees": 100,
+    "logreg": 100,
+    "svm_rbf": 100,
+    "knn": 100,
+    "mlp": 100
+  },
+  "fit_warnings_by_category": {
+    "logreg": {
+      "RuntimeWarning": 600
+    },
+    "mlp": {
+      "RuntimeWarning": 300,
+      "ConvergenceWarning": 100
+    }
+  },
+  "fit_warnings_note": "ConvergenceWarning counted at every occurrence; other categories once per distinct (message, location) per fit",
+  "fits_with_warning_category": {
+    "logreg": {
+      "RuntimeWarning": 100
+    },
+    "mlp": {
+      "RuntimeWarning": 100,
+      "ConvergenceWarning": 100
+    }
+  },
+  "fit_warning_messages": {
+    "logreg": {
+      "divide by zero encountered in matmul": 200,
+      "overflow encountered in matmul": 200,
+      "invalid value encountered in matmul": 200
+    },
+    "mlp": {
+      "divide by zero encountered in matmul": 100,
+      "overflow encountered in matmul": 100,
+      "invalid value encountered in matmul": 100,
+      "Stochastic Optimizer: Maximum iterations (200) reached and the optimization hasn't converg": 100
+    }
+  },
+  "mlp_fits_with_nonfinite_parameters": {},
+  "mlp_fits_reaching_max_iter": {
+    "mlp": 100
+  },
+  "mlp_n_iter_summary": {
+    "mlp": {
+      "n": 100,
+      "min": 200,
+      "median": 200.0,
+      "max": 200
+    }
+  },
+  "weibull": {
+    "extra_trees|posterior": {
+      "fits": 750,
+      "fallback_degenerate": 678
+    },
+    "knn|posterior": {
+      "fits": 750,
+      "fallback_degenerate": 124
+    },
+    "logreg|logit": {
+      "fits": 750
+    },
+    "logreg|posterior": {
+      "fits": 750
+    },
+    "mlp|logit": {
+      "fits": 750
+    },
+    "mlp|posterior": {
+      "fits": 750
+    },
+    "random_forest|posterior": {
+      "fits": 750
+    },
+    "svm_rbf|logit": {
+      "fits": 750
+    },
+    "svm_rbf|posterior": {
+      "fits": 750
+    }
+  },
+  "tail_fallback_lt3_correct_classes": {},
+  "tail_classes_total": {
+    "random_forest": 750,
+    "extra_trees": 750,
+    "logreg": 750,
+    "svm_rbf": 750,
+    "knn": 750,
+    "mlp": 750
+  }
+}

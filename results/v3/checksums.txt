@@ -1,0 +1,7 @@
+# SHA-256 of the committed feature tables (shasum -a 256), recorded by the revision
+# Verified: python -m obfuscope.build_dataset --corpus data/pilot_corpus with --jobs 1 and with --jobs 8
+# both reproduce data/features_pilot.csv byte for byte (macOS/APFS, Python 3.9.6).
+0b53441c3eb40d9a9d8a22d14af360abcc16af7cf3fb233860c395a46d7f7fd7  data/features_pilot.csv
+a4e3f5022ffb2cade9cd3fd9f75968fefdd697bfb11129cfbf4d5ac23cea027b  data/features.csv
+# data/features.csv is the version 1 table (cohorts Testing_trojans_from_original, Testing_trojans_new);
+# its corpus is not in the archive (data/corpus/ is gitignored), so it was NOT rebuilt: checksum only.

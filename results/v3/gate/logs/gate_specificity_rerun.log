@@ -1,0 +1,31 @@
+Gate specificity on feature tables with a known correct verdict
+  seeds per family 3
+
+  Each family below has a verdict fixed by construction, decided before the gate ran.
+  The cases that can embarrass the gate are hard_but_honest and near_chance: a gate
+  that fails those is a difficulty detector, not a validity check.
+
+  family               expect  got      correct  checks that fired
+  --------------------------------------------------------------------------------------------
+  clean                pass    pass    3/3       (none)
+  hard_but_honest      pass    mixed   2/3       4b_headroom
+  near_chance          pass    pass    3/3       (none)
+  leaked_id            fail    fail    3/3       4_feature_ceiling, 4b_headroom
+  seed_jitter_only     fail    fail    3/3       1b_input_dependence
+  duplicated_rows      fail    fail    3/3       3_cross_group_duplicates
+  ambiguous_labels     fail    fail    3/3       6_cross_class_duplicates
+
+  overall
+    agreement with the constructed verdict   20/21 (95.2%)
+    sensitivity, degenerate tables failed    100.0% (12 table instances)
+    specificity, sound tables passed         88.9% (9 table instances)
+
+  Sensitivity and specificity here are properties of these constructed families at these
+  thresholds, not of corpora in general. They establish that the gate discriminates, which
+  is what version 1 failed to establish, and they do not establish that the thresholds are
+  right for any particular real corpus.
+
+report written to results/v3/gate/gate_specificity_rerun.json
+real 961.70
+user 206.06
+sys 6.31

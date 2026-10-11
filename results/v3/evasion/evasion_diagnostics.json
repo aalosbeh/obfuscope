@@ -1,0 +1,154 @@
+{
+  "note": "AUDIT-GENERATED; replicates scripts/evasion_matched.py greedy_evade split/model/sample",
+  "shared_features": 61,
+  "attacker_controlled": [
+    "comment_char_ratio",
+    "identifier_digit_ratio",
+    "identifier_entropy",
+    "n_comments",
+    "n_lines",
+    "size_bytes"
+  ],
+  "narrow_importance": {
+    "controlled_features": {
+      "comment_char_ratio": {
+        "importance": 0.0,
+        "rank_of_61": 58,
+        "train_sd": 0.0
+      },
+      "identifier_digit_ratio": {
+        "importance": 0.04761,
+        "rank_of_61": 8,
+        "train_sd": 0.15669180027529023
+      },
+      "identifier_entropy": {
+        "importance": 0.02017,
+        "rank_of_61": 16,
+        "train_sd": 0.5771332497161086
+      },
+      "n_comments": {
+        "importance": 0.0,
+        "rank_of_61": 59,
+        "train_sd": 0.0
+      },
+      "n_lines": {
+        "importance": 0.03262,
+        "rank_of_61": 11,
+        "train_sd": 11.855700863209195
+      },
+      "size_bytes": {
+        "importance": 0.0265,
+        "rank_of_61": 13,
+        "train_sd": 405.5924711693633
+      }
+    },
+    "controlled_importance_share": 0.1269,
+    "top10": [
+      [
+        "hex_to_int_ratio",
+        0.1139
+      ],
+      [
+        "n_int_const",
+        0.0882
+      ],
+      [
+        "n_hex_const",
+        0.0726
+      ],
+      [
+        "n_if",
+        0.0696
+      ],
+      [
+        "n_xor_op",
+        0.0589
+      ],
+      [
+        "n_string_lit",
+        0.0565
+      ],
+      [
+        "mean_string_len",
+        0.0495
+      ],
+      [
+        "identifier_digit_ratio",
+        0.0476
+      ],
+      [
+        "n_assign_op",
+        0.0476
+      ],
+      [
+        "n_unique_identifiers",
+        0.0358
+      ]
+    ]
+  },
+  "narrow_unrestricted_greedy": {
+    "stop_reasons": {
+      "plateau": 112,
+      "success": 32,
+      "max_steps": 6
+    },
+    "plateau_at_step0": 2,
+    "success_by_budget_reproduced": {
+      "0.5": 0.1867,
+      "1": 0.2067,
+      "2": 0.2133,
+      "5": 0.2133
+    },
+    "unbounded_success_rate_reproduced": 0.2133,
+    "mean_steps_when_successful": 4.81,
+    "max_displacement_any_trial": 1.3455,
+    "max_possible_displacement_30_steps": 3.0
+  },
+  "narrow_unrestricted_stronger_attack": {
+    "success_by_budget": {
+      "0.5": 0.1867,
+      "1": 0.3467,
+      "2": 0.5267,
+      "5": 0.8733
+    },
+    "n_attacked": 150,
+    "median_min_norm_when_successful": 1.5754
+  },
+  "narrow_restricted_greedy": {
+    "stop_reasons": {
+      "plateau": 150
+    },
+    "plateau_at_step0": 37,
+    "success_by_budget_reproduced": {
+      "0.5": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "5": 0.0
+    },
+    "unbounded_success_rate_reproduced": 0.0,
+    "mean_steps_when_successful": null,
+    "max_displacement_any_trial": 1.0817,
+    "max_possible_displacement_30_steps": 3.0
+  },
+  "narrow_restricted_stronger_attack": {
+    "success_by_budget": {
+      "0.5": 0.02,
+      "1": 0.0267,
+      "2": 0.0267,
+      "5": 0.0267
+    },
+    "n_attacked": 150,
+    "median_min_norm_when_successful": 0.5
+  },
+  "narrow_closed_accuracy_controlled_features_only_grouped5fold": {
+    "mean": 0.7596,
+    "per_fold": [
+      0.775,
+      0.6896,
+      0.8375,
+      0.8083,
+      0.6875
+    ],
+    "chance_4_classes": 0.25
+  }
+}

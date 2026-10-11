@@ -1,0 +1,107 @@
+corpus    /Users/anasalsobeh/Downloads/manar/ofuScope/submission_package/code/obfuscope-corrected/results/v3/gate/features_pilot_no_noop.csv
+rows      2368
+features  61
+label     sub_technique  (10 classes)
+group     sample_id  (30 groups)
+
+CHECK 1 and 2  per class distinctness, constant features, input dependence
+class          n    distinct_vectors  distinct_ratio  constant_features  constant_fraction  n_groups  input_dependence  dependence_omega2  dependence_null_mean  dependence_z  dependence_p
+-------------  ---  ----------------  --------------  -----------------  -----------------  --------  ----------------  -----------------  --------------------  ------------  ------------
+ref_lit_mixed  240  240               1.0             18                 0.2951             30        0.9821            0.9796             -0.000976             92.788        0.00498     
+ref_lit_sum    240  240               1.0             18                 0.2951             30        0.9986            0.9984             -0.000886             100.572       0.00498     
+ref_lit_xor    240  240               1.0             18                 0.2951             30        0.9993            0.9992             -0.001089             91.558        0.00498     
+ref_opq_both   240  240               1.0             18                 0.2951             30        0.8786            0.8615             -0.00026              70.584        0.00498     
+ref_opq_junk   240  240               1.0             18                 0.2951             30        0.9593            0.9535             -0.001606             73.669        0.00498     
+ref_opq_true   240  240               1.0             18                 0.2951             30        0.9948            0.994              -0.001323             94.148        0.00498     
+ref_ren_hex    224  224               1.0             18                 0.2951             28        0.9995            0.9994             -0.000854             95.155        0.00498     
+ref_ren_long   224  224               1.0             17                 0.2787             28        0.976             0.9726             -0.00086              93.683        0.00498     
+ref_str_add    240  240               1.0             19                 0.3115             30        0.9983            0.9981             -0.001475             102.058       0.00498     
+ref_str_xor    240  240               1.0             19                 0.3115             30        0.998             0.9977             -0.001484             102.563       0.00498     
+  distinct_ratio is a necessary condition only. input_dependence is the raw share of within
+  class feature variance lying between input programs; dependence_omega2 is the same quantity
+  with the upward bias from the group count removed, and dependence_null_mean is its value when
+  the program labels are shuffled. The verdict uses dependence_p, not a fixed cut, so a high
+  distinct ratio with variation that does not track the input programs is caught whatever the
+  group count happens to be.
+
+CHECK 3  duplicate feature vectors spanning groups
+  group_column                           sample_id
+  duplicate_clusters_spanning_groups     0
+  rows_in_those_clusters                 0
+  fraction_of_corpus                     0.0
+  total_rows                             2368
+  distinct_vectors_overall               2368
+
+CHECK 6  duplicate feature vectors spanning class labels
+  label_column                           sub_technique
+  duplicate_clusters_spanning_labels     0
+  rows_in_those_clusters                 0
+  fraction_of_corpus                     0.0
+  irreducible_errors                     0
+  irreducible_error_rate                 0.0
+  accuracy_ceiling                       1.0
+  accuracy_ceiling is the highest accuracy any model can reach on this feature table and
+  label. Compare every reported accuracy against it.
+
+CHECK 4  best k feature ceiling and chance corrected headroom
+  n_classes                              10
+  chance_macro_f1                        0.1
+  best_feature                           identifier_digit_ratio
+  best_macro_f1                          0.2672
+  macro_f1_by_k                          {1: 0.2672, 2: 0.5353, 3: 0.8277}
+  greedy_trace
+    k=1  0.2672  identifier_digit_ratio
+    k=2  0.5353  identifier_digit_ratio, hex_to_int_ratio
+    k=3  0.8277  identifier_digit_ratio, hex_to_int_ratio, n_xor_op
+  candidate_pool_size                    24
+  full_set_shallow_depth3                0.4545
+  full_set_macro_f1                      0.7884
+  full_set_source                        probe tree on all features
+  headroom_R                             0.7571
+  top_five
+    identifier_digit_ratio         0.2672
+    n_xor_op                       0.2427
+    obf_xor_key                    0.224
+    hex_to_int_ratio               0.2166
+    n_hex_const                    0.1796
+  threshold_absolute_f1                  0.7
+  threshold_min_headroom                 0.5
+  headroom_status                        pass
+  headroom_note                          R 0.7571 at or above 0.50
+  headroom_gap                           0.6884
+  headroom_reference
+    full_set_source                      probe tree on all features
+    full_set_value                       0.7884
+    full_set_protocol                    DecisionTreeClassifier(max_depth=8, random_state=0) on all 61 features, mean macro F1 over GroupShuffleSplit(n_splits=3, test_size=0.3, random_state=0) grouped by 'sample_id'
+    best_k_protocol                      DecisionTreeClassifier(max_depth=8, random_state=0) on the feature subset, mean macro F1 over GroupShuffleSplit(n_splits=3, test_size=0.3, random_state=0) grouped by 'sample_id'
+    same_protocol_as_best_k              True
+  full_set_probe_macro_f1                0.7884
+  headroom_R_probe_reference             0.7571
+  probe_settings
+    tree_depth                           8
+    depth_rule                           min(8, n_classes + 2)
+    splitter                             GroupShuffleSplit(n_splits=3, test_size=0.3, random_state=0) grouped by 'sample_id'
+    seed                                 0
+    k_values                             [1, 2, 3]
+    k1_search                            exhaustive over all features
+    k_above_1_search                     greedy forward selection from the 24 strongest single features
+    selection_and_scoring_on_same_splits True
+  headroom_R = (full - best_single) / (full - chance). Near zero means one feature
+  already recovers the achievable gap above chance.
+
+CHECK 5  permuted label control
+  real_macro_f1                          0.8515
+  permuted_macro_f1                      0.1195
+  chance_macro_f1                        0.1
+  excess_over_chance                     0.0195
+  tolerance                              0.08
+
+report written to /Users/anasalsobeh/Downloads/manar/ofuScope/submission_package/code/obfuscope-corrected/results/v3/gate/gate_noop_free_selfcontained_subtechnique.json
+
+GATE FAILED
+  1. the best 3 features together reach macro F1 0.828 (above 0.70) with a depth 8 tree. A 3 feature rule settles the label, so the corpus is separable without the representation the paper is arguing for.
+
+The corpus does not support an attribution claim in its current state. Increase generator variation, widen the input programs, or drop the degenerate classes, then rebuild.
+real 87.19
+user 18.80
+sys 0.75

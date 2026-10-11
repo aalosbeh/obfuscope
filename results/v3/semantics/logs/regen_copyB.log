@@ -1,0 +1,24 @@
+usable input programs: 30/30
+
+parameterisation  attempted  preserved  compile_failed  run_timeout  transform_failed  output_differs  exit_status_differs    rate
+----------------------------------------------------------------------------------------------------------------------------------
+ref_lit_mixed         60         60               0            0                 0               0                    0  100.0%
+ref_lit_sum           60         60               0            0                 0               0                    0  100.0%
+ref_lit_xor           60         60               0            0                 0               0                    0  100.0%
+ref_opq_both          60         60               0            0                 0               0                    0  100.0%
+ref_opq_junk          60         60               0            0                 0               0                    0  100.0%
+ref_opq_true          60         60               0            0                 0               0                    0  100.0%
+ref_ren_hex           60         60               0            0                 0               0                    0  100.0%
+ref_ren_long          60         60               0            0                 0               0                    0  100.0%
+ref_str_add           60         60               0            0                 0               0                    0  100.0%
+ref_str_xor           60         60               0            0                 0               0                    0  100.0%
+----------------------------------------------------------------------------------------------------------------------------------
+overall              600        600               0            0                 0               0                    0  100.0%
+  output_differs and exit_status_differs are reported separately and can overlap;
+  0 artifacts differ in both.
+
+report written to /Users/anasalsobeh/Downloads/manar/ofuScope/submission_package/code/obfuscope-corrected/results/v3/semantics/semantics_regenerate_copyB.json
+real 1320.48
+user 51.61
+sys 49.34
+exit=0

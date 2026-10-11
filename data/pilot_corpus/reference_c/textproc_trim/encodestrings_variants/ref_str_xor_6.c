@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+
+static char dec_f2db_buf[4][256];
+static int dec_f2db_slot = 0;
+static const char *dec_f2db(const unsigned char *enc, int n, int key) {
+    int s = dec_f2db_slot++ % 4;
+    char *out = dec_f2db_buf[s];
+    for (int i = 0; i < n && i < 255; i++) out[i] = (char)(enc[i] ^ key);
+    out[n < 255 ? n : 255] = '\0';
+    return out;
+}
+
+static void trim_inplace(char *s) {
+    size_t n = strlen(s);
+    size_t b = 0;
+    while (b < n && (s[b] == ' ' || s[b] == '\t')) b++;
+    size_t e = n;
+    while (e > b && (s[e-1] == ' ' || s[e-1] == '\t')) e--;
+    memmove(s, s + b, e - b);
+    s[e - b] = '\0';
+}
+int main(void) {
+    char a[] = "   padded value\t\t";
+    char b[] = "\t\tanother   ";
+    trim_inplace(a); trim_inplace(b);
+    printf(dec_f2db((const unsigned char[]){0x10, 0x6E, 0x38, 0x16, 0x10, 0x6E, 0x38, 0x16, 0x6B, 0x6E, 0x31, 0x3E, 0x41}, 13, 75), a, b, strlen(a) + strlen(b));
+    return 0;
+}

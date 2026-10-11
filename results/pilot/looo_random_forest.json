@@ -1,0 +1,50 @@
+{
+  "task": "provenance",
+  "protocol": "looo",
+  "model": "random_forest",
+  "feature_set": "all",
+  "seed": 0,
+  "n_features": 61,
+  "n_rows": 2400,
+  "runtime_s": 2.48,
+  "per_technique": [
+    {
+      "novel_technique": "addopaque",
+      "auroc": 0.8415529927248677,
+      "auprc": 0.9316901000278651,
+      "n_novel": 720,
+      "n_known_eval": 336,
+      "mean_novelty_novel": 0.39196527777777784,
+      "mean_novelty_known": 0.18588541666666666
+    },
+    {
+      "novel_technique": "encodeliterals",
+      "auroc": 0.9625227347883598,
+      "auprc": 0.9806951183330704,
+      "n_novel": 720,
+      "n_known_eval": 336,
+      "mean_novelty_novel": 0.4590625,
+      "mean_novelty_known": 0.14147321428571427
+    },
+    {
+      "novel_technique": "encodestrings",
+      "auroc": 0.9482747395833333,
+      "auprc": 0.9513785434260172,
+      "n_novel": 480,
+      "n_known_eval": 384,
+      "mean_novelty_novel": 0.46883854166666666,
+      "mean_novelty_known": 0.1555859375
+    },
+    {
+      "novel_technique": "renameidentifiers",
+      "auroc": 0.9586859809027777,
+      "auprc": 0.9593542510533527,
+      "n_novel": 480,
+      "n_known_eval": 384,
+      "mean_novelty_novel": 0.44141145833333334,
+      "mean_novelty_known": 0.1471875
+    }
+  ],
+  "auroc_mean": 0.9277591119998346,
+  "auroc_std": 0.05004339782907763
+}

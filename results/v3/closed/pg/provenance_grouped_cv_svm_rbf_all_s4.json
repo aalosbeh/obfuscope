@@ -1,0 +1,330 @@
+{
+  "task": "provenance",
+  "protocol": "grouped_cv",
+  "model": "svm_rbf",
+  "feature_set": "all",
+  "seed": 4,
+  "n_features": 61,
+  "n_rows": 2400,
+  "runtime_s": 0.74,
+  "permute_groups": true,
+  "per_fold": [
+    {
+      "accuracy": 0.93125,
+      "balanced_accuracy": 0.9288194444444445,
+      "macro_f1": 0.9289543012392959,
+      "weighted_f1": 0.9309755279793016,
+      "per_class_f1": {
+        "addopaque": 0.8850174216027874,
+        "encodeliterals": 0.993103448275862,
+        "encodestrings": 1.0,
+        "renameidentifiers": 0.837696335078534
+      },
+      "confusion": [
+        [
+          127,
+          2,
+          0,
+          15
+        ],
+        [
+          0,
+          144,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          96,
+          0
+        ],
+        [
+          16,
+          0,
+          0,
+          80
+        ]
+      ],
+      "labels": [
+        "addopaque",
+        "encodeliterals",
+        "encodestrings",
+        "renameidentifiers"
+      ],
+      "n_test": 480,
+      "fold_id": "fold0",
+      "test_groups": [
+        "bitops_graycode",
+        "bitops_popcount",
+        "bitops_xorcipher",
+        "dsalgo_heap",
+        "mathlib_fib",
+        "textproc_runlength"
+      ]
+    },
+    {
+      "accuracy": 0.8520833333333333,
+      "balanced_accuracy": 0.8350694444444444,
+      "macro_f1": 0.834047619047619,
+      "weighted_f1": 0.8518827838827839,
+      "per_class_f1": {
+        "addopaque": 0.8864468864468864,
+        "encodeliterals": 0.96,
+        "encodestrings": 0.8333333333333334,
+        "renameidentifiers": 0.6564102564102564
+      },
+      "confusion": [
+        [
+          121,
+          4,
+          0,
+          19
+        ],
+        [
+          0,
+          144,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          80,
+          16
+        ],
+        [
+          8,
+          8,
+          16,
+          64
+        ]
+      ],
+      "labels": [
+        "addopaque",
+        "encodeliterals",
+        "encodestrings",
+        "renameidentifiers"
+      ],
+      "n_test": 480,
+      "fold_id": "fold1",
+      "test_groups": [
+        "bitops_bitset",
+        "dsalgo_bsearch",
+        "mathlib_gcd",
+        "statemach_crc",
+        "textproc_rot13",
+        "textproc_wordcount"
+      ]
+    },
+    {
+      "accuracy": 0.95,
+      "balanced_accuracy": 0.9583333333333334,
+      "macro_f1": 0.9494949494949495,
+      "weighted_f1": 0.9505050505050504,
+      "per_class_f1": {
+        "addopaque": 1.0,
+        "encodeliterals": 0.9090909090909091,
+        "encodestrings": 1.0,
+        "renameidentifiers": 0.8888888888888888
+      },
+      "confusion": [
+        [
+          144,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0,
+          24
+        ],
+        [
+          0,
+          0,
+          96,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          96
+        ]
+      ],
+      "labels": [
+        "addopaque",
+        "encodeliterals",
+        "encodestrings",
+        "renameidentifiers"
+      ],
+      "n_test": 480,
+      "fold_id": "fold2",
+      "test_groups": [
+        "bitops_base64",
+        "mathlib_newton",
+        "mathlib_stats",
+        "statemach_retry",
+        "statemach_vending",
+        "textproc_csvsplit"
+      ]
+    },
+    {
+      "accuracy": 0.75625,
+      "balanced_accuracy": 0.7369791666666666,
+      "macro_f1": 0.7436879373339046,
+      "weighted_f1": 0.7538544594561647,
+      "per_class_f1": {
+        "addopaque": 0.7890410958904109,
+        "encodeliterals": 0.8,
+        "encodestrings": 0.6956521739130435,
+        "renameidentifiers": 0.6900584795321637
+      },
+      "confusion": [
+        [
+          144,
+          0,
+          0,
+          0
+        ],
+        [
+          24,
+          96,
+          24,
+          0
+        ],
+        [
+          16,
+          0,
+          64,
+          16
+        ],
+        [
+          37,
+          0,
+          0,
+          59
+        ]
+      ],
+      "labels": [
+        "addopaque",
+        "encodeliterals",
+        "encodestrings",
+        "renameidentifiers"
+      ],
+      "n_test": 480,
+      "fold_id": "fold3",
+      "test_groups": [
+        "bitops_fnvhash",
+        "dsalgo_graphbfs",
+        "dsalgo_linkedlist",
+        "mathlib_matmul",
+        "statemach_exprparse",
+        "textproc_tokenize"
+      ]
+    },
+    {
+      "accuracy": 0.8833333333333333,
+      "balanced_accuracy": 0.9027777777777778,
+      "macro_f1": 0.8864055299539171,
+      "weighted_f1": 0.8862672811059907,
+      "per_class_f1": {
+        "addopaque": 0.9714285714285714,
+        "encodeliterals": 0.8,
+        "encodestrings": 1.0,
+        "renameidentifiers": 0.7741935483870968
+      },
+      "confusion": [
+        [
+          136,
+          0,
+          0,
+          8
+        ],
+        [
+          0,
+          96,
+          0,
+          48
+        ],
+        [
+          0,
+          0,
+          96,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          96
+        ]
+      ],
+      "labels": [
+        "addopaque",
+        "encodeliterals",
+        "encodestrings",
+        "renameidentifiers"
+      ],
+      "n_test": 480,
+      "fold_id": "fold4",
+      "test_groups": [
+        "dsalgo_bst",
+        "dsalgo_quicksort",
+        "mathlib_primes",
+        "statemach_lexer",
+        "statemach_traffic",
+        "textproc_trim"
+      ]
+    }
+  ],
+  "aggregate": {
+    "accuracy": 0.8745833333333334,
+    "balanced_accuracy": 0.8723958333333333,
+    "macro_f1": 0.8702663530242155,
+    "weighted_f1": 0.8761881986790591,
+    "per_class_f1": {
+      "addopaque": 0.9002009377093101,
+      "encodeliterals": 0.8995502248875562,
+      "encodestrings": 0.907563025210084,
+      "renameidentifiers": 0.7737512242899118
+    },
+    "confusion": [
+      [
+        672,
+        6,
+        0,
+        42
+      ],
+      [
+        24,
+        600,
+        24,
+        72
+      ],
+      [
+        16,
+        0,
+        432,
+        32
+      ],
+      [
+        61,
+        8,
+        16,
+        395
+      ]
+    ],
+    "labels": [
+      "addopaque",
+      "encodeliterals",
+      "encodestrings",
+      "renameidentifiers"
+    ],
+    "n_test": 2400
+  },
+  "macro_f1_mean": 0.8685180674139372,
+  "macro_f1_std": 0.07389252775896579
+}

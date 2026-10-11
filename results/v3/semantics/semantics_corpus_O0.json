@@ -1,0 +1,159 @@
+{
+  "mode": "corpus",
+  "corpus": "data/pilot_corpus",
+  "compiler": {
+    "cc": "cc",
+    "version": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+    "flags": [
+      "-std=c99",
+      "-w",
+      "-O0"
+    ],
+    "timeout_seconds": 60
+  },
+  "artifacts_found": 2400,
+  "artifacts_unmatched": 0,
+  "usable_programs": 30,
+  "excluded_programs": [],
+  "baseline": {
+    "exit_status_counts": {
+      "0": 30
+    }
+  },
+  "comparison": "standard output and exit status, reported separately",
+  "counter_definitions": {
+    "attempted": "artifacts checked against a usable baseline",
+    "preserved": "compiled, ran to completion, and both standard output and exit status equal the original program's",
+    "compile_failed": "did not compile, including compile timeouts",
+    "compile_timeout": "subset of compile_failed: the compiler timed out",
+    "run_timeout": "compiled but did not finish within the timeout",
+    "transform_failed": "regenerate mode only: the transformation raised",
+    "behaviour_differs": "ran to completion but standard output or exit status differs; attempted = preserved + compile_failed + run_timeout + transform_failed + behaviour_differs",
+    "output_differs": "standard output differs (whatever the exit status)",
+    "exit_status_differs": "exit status differs (whatever the standard output)",
+    "output_and_exit_status_differ": "both differ; behaviour_differs = output_differs + exit_status_differs - output_and_exit_status_differ"
+  },
+  "per_parameterisation": {
+    "ref_opq_both": {
+      "attempted": 240,
+      "preserved": 240,
+      "compile_failed": 0,
+      "compile_timeout": 0,
+      "run_timeout": 0,
+      "transform_failed": 0,
+      "behaviour_differs": 0,
+      "output_differs": 0,
+      "exit_status_differs": 0,
+      "output_and_exit_status_differ": 0
+    },
+    "ref_opq_junk": {
+      "attempted": 240,
+      "preserved": 240,
+      "compile_failed": 0,
+      "compile_timeout": 0,
+      "run_timeout": 0,
+      "transform_failed": 0,
+      "behaviour_differs": 0,
+      "output_differs": 0,
+      "exit_status_differs": 0,
+      "output_and_exit_status_differ": 0
+    },
+    "ref_opq_true": {
+      "attempted": 240,
+      "preserved": 240,
+      "compile_failed": 0,
+      "compile_timeout": 0,
+      "run_timeout": 0,
+      "transform_failed": 0,
+      "behaviour_differs": 0,
+      "output_differs": 0,
+      "exit_status_differs": 0,
+      "output_and_exit_status_differ": 0
+    },
+    "ref_lit_mixed": {
+      "attempted": 240,
+      "preserved": 240,
+      "compile_failed": 0,
+      "compile_timeout": 0,
+      "run_timeout": 0,
+      "transform_failed": 0,
+      "behaviour_differs": 0,
+      "output_differs": 0,
+      "exit_status_differs": 0,
+      "output_and_exit_status_differ": 0
+    },
+    "ref_lit_sum": {
+      "attempted": 240,
+      "preserved": 240,
+      "compile_failed": 0,
+      "compile_timeout": 0,
+      "run_timeout": 0,
+      "transform_failed": 0,
+      "behaviour_differs": 0,
+      "output_differs": 0,
+      "exit_status_differs": 0,
+      "output_and_exit_status_differ": 0
+    },
+    "ref_lit_xor": {
+      "attempted": 240,
+      "preserved": 240,
+      "compile_failed": 0,
+      "compile_timeout": 0,
+      "run_timeout": 0,
+      "transform_failed": 0,
+      "behaviour_differs": 0,
+      "output_differs": 0,
+      "exit_status_differs": 0,
+      "output_and_exit_status_differ": 0
+    },
+    "ref_str_add": {
+      "attempted": 240,
+      "preserved": 240,
+      "compile_failed": 0,
+      "compile_timeout": 0,
+      "run_timeout": 0,
+      "transform_failed": 0,
+      "behaviour_differs": 0,
+      "output_differs": 0,
+      "exit_status_differs": 0,
+      "output_and_exit_status_differ": 0
+    },
+    "ref_str_xor": {
+      "attempted": 240,
+      "preserved": 240,
+      "compile_failed": 0,
+      "compile_timeout": 0,
+      "run_timeout": 0,
+      "transform_failed": 0,
+      "behaviour_differs": 0,
+      "output_differs": 0,
+      "exit_status_differs": 0,
+      "output_and_exit_status_differ": 0
+    },
+    "ref_ren_hex": {
+      "attempted": 240,
+      "preserved": 240,
+      "compile_failed": 0,
+      "compile_timeout": 0,
+      "run_timeout": 0,
+      "transform_failed": 0,
+      "behaviour_differs": 0,
+      "output_differs": 0,
+      "exit_status_differs": 0,
+      "output_and_exit_status_differ": 0
+    },
+    "ref_ren_long": {
+      "attempted": 240,
+      "preserved": 240,
+      "compile_failed": 0,
+      "compile_timeout": 0,
+      "run_timeout": 0,
+      "transform_failed": 0,
+      "behaviour_differs": 0,
+      "output_differs": 0,
+      "exit_status_differs": 0,
+      "output_and_exit_status_differ": 0
+    }
+  },
+  "failures": []
+}

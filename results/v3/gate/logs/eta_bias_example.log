@@ -1,0 +1,8 @@
+synthetic class: k = 30 programs, n = 300 rows, 5 features, no program effect, seed 0
+  raw eta squared, observed                  0.1050
+  raw eta squared, permutation null mean     0.0968  (200 permutations)
+  raw eta squared, analytic (k-1)/(n-1)      0.0970
+  omega squared, observed                    0.0089
+  omega squared, permutation null mean       -0.0002
+  omega squared, permutation p               0.23383
+report written to results/v3/gate/eta_bias_example.json

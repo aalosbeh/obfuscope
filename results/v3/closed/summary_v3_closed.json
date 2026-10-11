@@ -1,0 +1,736 @@
+{
+  "label": "AUDIT-GENERATED run:closedset-v3",
+  "repro_check_all_exact": true,
+  "repro_check_n_cells": 13,
+  "task1_partition_variance": {
+    "n_distinct_partitions": 5,
+    "n_distinct_test_folds": 25,
+    "seeds_equal_to_default_partition": [],
+    "per_model": [
+      {
+        "model": "hist_gbdt",
+        "table19_mean": 0.9601,
+        "table19_fold_sd": 0.0357,
+        "table19_seed_sd": 0.0009,
+        "table19_matches_committed": true,
+        "pg_mean": 0.9664,
+        "pg_fold_sd": 0.029,
+        "pg_seed_partition_sd": 0.0004,
+        "pg_min": 0.9105,
+        "pg_max": 1.0,
+        "pg_minus_table19_mean": 0.0063
+      },
+      {
+        "model": "random_forest",
+        "table19_mean": 0.9583,
+        "table19_fold_sd": 0.0318,
+        "table19_seed_sd": 0.003,
+        "table19_matches_committed": true,
+        "pg_mean": 0.9609,
+        "pg_fold_sd": 0.0305,
+        "pg_seed_partition_sd": 0.005,
+        "pg_min": 0.9097,
+        "pg_max": 1.0,
+        "pg_minus_table19_mean": 0.0026
+      },
+      {
+        "model": "extra_trees",
+        "table19_mean": 0.944,
+        "table19_fold_sd": 0.0368,
+        "table19_seed_sd": 0.0048,
+        "table19_matches_committed": true,
+        "pg_mean": 0.9423,
+        "pg_fold_sd": 0.0324,
+        "pg_seed_partition_sd": 0.0071,
+        "pg_min": 0.8816,
+        "pg_max": 1.0,
+        "pg_minus_table19_mean": -0.0017
+      },
+      {
+        "model": "svm_rbf",
+        "table19_mean": 0.9013,
+        "table19_fold_sd": 0.0443,
+        "table19_seed_sd": 0.0,
+        "table19_matches_committed": true,
+        "pg_mean": 0.8716,
+        "pg_fold_sd": 0.0411,
+        "pg_seed_partition_sd": 0.011,
+        "pg_min": 0.7437,
+        "pg_max": 0.9495,
+        "pg_minus_table19_mean": -0.0297
+      },
+      {
+        "model": "logreg",
+        "table19_mean": 0.8859,
+        "table19_fold_sd": 0.0919,
+        "table19_seed_sd": 0.0,
+        "table19_matches_committed": true,
+        "pg_mean": 0.894,
+        "pg_fold_sd": 0.0453,
+        "pg_seed_partition_sd": 0.011,
+        "pg_min": 0.8015,
+        "pg_max": 0.9824,
+        "pg_minus_table19_mean": 0.0081
+      },
+      {
+        "model": "mlp",
+        "table19_mean": 0.8641,
+        "table19_fold_sd": 0.087,
+        "table19_seed_sd": 0.0159,
+        "table19_matches_committed": true,
+        "pg_mean": 0.8757,
+        "pg_fold_sd": 0.043,
+        "pg_seed_partition_sd": 0.0159,
+        "pg_min": 0.7828,
+        "pg_max": 0.9347,
+        "pg_minus_table19_mean": 0.0116
+      },
+      {
+        "model": "knn",
+        "table19_mean": 0.8356,
+        "table19_fold_sd": 0.0713,
+        "table19_seed_sd": 0.0,
+        "table19_matches_committed": true,
+        "pg_mean": 0.8392,
+        "pg_fold_sd": 0.057,
+        "pg_seed_partition_sd": 0.0195,
+        "pg_min": 0.7254,
+        "pg_max": 0.9203,
+        "pg_minus_table19_mean": 0.0036
+      }
+    ],
+    "rank_table19": [
+      "hist_gbdt",
+      "random_forest",
+      "extra_trees",
+      "svm_rbf",
+      "logreg",
+      "mlp",
+      "knn"
+    ],
+    "rank_permuted": [
+      "hist_gbdt",
+      "random_forest",
+      "extra_trees",
+      "logreg",
+      "mlp",
+      "svm_rbf",
+      "knn"
+    ],
+    "corrected_rcv_holm_significant": [
+      "hist_gbdt>svm_rbf p_holm=0.023772",
+      "hist_gbdt>knn p_holm=0.02448",
+      "random_forest>svm_rbf p_holm=0.036613",
+      "random_forest>knn p_holm=0.047268"
+    ]
+  },
+  "task2_noop": {
+    "n_noop": 32,
+    "by_sub_technique": {
+      "ref_ren_long": 16,
+      "ref_ren_hex": 16
+    },
+    "by_sample_id": {
+      "textproc_trim": 16,
+      "bitops_popcount": 16
+    },
+    "duplicate_clusters_before": 2,
+    "duplicate_clusters_after": 0,
+    "cells": [
+      {
+        "granularity": "family",
+        "model": "random_forest",
+        "ms_ref": "MS L664",
+        "ms_mean": 0.9542,
+        "ms_matches_committed": true,
+        "noop_free": {
+          "mean": 0.9433,
+          "sd_fold": 0.036,
+          "sd_seed": 0.0048,
+          "min_fold": 0.8723,
+          "max_fold": 1.0,
+          "per_seed_mean": [
+            0.9373,
+            0.949,
+            0.94,
+            0.947,
+            0.9433
+          ]
+        },
+        "diff": -0.0109,
+        "renaming_f1": {
+          "renameidentifiers": {
+            "full": 0.932,
+            "noop_free": 0.9038
+          }
+        }
+      },
+      {
+        "granularity": "family",
+        "model": "hist_gbdt",
+        "ms_ref": "MS L663",
+        "ms_mean": 0.948,
+        "ms_matches_committed": true,
+        "noop_free": {
+          "mean": 0.9444,
+          "sd_fold": 0.0368,
+          "sd_seed": 0.0026,
+          "min_fold": 0.8797,
+          "max_fold": 1.0,
+          "per_seed_mean": [
+            0.9437,
+            0.9482,
+            0.9443,
+            0.9449,
+            0.9408
+          ]
+        },
+        "diff": -0.0036,
+        "renaming_f1": {
+          "renameidentifiers": {
+            "full": 0.9427,
+            "noop_free": 0.942
+          }
+        }
+      },
+      {
+        "granularity": "parameterisation",
+        "model": "random_forest",
+        "ms_ref": "MS L676",
+        "ms_mean": 0.8045,
+        "ms_matches_committed": true,
+        "noop_free": {
+          "mean": 0.8165,
+          "sd_fold": 0.0682,
+          "sd_seed": 0.0038,
+          "min_fold": 0.7454,
+          "max_fold": 0.9498,
+          "per_seed_mean": [
+            0.8192,
+            0.8191,
+            0.8194,
+            0.8112,
+            0.8136
+          ]
+        },
+        "diff": 0.012,
+        "renaming_f1": {
+          "ref_ren_hex": {
+            "full": 0.8465,
+            "noop_free": 0.8815
+          },
+          "ref_ren_long": {
+            "full": 0.9186,
+            "noop_free": 0.9523
+          }
+        }
+      },
+      {
+        "granularity": "parameterisation",
+        "model": "hist_gbdt",
+        "ms_ref": "MS L675",
+        "ms_mean": 0.8124,
+        "ms_matches_committed": true,
+        "noop_free": {
+          "mean": 0.8183,
+          "sd_fold": 0.0795,
+          "sd_seed": 0.0036,
+          "min_fold": 0.7091,
+          "max_fold": 0.9387,
+          "per_seed_mean": [
+            0.8232,
+            0.8205,
+            0.814,
+            0.8179,
+            0.8161
+          ]
+        },
+        "diff": 0.0059,
+        "renaming_f1": {
+          "ref_ren_hex": {
+            "full": 0.8081,
+            "noop_free": 0.8329
+          },
+          "ref_ren_long": {
+            "full": 0.9297,
+            "noop_free": 0.9603
+          }
+        }
+      }
+    ],
+    "decomposition_2x2": {
+      "family|random_forest": {
+        "train_full|test_full": 0.9542,
+        "train_full|test_noopfree": 0.9527,
+        "train_noopfree|test_full": 0.9449,
+        "train_noopfree|test_noopfree": 0.9433
+      },
+      "family|hist_gbdt": {
+        "train_full|test_full": 0.948,
+        "train_full|test_noopfree": 0.946,
+        "train_noopfree|test_full": 0.9464,
+        "train_noopfree|test_noopfree": 0.9444
+      },
+      "parameterisation|random_forest": {
+        "train_full|test_full": 0.8045,
+        "train_full|test_noopfree": 0.8098,
+        "train_noopfree|test_full": 0.811,
+        "train_noopfree|test_noopfree": 0.8165
+      },
+      "parameterisation|hist_gbdt": {
+        "train_full|test_full": 0.8124,
+        "train_full|test_noopfree": 0.8183,
+        "train_noopfree|test_full": 0.8136,
+        "train_noopfree|test_noopfree": 0.8183
+      }
+    }
+  },
+  "task3_paired_foldlevel_by_setting": {
+    "family|grouped_cv": {
+      "n_pairs": 21,
+      "n_5_of_5": 10,
+      "n_sign_p_lt_0.05": 0,
+      "n_wilcoxon_p_lt_0.05": 0,
+      "n_nb_p_lt_0.05": 4,
+      "n_nb_holm_lt_0.05": 0,
+      "nb_holm_significant": []
+    },
+    "family|lomfo": {
+      "n_pairs": 21,
+      "n_5_of_5": 8,
+      "n_sign_p_lt_0.05": 0,
+      "n_wilcoxon_p_lt_0.05": 0,
+      "n_nb_p_lt_0.05": 3,
+      "n_nb_holm_lt_0.05": 0,
+      "nb_holm_significant": []
+    },
+    "parameterisation|lomfo": {
+      "n_pairs": 21,
+      "n_5_of_5": 10,
+      "n_sign_p_lt_0.05": 0,
+      "n_wilcoxon_p_lt_0.05": 0,
+      "n_nb_p_lt_0.05": 4,
+      "n_nb_holm_lt_0.05": 2,
+      "nb_holm_significant": [
+        "extra_trees>knn (p_holm=0.036981)",
+        "logreg>knn (p_holm=0.04886)"
+      ]
+    }
+  },
+  "task4_convergence": {
+    "family|mlp": {
+      "n_fits": 25,
+      "n_iter_": [
+        73,
+        69,
+        76,
+        68,
+        73,
+        78,
+        73,
+        78,
+        72,
+        78,
+        71,
+        68,
+        74,
+        67,
+        72,
+        72,
+        70,
+        74,
+        69,
+        73,
+        75,
+        71,
+        77,
+        70,
+        75
+      ],
+      "n_hit_max_iter_or_warning": 0,
+      "all_match_committed": true
+    },
+    "family|hist_gbdt": {
+      "n_fits": 25,
+      "n_iter_": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "n_hit_max_iter_or_warning": 0,
+      "all_match_committed": true,
+      "n_early_stopped": 0
+    },
+    "family|logreg": {
+      "n_fits": 5,
+      "n_iter_": [
+        [
+          29
+        ],
+        [
+          27
+        ],
+        [
+          31
+        ],
+        [
+          23
+        ],
+        [
+          28
+        ]
+      ],
+      "n_hit_max_iter_or_warning": 0,
+      "all_match_committed": true
+    },
+    "parameterisation|mlp": {
+      "n_fits": 25,
+      "n_iter_": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "n_hit_max_iter_or_warning": 25,
+      "all_match_committed": true
+    },
+    "parameterisation|hist_gbdt": {
+      "n_fits": 25,
+      "n_iter_": [
+        50,
+        57,
+        64,
+        50,
+        46,
+        48,
+        96,
+        53,
+        48,
+        68,
+        62,
+        81,
+        52,
+        68,
+        53,
+        49,
+        45,
+        55,
+        45,
+        55,
+        50,
+        57,
+        64,
+        58,
+        44
+      ],
+      "n_hit_max_iter_or_warning": 0,
+      "all_match_committed": true,
+      "n_early_stopped": 25
+    },
+    "parameterisation|logreg": {
+      "n_fits": 5,
+      "n_iter_": [
+        [
+          101
+        ],
+        [
+          104
+        ],
+        [
+          120
+        ],
+        [
+          115
+        ],
+        [
+          112
+        ]
+      ],
+      "n_hit_max_iter_or_warning": 0,
+      "all_match_committed": true
+    }
+  },
+  "task4_hyperparameters_non_default": {
+    "logreg": {
+      "class_weight": {
+        "value": "balanced",
+        "default": null
+      },
+      "max_iter": {
+        "value": 2000,
+        "default": 100
+      },
+      "random_state": {
+        "value": "seed (cell --seed)",
+        "default": null
+      }
+    },
+    "random_forest": {
+      "class_weight": {
+        "value": "balanced_subsample",
+        "default": null
+      },
+      "n_estimators": {
+        "value": 400,
+        "default": 100
+      },
+      "n_jobs": {
+        "value": -1,
+        "default": null
+      },
+      "random_state": {
+        "value": "seed (cell --seed)",
+        "default": null
+      }
+    },
+    "extra_trees": {
+      "class_weight": {
+        "value": "balanced_subsample",
+        "default": null
+      },
+      "n_estimators": {
+        "value": 400,
+        "default": 100
+      },
+      "n_jobs": {
+        "value": -1,
+        "default": null
+      },
+      "random_state": {
+        "value": "seed (cell --seed)",
+        "default": null
+      }
+    },
+    "hist_gbdt": {
+      "early_stopping": {
+        "value": true,
+        "default": "auto"
+      },
+      "l2_regularization": {
+        "value": 1.0,
+        "default": 0.0
+      },
+      "max_iter": {
+        "value": 200,
+        "default": 100
+      },
+      "random_state": {
+        "value": "seed (cell --seed)",
+        "default": null
+      }
+    },
+    "svm_rbf": {
+      "C": {
+        "value": 4.0,
+        "default": 1.0
+      },
+      "class_weight": {
+        "value": "balanced",
+        "default": null
+      },
+      "probability": {
+        "value": true,
+        "default": false
+      },
+      "random_state": {
+        "value": "seed (cell --seed)",
+        "default": null
+      }
+    },
+    "knn": {
+      "n_neighbors": {
+        "value": 7,
+        "default": 5
+      },
+      "weights": {
+        "value": "distance",
+        "default": "uniform"
+      }
+    },
+    "mlp": {
+      "alpha": {
+        "value": 0.001,
+        "default": 0.0001
+      },
+      "hidden_layer_sizes": {
+        "value": [
+          96
+        ],
+        "default": [
+          100
+        ]
+      },
+      "n_iter_no_change": {
+        "value": 8,
+        "default": 10
+      },
+      "random_state": {
+        "value": "seed (cell --seed)",
+        "default": null
+      }
+    }
+  },
+  "task5_mlp_maxiter2000": {
+    "sub_provenance": {
+      "ms": {
+        "ref": "MS L679 (Table 20)",
+        "mean": 0.6834,
+        "sd_fold": 0.096,
+        "sd_seed": 0.0131,
+        "min": 0.492,
+        "max": 0.7973
+      },
+      "committed_max_iter_200": {
+        "mean": 0.6834,
+        "sd_fold": 0.096,
+        "sd_seed": 0.0131,
+        "min_fold": 0.492,
+        "max_fold": 0.7973,
+        "per_seed_mean": [
+          0.698,
+          0.6757,
+          0.6829,
+          0.6943,
+          0.6663
+        ]
+      },
+      "max_iter_2000": {
+        "mean": 0.681,
+        "sd_fold": 0.1013,
+        "sd_seed": 0.0124,
+        "min_fold": 0.4706,
+        "max_fold": 0.7968,
+        "per_seed_mean": [
+          0.6879,
+          0.6681,
+          0.6804,
+          0.6979,
+          0.6704
+        ]
+      },
+      "mean_diff_2000_minus_200": -0.0024,
+      "paired_per_fold_seed_avg_diff": [
+        0.0003,
+        0.0075,
+        -0.0067,
+        -0.0035,
+        -0.01
+      ],
+      "n_iter_2000": {
+        "min": 239,
+        "max": 365,
+        "median": 310.0,
+        "n_hit_max_iter": 0,
+        "n_convergence_warning": 0,
+        "n_fits": 25
+      },
+      "neighbour_means_committed": {
+        "logreg": 0.7312,
+        "svm_rbf": 0.6686,
+        "knn": 0.5546
+      }
+    },
+    "provenance": {
+      "ms": {
+        "ref": "MS L668 (Table 19, domain holdout)",
+        "mean": 0.8233,
+        "sd_fold": 0.0629,
+        "sd_seed": 0.0178,
+        "min": 0.7259,
+        "max": 0.8975
+      },
+      "committed_max_iter_200": {
+        "mean": 0.8233,
+        "sd_fold": 0.0629,
+        "sd_seed": 0.0178,
+        "min_fold": 0.7259,
+        "max_fold": 0.8975,
+        "per_seed_mean": [
+          0.7981,
+          0.826,
+          0.8423,
+          0.8363,
+          0.8136
+        ]
+      },
+      "max_iter_2000": {
+        "mean": 0.8233,
+        "sd_fold": 0.0629,
+        "sd_seed": 0.0178,
+        "min_fold": 0.7259,
+        "max_fold": 0.8975,
+        "per_seed_mean": [
+          0.7981,
+          0.826,
+          0.8423,
+          0.8363,
+          0.8136
+        ]
+      },
+      "mean_diff_2000_minus_200": 0.0,
+      "paired_per_fold_seed_avg_diff": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "n_iter_2000": {
+        "min": 67,
+        "max": 78,
+        "median": 73.0,
+        "n_hit_max_iter": 0,
+        "n_convergence_warning": 0,
+        "n_fits": 25
+      },
+      "neighbour_means_committed": {
+        "logreg": 0.8357,
+        "svm_rbf": 0.7987,
+        "knn": 0.7973
+      }
+    }
+  }
+}

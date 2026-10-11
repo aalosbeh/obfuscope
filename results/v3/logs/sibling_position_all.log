@@ -1,0 +1,53 @@
+open set report   results/v3/openset_B_all.json
+holdout unit      sub_technique
+label             sub_technique
+scorer            msp
+folds             300
+
+measured sibling positions
+  sub technique      family               position      rank      proj  axis var
+  ref_opq_junk       addopaque            end              0    -3.084     0.989
+  ref_opq_both       addopaque            interior         1    -0.063     0.989
+  ref_opq_true       addopaque            end              2     3.146     0.989
+  ref_lit_xor        encodeliterals       end              0    -2.162     0.998
+  ref_lit_mixed      encodeliterals       interior         1    -0.056     0.998
+  ref_lit_sum        encodeliterals       end              2     2.218     0.998
+  ref_str_add        encodestrings        end_of_pair      0    -0.116     1.000
+  ref_str_xor        encodestrings        end_of_pair      1     0.116     1.000
+  ref_ren_hex        renameidentifiers    end_of_pair      0    -1.240     1.000
+  ref_ren_long       renameidentifiers    end_of_pair      1     1.240     1.000
+  axis var is the share of sibling centroid variance on the leading direction; a low
+  value means the siblings are not well described by a single axis and the end versus
+  interior distinction is correspondingly weaker.
+
+per held out class AUROC, msp, pooled over models and seeds
+  sub technique      position        n     mean       sd      min      max
+  ref_opq_both       interior       30   0.4129   0.1410   0.2292   0.6781
+  ref_opq_junk       end            30   0.1303   0.1148   0.0183   0.3476
+  ref_opq_true       end            30   0.2375   0.1074   0.0838   0.4398
+  ref_lit_mixed      interior       30   0.4405   0.1223   0.2789   0.6567
+  ref_lit_sum        end            30   0.2328   0.0893   0.1366   0.5003
+  ref_lit_xor        end            30   0.1541   0.0971   0.0495   0.3795
+  ref_str_add        end_of_pair    30   0.2431   0.1116   0.0581   0.4391
+  ref_str_xor        end_of_pair    30   0.2261   0.1230   0.0454   0.4158
+  ref_ren_hex        end_of_pair    30   0.5744   0.1374   0.3637   0.8370
+  ref_ren_long       end_of_pair    30   0.3503   0.1377   0.1456   0.6360
+
+grouped by measured position
+  end          n= 120  mean AUROC 0.1887  sd 0.1119  share of folds below 0.5 0.992
+  end_of_pair  n= 120  mean AUROC 0.3485  sd 0.1881  share of folds below 0.5 0.808
+  interior     n=  60  mean AUROC 0.4267  sd 0.1316  share of folds below 0.5 0.667
+
+contrast, ends against interior members, families of three only
+  mean_a               0.1887
+  mean_b               0.4267
+  difference           -0.238
+  n_a                  120
+  n_b                  60
+  t_statistic          -12.008
+  welch_df             102.7
+
+verdict
+  consistent with the model: ends invert further than interior members
+
+report written to results/v3/sibling_position_all.json

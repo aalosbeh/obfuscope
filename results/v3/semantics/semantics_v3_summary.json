@@ -1,0 +1,953 @@
+{
+  "label": "AUDIT-GENERATED (run:semantics-v3)",
+  "noop_artifacts": {
+    "artifacts_checked": 2400,
+    "artifacts_found": 2400,
+    "artifacts_unmatched": 0,
+    "corpus": "data/pilot_corpus",
+    "definitions": {
+      "byte_identical": "artifact bytes equal the input program's bytes",
+      "whitespace_identical": "equal after collapsing every whitespace run to one space and stripping both ends; includes byte_identical",
+      "whitespace_only_difference": "whitespace_identical and not byte_identical"
+    },
+    "input_programs": 30,
+    "per_parameterisation": {
+      "ref_lit_mixed": {
+        "artifacts": 240,
+        "byte_identical": 0,
+        "whitespace_identical": 0,
+        "whitespace_only_difference": 0
+      },
+      "ref_lit_sum": {
+        "artifacts": 240,
+        "byte_identical": 0,
+        "whitespace_identical": 0,
+        "whitespace_only_difference": 0
+      },
+      "ref_lit_xor": {
+        "artifacts": 240,
+        "byte_identical": 0,
+        "whitespace_identical": 0,
+        "whitespace_only_difference": 0
+      },
+      "ref_opq_both": {
+        "artifacts": 240,
+        "byte_identical": 0,
+        "whitespace_identical": 0,
+        "whitespace_only_difference": 0
+      },
+      "ref_opq_junk": {
+        "artifacts": 240,
+        "byte_identical": 0,
+        "whitespace_identical": 0,
+        "whitespace_only_difference": 0
+      },
+      "ref_opq_true": {
+        "artifacts": 240,
+        "byte_identical": 0,
+        "whitespace_identical": 0,
+        "whitespace_only_difference": 0
+      },
+      "ref_ren_hex": {
+        "artifacts": 240,
+        "byte_identical": 16,
+        "whitespace_identical": 16,
+        "whitespace_only_difference": 0
+      },
+      "ref_ren_long": {
+        "artifacts": 240,
+        "byte_identical": 16,
+        "whitespace_identical": 16,
+        "whitespace_only_difference": 0
+      },
+      "ref_str_add": {
+        "artifacts": 240,
+        "byte_identical": 0,
+        "whitespace_identical": 0,
+        "whitespace_only_difference": 0
+      },
+      "ref_str_xor": {
+        "artifacts": 240,
+        "byte_identical": 0,
+        "whitespace_identical": 0,
+        "whitespace_only_difference": 0
+      }
+    },
+    "per_program": {
+      "bitops_popcount": {
+        "artifacts": 80,
+        "byte_identical": 16,
+        "whitespace_identical": 16,
+        "whitespace_only_difference": 0
+      },
+      "textproc_trim": {
+        "artifacts": 80,
+        "byte_identical": 16,
+        "whitespace_identical": 16,
+        "whitespace_only_difference": 0
+      }
+    },
+    "totals": {
+      "byte_identical": 32,
+      "byte_identical_fraction": 0.013333,
+      "whitespace_identical": 32,
+      "whitespace_identical_fraction": 0.013333,
+      "whitespace_only_difference": 0
+    }
+  },
+  "regen_r0to7_vs_pilot_corpus_copyA": {
+    "compared": 2400,
+    "differs": 0,
+    "identical": 2400,
+    "missing": 0
+  },
+  "regen_r0to7_vs_pilot_corpus_copyB": {
+    "compared": 2400,
+    "differs": 0,
+    "identical": 2400,
+    "missing": 0
+  },
+  "regenerate_reports_identical_across_locations": true,
+  "regenerated_r8_r9_hashes": {
+    "combined_sha256_copyA": "7a250b73370b5c848faeb301f057e23db844f17cd5c2194c76752956c50b3f89",
+    "combined_sha256_copyB": "7a250b73370b5c848faeb301f057e23db844f17cd5c2194c76752956c50b3f89",
+    "cwd_copyA": "/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/semantics_v3_copies/copyA/obfuscope-corrected",
+    "cwd_copyB": "/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/semantics_v3_copies/other/nested/path/copyB/obf_copy_B",
+    "identical_to_input_per_param": {
+      "ref_lit_mixed": 0,
+      "ref_lit_sum": 0,
+      "ref_lit_xor": 0,
+      "ref_opq_both": 0,
+      "ref_opq_junk": 0,
+      "ref_opq_true": 0,
+      "ref_ren_hex": 4,
+      "ref_ren_long": 4,
+      "ref_str_add": 0,
+      "ref_str_xor": 0
+    },
+    "n_artifacts_copyA": 600,
+    "n_artifacts_copyB": 600,
+    "per_artifact_identical": true
+  },
+  "runs": {
+    "corpus_O0": {
+      "artifacts_found": 2400,
+      "artifacts_unmatched": 0,
+      "baseline": {
+        "exit_status_counts": {
+          "0": 30
+        }
+      },
+      "compiler": {
+        "cc": "cc",
+        "flags": [
+          "-std=c99",
+          "-w",
+          "-O0"
+        ],
+        "timeout_seconds": 60,
+        "version": "Apple clang version 21.0.0 (clang-2100.3.34.2)"
+      },
+      "excluded_programs": [],
+      "file": "semantics_corpus_O0.json",
+      "mode": "corpus",
+      "n_failures": 0,
+      "per_parameterisation": {
+        "ref_lit_mixed": {
+          "attempted": 240,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 240,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_lit_sum": {
+          "attempted": 240,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 240,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_lit_xor": {
+          "attempted": 240,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 240,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_opq_both": {
+          "attempted": 240,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 240,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_opq_junk": {
+          "attempted": 240,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 240,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_opq_true": {
+          "attempted": 240,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 240,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_ren_hex": {
+          "attempted": 240,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 240,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_ren_long": {
+          "attempted": 240,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 240,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_str_add": {
+          "attempted": 240,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 240,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_str_xor": {
+          "attempted": 240,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 240,
+          "run_timeout": 0,
+          "transform_failed": 0
+        }
+      },
+      "replicate_indices": null,
+      "replicates_overlap_corpus": null,
+      "totals": {
+        "attempted": 2400,
+        "behaviour_differs": 0,
+        "compile_failed": 0,
+        "compile_timeout": 0,
+        "exit_status_differs": 0,
+        "output_and_exit_status_differ": 0,
+        "output_differs": 0,
+        "preservation_rate": 1.0,
+        "preserved": 2400,
+        "run_timeout": 0,
+        "transform_failed": 0
+      },
+      "usable_programs": 30,
+      "wall_seconds": 5088.13
+    },
+    "corpus_O2": {
+      "artifacts_found": 2400,
+      "artifacts_unmatched": 0,
+      "baseline": {
+        "exit_status_counts": {
+          "0": 30
+        }
+      },
+      "compiler": {
+        "cc": "cc",
+        "flags": [
+          "-std=c99",
+          "-w",
+          "-O2"
+        ],
+        "timeout_seconds": 60,
+        "version": "Apple clang version 21.0.0 (clang-2100.3.34.2)"
+      },
+      "excluded_programs": [],
+      "file": "semantics_corpus_O2.json",
+      "mode": "corpus",
+      "n_failures": 0,
+      "per_parameterisation": {
+        "ref_lit_mixed": {
+          "attempted": 240,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 240,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_lit_sum": {
+          "attempted": 240,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 240,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_lit_xor": {
+          "attempted": 240,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 240,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_opq_both": {
+          "attempted": 240,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 240,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_opq_junk": {
+          "attempted": 240,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 240,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_opq_true": {
+          "attempted": 240,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 240,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_ren_hex": {
+          "attempted": 240,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 240,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_ren_long": {
+          "attempted": 240,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 240,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_str_add": {
+          "attempted": 240,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 240,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_str_xor": {
+          "attempted": 240,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 240,
+          "run_timeout": 0,
+          "transform_failed": 0
+        }
+      },
+      "replicate_indices": null,
+      "replicates_overlap_corpus": null,
+      "totals": {
+        "attempted": 2400,
+        "behaviour_differs": 0,
+        "compile_failed": 0,
+        "compile_timeout": 0,
+        "exit_status_differs": 0,
+        "output_and_exit_status_differ": 0,
+        "output_differs": 0,
+        "preservation_rate": 1.0,
+        "preserved": 2400,
+        "run_timeout": 0,
+        "transform_failed": 0
+      },
+      "usable_programs": 30,
+      "wall_seconds": 5079.86
+    },
+    "regen_copyA": {
+      "artifacts_found": null,
+      "artifacts_unmatched": null,
+      "baseline": {
+        "exit_status_counts": {
+          "0": 30
+        }
+      },
+      "compiler": {
+        "cc": "cc",
+        "flags": [
+          "-std=c99",
+          "-w",
+          "-O0"
+        ],
+        "timeout_seconds": 60,
+        "version": "Apple clang version 21.0.0 (clang-2100.3.34.2)"
+      },
+      "excluded_programs": [],
+      "file": "semantics_regenerate_copyA.json",
+      "mode": "regenerate",
+      "n_failures": 0,
+      "per_parameterisation": {
+        "ref_lit_mixed": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_lit_sum": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_lit_xor": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_opq_both": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_opq_junk": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_opq_true": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_ren_hex": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_ren_long": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_str_add": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_str_xor": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        }
+      },
+      "replicate_indices": [
+        8,
+        9
+      ],
+      "replicates_overlap_corpus": false,
+      "totals": {
+        "attempted": 600,
+        "behaviour_differs": 0,
+        "compile_failed": 0,
+        "compile_timeout": 0,
+        "exit_status_differs": 0,
+        "output_and_exit_status_differ": 0,
+        "output_differs": 0,
+        "preservation_rate": 1.0,
+        "preserved": 600,
+        "run_timeout": 0,
+        "transform_failed": 0
+      },
+      "usable_programs": 30,
+      "wall_seconds": 1328.81
+    },
+    "regen_copyB": {
+      "artifacts_found": null,
+      "artifacts_unmatched": null,
+      "baseline": {
+        "exit_status_counts": {
+          "0": 30
+        }
+      },
+      "compiler": {
+        "cc": "cc",
+        "flags": [
+          "-std=c99",
+          "-w",
+          "-O0"
+        ],
+        "timeout_seconds": 60,
+        "version": "Apple clang version 21.0.0 (clang-2100.3.34.2)"
+      },
+      "excluded_programs": [],
+      "file": "semantics_regenerate_copyB.json",
+      "mode": "regenerate",
+      "n_failures": 0,
+      "per_parameterisation": {
+        "ref_lit_mixed": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_lit_sum": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_lit_xor": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_opq_both": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_opq_junk": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_opq_true": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_ren_hex": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_ren_long": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_str_add": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_str_xor": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        }
+      },
+      "replicate_indices": [
+        8,
+        9
+      ],
+      "replicates_overlap_corpus": false,
+      "totals": {
+        "attempted": 600,
+        "behaviour_differs": 0,
+        "compile_failed": 0,
+        "compile_timeout": 0,
+        "exit_status_differs": 0,
+        "output_and_exit_status_differ": 0,
+        "output_differs": 0,
+        "preservation_rate": 1.0,
+        "preserved": 600,
+        "run_timeout": 0,
+        "transform_failed": 0
+      },
+      "usable_programs": 30,
+      "wall_seconds": 1320.48
+    },
+    "regen_repo": {
+      "artifacts_found": null,
+      "artifacts_unmatched": null,
+      "baseline": {
+        "exit_status_counts": {
+          "0": 30
+        }
+      },
+      "compiler": {
+        "cc": "cc",
+        "flags": [
+          "-std=c99",
+          "-w",
+          "-O0"
+        ],
+        "timeout_seconds": 60,
+        "version": "Apple clang version 21.0.0 (clang-2100.3.34.2)"
+      },
+      "excluded_programs": [],
+      "file": "semantics_regenerate.json",
+      "mode": "regenerate",
+      "n_failures": 0,
+      "per_parameterisation": {
+        "ref_lit_mixed": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_lit_sum": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_lit_xor": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_opq_both": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_opq_junk": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_opq_true": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_ren_hex": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_ren_long": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_str_add": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        },
+        "ref_str_xor": {
+          "attempted": 60,
+          "behaviour_differs": 0,
+          "compile_failed": 0,
+          "compile_timeout": 0,
+          "exit_status_differs": 0,
+          "output_and_exit_status_differ": 0,
+          "output_differs": 0,
+          "preserved": 60,
+          "run_timeout": 0,
+          "transform_failed": 0
+        }
+      },
+      "replicate_indices": [
+        8,
+        9
+      ],
+      "replicates_overlap_corpus": false,
+      "totals": {
+        "attempted": 600,
+        "behaviour_differs": 0,
+        "compile_failed": 0,
+        "compile_timeout": 0,
+        "exit_status_differs": 0,
+        "output_and_exit_status_differ": 0,
+        "output_differs": 0,
+        "preservation_rate": 1.0,
+        "preserved": 600,
+        "run_timeout": 0,
+        "transform_failed": 0
+      },
+      "usable_programs": 30,
+      "wall_seconds": 1324.09
+    }
+  }
+}

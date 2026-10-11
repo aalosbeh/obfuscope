@@ -1,0 +1,68 @@
+# ObfuScope end-to-end workflow on the OSPool, orchestrated by DAGMan.
+#
+#   condor_submit_dag obfuscope.dag
+#
+# Stages:
+#   CORPUS    : N sharded Tigress generation jobs (corpus.sub). Each produces
+#               one tarball of obfuscated C artifacts plus a JSONL manifest of
+#               every attempt.
+#   FEATURES  : N sharded feature-extraction jobs (features.sub).
+#   MERGE     : concatenate shard CSVs into a single feature table (merge.sub).
+#   GATE      : corpus health checks (gate.sub). Blocking.
+#   GRID      : the embarrassingly-parallel experiment grid (experiment.sub),
+#               expanded from grid.txt by make_manifest.py in the PRE script.
+#   AGGREGATE : reduce per-cell JSONs into tables and figures (aggregate.sub).
+#
+# Edges enforce data dependencies; within a stage, jobs run concurrently subject
+# to the access point's throttle.
+#
+# Why GATE sits before GRID
+# -------------------------
+# GRID is the expensive stage. A corpus whose classes carry no within-class
+# variation yields saturated metrics that read as a strong result, and the
+# defect is invisible in row counts, class balance, and grouped cross
+# validation alike. Checking corpus health after the grid means retracting a
+# number; checking it here means rebuilding a corpus. GATE therefore returns
+# nonzero on a degenerate corpus and DAGMan holds GRID and AGGREGATE back.
+#
+# Running without CORPUS
+# ----------------------
+# To reuse an already staged corpus, comment out the CORPUS job, its PRE and
+# POST scripts, and the PARENT CORPUS CHILD FEATURES edge, then move the
+# package_src.sh PRE script onto FEATURES.
+
+JOB   CORPUS     corpus.sub
+JOB   FEATURES   features.sub
+JOB   MERGE      merge.sub
+JOB   GATE       gate.sub
+JOB   GRID       experiment.sub
+JOB   AGGREGATE  aggregate.sub
+
+# Package current source before the first stage submits, so every job in the
+# run (CORPUS, FEATURES, MERGE, GATE, GRID, AGGREGATE all
+# `tar xzf obfuscope_src.tar.gz`) ships identical, up-to-date code without a
+# separate manual step.
+SCRIPT PRE  CORPUS  package_src.sh
+
+# Merge the shard tarballs into one corpus tree, stage it to the OSDF path
+# features.sub reads, and report the per-transformation generation yield.
+SCRIPT POST CORPUS  assemble_corpus.sh
+
+# Build grid.txt before the GRID stage is submitted.
+SCRIPT PRE  GRID  generate_grid.sh
+
+PARENT CORPUS    CHILD FEATURES
+PARENT FEATURES  CHILD MERGE
+PARENT MERGE     CHILD GATE
+PARENT GATE      CHILD GRID
+PARENT GRID      CHILD AGGREGATE
+
+# Retry whole stages a few times to ride out transient OSPool preemption.
+# GATE is deliberately absent: its failures are properties of the corpus, not
+# transient faults, so a retry would repeat the same verdict at the same cost.
+RETRY CORPUS    2
+RETRY FEATURES  3
+RETRY GRID      2
+
+# Throttle simultaneously-idle jobs submitted to the schedd.
+CONFIG dagman.config

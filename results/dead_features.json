@@ -1,0 +1,107 @@
+{
+  "n_features": 61,
+  "dead": [
+    "api_antidebug",
+    "api_crypto",
+    "api_loader",
+    "api_memory",
+    "api_network",
+    "api_registry",
+    "comment_char_ratio",
+    "n_comments",
+    "n_goto",
+    "obf_always_true",
+    "obf_goto",
+    "obf_junk",
+    "obf_magic",
+    "obf_opaque_pred",
+    "obf_selfmod",
+    "obf_state_machine",
+    "obf_vm_dispatch"
+  ],
+  "dead_by_family": {
+    "api": [
+      "api_antidebug",
+      "api_crypto",
+      "api_loader",
+      "api_memory",
+      "api_network",
+      "api_registry"
+    ],
+    "obfuscation": [
+      "comment_char_ratio",
+      "n_comments",
+      "obf_always_true",
+      "obf_goto",
+      "obf_junk",
+      "obf_magic",
+      "obf_opaque_pred",
+      "obf_selfmod",
+      "obf_state_machine",
+      "obf_vm_dispatch"
+    ],
+    "control_flow": [
+      "n_goto"
+    ]
+  },
+  "live_by_family": {
+    "lexical": [
+      "identifier_digit_ratio",
+      "max_line_len",
+      "mean_function_name_len",
+      "mean_identifier_len",
+      "mean_line_len",
+      "n_functions",
+      "n_lines",
+      "n_nonblank_lines",
+      "n_tokens",
+      "n_unique_identifiers",
+      "size_bytes",
+      "unique_identifier_ratio"
+    ],
+    "entropy": [
+      "byte_entropy",
+      "identifier_entropy",
+      "line_len_entropy"
+    ],
+    "control_flow": [
+      "branch_density",
+      "cyclomatic_proxy",
+      "n_break",
+      "n_case",
+      "n_for",
+      "n_if",
+      "n_return",
+      "n_switch",
+      "n_while"
+    ],
+    "literal": [
+      "hex_to_int_ratio",
+      "mean_string_len",
+      "n_char_array",
+      "n_char_lit",
+      "n_hex_const",
+      "n_int_const",
+      "n_string_lit"
+    ],
+    "operator": [
+      "n_arith_op",
+      "n_assign_op",
+      "n_bitwise_op",
+      "n_logical_op",
+      "n_shift_op",
+      "n_xor_op",
+      "operator_density"
+    ],
+    "api": [
+      "api_process",
+      "api_timing"
+    ],
+    "obfuscation": [
+      "n_includes",
+      "obf_random_name",
+      "obf_xor_key",
+      "preprocessor_ratio"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+corpus data/pilot_corpus: 2400 artifacts checked against 30 input programs (0 unmatched)
+  byte identical to the input program        32
+  identical after whitespace normalisation   32
+
+parameterisation  artifacts  byte_identical  whitespace_identical
+ref_lit_mixed           240               0                     0
+ref_lit_sum             240               0                     0
+ref_lit_xor             240               0                     0
+ref_opq_both            240               0                     0
+ref_opq_junk            240               0                     0
+ref_opq_true            240               0                     0
+ref_ren_hex             240              16                    16
+ref_ren_long            240              16                    16
+ref_str_add             240               0                     0
+ref_str_xor             240               0                     0
+
+cells with at least one identical artifact
+  bitops_popcount              ref_ren_hex      8/8 byte identical, 8/8 after whitespace
+  bitops_popcount              ref_ren_long     8/8 byte identical, 8/8 after whitespace
+  textproc_trim                ref_ren_hex      8/8 byte identical, 8/8 after whitespace
+  textproc_trim                ref_ren_long     8/8 byte identical, 8/8 after whitespace
+
+report written to results/v3/gate/noop_artifacts.json

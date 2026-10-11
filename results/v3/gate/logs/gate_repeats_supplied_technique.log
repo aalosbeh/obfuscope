@@ -1,0 +1,111 @@
+corpus    data/features_pilot.csv
+rows      2400
+features  61
+label     technique  (4 classes)
+group     sample_id  (30 groups)
+
+CHECK 1 and 2  per class distinctness, constant features, input dependence
+class              n    distinct_vectors  distinct_ratio  constant_features  constant_fraction  n_groups  input_dependence  dependence_omega2  dependence_null_mean  dependence_z  dependence_p
+-----------------  ---  ----------------  --------------  -----------------  -----------------  --------  ----------------  -----------------  --------------------  ------------  ------------
+addopaque          720  720               1.0             18                 0.2951             30        0.7553            0.7448             1e-06                 157.945       0.00498     
+encodeliterals     720  720               1.0             18                 0.2951             30        0.9299            0.927              0.000106              242.571       0.00498     
+encodestrings      480  480               1.0             19                 0.3115             30        0.9923            0.9918             -9.6e-05              189.073       0.00498     
+renameidentifiers  480  450               0.9375          17                 0.2787             30        0.9274            0.9226             -0.000243             205.927       0.00498     
+  distinct_ratio is a necessary condition only. input_dependence is the raw share of within
+  class feature variance lying between input programs; dependence_omega2 is the same quantity
+  with the upward bias from the group count removed, and dependence_null_mean is its value when
+  the program labels are shuffled. The verdict uses dependence_p, not a fixed cut, so a high
+  distinct ratio with variation that does not track the input programs is caught whatever the
+  group count happens to be.
+
+CHECK 3  duplicate feature vectors spanning groups
+  group_column                           sample_id
+  duplicate_clusters_spanning_groups     0
+  rows_in_those_clusters                 0
+  fraction_of_corpus                     0.0
+  total_rows                             2400
+  distinct_vectors_overall               2370
+
+CHECK 6  duplicate feature vectors spanning class labels
+  label_column                           technique
+  duplicate_clusters_spanning_labels     0
+  rows_in_those_clusters                 0
+  fraction_of_corpus                     0.0
+  irreducible_errors                     0
+  irreducible_error_rate                 0.0
+  accuracy_ceiling                       1.0
+  accuracy_ceiling is the highest accuracy any model can reach on this feature table and
+  label. Compare every reported accuracy against it.
+
+CHECK 4  best k feature ceiling and chance corrected headroom
+  n_classes                              4
+  chance_macro_f1                        0.25
+  best_feature                           n_int_const
+  best_macro_f1                          0.6383
+  macro_f1_by_k                          {1: 0.6383, 2: 0.813, 3: 0.9154}
+  greedy_trace
+    k=1  0.6383  n_int_const
+    k=2  0.813  n_int_const, identifier_digit_ratio
+    k=3  0.9154  n_int_const, identifier_digit_ratio, hex_to_int_ratio
+  candidate_pool_size                    24
+  full_set_shallow_depth3                0.9455
+  full_set_macro_f1                      0.9542
+  full_set_source                        supplied
+  headroom_R                             0.4486
+  top_five
+    n_int_const                    0.6383
+    hex_to_int_ratio               0.6316
+    n_xor_op                       0.5697
+    n_hex_const                    0.5515
+    identifier_digit_ratio         0.4851
+  threshold_absolute_f1                  0.7
+  threshold_min_headroom                 0.5
+  headroom_status                        fail
+  headroom_note                          R 0.4486 below 0.50
+  headroom_gap                           0.7042
+  headroom_reference
+    full_set_source                      supplied
+    full_set_value                       0.9542
+    full_set_protocol                    manuscript Table 19 (MS L664): random_forest, feature set all, domain holdout (lomfo, StratifiedGroupKFold over malware_family, 5 folds), estimator seeds 0-4, mean macro F1 of 25 fold measurements; value taken from the manuscript
+    best_k_protocol                      DecisionTreeClassifier(max_depth=6, random_state=0) on the feature subset, mean macro F1 over GroupShuffleSplit(n_splits=3, test_size=0.3, random_state=0) grouped by 'sample_id'
+    same_protocol_as_best_k              False
+  full_set_probe_macro_f1                0.9345
+  headroom_R_probe_reference             0.4327
+  probe_settings
+    tree_depth                           6
+    depth_rule                           min(8, n_classes + 2)
+    splitter                             GroupShuffleSplit(n_splits=3, test_size=0.3, random_state=0) grouped by 'sample_id'
+    seed                                 0
+    k_values                             [1, 2, 3]
+    k1_search                            exhaustive over all features
+    k_above_1_search                     greedy forward selection from the 24 strongest single features
+    selection_and_scoring_on_same_splits True
+  headroom_R = (full - best_single) / (full - chance). Near zero means one feature
+  already recovers the achievable gap above chance.
+
+CHECK 4  repeated over split seeds 0..9 (verdict uses seed 0 only)
+  best_1_macro_f1                mean 0.6736  min 0.6004  max 0.7372  (defined in 10 of 10)
+  best_2_macro_f1                mean 0.8587  min 0.813  max 0.9123  (defined in 10 of 10)
+  best_3_macro_f1                mean 0.9121  min 0.8798  max 0.947  (defined in 10 of 10)
+  headroom_R                     mean 0.3984  min 0.3081  max 0.5025  (defined in 10 of 10)
+  headroom_R_probe_reference     mean 0.3504  min 0.2249  max 0.4567  (defined in 10 of 10)
+  best_feature_by_seed           ['n_int_const', 'n_int_const', 'hex_to_int_ratio', 'n_int_const', 'hex_to_int_ratio', 'n_int_const', 'hex_to_int_ratio', 'hex_to_int_ratio', 'hex_to_int_ratio', 'n_int_const']
+  headroom_status_by_seed        ['fail', 'fail', 'fail', 'fail', 'pass', 'fail', 'fail', 'fail', 'fail', 'fail']
+
+CHECK 5  permuted label control
+  real_macro_f1                          0.9759
+  permuted_macro_f1                      0.219
+  chance_macro_f1                        0.25
+  excess_over_chance                     -0.031
+  tolerance                              0.08
+
+report written to /Users/anasalsobeh/Downloads/manar/ofuScope/submission_package/code/obfuscope-corrected/results/v3/gate/gate_repeats_supplied_technique.json
+
+GATE FAILED
+  1. chance corrected headroom R is 0.449 (below 0.50). The best single feature 'n_int_const' recovers 55.1% of the gap between chance and the full feature set, so the remaining features add little and the reported result is close to a one feature rule dressed up as a learned model.
+  2. the best 2 features together reach macro F1 0.813 (above 0.70) with a depth 6 tree. A 2 feature rule settles the label, so the corpus is separable without the representation the paper is arguing for.
+
+The corpus does not support an attribution claim in its current state. Increase generator variation, widen the input programs, or drop the degenerate classes, then rebuild.
+real 215.96
+user 28.91
+sys 0.89

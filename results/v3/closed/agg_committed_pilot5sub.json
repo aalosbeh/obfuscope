@@ -1,0 +1,571 @@
+{
+  "results_dir": "/Users/anasalsobeh/Downloads/manar/ofuScope/obfuscope-main/results/pilot5sub",
+  "cells": [
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "model": "extra_trees",
+      "feature_set": "all",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.7932,
+      "sd_total": 0.0485,
+      "sd_fold": 0.0522,
+      "sd_seed": 0.0069,
+      "per_seed_mean": [
+        0.7849,
+        0.7992,
+        0.7864,
+        0.7986,
+        0.7968
+      ],
+      "min_fold": 0.7295,
+      "max_fold": 0.8908
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "model": "hist_gbdt",
+      "feature_set": "all",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.8124,
+      "sd_total": 0.0748,
+      "sd_fold": 0.0816,
+      "sd_seed": 0.0073,
+      "per_seed_mean": [
+        0.8222,
+        0.8121,
+        0.8029,
+        0.8158,
+        0.8088
+      ],
+      "min_fold": 0.7112,
+      "max_fold": 0.9366
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "model": "hist_gbdt",
+      "feature_set": "lexical_only",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.4869,
+      "sd_total": 0.0814,
+      "sd_fold": 0.0887,
+      "sd_seed": 0.006,
+      "per_seed_mean": [
+        0.491,
+        0.4897,
+        0.4824,
+        0.4925,
+        0.4787
+      ],
+      "min_fold": 0.319,
+      "max_fold": 0.5963
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "model": "hist_gbdt",
+      "feature_set": "no_obfuscation",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.7881,
+      "sd_total": 0.1004,
+      "sd_fold": 0.1095,
+      "sd_seed": 0.0079,
+      "per_seed_mean": [
+        0.7871,
+        0.7819,
+        0.789,
+        0.7816,
+        0.8011
+      ],
+      "min_fold": 0.6313,
+      "max_fold": 0.9303
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "model": "hist_gbdt",
+      "feature_set": "semantic",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.6513,
+      "sd_total": 0.0699,
+      "sd_fold": 0.076,
+      "sd_seed": 0.0062,
+      "per_seed_mean": [
+        0.658,
+        0.6476,
+        0.6494,
+        0.6439,
+        0.6576
+      ],
+      "min_fold": 0.5397,
+      "max_fold": 0.7855
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "model": "hist_gbdt",
+      "feature_set": "structural",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.6932,
+      "sd_total": 0.0947,
+      "sd_fold": 0.1033,
+      "sd_seed": 0.0036,
+      "per_seed_mean": [
+        0.6961,
+        0.6932,
+        0.693,
+        0.6965,
+        0.6874
+      ],
+      "min_fold": 0.5734,
+      "max_fold": 0.8584
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "model": "knn",
+      "feature_set": "all",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.5546,
+      "sd_total": 0.0605,
+      "sd_fold": 0.0663,
+      "sd_seed": 0.0,
+      "per_seed_mean": [
+        0.5546,
+        0.5546,
+        0.5546,
+        0.5546,
+        0.5546
+      ],
+      "min_fold": 0.478,
+      "max_fold": 0.6531
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "model": "logreg",
+      "feature_set": "all",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.7312,
+      "sd_total": 0.048,
+      "sd_fold": 0.0526,
+      "sd_seed": 0.0,
+      "per_seed_mean": [
+        0.7312,
+        0.7312,
+        0.7312,
+        0.7312,
+        0.7312
+      ],
+      "min_fold": 0.6757,
+      "max_fold": 0.8171
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "model": "mlp",
+      "feature_set": "all",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.6834,
+      "sd_total": 0.0893,
+      "sd_fold": 0.096,
+      "sd_seed": 0.0131,
+      "per_seed_mean": [
+        0.698,
+        0.6757,
+        0.6829,
+        0.6943,
+        0.6663
+      ],
+      "min_fold": 0.492,
+      "max_fold": 0.7973
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "model": "random_forest",
+      "feature_set": "all",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.8045,
+      "sd_total": 0.0671,
+      "sd_fold": 0.0731,
+      "sd_seed": 0.0042,
+      "per_seed_mean": [
+        0.7998,
+        0.8027,
+        0.8076,
+        0.8022,
+        0.8099
+      ],
+      "min_fold": 0.7372,
+      "max_fold": 0.9436
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "model": "random_forest",
+      "feature_set": "lexical_only",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.4831,
+      "sd_total": 0.063,
+      "sd_fold": 0.0675,
+      "sd_seed": 0.0106,
+      "per_seed_mean": [
+        0.4914,
+        0.4856,
+        0.4744,
+        0.4699,
+        0.4943
+      ],
+      "min_fold": 0.3627,
+      "max_fold": 0.5845
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "model": "random_forest",
+      "feature_set": "no_obfuscation",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.7937,
+      "sd_total": 0.0676,
+      "sd_fold": 0.074,
+      "sd_seed": 0.003,
+      "per_seed_mean": [
+        0.7934,
+        0.7968,
+        0.789,
+        0.7959,
+        0.7934
+      ],
+      "min_fold": 0.7242,
+      "max_fold": 0.9261
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "model": "random_forest",
+      "feature_set": "semantic",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.6014,
+      "sd_total": 0.0789,
+      "sd_fold": 0.0846,
+      "sd_seed": 0.0163,
+      "per_seed_mean": [
+        0.6095,
+        0.5828,
+        0.5862,
+        0.6211,
+        0.6074
+      ],
+      "min_fold": 0.4653,
+      "max_fold": 0.7169
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "model": "random_forest",
+      "feature_set": "structural",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.6789,
+      "sd_total": 0.0738,
+      "sd_fold": 0.0803,
+      "sd_seed": 0.0084,
+      "per_seed_mean": [
+        0.6915,
+        0.6804,
+        0.6804,
+        0.6715,
+        0.6708
+      ],
+      "min_fold": 0.557,
+      "max_fold": 0.778
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "model": "svm_rbf",
+      "feature_set": "all",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.6686,
+      "sd_total": 0.08,
+      "sd_fold": 0.0877,
+      "sd_seed": 0.0,
+      "per_seed_mean": [
+        0.6686,
+        0.6686,
+        0.6686,
+        0.6686,
+        0.6686
+      ],
+      "min_fold": 0.5419,
+      "max_fold": 0.7721
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "feature_set": "all",
+      "reference": "hist_gbdt",
+      "other": "random_forest",
+      "n_pairs": 25,
+      "mean_difference": 0.0079,
+      "sd_of_differences": 0.0385,
+      "standard_error": 0.0077,
+      "t_statistic": 1.026,
+      "folds_won": 15,
+      "folds_tied": 0,
+      "folds_lost": 10,
+      "win_fraction": 0.6,
+      "paired_effect_size": 0.205,
+      "fold_level": {
+        "fold_identity": "fold_index",
+        "n_distinct_folds": 5,
+        "n_seeds_per_fold": [
+          5
+        ],
+        "seed_averaged_differences": [
+          -0.0514,
+          0.0546,
+          0.0166,
+          0.0035,
+          0.0163
+        ],
+        "mean_difference": 0.0079,
+        "folds_won": 4,
+        "folds_tied": 0,
+        "folds_lost": 1,
+        "sign_test_p_two_sided": 0.375,
+        "wilcoxon_w_plus": 11.0,
+        "wilcoxon_n_nonzero": 5,
+        "wilcoxon_p_two_sided_exact": 0.4375
+      }
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "feature_set": "all",
+      "reference": "hist_gbdt",
+      "other": "extra_trees",
+      "n_pairs": 25,
+      "mean_difference": 0.0192,
+      "sd_of_differences": 0.0735,
+      "standard_error": 0.0147,
+      "t_statistic": 1.306,
+      "folds_won": 16,
+      "folds_tied": 0,
+      "folds_lost": 9,
+      "win_fraction": 0.64,
+      "paired_effect_size": 0.261,
+      "fold_level": {
+        "fold_identity": "fold_index",
+        "n_distinct_folds": 5,
+        "n_seeds_per_fold": [
+          5
+        ],
+        "seed_averaged_differences": [
+          -0.1046,
+          0.0693,
+          0.079,
+          0.0641,
+          -0.0118
+        ],
+        "mean_difference": 0.0192,
+        "folds_won": 3,
+        "folds_tied": 0,
+        "folds_lost": 2,
+        "sign_test_p_two_sided": 1.0,
+        "wilcoxon_w_plus": 9.0,
+        "wilcoxon_n_nonzero": 5,
+        "wilcoxon_p_two_sided_exact": 0.8125
+      }
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "feature_set": "all",
+      "reference": "hist_gbdt",
+      "other": "logreg",
+      "n_pairs": 25,
+      "mean_difference": 0.0812,
+      "sd_of_differences": 0.1001,
+      "standard_error": 0.02,
+      "t_statistic": 4.058,
+      "folds_won": 20,
+      "folds_tied": 0,
+      "folds_lost": 5,
+      "win_fraction": 0.8,
+      "paired_effect_size": 0.812,
+      "fold_level": {
+        "fold_identity": "fold_index",
+        "n_distinct_folds": 5,
+        "n_seeds_per_fold": [
+          5
+        ],
+        "seed_averaged_differences": [
+          -0.0976,
+          0.1171,
+          0.1077,
+          0.1959,
+          0.083
+        ],
+        "mean_difference": 0.0812,
+        "folds_won": 4,
+        "folds_tied": 0,
+        "folds_lost": 1,
+        "sign_test_p_two_sided": 0.375,
+        "wilcoxon_w_plus": 13.0,
+        "wilcoxon_n_nonzero": 5,
+        "wilcoxon_p_two_sided_exact": 0.1875
+      }
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "feature_set": "all",
+      "reference": "hist_gbdt",
+      "other": "mlp",
+      "n_pairs": 25,
+      "mean_difference": 0.1289,
+      "sd_of_differences": 0.1046,
+      "standard_error": 0.0209,
+      "t_statistic": 6.16,
+      "folds_won": 20,
+      "folds_tied": 0,
+      "folds_lost": 5,
+      "win_fraction": 0.8,
+      "paired_effect_size": 1.232,
+      "fold_level": {
+        "fold_identity": "fold_index",
+        "n_distinct_folds": 5,
+        "n_seeds_per_fold": [
+          5
+        ],
+        "seed_averaged_differences": [
+          -0.058,
+          0.1053,
+          0.2027,
+          0.1891,
+          0.2055
+        ],
+        "mean_difference": 0.1289,
+        "folds_won": 4,
+        "folds_tied": 0,
+        "folds_lost": 1,
+        "sign_test_p_two_sided": 0.375,
+        "wilcoxon_w_plus": 14.0,
+        "wilcoxon_n_nonzero": 5,
+        "wilcoxon_p_two_sided_exact": 0.125
+      }
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "feature_set": "all",
+      "reference": "hist_gbdt",
+      "other": "svm_rbf",
+      "n_pairs": 25,
+      "mean_difference": 0.1438,
+      "sd_of_differences": 0.1176,
+      "standard_error": 0.0235,
+      "t_statistic": 6.115,
+      "folds_won": 20,
+      "folds_tied": 0,
+      "folds_lost": 5,
+      "win_fraction": 0.8,
+      "paired_effect_size": 1.223,
+      "fold_level": {
+        "fold_identity": "fold_index",
+        "n_distinct_folds": 5,
+        "n_seeds_per_fold": [
+          5
+        ],
+        "seed_averaged_differences": [
+          -0.0526,
+          0.1266,
+          0.2803,
+          0.2321,
+          0.1326
+        ],
+        "mean_difference": 0.1438,
+        "folds_won": 4,
+        "folds_tied": 0,
+        "folds_lost": 1,
+        "sign_test_p_two_sided": 0.375,
+        "wilcoxon_w_plus": 14.0,
+        "wilcoxon_n_nonzero": 5,
+        "wilcoxon_p_two_sided_exact": 0.125
+      }
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "feature_set": "all",
+      "reference": "hist_gbdt",
+      "other": "knn",
+      "n_pairs": 25,
+      "mean_difference": 0.2578,
+      "sd_of_differences": 0.1102,
+      "standard_error": 0.022,
+      "t_statistic": 11.692,
+      "folds_won": 25,
+      "folds_tied": 0,
+      "folds_lost": 0,
+      "win_fraction": 1.0,
+      "paired_effect_size": 2.338,
+      "fold_level": {
+        "fold_identity": "fold_index",
+        "n_distinct_folds": 5,
+        "n_seeds_per_fold": [
+          5
+        ],
+        "seed_averaged_differences": [
+          0.0663,
+          0.3528,
+          0.3,
+          0.35,
+          0.2198
+        ],
+        "mean_difference": 0.2578,
+        "folds_won": 5,
+        "folds_tied": 0,
+        "folds_lost": 0,
+        "sign_test_p_two_sided": 0.0625,
+        "wilcoxon_w_plus": 15.0,
+        "wilcoxon_n_nonzero": 5,
+        "wilcoxon_p_two_sided_exact": 0.0625
+      }
+    }
+  ]
+}

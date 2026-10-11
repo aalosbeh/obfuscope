@@ -1,0 +1,89 @@
+{
+  "gate_supplied_technique.json": {
+    "committed": "results/gate_v2_technique.json",
+    "committed_leaves": 112,
+    "differences": [],
+    "n_differences": 0,
+    "new_keys": [
+      "/single_feature/headroom_status",
+      "/single_feature/headroom_note",
+      "/single_feature/headroom_gap",
+      "/single_feature/headroom_reference",
+      "/single_feature/full_set_probe_macro_f1",
+      "/single_feature/headroom_R_probe_reference",
+      "/single_feature/probe_settings",
+      "/inconclusive",
+      "/gate_settings"
+    ]
+  },
+  "gate_supplied_subtechnique.json": {
+    "committed": "results/gate_v2_subtechnique.json",
+    "committed_leaves": 198,
+    "differences": [],
+    "n_differences": 0,
+    "new_keys": [
+      "/single_feature/headroom_status",
+      "/single_feature/headroom_note",
+      "/single_feature/headroom_gap",
+      "/single_feature/headroom_reference",
+      "/single_feature/full_set_probe_macro_f1",
+      "/single_feature/headroom_R_probe_reference",
+      "/single_feature/probe_settings",
+      "/inconclusive",
+      "/gate_settings"
+    ]
+  },
+  "gate_supplied_v1.json": {
+    "committed": "results/gate_original_technique.json",
+    "committed_leaves": 227,
+    "differences": [],
+    "n_differences": 0,
+    "new_keys": [
+      "/single_feature/headroom_status",
+      "/single_feature/headroom_note",
+      "/single_feature/headroom_gap",
+      "/single_feature/headroom_reference",
+      "/single_feature/full_set_probe_macro_f1",
+      "/single_feature/headroom_R_probe_reference",
+      "/single_feature/probe_settings",
+      "/inconclusive",
+      "/gate_settings"
+    ]
+  },
+  "gate_repeats_supplied_technique.json": {
+    "committed": "results/gate_v2_technique.json",
+    "committed_leaves": 112,
+    "differences": [],
+    "n_differences": 0,
+    "new_keys": [
+      "/single_feature/headroom_status",
+      "/single_feature/headroom_note",
+      "/single_feature/headroom_gap",
+      "/single_feature/headroom_reference",
+      "/single_feature/full_set_probe_macro_f1",
+      "/single_feature/headroom_R_probe_reference",
+      "/single_feature/probe_settings",
+      "/single_feature_repeats",
+      "/inconclusive",
+      "/gate_settings"
+    ]
+  },
+  "gate_repeats_supplied_subtechnique.json": {
+    "committed": "results/gate_v2_subtechnique.json",
+    "committed_leaves": 198,
+    "differences": [],
+    "n_differences": 0,
+    "new_keys": [
+      "/single_feature/headroom_status",
+      "/single_feature/headroom_note",
+      "/single_feature/headroom_gap",
+      "/single_feature/headroom_reference",
+      "/single_feature/full_set_probe_macro_f1",
+      "/single_feature/headroom_R_probe_reference",
+      "/single_feature/probe_settings",
+      "/single_feature_repeats",
+      "/inconclusive",
+      "/gate_settings"
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "features_path": "data/features_pilot.csv",
+  "label": "technique",
+  "group": "sample_id",
+  "per_class": [
+    {
+      "class": "addopaque",
+      "n": 720,
+      "distinct_vectors": 720,
+      "distinct_ratio": 1.0,
+      "constant_features": 18,
+      "constant_fraction": 0.2951
+    },
+    {
+      "class": "encodeliterals",
+      "n": 720,
+      "distinct_vectors": 720,
+      "distinct_ratio": 1.0,
+      "constant_features": 18,
+      "constant_fraction": 0.2951
+    },
+    {
+      "class": "encodestrings",
+      "n": 480,
+      "distinct_vectors": 480,
+      "distinct_ratio": 1.0,
+      "constant_features": 19,
+      "constant_fraction": 0.3115
+    },
+    {
+      "class": "renameidentifiers",
+      "n": 480,
+      "distinct_vectors": 450,
+      "distinct_ratio": 0.9375,
+      "constant_features": 17,
+      "constant_fraction": 0.2787
+    }
+  ],
+  "cross_group_duplicates": {
+    "group_column": "sample_id",
+    "duplicate_clusters_spanning_groups": 0,
+    "rows_in_those_clusters": 0,
+    "fraction_of_corpus": 0.0,
+    "total_rows": 2400,
+    "distinct_vectors_overall": 2370
+  },
+  "single_feature": {
+    "best_feature": "n_int_const",
+    "best_macro_f1": 0.6383,
+    "top_five": [
+      {
+        "feature": "n_int_const",
+        "macro_f1": 0.6383
+      },
+      {
+        "feature": "hex_to_int_ratio",
+        "macro_f1": 0.6316
+      },
+      {
+        "feature": "n_xor_op",
+        "macro_f1": 0.5697
+      },
+      {
+        "feature": "n_hex_const",
+        "macro_f1": 0.5515
+      },
+      {
+        "feature": "identifier_digit_ratio",
+        "macro_f1": 0.4851
+      }
+    ],
+    "threshold": 0.7
+  },
+  "permuted_labels": {
+    "real_macro_f1": 0.9759,
+    "permuted_macro_f1": 0.219,
+    "chance_macro_f1": 0.25,
+    "excess_over_chance": -0.031,
+    "tolerance": 0.08
+  },
+  "failures": [],
+  "passed": true
+}

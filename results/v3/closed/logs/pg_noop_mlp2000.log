@@ -1,0 +1,86 @@
+rc=0 13.9s pg/provenance_grouped_cv_random_forest_all_s0.json :: [cell] provenance/grouped_cv/random_forest/all seed=0 -> 0.9631 (8.74s)
+rc=0 13.4s pg/provenance_grouped_cv_hist_gbdt_all_s0.json :: [cell] provenance/grouped_cv/hist_gbdt/all seed=0 -> 0.9664 (8.29s)
+rc=0 11.0s pg/provenance_grouped_cv_extra_trees_all_s0.json :: [cell] provenance/grouped_cv/extra_trees/all seed=0 -> 0.9450 (5.43s)
+rc=0 7.8s pg/provenance_grouped_cv_svm_rbf_all_s0.json :: [cell] provenance/grouped_cv/svm_rbf/all seed=0 -> 0.8758 (2.39s)
+rc=0 5.1s pg/provenance_grouped_cv_logreg_all_s0.json :: [cell] provenance/grouped_cv/logreg/all seed=0 -> 0.8976 (0.35s)
+   stderr warnings: 45 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/linear_model/_linear_loss.py:203: Runtime
+rc=0 76.9s pg/provenance_grouped_cv_mlp_all_s0.json :: [cell] provenance/grouped_cv/mlp/all seed=0 -> 0.8784 (73.78s)
+   stderr warnings: 30 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: div
+rc=0 74.7s pg/provenance_grouped_cv_knn_all_s0.json :: [cell] provenance/grouped_cv/knn/all seed=0 -> 0.8175 (0.12s)
+rc=0 81.8s pg/provenance_grouped_cv_random_forest_all_s1.json :: [cell] provenance/grouped_cv/random_forest/all seed=1 -> 0.9568 (6.83s)
+rc=0 82.3s pg/provenance_grouped_cv_hist_gbdt_all_s1.json :: [cell] provenance/grouped_cv/hist_gbdt/all seed=1 -> 0.9664 (7.14s)
+rc=0 5.4s pg/provenance_grouped_cv_extra_trees_all_s1.json :: [cell] provenance/grouped_cv/extra_trees/all seed=1 -> 0.9325 (3.22s)
+rc=0 2.3s pg/provenance_grouped_cv_svm_rbf_all_s1.json :: [cell] provenance/grouped_cv/svm_rbf/all seed=1 -> 0.8651 (0.71s)
+rc=0 6.2s pg/provenance_grouped_cv_logreg_all_s1.json :: [cell] provenance/grouped_cv/logreg/all seed=1 -> 0.8888 (0.51s)
+   stderr warnings: 45 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/linear_model/_linear_loss.py:203: Runtime
+rc=0 10.8s pg/provenance_grouped_cv_mlp_all_s1.json :: [cell] provenance/grouped_cv/mlp/all seed=1 -> 0.8642 (4.01s)
+   stderr warnings: 30 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: div
+rc=0 6.3s pg/provenance_grouped_cv_knn_all_s1.json :: [cell] provenance/grouped_cv/knn/all seed=1 -> 0.8323 (0.47s)
+rc=0 15.3s pg/provenance_grouped_cv_random_forest_all_s2.json :: [cell] provenance/grouped_cv/random_forest/all seed=2 -> 0.9566 (9.9s)
+rc=0 14.4s pg/provenance_grouped_cv_hist_gbdt_all_s2.json :: [cell] provenance/grouped_cv/hist_gbdt/all seed=2 -> 0.9662 (8.78s)
+rc=0 11.6s pg/provenance_grouped_cv_extra_trees_all_s2.json :: [cell] provenance/grouped_cv/extra_trees/all seed=2 -> 0.9421 (5.55s)
+rc=0 7.5s pg/provenance_grouped_cv_svm_rbf_all_s2.json :: [cell] provenance/grouped_cv/svm_rbf/all seed=2 -> 0.8884 (2.13s)
+rc=0 5.6s pg/provenance_grouped_cv_logreg_all_s2.json :: [cell] provenance/grouped_cv/logreg/all seed=2 -> 0.9054 (0.42s)
+   stderr warnings: 45 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/linear_model/_linear_loss.py:203: Runtime
+rc=0 8.2s pg/provenance_grouped_cv_mlp_all_s2.json :: [cell] provenance/grouped_cv/mlp/all seed=2 -> 0.8876 (3.11s)
+   stderr warnings: 30 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: div
+rc=0 5.5s pg/provenance_grouped_cv_knn_all_s2.json :: [cell] provenance/grouped_cv/knn/all seed=2 -> 0.8614 (0.35s)
+rc=0 14.9s pg/provenance_grouped_cv_random_forest_all_s3.json :: [cell] provenance/grouped_cv/random_forest/all seed=3 -> 0.9685 (9.81s)
+rc=0 14.0s pg/provenance_grouped_cv_hist_gbdt_all_s3.json :: [cell] provenance/grouped_cv/hist_gbdt/all seed=3 -> 0.9659 (8.9s)
+rc=0 11.0s pg/provenance_grouped_cv_extra_trees_all_s3.json :: [cell] provenance/grouped_cv/extra_trees/all seed=3 -> 0.9519 (5.39s)
+rc=0 7.6s pg/provenance_grouped_cv_svm_rbf_all_s3.json :: [cell] provenance/grouped_cv/svm_rbf/all seed=3 -> 0.8601 (2.18s)
+rc=0 5.3s pg/provenance_grouped_cv_logreg_all_s3.json :: [cell] provenance/grouped_cv/logreg/all seed=3 -> 0.9005 (0.34s)
+   stderr warnings: 45 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/linear_model/_linear_loss.py:203: Runtime
+rc=0 6.0s pg/provenance_grouped_cv_mlp_all_s3.json :: [cell] provenance/grouped_cv/mlp/all seed=3 -> 0.8931 (1.49s)
+   stderr warnings: 30 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: div
+rc=0 4.7s pg/provenance_grouped_cv_knn_all_s3.json :: [cell] provenance/grouped_cv/knn/all seed=3 -> 0.8267 (0.18s)
+rc=0 81.3s pg/provenance_grouped_cv_random_forest_all_s4.json :: [cell] provenance/grouped_cv/random_forest/all seed=4 -> 0.9593 (77.97s)
+rc=0 82.3s pg/provenance_grouped_cv_hist_gbdt_all_s4.json :: [cell] provenance/grouped_cv/hist_gbdt/all seed=4 -> 0.9670 (6.18s)
+rc=0 77.8s pg/provenance_grouped_cv_extra_trees_all_s4.json :: [cell] provenance/grouped_cv/extra_trees/all seed=4 -> 0.9398 (2.35s)
+rc=0 75.9s pg/provenance_grouped_cv_svm_rbf_all_s4.json :: [cell] provenance/grouped_cv/svm_rbf/all seed=4 -> 0.8685 (0.74s)
+rc=0 3.7s pg/provenance_grouped_cv_logreg_all_s4.json :: [cell] provenance/grouped_cv/logreg/all seed=4 -> 0.8775 (0.71s)
+   stderr warnings: 45 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/linear_model/_linear_loss.py:203: Runtime
+rc=0 8.6s pg/provenance_grouped_cv_mlp_all_s4.json :: [cell] provenance/grouped_cv/mlp/all seed=4 -> 0.8551 (3.15s)
+   stderr warnings: 30 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: div
+rc=0 7.1s pg/provenance_grouped_cv_knn_all_s4.json :: [cell] provenance/grouped_cv/knn/all seed=4 -> 0.8580 (0.36s)
+rc=0 16.1s noop/cells/provenance_lomfo_random_forest_all_s0.json :: [cell] provenance/lomfo/random_forest/all seed=0 -> 0.9373 (10.37s)
+rc=0 15.5s noop/cells/provenance_lomfo_random_forest_all_s1.json :: [cell] provenance/lomfo/random_forest/all seed=1 -> 0.9490 (10.37s)
+rc=0 14.7s noop/cells/provenance_lomfo_random_forest_all_s2.json :: [cell] provenance/lomfo/random_forest/all seed=2 -> 0.9400 (9.02s)
+rc=0 14.9s noop/cells/provenance_lomfo_random_forest_all_s3.json :: [cell] provenance/lomfo/random_forest/all seed=3 -> 0.9470 (8.85s)
+rc=0 12.3s noop/cells/provenance_lomfo_random_forest_all_s4.json :: [cell] provenance/lomfo/random_forest/all seed=4 -> 0.9433 (8.19s)
+rc=0 11.3s noop/cells/provenance_lomfo_hist_gbdt_all_s0.json :: [cell] provenance/lomfo/hist_gbdt/all seed=0 -> 0.9437 (7.21s)
+rc=0 11.6s noop/cells/provenance_lomfo_hist_gbdt_all_s1.json :: [cell] provenance/lomfo/hist_gbdt/all seed=1 -> 0.9482 (7.32s)
+rc=0 11.5s noop/cells/provenance_lomfo_hist_gbdt_all_s2.json :: [cell] provenance/lomfo/hist_gbdt/all seed=2 -> 0.9443 (7.32s)
+rc=0 15.9s noop/cells/provenance_lomfo_hist_gbdt_all_s3.json :: [cell] provenance/lomfo/hist_gbdt/all seed=3 -> 0.9449 (11.69s)
+rc=0 15.8s noop/cells/provenance_lomfo_hist_gbdt_all_s4.json :: [cell] provenance/lomfo/hist_gbdt/all seed=4 -> 0.9408 (10.12s)
+rc=0 15.8s noop/cells/sub_provenance_lomfo_random_forest_all_s0.json :: [cell] sub_provenance/lomfo/random_forest/all seed=0 -> 0.8192 (7.37s)
+rc=0 16.8s noop/cells/sub_provenance_lomfo_random_forest_all_s1.json :: [cell] sub_provenance/lomfo/random_forest/all seed=1 -> 0.8191 (7.46s)
+rc=0 13.8s noop/cells/sub_provenance_lomfo_random_forest_all_s2.json :: [cell] sub_provenance/lomfo/random_forest/all seed=2 -> 0.8194 (12.1s)
+rc=0 13.9s noop/cells/sub_provenance_lomfo_random_forest_all_s3.json :: [cell] sub_provenance/lomfo/random_forest/all seed=3 -> 0.8112 (12.39s)
+rc=0 18.2s noop/cells/sub_provenance_lomfo_random_forest_all_s4.json :: [cell] sub_provenance/lomfo/random_forest/all seed=4 -> 0.8136 (11.28s)
+rc=0 18.2s noop/cells/sub_provenance_lomfo_hist_gbdt_all_s0.json :: [cell] sub_provenance/lomfo/hist_gbdt/all seed=0 -> 0.8232 (12.03s)
+rc=0 13.4s noop/cells/sub_provenance_lomfo_hist_gbdt_all_s1.json :: [cell] sub_provenance/lomfo/hist_gbdt/all seed=1 -> 0.8205 (8.86s)
+rc=0 13.3s noop/cells/sub_provenance_lomfo_hist_gbdt_all_s2.json :: [cell] sub_provenance/lomfo/hist_gbdt/all seed=2 -> 0.8140 (8.63s)
+rc=0 12.1s noop/cells/sub_provenance_lomfo_hist_gbdt_all_s3.json :: [cell] sub_provenance/lomfo/hist_gbdt/all seed=3 -> 0.8179 (7.18s)
+rc=0 12.6s noop/cells/sub_provenance_lomfo_hist_gbdt_all_s4.json :: [cell] sub_provenance/lomfo/hist_gbdt/all seed=4 -> 0.8161 (7.18s)
+rc=0 17.7s mlp2000/sub_provenance_lomfo_mlp_maxiter2000_all_s0.json :: [cell] sub_provenance/lomfo/mlp_maxiter2000 seed=0 -> 0.6879 n_iter=[298, 365, 350, 321, 324]
+   stderr warnings: 15 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: div
+rc=0 16.8s mlp2000/sub_provenance_lomfo_mlp_maxiter2000_all_s1.json :: [cell] sub_provenance/lomfo/mlp_maxiter2000 seed=1 -> 0.6681 n_iter=[313, 329, 344, 277, 260]
+   stderr warnings: 15 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: div
+rc=0 36.5s mlp2000/sub_provenance_lomfo_mlp_maxiter2000_all_s2.json :: [cell] sub_provenance/lomfo/mlp_maxiter2000 seed=2 -> 0.6804 n_iter=[273, 239, 239, 273, 275]
+   stderr warnings: 15 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: div
+rc=0 35.8s mlp2000/sub_provenance_lomfo_mlp_maxiter2000_all_s3.json :: [cell] sub_provenance/lomfo/mlp_maxiter2000 seed=3 -> 0.6979 n_iter=[310, 310, 306, 260, 335]
+   stderr warnings: 15 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: div
+rc=0 33.1s mlp2000/sub_provenance_lomfo_mlp_maxiter2000_all_s4.json :: [cell] sub_provenance/lomfo/mlp_maxiter2000 seed=4 -> 0.6704 n_iter=[326, 290, 290, 330, 310]
+   stderr warnings: 15 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: div
+rc=0 26.6s mlp2000/provenance_lomfo_mlp_maxiter2000_all_s0.json :: [cell] provenance/lomfo/mlp_maxiter2000 seed=0 -> 0.7981 n_iter=[73, 69, 76, 68, 73]
+   stderr warnings: 15 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: div
+rc=0 2.5s mlp2000/provenance_lomfo_mlp_maxiter2000_all_s1.json :: [cell] provenance/lomfo/mlp_maxiter2000 seed=1 -> 0.8260 n_iter=[78, 73, 78, 72, 78]
+   stderr warnings: 15 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: div
+rc=0 3.4s mlp2000/provenance_lomfo_mlp_maxiter2000_all_s2.json :: [cell] provenance/lomfo/mlp_maxiter2000 seed=2 -> 0.8423 n_iter=[71, 68, 74, 67, 72]
+   stderr warnings: 15 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: div
+rc=0 4.2s mlp2000/provenance_lomfo_mlp_maxiter2000_all_s3.json :: [cell] provenance/lomfo/mlp_maxiter2000 seed=3 -> 0.8363 n_iter=[72, 70, 74, 69, 73]
+   stderr warnings: 15 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: div
+rc=0 6.6s mlp2000/provenance_lomfo_mlp_maxiter2000_all_s4.json :: [cell] provenance/lomfo/mlp_maxiter2000 seed=4 -> 0.8136 n_iter=[75, 71, 77, 70, 75]
+   stderr warnings: 15 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: div
+total 336.7s, 65 jobs

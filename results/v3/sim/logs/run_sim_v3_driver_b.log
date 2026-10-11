@@ -1,0 +1,8 @@
+skip inversion_sim_ordered_5seeds (report exists)
+skip inversion_sim_ordered_20seeds (locked)
+skip inversion_sim_random_5seeds (report exists)
+skip inversion_sim_random_20seeds (locked)
+skip supp_fine_ordered_20seeds (locked)
+01:00:02 start supp_fine_random_20seeds
+01:23:33 done supp_fine_random_20seeds rc=0
+01:23:33 all simulation jobs finished (this driver instance)

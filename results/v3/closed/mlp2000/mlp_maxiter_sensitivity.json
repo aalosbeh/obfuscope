@@ -1,0 +1,182 @@
+{
+  "label": "AUDIT-GENERATED run:closedset-v3",
+  "wrapper": "results/v3/closed/scripts/mlp_maxiter_wrapper.py (models.py unchanged; only max_iter differs)",
+  "results": {
+    "sub_provenance": {
+      "ms": {
+        "ref": "MS L679 (Table 20)",
+        "mean": 0.6834,
+        "sd_fold": 0.096,
+        "sd_seed": 0.0131,
+        "min": 0.492,
+        "max": 0.7973
+      },
+      "committed_max_iter_200": {
+        "mean": 0.6834,
+        "sd_fold": 0.096,
+        "sd_seed": 0.0131,
+        "min_fold": 0.492,
+        "max_fold": 0.7973,
+        "per_seed_mean": [
+          0.698,
+          0.6757,
+          0.6829,
+          0.6943,
+          0.6663
+        ]
+      },
+      "max_iter_2000": {
+        "mean": 0.681,
+        "sd_fold": 0.1013,
+        "sd_seed": 0.0124,
+        "min_fold": 0.4706,
+        "max_fold": 0.7968,
+        "per_seed_mean": [
+          0.6879,
+          0.6681,
+          0.6804,
+          0.6979,
+          0.6704
+        ]
+      },
+      "mean_diff_2000_minus_200": -0.0024,
+      "paired_per_fold_seed_avg_diff": [
+        0.0003,
+        0.0075,
+        -0.0067,
+        -0.0035,
+        -0.01
+      ],
+      "paired_diff_all_25": {
+        "mean": -0.0025,
+        "sd": 0.0107,
+        "n_pos": 12,
+        "n_zero": 0,
+        "n_neg": 13
+      },
+      "fold_level_test": {
+        "fold_identity": "fold_index",
+        "n_distinct_folds": 5,
+        "n_seeds_per_fold": [
+          5
+        ],
+        "seed_averaged_differences": [
+          0.0003,
+          0.0075,
+          -0.0067,
+          -0.0035,
+          -0.01
+        ],
+        "mean_difference": -0.0025,
+        "folds_won": 2,
+        "folds_tied": 0,
+        "folds_lost": 3,
+        "sign_test_p_two_sided": 1.0,
+        "wilcoxon_w_plus": 5.0,
+        "wilcoxon_n_nonzero": 5,
+        "wilcoxon_p_two_sided_exact": 0.625
+      },
+      "n_iter_2000": {
+        "min": 239,
+        "max": 365,
+        "median": 310.0,
+        "n_hit_max_iter": 0,
+        "n_convergence_warning": 0,
+        "n_fits": 25
+      },
+      "neighbour_means_committed": {
+        "logreg": 0.7312,
+        "svm_rbf": 0.6686,
+        "knn": 0.5546
+      }
+    },
+    "provenance": {
+      "ms": {
+        "ref": "MS L668 (Table 19, domain holdout)",
+        "mean": 0.8233,
+        "sd_fold": 0.0629,
+        "sd_seed": 0.0178,
+        "min": 0.7259,
+        "max": 0.8975
+      },
+      "committed_max_iter_200": {
+        "mean": 0.8233,
+        "sd_fold": 0.0629,
+        "sd_seed": 0.0178,
+        "min_fold": 0.7259,
+        "max_fold": 0.8975,
+        "per_seed_mean": [
+          0.7981,
+          0.826,
+          0.8423,
+          0.8363,
+          0.8136
+        ]
+      },
+      "max_iter_2000": {
+        "mean": 0.8233,
+        "sd_fold": 0.0629,
+        "sd_seed": 0.0178,
+        "min_fold": 0.7259,
+        "max_fold": 0.8975,
+        "per_seed_mean": [
+          0.7981,
+          0.826,
+          0.8423,
+          0.8363,
+          0.8136
+        ]
+      },
+      "mean_diff_2000_minus_200": 0.0,
+      "paired_per_fold_seed_avg_diff": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "paired_diff_all_25": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "n_pos": 0,
+        "n_zero": 25,
+        "n_neg": 0
+      },
+      "fold_level_test": {
+        "fold_identity": "fold_index",
+        "n_distinct_folds": 5,
+        "n_seeds_per_fold": [
+          5
+        ],
+        "seed_averaged_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_difference": 0.0,
+        "folds_won": 0,
+        "folds_tied": 5,
+        "folds_lost": 0,
+        "sign_test_p_two_sided": 1.0,
+        "wilcoxon_w_plus": 0.0,
+        "wilcoxon_n_nonzero": 0,
+        "wilcoxon_p_two_sided_exact": 1.0
+      },
+      "n_iter_2000": {
+        "min": 67,
+        "max": 78,
+        "median": 73.0,
+        "n_hit_max_iter": 0,
+        "n_convergence_warning": 0,
+        "n_fits": 25
+      },
+      "neighbour_means_committed": {
+        "logreg": 0.8357,
+        "svm_rbf": 0.7987,
+        "knn": 0.7973
+      }
+    }
+  }
+}

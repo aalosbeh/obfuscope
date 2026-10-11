@@ -1,0 +1,50 @@
+{
+  "task": "provenance",
+  "protocol": "looo",
+  "model": "logreg",
+  "feature_set": "all",
+  "seed": 0,
+  "n_features": 61,
+  "n_rows": 2400,
+  "runtime_s": 0.05,
+  "per_technique": [
+    {
+      "novel_technique": "addopaque",
+      "auroc": 0.3926339285714286,
+      "auprc": 0.6270839681802044,
+      "n_novel": 720,
+      "n_known_eval": 336,
+      "mean_novelty_novel": 0.05541873595588504,
+      "mean_novelty_known": 0.11358661434501165
+    },
+    {
+      "novel_technique": "encodeliterals",
+      "auroc": 0.5412491732804232,
+      "auprc": 0.7292247441256352,
+      "n_novel": 720,
+      "n_known_eval": 336,
+      "mean_novelty_novel": 0.07156706542106125,
+      "mean_novelty_known": 0.049700715671709646
+    },
+    {
+      "novel_technique": "encodestrings",
+      "auroc": 0.6210557725694446,
+      "auprc": 0.5789284155898347,
+      "n_novel": 480,
+      "n_known_eval": 384,
+      "mean_novelty_novel": 0.047051187096263526,
+      "mean_novelty_known": 0.06872846995019123
+    },
+    {
+      "novel_technique": "renameidentifiers",
+      "auroc": 0.8435275607638888,
+      "auprc": 0.8263563199470566,
+      "n_novel": 480,
+      "n_known_eval": 384,
+      "mean_novelty_novel": 0.21658484227982683,
+      "mean_novelty_known": 0.06468576449812903
+    }
+  ],
+  "auroc_mean": 0.5996166087962963,
+  "auroc_std": 0.16294230395664483
+}

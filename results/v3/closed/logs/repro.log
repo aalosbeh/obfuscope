@@ -1,0 +1,18 @@
+rc=0 18.1s repro_check/provenance_grouped_cv_random_forest_all_s0.json :: [cell] provenance/grouped_cv/random_forest/all seed=0 -> 0.9568 (11.98s)
+rc=0 16.9s repro_check/provenance_grouped_cv_hist_gbdt_all_s0.json :: [cell] provenance/grouped_cv/hist_gbdt/all seed=0 -> 0.9595 (10.75s)
+rc=0 12.6s repro_check/provenance_grouped_cv_extra_trees_all_s0.json :: [cell] provenance/grouped_cv/extra_trees/all seed=0 -> 0.9496 (6.56s)
+rc=0 8.6s repro_check/provenance_grouped_cv_svm_rbf_all_s0.json :: [cell] provenance/grouped_cv/svm_rbf/all seed=0 -> 0.9013 (2.43s)
+rc=0 7.4s repro_check/provenance_grouped_cv_logreg_all_s0.json :: [cell] provenance/grouped_cv/logreg/all seed=0 -> 0.8859 (0.48s)
+   stderr warnings: 45 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/linear_model/_linear_loss.py:203: Runtime
+rc=0 9.2s repro_check/provenance_grouped_cv_mlp_all_s0.json :: [cell] provenance/grouped_cv/mlp/all seed=0 -> 0.8456 (2.94s)
+   stderr warnings: 30 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: div
+rc=0 5.7s repro_check/provenance_grouped_cv_knn_all_s0.json :: [cell] provenance/grouped_cv/knn/all seed=0 -> 0.8356 (0.19s)
+rc=0 128.9s repro_check/provenance_lomfo_random_forest_all_s0.json :: [cell] provenance/lomfo/random_forest/all seed=0 -> 0.9476 (123.98s)
+rc=0 127.9s repro_check/provenance_lomfo_hist_gbdt_all_s0.json :: [cell] provenance/lomfo/hist_gbdt/all seed=0 -> 0.9491 (123.8s)
+rc=0 122.4s repro_check/provenance_lomfo_mlp_all_s0.json :: [cell] provenance/lomfo/mlp/all seed=0 -> 0.7981 (1.16s)
+   stderr warnings: 30 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: div
+rc=0 133.3s repro_check/sub_provenance_lomfo_random_forest_all_s0.json :: [cell] sub_provenance/lomfo/random_forest/all seed=0 -> 0.7998 (11.78s)
+rc=0 11.8s repro_check/sub_provenance_lomfo_hist_gbdt_all_s0.json :: [cell] sub_provenance/lomfo/hist_gbdt/all seed=0 -> 0.8222 (9.79s)
+rc=0 14.2s repro_check/sub_provenance_lomfo_mlp_all_s0.json :: [cell] sub_provenance/lomfo/mlp/all seed=0 -> 0.6980 (7.24s)
+   stderr warnings: 35 e.g. /private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: div
+total 159.9s, 13 jobs

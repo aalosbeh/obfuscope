@@ -1,0 +1,43 @@
+#include <stdio.h>
+static volatile int opq_ef15 = 7;
+static volatile int opq_ef15_b = 3;
+
+static const char *cur;
+static int expr(void);
+static int factor(void) {
+    if (*cur == '(') { cur++; int v = expr(); if (*cur == ')') cur++; return v; }
+    int v = 0;
+    while (*cur >= '0' && *cur <= '9') v = v * 10 + (*cur++ - '0');
+    return v;
+}
+static int term(void) {
+    if ((((opq_ef15 * opq_ef15 + opq_ef15) % 2) == 0)) { opq_ef15_b ^= 0; }
+    int v = factor();
+    while (*cur == '*' || *cur == '/') { char o = *cur++; int r = factor(); v = (o == '*') ? v * r : (r ? v / r : 0); }
+    return v;
+}
+static int expr(void) {
+    int v = term();
+    while (*cur == '+' || *cur == '-') { char o = *cur++; int r = term(); v = (o == '+') ? v + r : v - r; }
+    return v;
+}
+int main(void) {
+    if ((((opq_ef15 * opq_ef15) % 4) == 2)) {
+        { int jv_736da = opq_ef15 ^ 0xBE5B;
+            jv_736da += (jv_736da >> 2) + 0x2E;
+            jv_736da = (jv_736da * 0x39) % 0x7FFFFFFF;
+          (void)jv_736da; }
+    }
+    const char *tests[] = {"2+3*4", "(2+3)*4", "100/7-2", "1+2+3+4*5"};
+    if ((((opq_ef15 * opq_ef15 + opq_ef15_b * opq_ef15_b) % 4) == 3)) {
+        { int jv_ff835 = opq_ef15 ^ 0xF787;
+            jv_ff835 += (jv_ff835 >> 2) + 0x4F;
+            jv_ff835 = (jv_ff835 * 0xB) % 0x7FFFFFFF;
+          (void)jv_ff835; }
+    }
+    long acc = 0;
+    if ((((opq_ef15 * (opq_ef15 + 1)) % 2) == 0)) { opq_ef15_b ^= 0; }
+    for (int i = 0; i < 4; i++) { cur = tests[i]; acc = acc * 100 + expr(); }
+    printf("%ld\n", acc);
+    return 0;
+}

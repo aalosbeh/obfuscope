@@ -1,0 +1,382 @@
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+provenance mlp 0 [73, 69, 76, 68, 73] [False, False, False, False, False] True
+provenance hist_gbdt 0 [200, 200, 200, 200, 200] [False, False, False, False, False] True
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+provenance logreg 0 [[29], [27], [31], [23], [28]] [False, False, False, False, False] True
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+provenance mlp 1 [78, 73, 78, 72, 78] [False, False, False, False, False] True
+provenance hist_gbdt 1 [200, 200, 200, 200, 200] [False, False, False, False, False] True
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+provenance mlp 2 [71, 68, 74, 67, 72] [False, False, False, False, False] True
+provenance hist_gbdt 2 [200, 200, 200, 200, 200] [False, False, False, False, False] True
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+provenance mlp 3 [72, 70, 74, 69, 73] [False, False, False, False, False] True
+provenance hist_gbdt 3 [200, 200, 200, 200, 200] [False, False, False, False, False] True
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+provenance mlp 4 [75, 71, 77, 70, 75] [False, False, False, False, False] True
+provenance hist_gbdt 4 [200, 200, 200, 200, 200] [False, False, False, False, False] True
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+sub_provenance mlp 0 [200, 200, 200, 200, 200] [True, True, True, True, True] True
+sub_provenance hist_gbdt 0 [50, 57, 64, 50, 46] [False, False, False, False, False] True
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+sub_provenance logreg 0 [[101], [104], [120], [115], [112]] [False, False, False, False, False] True
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+sub_provenance mlp 1 [200, 200, 200, 200, 200] [True, True, True, True, True] True
+sub_provenance hist_gbdt 1 [48, 96, 53, 48, 68] [False, False, False, False, False] True
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+sub_provenance mlp 2 [200, 200, 200, 200, 200] [True, True, True, True, True] True
+sub_provenance hist_gbdt 2 [62, 81, 52, 68, 53] [False, False, False, False, False] True
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+sub_provenance mlp 3 [200, 200, 200, 200, 200] [True, True, True, True, True] True
+sub_provenance hist_gbdt 3 [49, 45, 55, 45, 55] [False, False, False, False, False] True
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: divide by zero encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: overflow encountered in matmul
+  ret = a @ b
+/private/tmp/claude-503/-Users-anasalsobeh-Downloads-manar-ofuScope/fa0767f6-1632-4b8e-91a7-549fd14f475a/scratchpad/venv39/lib/python3.9/site-packages/sklearn/utils/extmath.py:203: RuntimeWarning: invalid value encountered in matmul
+  ret = a @ b
+sub_provenance mlp 4 [200, 200, 200, 200, 200] [True, True, True, True, True] True
+sub_provenance hist_gbdt 4 [50, 57, 64, 58, 44] [False, False, False, False, False] True

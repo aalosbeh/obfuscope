@@ -1,0 +1,675 @@
+{
+  "label": "AUDIT-GENERATED run:closedset-v3",
+  "protocol": "lomfo (domain holdout)",
+  "data": "data/features_pilot.csv",
+  "seed0": {
+    "family|mlp": [
+      {
+        "fold_id": "famfold0",
+        "macro_f1": 0.8816804407713499,
+        "convergence_warning": false,
+        "n_iter_": 73,
+        "max_iter": 200,
+        "hit_max_iter": false,
+        "stopped_by_tol_rule": true,
+        "final_loss": 0.002707,
+        "best_loss": 0.002707,
+        "no_improvement_count_at_stop": 9,
+        "held_out_domain": [
+          "bitops"
+        ],
+        "committed_macro_f1": 0.8816804407713499,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold1",
+        "macro_f1": 0.7850221779075534,
+        "convergence_warning": false,
+        "n_iter_": 69,
+        "max_iter": 200,
+        "hit_max_iter": false,
+        "stopped_by_tol_rule": true,
+        "final_loss": 0.002673,
+        "best_loss": 0.002673,
+        "no_improvement_count_at_stop": 9,
+        "held_out_domain": [
+          "mathlib"
+        ],
+        "committed_macro_f1": 0.7850221779075534,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold2",
+        "macro_f1": 0.8700146007838315,
+        "convergence_warning": false,
+        "n_iter_": 76,
+        "max_iter": 200,
+        "hit_max_iter": false,
+        "stopped_by_tol_rule": true,
+        "final_loss": 0.002836,
+        "best_loss": 0.002836,
+        "no_improvement_count_at_stop": 9,
+        "held_out_domain": [
+          "statemach"
+        ],
+        "committed_macro_f1": 0.8700146007838315,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold3",
+        "macro_f1": 0.7259436215957955,
+        "convergence_warning": false,
+        "n_iter_": 68,
+        "max_iter": 200,
+        "hit_max_iter": false,
+        "stopped_by_tol_rule": true,
+        "final_loss": 0.002614,
+        "best_loss": 0.002614,
+        "no_improvement_count_at_stop": 9,
+        "held_out_domain": [
+          "dsalgo"
+        ],
+        "committed_macro_f1": 0.7259436215957955,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold4",
+        "macro_f1": 0.7278017001373472,
+        "convergence_warning": false,
+        "n_iter_": 73,
+        "max_iter": 200,
+        "hit_max_iter": false,
+        "stopped_by_tol_rule": true,
+        "final_loss": 0.002778,
+        "best_loss": 0.002778,
+        "no_improvement_count_at_stop": 9,
+        "held_out_domain": [
+          "textproc"
+        ],
+        "committed_macro_f1": 0.7278017001373472,
+        "matches_committed": true
+      }
+    ],
+    "family|hist_gbdt": [
+      {
+        "fold_id": "famfold0",
+        "macro_f1": 0.9394783158705278,
+        "convergence_warning": false,
+        "n_iter_": 200,
+        "max_iter": 200,
+        "early_stopped": false,
+        "n_trees_per_iteration": 4,
+        "validation_fraction": 0.1,
+        "best_validation_score": -0.000129,
+        "final_validation_score": -0.000129,
+        "held_out_domain": [
+          "bitops"
+        ],
+        "committed_macro_f1": 0.9394783158705278,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold1",
+        "macro_f1": 0.9529285870504796,
+        "convergence_warning": false,
+        "n_iter_": 200,
+        "max_iter": 200,
+        "early_stopped": false,
+        "n_trees_per_iteration": 4,
+        "validation_fraction": 0.1,
+        "best_validation_score": -0.000237,
+        "final_validation_score": -0.000237,
+        "held_out_domain": [
+          "mathlib"
+        ],
+        "committed_macro_f1": 0.9529285870504796,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold2",
+        "macro_f1": 0.9142857142857144,
+        "convergence_warning": false,
+        "n_iter_": 200,
+        "max_iter": 200,
+        "early_stopped": false,
+        "n_trees_per_iteration": 4,
+        "validation_fraction": 0.1,
+        "best_validation_score": -0.000235,
+        "final_validation_score": -0.000235,
+        "held_out_domain": [
+          "statemach"
+        ],
+        "committed_macro_f1": 0.9142857142857144,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold3",
+        "macro_f1": 1.0,
+        "convergence_warning": false,
+        "n_iter_": 200,
+        "max_iter": 200,
+        "early_stopped": false,
+        "n_trees_per_iteration": 4,
+        "validation_fraction": 0.1,
+        "best_validation_score": -0.00035,
+        "final_validation_score": -0.00035,
+        "held_out_domain": [
+          "dsalgo"
+        ],
+        "committed_macro_f1": 1.0,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold4",
+        "macro_f1": 0.9387654813435042,
+        "convergence_warning": false,
+        "n_iter_": 200,
+        "max_iter": 200,
+        "early_stopped": false,
+        "n_trees_per_iteration": 4,
+        "validation_fraction": 0.1,
+        "best_validation_score": -0.00012,
+        "final_validation_score": -0.00012,
+        "held_out_domain": [
+          "textproc"
+        ],
+        "committed_macro_f1": 0.9387654813435042,
+        "matches_committed": true
+      }
+    ],
+    "family|logreg": [
+      {
+        "fold_id": "famfold0",
+        "macro_f1": 0.9288876278495656,
+        "convergence_warning": false,
+        "n_iter_": [
+          29
+        ],
+        "max_iter": 2000,
+        "held_out_domain": [
+          "bitops"
+        ],
+        "committed_macro_f1": 0.9288876278495656,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold1",
+        "macro_f1": 0.8341160033091277,
+        "convergence_warning": false,
+        "n_iter_": [
+          27
+        ],
+        "max_iter": 2000,
+        "held_out_domain": [
+          "mathlib"
+        ],
+        "committed_macro_f1": 0.8341160033091277,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold2",
+        "macro_f1": 0.8746037712071328,
+        "convergence_warning": false,
+        "n_iter_": [
+          31
+        ],
+        "max_iter": 2000,
+        "held_out_domain": [
+          "statemach"
+        ],
+        "committed_macro_f1": 0.8746037712071328,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold3",
+        "macro_f1": 0.7636974387963649,
+        "convergence_warning": false,
+        "n_iter_": [
+          23
+        ],
+        "max_iter": 2000,
+        "held_out_domain": [
+          "dsalgo"
+        ],
+        "committed_macro_f1": 0.7636974387963649,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold4",
+        "macro_f1": 0.7772558650746764,
+        "convergence_warning": false,
+        "n_iter_": [
+          28
+        ],
+        "max_iter": 2000,
+        "held_out_domain": [
+          "textproc"
+        ],
+        "committed_macro_f1": 0.7772558650746764,
+        "matches_committed": true
+      }
+    ],
+    "parameterisation|mlp": [
+      {
+        "fold_id": "famfold0",
+        "macro_f1": 0.7916957224993195,
+        "convergence_warning": true,
+        "n_iter_": 200,
+        "max_iter": 200,
+        "hit_max_iter": true,
+        "stopped_by_tol_rule": false,
+        "final_loss": 0.063592,
+        "best_loss": 0.063592,
+        "no_improvement_count_at_stop": 0,
+        "held_out_domain": [
+          "bitops"
+        ],
+        "committed_macro_f1": 0.7916957224993195,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold1",
+        "macro_f1": 0.7143646010318302,
+        "convergence_warning": true,
+        "n_iter_": 200,
+        "max_iter": 200,
+        "hit_max_iter": true,
+        "stopped_by_tol_rule": false,
+        "final_loss": 0.066751,
+        "best_loss": 0.066751,
+        "no_improvement_count_at_stop": 0,
+        "held_out_domain": [
+          "mathlib"
+        ],
+        "committed_macro_f1": 0.7143646010318302,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold2",
+        "macro_f1": 0.6189208676905761,
+        "convergence_warning": true,
+        "n_iter_": 200,
+        "max_iter": 200,
+        "hit_max_iter": true,
+        "stopped_by_tol_rule": false,
+        "final_loss": 0.070422,
+        "best_loss": 0.070422,
+        "no_improvement_count_at_stop": 0,
+        "held_out_domain": [
+          "statemach"
+        ],
+        "committed_macro_f1": 0.6189208676905761,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold3",
+        "macro_f1": 0.7475608851416193,
+        "convergence_warning": true,
+        "n_iter_": 200,
+        "max_iter": 200,
+        "hit_max_iter": true,
+        "stopped_by_tol_rule": false,
+        "final_loss": 0.074671,
+        "best_loss": 0.074235,
+        "no_improvement_count_at_stop": 1,
+        "held_out_domain": [
+          "dsalgo"
+        ],
+        "committed_macro_f1": 0.7475608851416193,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold4",
+        "macro_f1": 0.6175333463263899,
+        "convergence_warning": true,
+        "n_iter_": 200,
+        "max_iter": 200,
+        "hit_max_iter": true,
+        "stopped_by_tol_rule": false,
+        "final_loss": 0.066658,
+        "best_loss": 0.064454,
+        "no_improvement_count_at_stop": 2,
+        "held_out_domain": [
+          "textproc"
+        ],
+        "committed_macro_f1": 0.6175333463263899,
+        "matches_committed": true
+      }
+    ],
+    "parameterisation|hist_gbdt": [
+      {
+        "fold_id": "famfold0",
+        "macro_f1": 0.7164771248052513,
+        "convergence_warning": false,
+        "n_iter_": 50,
+        "max_iter": 200,
+        "early_stopped": true,
+        "n_trees_per_iteration": 10,
+        "validation_fraction": 0.1,
+        "best_validation_score": -0.170818,
+        "final_validation_score": -0.173268,
+        "held_out_domain": [
+          "bitops"
+        ],
+        "committed_macro_f1": 0.7164771248052513,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold1",
+        "macro_f1": 0.8293213155876311,
+        "convergence_warning": false,
+        "n_iter_": 57,
+        "max_iter": 200,
+        "early_stopped": true,
+        "n_trees_per_iteration": 10,
+        "validation_fraction": 0.1,
+        "best_validation_score": -0.120461,
+        "final_validation_score": -0.122087,
+        "held_out_domain": [
+          "mathlib"
+        ],
+        "committed_macro_f1": 0.8293213155876311,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold2",
+        "macro_f1": 0.840669291841927,
+        "convergence_warning": false,
+        "n_iter_": 64,
+        "max_iter": 200,
+        "early_stopped": true,
+        "n_trees_per_iteration": 10,
+        "validation_fraction": 0.1,
+        "best_validation_score": -0.157626,
+        "final_validation_score": -0.158511,
+        "held_out_domain": [
+          "statemach"
+        ],
+        "committed_macro_f1": 0.840669291841927,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold3",
+        "macro_f1": 0.9322132714596112,
+        "convergence_warning": false,
+        "n_iter_": 50,
+        "max_iter": 200,
+        "early_stopped": true,
+        "n_trees_per_iteration": 10,
+        "validation_fraction": 0.1,
+        "best_validation_score": -0.183617,
+        "final_validation_score": -0.185489,
+        "held_out_domain": [
+          "dsalgo"
+        ],
+        "committed_macro_f1": 0.9322132714596112,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold4",
+        "macro_f1": 0.7923072024362636,
+        "convergence_warning": false,
+        "n_iter_": 46,
+        "max_iter": 200,
+        "early_stopped": true,
+        "n_trees_per_iteration": 10,
+        "validation_fraction": 0.1,
+        "best_validation_score": -0.21254,
+        "final_validation_score": -0.217232,
+        "held_out_domain": [
+          "textproc"
+        ],
+        "committed_macro_f1": 0.7923072024362636,
+        "matches_committed": true
+      }
+    ],
+    "parameterisation|logreg": [
+      {
+        "fold_id": "famfold0",
+        "macro_f1": 0.8170826476978335,
+        "convergence_warning": false,
+        "n_iter_": [
+          101
+        ],
+        "max_iter": 2000,
+        "held_out_domain": [
+          "bitops"
+        ],
+        "committed_macro_f1": 0.8170826476978335,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold1",
+        "macro_f1": 0.7137318820379214,
+        "convergence_warning": false,
+        "n_iter_": [
+          104
+        ],
+        "max_iter": 2000,
+        "held_out_domain": [
+          "mathlib"
+        ],
+        "committed_macro_f1": 0.7137318820379214,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold2",
+        "macro_f1": 0.7144977161069928,
+        "convergence_warning": false,
+        "n_iter_": [
+          120
+        ],
+        "max_iter": 2000,
+        "held_out_domain": [
+          "statemach"
+        ],
+        "committed_macro_f1": 0.7144977161069928,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold3",
+        "macro_f1": 0.734756934423601,
+        "convergence_warning": false,
+        "n_iter_": [
+          115
+        ],
+        "max_iter": 2000,
+        "held_out_domain": [
+          "dsalgo"
+        ],
+        "committed_macro_f1": 0.734756934423601,
+        "matches_committed": true
+      },
+      {
+        "fold_id": "famfold4",
+        "macro_f1": 0.675693717696701,
+        "convergence_warning": false,
+        "n_iter_": [
+          112
+        ],
+        "max_iter": 2000,
+        "held_out_domain": [
+          "textproc"
+        ],
+        "committed_macro_f1": 0.675693717696701,
+        "matches_committed": true
+      }
+    ]
+  },
+  "seeds0_4_summary": {
+    "family|mlp": {
+      "n_fits": 25,
+      "n_iter_": [
+        73,
+        69,
+        76,
+        68,
+        73,
+        78,
+        73,
+        78,
+        72,
+        78,
+        71,
+        68,
+        74,
+        67,
+        72,
+        72,
+        70,
+        74,
+        69,
+        73,
+        75,
+        71,
+        77,
+        70,
+        75
+      ],
+      "n_hit_max_iter_or_warning": 0,
+      "all_match_committed": true
+    },
+    "family|hist_gbdt": {
+      "n_fits": 25,
+      "n_iter_": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "n_hit_max_iter_or_warning": 0,
+      "all_match_committed": true,
+      "n_early_stopped": 0
+    },
+    "family|logreg": {
+      "n_fits": 5,
+      "n_iter_": [
+        [
+          29
+        ],
+        [
+          27
+        ],
+        [
+          31
+        ],
+        [
+          23
+        ],
+        [
+          28
+        ]
+      ],
+      "n_hit_max_iter_or_warning": 0,
+      "all_match_committed": true
+    },
+    "parameterisation|mlp": {
+      "n_fits": 25,
+      "n_iter_": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "n_hit_max_iter_or_warning": 25,
+      "all_match_committed": true
+    },
+    "parameterisation|hist_gbdt": {
+      "n_fits": 25,
+      "n_iter_": [
+        50,
+        57,
+        64,
+        50,
+        46,
+        48,
+        96,
+        53,
+        48,
+        68,
+        62,
+        81,
+        52,
+        68,
+        53,
+        49,
+        45,
+        55,
+        45,
+        55,
+        50,
+        57,
+        64,
+        58,
+        44
+      ],
+      "n_hit_max_iter_or_warning": 0,
+      "all_match_committed": true,
+      "n_early_stopped": 25
+    },
+    "parameterisation|logreg": {
+      "n_fits": 5,
+      "n_iter_": [
+        [
+          101
+        ],
+        [
+          104
+        ],
+        [
+          120
+        ],
+        [
+          115
+        ],
+        [
+          112
+        ]
+      ],
+      "n_hit_max_iter_or_warning": 0,
+      "all_match_committed": true
+    }
+  }
+}

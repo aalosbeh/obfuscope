@@ -1,0 +1,27 @@
+23:06:06 start openset_A_kfold
+23:06:06 start openset_C_kfold
+23:06:06 start openset_B_kfold_s0
+23:27:54 done openset_B_kfold_s0 rc=0
+23:27:55 start openset_B_kfold_s1
+23:37:49 done openset_A_kfold rc=0
+23:37:49 start openset_B_kfold_s2
+23:49:16 done openset_C_kfold rc=0
+23:49:16 start openset_B_kfold_s3
+23:54:09 done openset_B_kfold_s1 rc=0
+23:54:09 start openset_B_kfold_s4
+00:07:51 done openset_B_kfold_s2 rc=0
+00:07:51 start openset_B_heldout
+00:17:48 done openset_B_kfold_s3 rc=0
+00:17:48 start openset_B_all
+00:20:12 done openset_B_kfold_s4 rc=0
+00:20:12 start openset_A_heldout
+00:26:48 done openset_A_heldout rc=0
+00:26:48 start openset_A_all
+00:29:15 done openset_B_heldout rc=0
+00:29:15 start openset_C_heldout
+00:32:51 done openset_A_all rc=0
+00:32:51 start openset_C_all
+00:34:48 done openset_C_heldout rc=0
+00:37:49 done openset_B_all rc=0
+00:38:29 done openset_C_all rc=0
+00:38:29 all jobs finished

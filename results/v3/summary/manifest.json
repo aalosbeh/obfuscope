@@ -1,0 +1,40 @@
+{
+  "generated_by": "AUDIT-GENERATED results/v3/summarise_openset.py",
+  "variants": {
+    "heldout": "split gss, --novel-programs heldout (novel rows only from the 6 evaluation programs)",
+    "all": "split gss, --novel-programs all (novel rows from all 30 programs; the protocol of the committed reports and the manuscript)",
+    "kfold": "split program_kfold, 5 blocks, --novel-programs heldout"
+  },
+  "configs": {
+    "A": "label technique, technique held out (4 classes)",
+    "B": "label sub_technique, sub_technique held out (10 classes)",
+    "C": "label sub_technique, technique held out (10 classes)"
+  },
+  "reports": {
+    "A_heldout": "results/v3/openset_A_heldout.json",
+    "B_heldout": "results/v3/openset_B_heldout.json",
+    "C_heldout": "results/v3/openset_C_heldout.json",
+    "A_all": "results/v3/openset_A_all.json",
+    "B_all": "results/v3/openset_B_all.json",
+    "C_all": "results/v3/openset_C_all.json",
+    "A_kfold": "results/v3/openset_A_kfold.json",
+    "B_kfold": "results/v3/openset_B_kfold.json",
+    "C_kfold": "results/v3/openset_C_kfold.json"
+  },
+  "files": [
+    "results/v3/summary/table14.csv",
+    "results/v3/summary/table17.csv",
+    "results/v3/summary/grid.csv",
+    "results/v3/summary/model_free.csv",
+    "results/v3/summary/table15.csv",
+    "results/v3/summary/table16.csv",
+    "results/v3/summary/sibling_tests.json",
+    "results/v3/summary/manuscript_comparison.csv",
+    "results/v3/summary/bc_contrast.csv",
+    "results/v3/summary/bc_per_class.csv",
+    "results/v3/summary/bc_contrast.json",
+    "results/v3/summary/sanity_all_vs_committed.json",
+    "results/v3/summary/diagnostics_summary.json",
+    "results/v3/summary/crosscheck_overlap_control.json"
+  ]
+}

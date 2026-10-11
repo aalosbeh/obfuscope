@@ -1,0 +1,3 @@
+technique n_int_const 0.6541 R 0.4262 trace [(1, 0.6541), (2, 0.7938), (3, 0.931)] probe full 0.9051
+sub_technique identifier_digit_ratio 0.269 R 0.7601 trace [(1, 0.269), (2, 0.4901), (3, 0.7567)] probe full 0.7534
+written /Users/anasalsobeh/Downloads/manar/ofuScope/submission_package/code/obfuscope-corrected/results/v3/gate/consistent_protocol_R.json

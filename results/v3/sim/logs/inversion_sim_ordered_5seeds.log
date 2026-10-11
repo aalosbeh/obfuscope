@@ -1,0 +1,85 @@
+Gaussian mixture model of the holdout inversion
+  families 4  siblings per family 3  artifacts per class 400  dimension 20
+  family separation 12.0  seeds 5  seed values [0, 1, 2, 3, 4]  sibling layout ordered
+
+Siblings are placed along an ordered axis inside each family, because parameterisations
+of a transformation are ordered rather than scattered. The holdout conditions are:
+  edge      an end of the sibling axis is removed, retained siblings lie on one side only
+  interior  a middle sibling is removed, retained siblings lie on both sides
+  family    a whole family is removed, no sibling of it remains
+
+AUROC below 0.5 means the novelty score is reliably backwards.
+
+ sib_sep  holdout            Bayes msp     Bayes maxlogit  Bayes acc   fit LR   fit RF   RF acc
+-----------------------------------------------------------------------------------------------
+    0.25  edge         0.4801   0.0136    0.5188   0.0093     0.5477   0.4917   0.5112   0.5148
+    0.25  interior     0.5039   0.0102    0.5119   0.0098     0.5935   0.5008   0.5156   0.5619
+    0.25  family       0.1439   0.1026    1.0000   0.0000     0.4024   0.2726   0.9999   0.3581
+    0.50  edge         0.4273   0.0171    0.5314   0.0092     0.5935   0.4560   0.4937   0.5675
+    0.50  interior     0.5295   0.0123    0.5070   0.0099     0.6833   0.5290   0.5268   0.6531
+    0.50  family       0.1447   0.1012    1.0000   0.0000     0.4674   0.2484   0.9999   0.4246
+    1.00  edge         0.2780   0.0127    0.5706   0.0085     0.6833   0.3041   0.3697   0.6496
+    1.00  interior     0.6309   0.0177    0.5018   0.0105     0.8546   0.6242   0.6000   0.8104
+    1.00  family       0.1864   0.1136    1.0000   0.0000     0.5917   0.2711   0.9998   0.5394
+    2.00  edge         0.0803   0.0052    0.6820   0.0062     0.8546   0.0909   0.1790   0.8110
+    2.00  interior     0.8598   0.0060    0.5567   0.0118     0.9775   0.8401   0.7973   0.9629
+    2.00  family       0.3487   0.1285    1.0000   0.0000     0.8002   0.4384   0.9997   0.7493
+    4.00  edge         0.0023   0.0004    0.9233   0.0014     0.9775   0.0181   0.2603   0.9637
+    4.00  interior     0.9956   0.0004    0.8601   0.0095     1.0000   0.9908   0.9680   0.9992
+    4.00  family       0.7043   0.0890    1.0000   0.0000     0.9702   0.7573   1.0000   0.9546
+    8.00  edge         0.1375   0.0028    1.0000   0.0000     1.0000   0.0104   0.8946   0.9994
+    8.00  interior     0.9891   0.0024    1.0000   0.0000     1.0000   1.0000   0.9988   1.0000
+    8.00  family       0.9525   0.0257    1.0000   0.0000     1.0000   0.9500   1.0000   0.9993
+  Bayes msp / maxlogit: novelty AUROC of the exact Bayes scorers (mean, sd over seeds).
+  Bayes acc: closed set accuracy of the exact Bayes classifier on the retained classes.
+  fit LR / fit RF: novelty AUROC of the FITTED logistic regression and random forest.
+  RF acc: closed set accuracy of the fitted random forest (Table 18's accuracy column).
+
+Edge minus interior, Bayes posterior AUROC (ordered layout)
+  spread  0.25  edge 0.4801  interior 0.5039  difference -0.0238
+  spread  0.50  edge 0.4273  interior 0.5295  difference -0.1022
+  spread  1.00  edge 0.2780  interior 0.6309  difference -0.3529
+  spread  2.00  edge 0.0803  interior 0.8598  difference -0.7795
+  spread  4.00  edge 0.0023  interior 0.9956  difference -0.9933
+  spread  8.00  edge 0.1375  interior 0.9891  difference -0.8516
+
+Reading of the sweep, under the exact Bayes posterior
+  edge holdout inverts at sibling separations: [0.25, 0.5, 1.0, 2.0, 4.0, 8.0]
+  interior holdout inverts at: none
+  family holdout inverts at:   [0.25, 0.5, 1.0, 2.0]
+    of which with unidentifiable retained classes (closed accuracy below 0.80): [0.25, 0.5, 1.0, 2.0]
+    of which with identifiable retained classes: none
+    of which with Bayes classifier closed accuracy below 0.80: [0.25, 0.5, 1.0]
+
+  The numbers quoted in the narrative below describe the default settings.
+
+  Removing an end of an ordered sibling axis inverts the posterior at every separation
+  tested, and the inversion deepens as the separation grows, which is what the geometric
+  argument predicts: the wider the axis, the more decisively the removed end projects
+  onto its single nearest retained neighbour while the retained classes keep splitting
+  mass with neighbours on both sides.
+
+  Removing an interior sibling never inverts, because the retained siblings lie on both
+  sides and split the posterior.
+
+  The family condition needs care and does not support a blanket claim. It does fall
+  below one half at the smallest separations, but only where the retained classes are
+  themselves unidentifiable, with closed accuracy between 0.36 and 0.75. That is a
+  different defect: when training classes cannot be told apart, known artifacts are
+  scored as unconfidently as novel ones and the comparison carries no information about
+  nesting. Once the retained classes are identifiable the family condition recovers, and
+  under a fitted forest it reaches 0.9999 at every separation, which is the behaviour the
+  measured configuration C shows.
+
+  The maximum unnormalised score never inverts in the edge condition, rising from 0.5188
+  to 1.0000 across the sweep. Softmax discards the absolute scale and keeps only relative
+  proximity, which is the quantity nesting corrupts; the unnormalised score keeps the
+  scale and survives. That is the mechanism behind the measured observation that logit
+  based scorers partially escape the inversion while posterior based scorers do not.
+
+  None of this involves obfuscation, a feature extractor, a real program, or a fitted
+  estimator, since the headline scorer is the Bayes posterior computed from the
+  generating parameters. The inversion is therefore a consequence of the evaluation
+  design and not a finding about obfuscation.
+
+report written to results/v3/sim/inversion_sim_ordered_5seeds.json

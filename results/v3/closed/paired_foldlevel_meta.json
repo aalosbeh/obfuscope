@@ -1,0 +1,144 @@
+{
+  "label": "AUDIT-GENERATED run:closedset-v3",
+  "settings": {
+    "family|grouped_cv": {
+      "n_test_per_fold": [
+        480
+      ],
+      "n_rows": 2400,
+      "test_train_ratio": [
+        0.25
+      ],
+      "default_partition_identical_seeds_0_4": true,
+      "held_out_groups_by_fold_index": [
+        [
+          "bitops_base64",
+          "bitops_xorcipher",
+          "dsalgo_linkedlist",
+          "mathlib_newton",
+          "statemach_lexer",
+          "textproc_rot13"
+        ],
+        [
+          "bitops_bitset",
+          "dsalgo_bsearch",
+          "mathlib_gcd",
+          "mathlib_stats",
+          "statemach_retry",
+          "textproc_runlength"
+        ],
+        [
+          "bitops_fnvhash",
+          "dsalgo_graphbfs",
+          "dsalgo_quicksort",
+          "statemach_crc",
+          "statemach_traffic",
+          "textproc_tokenize"
+        ],
+        [
+          "bitops_graycode",
+          "dsalgo_bst",
+          "mathlib_fib",
+          "statemach_exprparse",
+          "statemach_vending",
+          "textproc_trim"
+        ],
+        [
+          "bitops_popcount",
+          "dsalgo_heap",
+          "mathlib_matmul",
+          "mathlib_primes",
+          "textproc_csvsplit",
+          "textproc_wordcount"
+        ]
+      ],
+      "pooled_means": {
+        "hist_gbdt": 0.9601,
+        "random_forest": 0.9583,
+        "extra_trees": 0.944,
+        "svm_rbf": 0.9013,
+        "logreg": 0.8859,
+        "mlp": 0.8641,
+        "knn": 0.8356
+      }
+    },
+    "family|lomfo": {
+      "n_test_per_fold": [
+        480
+      ],
+      "n_rows": 2400,
+      "test_train_ratio": [
+        0.25
+      ],
+      "default_partition_identical_seeds_0_4": true,
+      "held_out_groups_by_fold_index": [
+        [
+          "bitops"
+        ],
+        [
+          "mathlib"
+        ],
+        [
+          "statemach"
+        ],
+        [
+          "dsalgo"
+        ],
+        [
+          "textproc"
+        ]
+      ],
+      "pooled_means": {
+        "hist_gbdt": 0.948,
+        "random_forest": 0.9542,
+        "extra_trees": 0.9351,
+        "svm_rbf": 0.7987,
+        "logreg": 0.8357,
+        "mlp": 0.8233,
+        "knn": 0.7973
+      }
+    },
+    "parameterisation|lomfo": {
+      "n_test_per_fold": [
+        480
+      ],
+      "n_rows": 2400,
+      "test_train_ratio": [
+        0.25
+      ],
+      "default_partition_identical_seeds_0_4": true,
+      "held_out_groups_by_fold_index": [
+        [
+          "bitops"
+        ],
+        [
+          "mathlib"
+        ],
+        [
+          "statemach"
+        ],
+        [
+          "dsalgo"
+        ],
+        [
+          "textproc"
+        ]
+      ],
+      "pooled_means": {
+        "hist_gbdt": 0.8124,
+        "random_forest": 0.8045,
+        "extra_trees": 0.7932,
+        "svm_rbf": 0.6686,
+        "logreg": 0.7312,
+        "mlp": 0.6834,
+        "knn": 0.5546
+      }
+    }
+  },
+  "n_rows": 63,
+  "nadeau_bengio": "t = mean(d)/sqrt((1/J + 1/4) var(d)), J = 5 distinct folds, d = seed averaged per fold differences, df = 4, two sided",
+  "minimum_attainable_exact_p_with_5_folds": {
+    "sign": 0.0625,
+    "wilcoxon": 0.0625
+  }
+}

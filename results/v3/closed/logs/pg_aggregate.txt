@@ -1,0 +1,33 @@
+grid      results/v3/closed/pg
+cells     35
+configs   7
+
+task         protocol   model          featureset        mean  sd_fold  sd_seed  seeds
+--------------------------------------------------------------------------------------
+provenance   grouped_cv extra_trees    all             0.9423   0.0324   0.0071      5
+provenance   grouped_cv hist_gbdt      all             0.9664   0.0290   0.0004      5
+provenance   grouped_cv knn            all             0.8392   0.0570   0.0195      5
+provenance   grouped_cv logreg         all             0.8940   0.0453   0.0110      5
+provenance   grouped_cv mlp            all             0.8757   0.0430   0.0159      5
+provenance   grouped_cv random_forest  all             0.9609   0.0305   0.0050      5
+provenance   grouped_cv svm_rbf        all             0.8716   0.0411   0.0110      5
+
+sd_fold is the spread between held out folds within a seed. sd_seed is the spread between per seed means. A result is only reproducible in the sense version 1 claimed if sd_seed is small next to sd_fold.
+
+paired fold level comparisons against the best model in each cell
+
+  provenance / grouped_cv / all: reference hist_gbdt (0.9664)
+    vs random_forest  diff +0.0055 t   +1.54 wins 9/25 effect 0.308
+       per distinct fold (test_groups): won 9 tied 7 lost 9 of 25  sign p 1.0000  Wilcoxon p 0.3408
+    vs extra_trees    diff +0.0241 t   +4.57 wins 20/25 effect 0.914
+       per distinct fold (test_groups): won 20 tied 1 lost 4 of 25  sign p 0.0015  Wilcoxon p 0.0002
+    vs logreg         diff +0.0724 t   +7.34 wins 24/25 effect 1.468
+       per distinct fold (test_groups): won 24 tied 0 lost 1 of 25  sign p 0.0000  Wilcoxon p 0.0000
+    vs mlp            diff +0.0907 t   +8.10 wins 25/25 effect 1.62
+       per distinct fold (test_groups): won 25 tied 0 lost 0 of 25  sign p 0.0000  Wilcoxon p 0.0000
+    vs svm_rbf        diff +0.0948 t   +9.95 wins 24/25 effect 1.99
+       per distinct fold (test_groups): won 24 tied 1 lost 0 of 25  sign p 0.0000  Wilcoxon p 0.0000
+    vs knn            diff +0.1272 t   +9.87 wins 25/25 effect 1.973
+       per distinct fold (test_groups): won 25 tied 0 lost 0 of 25  sign p 0.0000  Wilcoxon p 0.0000
+
+report written to results/v3/closed/pg_aggregate.json

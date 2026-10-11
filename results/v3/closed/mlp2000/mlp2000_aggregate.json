@@ -1,0 +1,50 @@
+{
+  "results_dir": "results/v3/closed/mlp2000",
+  "cells": [
+    {
+      "task": "provenance",
+      "protocol": "lomfo",
+      "model": "mlp_maxiter2000",
+      "feature_set": "all",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.8233,
+      "sd_total": 0.0604,
+      "sd_fold": 0.0629,
+      "sd_seed": 0.0178,
+      "per_seed_mean": [
+        0.7981,
+        0.826,
+        0.8423,
+        0.8363,
+        0.8136
+      ],
+      "min_fold": 0.7259,
+      "max_fold": 0.8975
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "model": "mlp_maxiter2000",
+      "feature_set": "all",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.681,
+      "sd_total": 0.0942,
+      "sd_fold": 0.1013,
+      "sd_seed": 0.0124,
+      "per_seed_mean": [
+        0.6879,
+        0.6681,
+        0.6804,
+        0.6979,
+        0.6704
+      ],
+      "min_fold": 0.4706,
+      "max_fold": 0.7968
+    }
+  ],
+  "paired_comparisons": []
+}

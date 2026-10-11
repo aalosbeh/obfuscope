@@ -1,0 +1,47 @@
+{
+  "all": {
+    "declared": 61,
+    "present": 61,
+    "live": 44
+  },
+  "lexical_only": {
+    "declared": 12,
+    "present": 12,
+    "live": 12
+  },
+  "no_obfuscation": {
+    "declared": 47,
+    "present": 47,
+    "live": 40
+  },
+  "surface_and_control": {
+    "declared": 32,
+    "present": 32,
+    "live": 31
+  },
+  "markers_and_literals": {
+    "declared": 29,
+    "present": 29,
+    "live": 13
+  },
+  "control_only": {
+    "declared": 17,
+    "present": 17,
+    "live": 16
+  },
+  "behavioral_only": {
+    "declared": 32,
+    "present": 32,
+    "live": 25
+  },
+  "structural": {
+    "declared": 32,
+    "present": 32,
+    "live": 31
+  },
+  "semantic": {
+    "declared": 29,
+    "present": 29,
+    "live": 13
+  }
+}

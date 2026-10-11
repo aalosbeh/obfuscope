@@ -1,0 +1,70 @@
+rows 2400  features 61  groups 30  label sub_technique  novel unit sub_technique
+split program_kfold (5 blocks)  novel programs heldout
+folds 300  seeds [1]
+
+extra_trees   closed accuracy 0.8260 (argmax 0.8260)   calibration error 0.2493   folds 50   novel prevalence 0.1000
+  scorer                  AUROC      AUPR novel    FPR95 known+    FPR95 novel+            OSCR
+  msp             0.4061 0.2022    0.1303 0.1032    0.9413 0.1303    0.9048 0.0951    0.3689 0.1743
+  energy         not applicable
+  knn_dist        0.5524 0.1228    0.1774 0.1114    0.8862 0.1313    0.7990 0.1686    0.4580 0.1080
+  mahalanobis     0.5787 0.0986    0.1773 0.0858    0.8954 0.1108    0.8133 0.1371    0.4855 0.0899
+  iforest         0.5820 0.1664    0.1841 0.1569    0.9104 0.1954    0.7574 0.2059    0.4748 0.1423
+  openmax        not applicable
+  evt_posterior   0.3422 0.1653    0.0894 0.0369    0.9700 0.0671    0.9304 0.0733    0.2748 0.1387
+
+knn   closed accuracy 0.6341 (argmax 0.6341)   calibration error 0.2456   folds 50   novel prevalence 0.1000
+  scorer                  AUROC      AUPR novel    FPR95 known+    FPR95 novel+            OSCR
+  msp             0.3785 0.1080    0.1088 0.0368    0.9750 0.0624    0.9885 0.0804    0.2681 0.0736
+  energy         not applicable
+  knn_dist        0.5524 0.1228    0.1774 0.1114    0.8862 0.1313    0.7990 0.1686    0.3463 0.0877
+  mahalanobis     0.5787 0.0986    0.1773 0.0858    0.8954 0.1108    0.8133 0.1371    0.3707 0.0684
+  iforest         0.5820 0.1664    0.1841 0.1569    0.9104 0.1954    0.7574 0.2059    0.3498 0.1114
+  openmax        not applicable
+  evt_posterior   0.3306 0.1578    0.1229 0.0675    0.9583 0.0750    0.9652 0.0941    0.2297 0.1070
+
+logreg   closed accuracy 0.7796 (argmax 0.7796)   calibration error 0.1345   folds 50   novel prevalence 0.1000
+  scorer                  AUROC      AUPR novel    FPR95 known+    FPR95 novel+            OSCR
+  msp             0.3992 0.2120    0.1245 0.0934    0.9350 0.1089    0.9102 0.1162    0.3448 0.1797
+  energy          0.4768 0.2330    0.1428 0.1242    0.9167 0.1541    0.7862 0.2391    0.4074 0.1951
+  knn_dist        0.5524 0.1228    0.1774 0.1114    0.8862 0.1313    0.7990 0.1686    0.4348 0.0988
+  mahalanobis     0.5787 0.0986    0.1773 0.0858    0.8954 0.1108    0.8133 0.1371    0.4664 0.0818
+  iforest         0.5820 0.1664    0.1841 0.1569    0.9104 0.1954    0.7574 0.2059    0.4426 0.1303
+  openmax         0.6388 0.1447    0.2515 0.1793    0.8246 0.2150    0.7414 0.2240    0.5211 0.1127
+  evt_posterior   0.4025 0.1955    0.1014 0.0482    0.9704 0.0680    0.8692 0.1389    0.3390 0.1632
+
+mlp   closed accuracy 0.7241 (argmax 0.7241)   calibration error 0.2006   folds 50   novel prevalence 0.1000
+  scorer                  AUROC      AUPR novel    FPR95 known+    FPR95 novel+            OSCR
+  msp             0.4386 0.2070    0.1184 0.0774    0.9483 0.0887    0.8740 0.1395    0.3648 0.1663
+  energy          0.4975 0.2469    0.1494 0.1309    0.9225 0.1633    0.7560 0.2441    0.4058 0.1980
+  knn_dist        0.5524 0.1228    0.1774 0.1114    0.8862 0.1313    0.7990 0.1686    0.4112 0.1046
+  mahalanobis     0.5787 0.0986    0.1773 0.0858    0.8954 0.1108    0.8133 0.1371    0.4376 0.0843
+  iforest         0.5820 0.1664    0.1841 0.1569    0.9104 0.1954    0.7574 0.2059    0.4136 0.1346
+  openmax         0.6546 0.1484    0.2839 0.2262    0.7829 0.2794    0.7348 0.2534    0.5057 0.1098
+  evt_posterior   0.4446 0.2160    0.1185 0.0569    0.9546 0.0768    0.8495 0.1716    0.3605 0.1705
+
+random_forest   closed accuracy 0.8454 (argmax 0.8454)   calibration error 0.1821   folds 50   novel prevalence 0.1000
+  scorer                  AUROC      AUPR novel    FPR95 known+    FPR95 novel+            OSCR
+  msp             0.4515 0.2093    0.1417 0.0952    0.9475 0.0893    0.8507 0.1578    0.4185 0.1856
+  energy         not applicable
+  knn_dist        0.5524 0.1228    0.1774 0.1114    0.8862 0.1313    0.7990 0.1686    0.4683 0.1072
+  mahalanobis     0.5787 0.0986    0.1773 0.0858    0.8954 0.1108    0.8133 0.1371    0.4947 0.0880
+  iforest         0.5820 0.1664    0.1841 0.1569    0.9104 0.1954    0.7574 0.2059    0.4848 0.1421
+  openmax        not applicable
+  evt_posterior   0.3270 0.1206    0.0780 0.0174    0.9983 0.0117    0.9084 0.0744    0.2715 0.1022
+
+svm_rbf   closed accuracy 0.7138 (argmax 0.6377)   calibration error 0.1358   folds 50   novel prevalence 0.1000
+  scorer                  AUROC      AUPR novel    FPR95 known+    FPR95 novel+            OSCR
+  msp             0.4674 0.1338    0.1299 0.0773    0.9263 0.1156    0.8713 0.1087    0.3695 0.0983
+  energy          0.6386 0.1412    0.2247 0.1400    0.8154 0.1777    0.7297 0.1974    0.4180 0.1073
+  knn_dist        0.5524 0.1228    0.1774 0.1114    0.8862 0.1313    0.7990 0.1686    0.3572 0.0880
+  mahalanobis     0.5787 0.0986    0.1773 0.0858    0.8954 0.1108    0.8133 0.1371    0.3836 0.0693
+  iforest         0.5820 0.1664    0.1841 0.1569    0.9104 0.1954    0.7574 0.2059    0.3589 0.1149
+  openmax         0.6460 0.1255    0.1666 0.0709    0.9421 0.1125    0.6479 0.2287    0.4202 0.0986
+  evt_posterior   0.4148 0.1311    0.0906 0.0384    0.9958 0.0264    0.8709 0.1116    0.3107 0.1092
+
+AUROC and OSCR larger is better. Both FPR95 columns smaller is better.
+FPR95 known+ : novel rows accepted at 95% known retention (OpenOOD).
+FPR95 novel+ : known rows flagged at 95% novel detection (legacy fpr_at_95tpr).
+Values printed as mean then standard deviation over folds and seeds.
+wrote results/v3/parts/openset_B_kfold_s1.json
+wrote results/v3/diagnostics/openset_B_kfold_s1.json  runtime 1563.5s

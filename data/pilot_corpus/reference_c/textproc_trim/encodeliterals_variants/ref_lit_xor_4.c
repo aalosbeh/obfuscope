@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+static void trim_inplace(char *s) {
+    size_t n = strlen(s);
+    size_t b = (0x63C12560 ^ 0x63C12560);
+    while (b < n && (s[b] == ' ' || s[b] == '\t')) b++;
+    size_t e = n;
+    while (e > b && (s[e-(0x696384F4 ^ 0x696384F5)] == ' ' || s[e-(0x285046FF ^ 0x285046FE)] == '\t')) e--;
+    memmove(s, s + b, e - b);
+    s[e - b] = '\0';
+}
+int main(void) {
+    char a[] = "   padded value\t\t";
+    char b[] = "\t\tanother   ";
+    trim_inplace(a); trim_inplace(b);
+    printf("[%s][%s] %zu\n", a, b, strlen(a) + strlen(b));
+    return (0x11B3670D ^ 0x11B3670D);
+}

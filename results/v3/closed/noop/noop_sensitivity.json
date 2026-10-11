@@ -1,0 +1,1644 @@
+{
+  "label": "AUDIT-GENERATED run:closedset-v3",
+  "noop_definition": "closed/noop/noop_rows.json (32 rows: ref_ren_hex and ref_ren_long of bitops_popcount and textproc_trim, byte identical to the input program)",
+  "partA_cells_comparison": [
+    {
+      "granularity": "family",
+      "task": "provenance",
+      "protocol": "lomfo (domain holdout)",
+      "model": "random_forest",
+      "ms_ref": "MS L664",
+      "ms_mean": 0.9542,
+      "ms_fold_sd": 0.0356,
+      "ms_seed_sd": 0.0053,
+      "ms_min": 0.9058,
+      "ms_max": 1.0,
+      "committed_full": {
+        "mean": 0.9542,
+        "sd_fold": 0.0356,
+        "sd_seed": 0.0053,
+        "min_fold": 0.9058,
+        "max_fold": 1.0,
+        "per_seed_mean": [
+          0.9476,
+          0.9584,
+          0.9503,
+          0.9601,
+          0.9546
+        ]
+      },
+      "ms_matches_committed": true,
+      "noop_free": {
+        "mean": 0.9433,
+        "sd_fold": 0.036,
+        "sd_seed": 0.0048,
+        "min_fold": 0.8723,
+        "max_fold": 1.0,
+        "per_seed_mean": [
+          0.9373,
+          0.949,
+          0.94,
+          0.947,
+          0.9433
+        ]
+      },
+      "mean_diff_noop_free_minus_full": -0.0109,
+      "per_domain_seed_avg": {
+        "bitops": {
+          "full": 0.9599,
+          "noop_free": 0.9482,
+          "diff": -0.0116
+        },
+        "dsalgo": {
+          "full": 0.985,
+          "noop_free": 0.9613,
+          "diff": -0.0237
+        },
+        "mathlib": {
+          "full": 0.9307,
+          "noop_free": 0.9307,
+          "diff": 0.0
+        },
+        "statemach": {
+          "full": 0.9129,
+          "noop_free": 0.8929,
+          "diff": -0.02
+        },
+        "textproc": {
+          "full": 0.9825,
+          "noop_free": 0.9834,
+          "diff": 0.0009
+        }
+      },
+      "per_class_f1_renaming": {
+        "renameidentifiers": {
+          "full": 0.932,
+          "noop_free": 0.9038
+        }
+      },
+      "fold_to_domain_full_seed0": [
+        "bitops",
+        "mathlib",
+        "statemach",
+        "dsalgo",
+        "textproc"
+      ],
+      "fold_to_domain_noop_free_seed0": [
+        "textproc",
+        "bitops",
+        "mathlib",
+        "statemach",
+        "dsalgo"
+      ]
+    },
+    {
+      "granularity": "family",
+      "task": "provenance",
+      "protocol": "lomfo (domain holdout)",
+      "model": "hist_gbdt",
+      "ms_ref": "MS L663",
+      "ms_mean": 0.948,
+      "ms_fold_sd": 0.0339,
+      "ms_seed_sd": 0.0031,
+      "ms_min": 0.8797,
+      "ms_max": 1.0,
+      "committed_full": {
+        "mean": 0.948,
+        "sd_fold": 0.0339,
+        "sd_seed": 0.0031,
+        "min_fold": 0.8797,
+        "max_fold": 1.0,
+        "per_seed_mean": [
+          0.9491,
+          0.9429,
+          0.9487,
+          0.951,
+          0.9485
+        ]
+      },
+      "ms_matches_committed": true,
+      "noop_free": {
+        "mean": 0.9444,
+        "sd_fold": 0.0368,
+        "sd_seed": 0.0026,
+        "min_fold": 0.8797,
+        "max_fold": 1.0,
+        "per_seed_mean": [
+          0.9437,
+          0.9482,
+          0.9443,
+          0.9449,
+          0.9408
+        ]
+      },
+      "mean_diff_noop_free_minus_full": -0.0036,
+      "per_domain_seed_avg": {
+        "bitops": {
+          "full": 0.9415,
+          "noop_free": 0.9338,
+          "diff": -0.0077
+        },
+        "dsalgo": {
+          "full": 1.0,
+          "noop_free": 1.0,
+          "diff": 0.0
+        },
+        "mathlib": {
+          "full": 0.9529,
+          "noop_free": 0.9529,
+          "diff": 0.0
+        },
+        "statemach": {
+          "full": 0.9074,
+          "noop_free": 0.8998,
+          "diff": -0.0077
+        },
+        "textproc": {
+          "full": 0.9383,
+          "noop_free": 0.9354,
+          "diff": -0.0029
+        }
+      },
+      "per_class_f1_renaming": {
+        "renameidentifiers": {
+          "full": 0.9427,
+          "noop_free": 0.942
+        }
+      },
+      "fold_to_domain_full_seed0": [
+        "bitops",
+        "mathlib",
+        "statemach",
+        "dsalgo",
+        "textproc"
+      ],
+      "fold_to_domain_noop_free_seed0": [
+        "textproc",
+        "bitops",
+        "mathlib",
+        "statemach",
+        "dsalgo"
+      ]
+    },
+    {
+      "granularity": "parameterisation",
+      "task": "sub_provenance",
+      "protocol": "lomfo (domain holdout)",
+      "model": "random_forest",
+      "ms_ref": "MS L676",
+      "ms_mean": 0.8045,
+      "ms_fold_sd": 0.0731,
+      "ms_seed_sd": 0.0042,
+      "ms_min": 0.7372,
+      "ms_max": 0.9436,
+      "committed_full": {
+        "mean": 0.8045,
+        "sd_fold": 0.0731,
+        "sd_seed": 0.0042,
+        "min_fold": 0.7372,
+        "max_fold": 0.9436,
+        "per_seed_mean": [
+          0.7998,
+          0.8027,
+          0.8076,
+          0.8022,
+          0.8099
+        ]
+      },
+      "ms_matches_committed": true,
+      "noop_free": {
+        "mean": 0.8165,
+        "sd_fold": 0.0682,
+        "sd_seed": 0.0038,
+        "min_fold": 0.7454,
+        "max_fold": 0.9498,
+        "per_seed_mean": [
+          0.8192,
+          0.8191,
+          0.8194,
+          0.8112,
+          0.8136
+        ]
+      },
+      "mean_diff_noop_free_minus_full": 0.012,
+      "per_domain_seed_avg": {
+        "bitops": {
+          "full": 0.7709,
+          "noop_free": 0.795,
+          "diff": 0.0242
+        },
+        "dsalgo": {
+          "full": 0.9272,
+          "noop_free": 0.9343,
+          "diff": 0.0071
+        },
+        "mathlib": {
+          "full": 0.7762,
+          "noop_free": 0.7896,
+          "diff": 0.0133
+        },
+        "statemach": {
+          "full": 0.8056,
+          "noop_free": 0.8027,
+          "diff": -0.0029
+        },
+        "textproc": {
+          "full": 0.7424,
+          "noop_free": 0.7607,
+          "diff": 0.0183
+        }
+      },
+      "per_class_f1_renaming": {
+        "ref_ren_hex": {
+          "full": 0.8465,
+          "noop_free": 0.8815
+        },
+        "ref_ren_long": {
+          "full": 0.9186,
+          "noop_free": 0.9523
+        }
+      },
+      "fold_to_domain_full_seed0": [
+        "bitops",
+        "mathlib",
+        "statemach",
+        "dsalgo",
+        "textproc"
+      ],
+      "fold_to_domain_noop_free_seed0": [
+        "textproc",
+        "bitops",
+        "mathlib",
+        "statemach",
+        "dsalgo"
+      ]
+    },
+    {
+      "granularity": "parameterisation",
+      "task": "sub_provenance",
+      "protocol": "lomfo (domain holdout)",
+      "model": "hist_gbdt",
+      "ms_ref": "MS L675",
+      "ms_mean": 0.8124,
+      "ms_fold_sd": 0.0816,
+      "ms_seed_sd": 0.0073,
+      "ms_min": 0.7112,
+      "ms_max": 0.9366,
+      "committed_full": {
+        "mean": 0.8124,
+        "sd_fold": 0.0816,
+        "sd_seed": 0.0073,
+        "min_fold": 0.7112,
+        "max_fold": 0.9366,
+        "per_seed_mean": [
+          0.8222,
+          0.8121,
+          0.8029,
+          0.8158,
+          0.8088
+        ]
+      },
+      "ms_matches_committed": true,
+      "noop_free": {
+        "mean": 0.8183,
+        "sd_fold": 0.0795,
+        "sd_seed": 0.0036,
+        "min_fold": 0.7091,
+        "max_fold": 0.9387,
+        "per_seed_mean": [
+          0.8232,
+          0.8205,
+          0.814,
+          0.8179,
+          0.8161
+        ]
+      },
+      "mean_diff_noop_free_minus_full": 0.0059,
+      "per_domain_seed_avg": {
+        "bitops": {
+          "full": 0.7194,
+          "noop_free": 0.7215,
+          "diff": 0.002
+        },
+        "dsalgo": {
+          "full": 0.9307,
+          "noop_free": 0.9353,
+          "diff": 0.0046
+        },
+        "mathlib": {
+          "full": 0.8308,
+          "noop_free": 0.8361,
+          "diff": 0.0053
+        },
+        "statemach": {
+          "full": 0.8222,
+          "noop_free": 0.817,
+          "diff": -0.0052
+        },
+        "textproc": {
+          "full": 0.7587,
+          "noop_free": 0.7819,
+          "diff": 0.0232
+        }
+      },
+      "per_class_f1_renaming": {
+        "ref_ren_hex": {
+          "full": 0.8081,
+          "noop_free": 0.8329
+        },
+        "ref_ren_long": {
+          "full": 0.9297,
+          "noop_free": 0.9603
+        }
+      },
+      "fold_to_domain_full_seed0": [
+        "bitops",
+        "mathlib",
+        "statemach",
+        "dsalgo",
+        "textproc"
+      ],
+      "fold_to_domain_noop_free_seed0": [
+        "textproc",
+        "bitops",
+        "mathlib",
+        "statemach",
+        "dsalgo"
+      ]
+    }
+  ],
+  "partB_2x2_mean_macro_f1": {
+    "family|random_forest": {
+      "train_full|test_full": 0.9542,
+      "train_full|test_noopfree": 0.9527,
+      "train_noopfree|test_full": 0.9449,
+      "train_noopfree|test_noopfree": 0.9433
+    },
+    "family|hist_gbdt": {
+      "train_full|test_full": 0.948,
+      "train_full|test_noopfree": 0.946,
+      "train_noopfree|test_full": 0.9464,
+      "train_noopfree|test_noopfree": 0.9444
+    },
+    "parameterisation|random_forest": {
+      "train_full|test_full": 0.8045,
+      "train_full|test_noopfree": 0.8098,
+      "train_noopfree|test_full": 0.811,
+      "train_noopfree|test_noopfree": 0.8165
+    },
+    "parameterisation|hist_gbdt": {
+      "train_full|test_full": 0.8124,
+      "train_full|test_noopfree": 0.8183,
+      "train_noopfree|test_full": 0.8136,
+      "train_noopfree|test_noopfree": 0.8183
+    }
+  },
+  "partB_consistency": [
+    {
+      "config": "family|random_forest",
+      "partB_full_full_vs_committed_mean": [
+        0.9542,
+        0.9542
+      ],
+      "partB_nn_nn_vs_noop_cells_mean": [
+        0.9433,
+        0.9433
+      ]
+    },
+    {
+      "config": "family|hist_gbdt",
+      "partB_full_full_vs_committed_mean": [
+        0.948,
+        0.948
+      ],
+      "partB_nn_nn_vs_noop_cells_mean": [
+        0.9444,
+        0.9444
+      ]
+    },
+    {
+      "config": "parameterisation|random_forest",
+      "partB_full_full_vs_committed_mean": [
+        0.8045,
+        0.8045
+      ],
+      "partB_nn_nn_vs_noop_cells_mean": [
+        0.8165,
+        0.8165
+      ]
+    },
+    {
+      "config": "parameterisation|hist_gbdt",
+      "partB_full_full_vs_committed_mean": [
+        0.8124,
+        0.8124
+      ],
+      "partB_nn_nn_vs_noop_cells_mean": [
+        0.8183,
+        0.8183
+      ]
+    }
+  ],
+  "partB_per_fold": [
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 0,
+      "domain": "bitops",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.9641148325358851,
+      "train_full|test_noopfree": 0.9590643274853801,
+      "train_noopfree|test_full": 0.9429030629486225,
+      "train_noopfree|test_noopfree": 0.93564150729997
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 0,
+      "domain": "mathlib",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.930669302048305,
+      "train_full|test_noopfree": 0.930669302048305,
+      "train_noopfree|test_full": 0.930669302048305,
+      "train_noopfree|test_noopfree": 0.930669302048305
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 0,
+      "domain": "statemach",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9223079944407517,
+      "train_full|test_noopfree": 0.9223079944407517,
+      "train_noopfree|test_full": 0.9057692307692309,
+      "train_noopfree|test_noopfree": 0.9057692307692309
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 0,
+      "domain": "dsalgo",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.925,
+      "train_full|test_noopfree": 0.925,
+      "train_noopfree|test_full": 0.9450549450549451,
+      "train_noopfree|test_noopfree": 0.9450549450549451
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 0,
+      "domain": "textproc",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.9956744286641194,
+      "train_full|test_noopfree": 0.9951653284986618,
+      "train_noopfree|test_full": 0.9723281596452328,
+      "train_noopfree|test_noopfree": 0.9693956910141881
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 1,
+      "domain": "bitops",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.9641148325358851,
+      "train_full|test_noopfree": 0.9590643274853801,
+      "train_noopfree|test_full": 0.9449938053503418,
+      "train_noopfree|test_noopfree": 0.9379279159315113
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 1,
+      "domain": "mathlib",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.930669302048305,
+      "train_full|test_noopfree": 0.930669302048305,
+      "train_noopfree|test_full": 0.930669302048305,
+      "train_noopfree|test_noopfree": 0.930669302048305
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 1,
+      "domain": "statemach",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9246774193548387,
+      "train_full|test_noopfree": 0.9246774193548387,
+      "train_noopfree|test_full": 0.9246774193548387,
+      "train_noopfree|test_noopfree": 0.9246774193548387
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 1,
+      "domain": "dsalgo",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 1.0,
+      "train_full|test_noopfree": 1.0,
+      "train_noopfree|test_full": 0.9823736780258518,
+      "train_noopfree|test_noopfree": 0.9823736780258518
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 1,
+      "domain": "textproc",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.9723281596452328,
+      "train_full|test_noopfree": 0.9693956910141881,
+      "train_noopfree|test_full": 0.9723281596452328,
+      "train_noopfree|test_noopfree": 0.9693956910141881
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 2,
+      "domain": "bitops",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.9429030629486225,
+      "train_full|test_noopfree": 0.93564150729997,
+      "train_noopfree|test_full": 0.9641148325358851,
+      "train_noopfree|test_noopfree": 0.9590643274853801
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 2,
+      "domain": "mathlib",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.930669302048305,
+      "train_full|test_noopfree": 0.930669302048305,
+      "train_noopfree|test_full": 0.930669302048305,
+      "train_noopfree|test_noopfree": 0.930669302048305
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 2,
+      "domain": "statemach",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9057692307692309,
+      "train_full|test_noopfree": 0.9057692307692309,
+      "train_noopfree|test_full": 0.8894118606737906,
+      "train_noopfree|test_noopfree": 0.8894118606737906
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 2,
+      "domain": "dsalgo",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 1.0,
+      "train_full|test_noopfree": 1.0,
+      "train_noopfree|test_full": 0.9326508099320703,
+      "train_noopfree|test_noopfree": 0.9326508099320703
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 2,
+      "domain": "textproc",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.9723281596452328,
+      "train_full|test_noopfree": 0.9693956910141881,
+      "train_noopfree|test_full": 0.9892378612042834,
+      "train_noopfree|test_noopfree": 0.9880072812935004
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 3,
+      "domain": "bitops",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.9641148325358851,
+      "train_full|test_noopfree": 0.9590643274853801,
+      "train_noopfree|test_full": 0.9641148325358851,
+      "train_noopfree|test_noopfree": 0.9590643274853801
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 3,
+      "domain": "mathlib",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.930669302048305,
+      "train_full|test_noopfree": 0.930669302048305,
+      "train_noopfree|test_full": 0.930669302048305,
+      "train_noopfree|test_noopfree": 0.930669302048305
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 3,
+      "domain": "statemach",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9057692307692309,
+      "train_full|test_noopfree": 0.9057692307692309,
+      "train_noopfree|test_full": 0.8723276723276723,
+      "train_noopfree|test_noopfree": 0.8723276723276723
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 3,
+      "domain": "dsalgo",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 1.0,
+      "train_full|test_noopfree": 1.0,
+      "train_noopfree|test_full": 0.9823736780258518,
+      "train_noopfree|test_noopfree": 0.9823736780258518
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 3,
+      "domain": "textproc",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 1.0,
+      "train_full|test_noopfree": 1.0,
+      "train_noopfree|test_full": 0.99137683242311,
+      "train_noopfree|test_noopfree": 0.9903813122638269
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 4,
+      "domain": "bitops",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.9641148325358851,
+      "train_full|test_noopfree": 0.9590643274853801,
+      "train_noopfree|test_full": 0.9555432007248167,
+      "train_noopfree|test_noopfree": 0.9495371947188107
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 4,
+      "domain": "mathlib",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.930669302048305,
+      "train_full|test_noopfree": 0.930669302048305,
+      "train_noopfree|test_full": 0.930669302048305,
+      "train_noopfree|test_noopfree": 0.930669302048305
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 4,
+      "domain": "statemach",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9057692307692309,
+      "train_full|test_noopfree": 0.9057692307692309,
+      "train_noopfree|test_full": 0.8723276723276723,
+      "train_noopfree|test_noopfree": 0.8723276723276723
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 4,
+      "domain": "dsalgo",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 1.0,
+      "train_full|test_noopfree": 1.0,
+      "train_noopfree|test_full": 0.9641148325358851,
+      "train_noopfree|test_noopfree": 0.9641148325358851
+    },
+    {
+      "task": "provenance",
+      "model": "random_forest",
+      "seed": 4,
+      "domain": "textproc",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.9723281596452328,
+      "train_full|test_noopfree": 0.9693956910141881,
+      "train_noopfree|test_full": 1.0,
+      "train_noopfree|test_noopfree": 1.0
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 0,
+      "domain": "bitops",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.9394783158705278,
+      "train_full|test_noopfree": 0.9322167602218754,
+      "train_noopfree|test_full": 0.9372343624821725,
+      "train_noopfree|test_noopfree": 0.92997280683352
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 0,
+      "domain": "mathlib",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9529285870504796,
+      "train_full|test_noopfree": 0.9529285870504796,
+      "train_noopfree|test_full": 0.9529285870504796,
+      "train_noopfree|test_noopfree": 0.9529285870504796
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 0,
+      "domain": "statemach",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9142857142857144,
+      "train_full|test_noopfree": 0.9142857142857144,
+      "train_noopfree|test_full": 0.9,
+      "train_noopfree|test_noopfree": 0.9
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 0,
+      "domain": "dsalgo",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 1.0,
+      "train_full|test_noopfree": 1.0,
+      "train_noopfree|test_full": 1.0,
+      "train_noopfree|test_noopfree": 1.0
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 0,
+      "domain": "textproc",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.9387654813435042,
+      "train_full|test_noopfree": 0.9358330127124596,
+      "train_noopfree|test_full": 0.9387654813435042,
+      "train_noopfree|test_noopfree": 0.9358330127124596
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 1,
+      "domain": "bitops",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.9429030629486225,
+      "train_full|test_noopfree": 0.93564150729997,
+      "train_noopfree|test_full": 0.9429030629486225,
+      "train_noopfree|test_noopfree": 0.93564150729997
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 1,
+      "domain": "mathlib",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9529285870504796,
+      "train_full|test_noopfree": 0.9529285870504796,
+      "train_noopfree|test_full": 0.9529285870504796,
+      "train_noopfree|test_noopfree": 0.9529285870504796
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 1,
+      "domain": "statemach",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.8796551724137931,
+      "train_full|test_noopfree": 0.8796551724137931,
+      "train_noopfree|test_full": 0.9165739710789766,
+      "train_noopfree|test_noopfree": 0.9165739710789766
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 1,
+      "domain": "dsalgo",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 1.0,
+      "train_full|test_noopfree": 1.0,
+      "train_noopfree|test_full": 1.0,
+      "train_noopfree|test_noopfree": 1.0
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 1,
+      "domain": "textproc",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.9387654813435042,
+      "train_full|test_noopfree": 0.9358330127124596,
+      "train_noopfree|test_full": 0.9387654813435042,
+      "train_noopfree|test_noopfree": 0.9358330127124596
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 2,
+      "domain": "bitops",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.9394783158705278,
+      "train_full|test_noopfree": 0.9322167602218754,
+      "train_noopfree|test_full": 0.9394783158705278,
+      "train_noopfree|test_noopfree": 0.9322167602218754
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 2,
+      "domain": "mathlib",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9529285870504796,
+      "train_full|test_noopfree": 0.9529285870504796,
+      "train_noopfree|test_full": 0.9529285870504796,
+      "train_noopfree|test_noopfree": 0.9529285870504796
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 2,
+      "domain": "statemach",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9124537037037037,
+      "train_full|test_noopfree": 0.9124537037037037,
+      "train_noopfree|test_full": 0.9004096624848477,
+      "train_noopfree|test_noopfree": 0.9004096624848477
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 2,
+      "domain": "dsalgo",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 1.0,
+      "train_full|test_noopfree": 1.0,
+      "train_noopfree|test_full": 1.0,
+      "train_noopfree|test_noopfree": 1.0
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 2,
+      "domain": "textproc",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.9387654813435042,
+      "train_full|test_noopfree": 0.9358330127124596,
+      "train_noopfree|test_full": 0.9387654813435042,
+      "train_noopfree|test_noopfree": 0.9358330127124596
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 3,
+      "domain": "bitops",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.9429030629486225,
+      "train_full|test_noopfree": 0.93564150729997,
+      "train_noopfree|test_full": 0.9429030629486225,
+      "train_noopfree|test_noopfree": 0.93564150729997
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 3,
+      "domain": "mathlib",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9529285870504796,
+      "train_full|test_noopfree": 0.9529285870504796,
+      "train_noopfree|test_full": 0.9529285870504796,
+      "train_noopfree|test_noopfree": 0.9529285870504796
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 3,
+      "domain": "statemach",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9227543972581291,
+      "train_full|test_noopfree": 0.9227543972581291,
+      "train_noopfree|test_full": 0.9022424329830001,
+      "train_noopfree|test_noopfree": 0.9022424329830001
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 3,
+      "domain": "dsalgo",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 1.0,
+      "train_full|test_noopfree": 1.0,
+      "train_noopfree|test_full": 1.0,
+      "train_noopfree|test_noopfree": 1.0
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 3,
+      "domain": "textproc",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.9364429921811179,
+      "train_full|test_noopfree": 0.9335105235500732,
+      "train_noopfree|test_full": 0.9364429921811179,
+      "train_noopfree|test_noopfree": 0.9335105235500732
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 4,
+      "domain": "bitops",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.9429030629486225,
+      "train_full|test_noopfree": 0.93564150729997,
+      "train_noopfree|test_full": 0.9429030629486225,
+      "train_noopfree|test_noopfree": 0.93564150729997
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 4,
+      "domain": "mathlib",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9529285870504796,
+      "train_full|test_noopfree": 0.9529285870504796,
+      "train_noopfree|test_full": 0.9529285870504796,
+      "train_noopfree|test_noopfree": 0.9529285870504796
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 4,
+      "domain": "statemach",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9080419580419581,
+      "train_full|test_noopfree": 0.9080419580419581,
+      "train_noopfree|test_full": 0.8796551724137931,
+      "train_noopfree|test_noopfree": 0.8796551724137931
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 4,
+      "domain": "dsalgo",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 1.0,
+      "train_full|test_noopfree": 1.0,
+      "train_noopfree|test_full": 1.0,
+      "train_noopfree|test_noopfree": 1.0
+    },
+    {
+      "task": "provenance",
+      "model": "hist_gbdt",
+      "seed": 4,
+      "domain": "textproc",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.9387654813435042,
+      "train_full|test_noopfree": 0.9358330127124596,
+      "train_noopfree|test_full": 0.9387654813435042,
+      "train_noopfree|test_noopfree": 0.9358330127124596
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 0,
+      "domain": "bitops",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.7646482241112971,
+      "train_full|test_noopfree": 0.7790926685557416,
+      "train_noopfree|test_full": 0.7922964804013191,
+      "train_noopfree|test_noopfree": 0.8067409248457637
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 0,
+      "domain": "mathlib",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.789480995647768,
+      "train_full|test_noopfree": 0.789480995647768,
+      "train_noopfree|test_full": 0.7804671458868894,
+      "train_noopfree|test_noopfree": 0.7804671458868894
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 0,
+      "domain": "statemach",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.8150533190253914,
+      "train_full|test_noopfree": 0.8150533190253914,
+      "train_noopfree|test_full": 0.8090644520305952,
+      "train_noopfree|test_noopfree": 0.8090644520305952
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 0,
+      "domain": "dsalgo",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.8927885943580272,
+      "train_full|test_noopfree": 0.8927885943580272,
+      "train_noopfree|test_full": 0.9268298491665258,
+      "train_noopfree|test_noopfree": 0.9268298491665258
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 0,
+      "domain": "textproc",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.7372369571026162,
+      "train_full|test_noopfree": 0.7502575498215268,
+      "train_noopfree|test_full": 0.7598099943787797,
+      "train_noopfree|test_noopfree": 0.7729413075100928
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 1,
+      "domain": "bitops",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.7556145512193899,
+      "train_full|test_noopfree": 0.7700589956638344,
+      "train_noopfree|test_full": 0.7868942731634325,
+      "train_noopfree|test_noopfree": 0.8013387176078769
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 1,
+      "domain": "mathlib",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.7815074514940228,
+      "train_full|test_noopfree": 0.7815074514940228,
+      "train_noopfree|test_full": 0.787765268162706,
+      "train_noopfree|test_noopfree": 0.787765268162706
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 1,
+      "domain": "statemach",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.805265591879162,
+      "train_full|test_noopfree": 0.805265591879162,
+      "train_noopfree|test_full": 0.814992019969584,
+      "train_noopfree|test_noopfree": 0.814992019969584
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 1,
+      "domain": "dsalgo",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9324162160028422,
+      "train_full|test_noopfree": 0.9324162160028422,
+      "train_noopfree|test_full": 0.9323781560054851,
+      "train_noopfree|test_noopfree": 0.9323781560054851
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 1,
+      "domain": "textproc",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.7385582288689249,
+      "train_full|test_noopfree": 0.7499272098037155,
+      "train_noopfree|test_full": 0.7450025983105557,
+      "train_noopfree|test_noopfree": 0.7587830407182488
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 2,
+      "domain": "bitops",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.7828001106134204,
+      "train_full|test_noopfree": 0.7972445550578648,
+      "train_noopfree|test_full": 0.7859069160872265,
+      "train_noopfree|test_noopfree": 0.8003513605316709
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 2,
+      "domain": "mathlib",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.7728521720470372,
+      "train_full|test_noopfree": 0.7728521720470372,
+      "train_noopfree|test_full": 0.7939758074742594,
+      "train_noopfree|test_noopfree": 0.7939758074742594
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 2,
+      "domain": "statemach",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.7990960410508644,
+      "train_full|test_noopfree": 0.7990960410508644,
+      "train_noopfree|test_full": 0.8127302694148693,
+      "train_noopfree|test_noopfree": 0.8127302694148693
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 2,
+      "domain": "dsalgo",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9436130659497426,
+      "train_full|test_noopfree": 0.9436130659497426,
+      "train_noopfree|test_full": 0.9323781560054851,
+      "train_noopfree|test_noopfree": 0.9323781560054851
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 2,
+      "domain": "textproc",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.7398523630207448,
+      "train_full|test_noopfree": 0.7512213439555355,
+      "train_noopfree|test_full": 0.7459530679274801,
+      "train_noopfree|test_noopfree": 0.7573220488622707
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 3,
+      "domain": "bitops",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.7827890100055378,
+      "train_full|test_noopfree": 0.7972334544499823,
+      "train_noopfree|test_full": 0.7669529934788848,
+      "train_noopfree|test_noopfree": 0.7813974379233292
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 3,
+      "domain": "mathlib",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.768654127697277,
+      "train_full|test_noopfree": 0.768654127697277,
+      "train_noopfree|test_full": 0.7871943631892284,
+      "train_noopfree|test_noopfree": 0.7871943631892284
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 3,
+      "domain": "statemach",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.781280881930696,
+      "train_full|test_noopfree": 0.781280881930696,
+      "train_noopfree|test_full": 0.787930628341758,
+      "train_noopfree|test_noopfree": 0.787930628341758
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 3,
+      "domain": "dsalgo",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.934930034274285,
+      "train_full|test_noopfree": 0.934930034274285,
+      "train_noopfree|test_full": 0.9303149999002533,
+      "train_noopfree|test_noopfree": 0.9303149999002533
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 3,
+      "domain": "textproc",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.7434929340763687,
+      "train_full|test_noopfree": 0.7548619150111595,
+      "train_noopfree|test_full": 0.7544722353221118,
+      "train_noopfree|test_noopfree": 0.7690330234692377
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 4,
+      "domain": "bitops",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.768400131272877,
+      "train_full|test_noopfree": 0.7828445757173214,
+      "train_noopfree|test_full": 0.7709081450524574,
+      "train_noopfree|test_noopfree": 0.7853525894969019
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 4,
+      "domain": "mathlib",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.768654127697277,
+      "train_full|test_noopfree": 0.768654127697277,
+      "train_noopfree|test_full": 0.7984955950067512,
+      "train_noopfree|test_noopfree": 0.7984955950067512
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 4,
+      "domain": "statemach",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.8271904692328873,
+      "train_full|test_noopfree": 0.8271904692328873,
+      "train_noopfree|test_full": 0.7887718692899597,
+      "train_noopfree|test_noopfree": 0.7887718692899597
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 4,
+      "domain": "dsalgo",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9324162160028422,
+      "train_full|test_noopfree": 0.9324162160028422,
+      "train_noopfree|test_full": 0.949846961709585,
+      "train_noopfree|test_noopfree": 0.949846961709585
+    },
+    {
+      "task": "sub_provenance",
+      "model": "random_forest",
+      "seed": 4,
+      "domain": "textproc",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.7527708826315318,
+      "train_full|test_noopfree": 0.7673316707786577,
+      "train_noopfree|test_full": 0.7340798652138729,
+      "train_noopfree|test_noopfree": 0.7454488461486637
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 0,
+      "domain": "bitops",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.7164771248052513,
+      "train_full|test_noopfree": 0.7267945851227117,
+      "train_noopfree|test_full": 0.722913513230673,
+      "train_noopfree|test_noopfree": 0.7332309735481333
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 0,
+      "domain": "mathlib",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.8293213155876311,
+      "train_full|test_noopfree": 0.8293213155876311,
+      "train_noopfree|test_full": 0.8422583490279697,
+      "train_noopfree|test_noopfree": 0.8422583490279697
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 0,
+      "domain": "statemach",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.840669291841927,
+      "train_full|test_noopfree": 0.840669291841927,
+      "train_noopfree|test_full": 0.8152575827401576,
+      "train_noopfree|test_noopfree": 0.8152575827401576
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 0,
+      "domain": "dsalgo",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9322132714596112,
+      "train_full|test_noopfree": 0.9322132714596112,
+      "train_noopfree|test_full": 0.9386763937558449,
+      "train_noopfree|test_noopfree": 0.9386763937558449
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 0,
+      "domain": "textproc",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.7923072024362636,
+      "train_full|test_noopfree": 0.8054385155675767,
+      "train_noopfree|test_full": 0.7736231336439676,
+      "train_noopfree|test_noopfree": 0.7867544467752807
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 1,
+      "domain": "bitops",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.7179025727728086,
+      "train_full|test_noopfree": 0.728220033090269,
+      "train_noopfree|test_full": 0.7258977606043879,
+      "train_noopfree|test_noopfree": 0.7362152209218482
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 1,
+      "domain": "mathlib",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.8381886545632973,
+      "train_full|test_noopfree": 0.8381886545632973,
+      "train_noopfree|test_full": 0.8487039979219061,
+      "train_noopfree|test_noopfree": 0.8487039979219061
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 1,
+      "domain": "statemach",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.8242521045164658,
+      "train_full|test_noopfree": 0.8242521045164658,
+      "train_noopfree|test_full": 0.7961424636057697,
+      "train_noopfree|test_noopfree": 0.7961424636057697
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 1,
+      "domain": "dsalgo",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9365846919038407,
+      "train_full|test_noopfree": 0.9365846919038407,
+      "train_noopfree|test_full": 0.936595547309833,
+      "train_noopfree|test_noopfree": 0.936595547309833
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 1,
+      "domain": "textproc",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.7434650732666903,
+      "train_full|test_noopfree": 0.7722374120390292,
+      "train_noopfree|test_full": 0.7718903848746445,
+      "train_noopfree|test_noopfree": 0.7850216980059577
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 2,
+      "domain": "bitops",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.7278083149297476,
+      "train_full|test_noopfree": 0.7381257752472079,
+      "train_noopfree|test_full": 0.6988001534603476,
+      "train_noopfree|test_noopfree": 0.7091176137778079
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 2,
+      "domain": "mathlib",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.8118760465739356,
+      "train_full|test_noopfree": 0.8118760465739356,
+      "train_noopfree|test_full": 0.8183243826960016,
+      "train_noopfree|test_noopfree": 0.8183243826960016
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 2,
+      "domain": "statemach",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.8084920417530869,
+      "train_full|test_noopfree": 0.8084920417530869,
+      "train_noopfree|test_full": 0.8094243466702592,
+      "train_noopfree|test_noopfree": 0.8094243466702592
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 2,
+      "domain": "dsalgo",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9303421560998493,
+      "train_full|test_noopfree": 0.9303421560998493,
+      "train_noopfree|test_full": 0.9345092749278472,
+      "train_noopfree|test_noopfree": 0.9345092749278472
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 2,
+      "domain": "textproc",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.7361279456761778,
+      "train_full|test_noopfree": 0.7492592588074908,
+      "train_noopfree|test_full": 0.78400487172726,
+      "train_noopfree|test_noopfree": 0.7986513363737247
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 3,
+      "domain": "bitops",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.7238168754934284,
+      "train_full|test_noopfree": 0.7341343358108887,
+      "train_noopfree|test_full": 0.6994032362307735,
+      "train_noopfree|test_noopfree": 0.7097206965482338
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 3,
+      "domain": "mathlib",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.8538610504900117,
+      "train_full|test_noopfree": 0.8538610504900117,
+      "train_noopfree|test_full": 0.8497985823700109,
+      "train_noopfree|test_noopfree": 0.8497985823700109
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 3,
+      "domain": "statemach",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.8010230878531616,
+      "train_full|test_noopfree": 0.8010230878531616,
+      "train_noopfree|test_full": 0.8302479286441674,
+      "train_noopfree|test_noopfree": 0.8302479286441674
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 3,
+      "domain": "dsalgo",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9282477401018434,
+      "train_full|test_noopfree": 0.9282477401018434,
+      "train_noopfree|test_full": 0.936595547309833,
+      "train_noopfree|test_noopfree": 0.936595547309833
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 3,
+      "domain": "textproc",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.7721856816046724,
+      "train_full|test_noopfree": 0.7853169947359855,
+      "train_noopfree|test_full": 0.7497875233059493,
+      "train_noopfree|test_noopfree": 0.7629188364372624
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 4,
+      "domain": "bitops",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.7112362464634279,
+      "train_full|test_noopfree": 0.7215537067808881,
+      "train_noopfree|test_full": 0.7086623440781694,
+      "train_noopfree|test_noopfree": 0.7189798043956297
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 4,
+      "domain": "mathlib",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.8207506177783275,
+      "train_full|test_noopfree": 0.8207506177783275,
+      "train_noopfree|test_full": 0.8212560223682688,
+      "train_noopfree|test_noopfree": 0.8212560223682688
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 4,
+      "domain": "statemach",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.8363992323860054,
+      "train_full|test_noopfree": 0.8363992323860054,
+      "train_noopfree|test_full": 0.8339437789592589,
+      "train_noopfree|test_noopfree": 0.8339437789592589
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 4,
+      "domain": "dsalgo",
+      "n_noop_train": 32,
+      "n_noop_test": 0,
+      "train_full|test_full": 0.9260825454601974,
+      "train_full|test_noopfree": 0.9260825454601974,
+      "train_noopfree|test_full": 0.9302605456778018,
+      "train_noopfree|test_noopfree": 0.9302605456778018
+    },
+    {
+      "task": "sub_provenance",
+      "model": "hist_gbdt",
+      "seed": 4,
+      "domain": "textproc",
+      "n_noop_train": 16,
+      "n_noop_test": 16,
+      "train_full|test_full": 0.7492891998167696,
+      "train_full|test_noopfree": 0.7782854608689986,
+      "train_noopfree|test_full": 0.7629753872599458,
+      "train_noopfree|test_noopfree": 0.776106700391259
+    }
+  ]
+}

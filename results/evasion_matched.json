@@ -1,0 +1,478 @@
+{
+  "wide": "data/features.csv",
+  "narrow": "data/features_pilot.csv",
+  "n_shared_features": 61,
+  "matched_class_count": 4,
+  "budgets": [
+    0.5,
+    1.0,
+    2.0,
+    5.0
+  ],
+  "attacker_controlled_features": [
+    "comment_char_ratio",
+    "identifier_digit_ratio",
+    "identifier_entropy",
+    "n_comments",
+    "n_lines",
+    "size_bytes"
+  ],
+  "unrestricted": {
+    "narrow": {
+      "n_classes": 4,
+      "n_attacked": 150,
+      "closed_accuracy_heldout": 0.91875,
+      "unbounded_success_rate": 0.2133,
+      "median_displacement_when_successful": 0.2236,
+      "mean_steps_when_successful": 4.81,
+      "success_by_budget": {
+        "0.5": 0.1867,
+        "1": 0.2067,
+        "2": 0.2133,
+        "5": 0.2133
+      },
+      "n_movable_features": 61
+    },
+    "wide_matched_replicates": [
+      {
+        "n_classes": 4,
+        "n_attacked": 150,
+        "closed_accuracy_heldout": 1.0,
+        "unbounded_success_rate": 0.52,
+        "median_displacement_when_successful": 0.2,
+        "mean_steps_when_successful": 4.72,
+        "success_by_budget": {
+          "0.5": 0.52,
+          "1": 0.52,
+          "2": 0.52,
+          "5": 0.52
+        },
+        "n_movable_features": 61,
+        "classes": [
+          "advanced_microcode",
+          "self_modifying",
+          "cryptographic",
+          "code_based"
+        ]
+      },
+      {
+        "n_classes": 4,
+        "n_attacked": 150,
+        "closed_accuracy_heldout": 1.0,
+        "unbounded_success_rate": 0.0,
+        "median_displacement_when_successful": null,
+        "mean_steps_when_successful": null,
+        "success_by_budget": {
+          "0.5": 0.0,
+          "1": 0.0,
+          "2": 0.0,
+          "5": 0.0
+        },
+        "n_movable_features": 61,
+        "classes": [
+          "advanced",
+          "rop_obfuscated",
+          "advanced_code",
+          "packer_obfuscated"
+        ]
+      },
+      {
+        "n_classes": 4,
+        "n_attacked": 150,
+        "closed_accuracy_heldout": 1.0,
+        "unbounded_success_rate": 0.4133,
+        "median_displacement_when_successful": 0.1582,
+        "mean_steps_when_successful": 5.6,
+        "success_by_budget": {
+          "0.5": 0.4133,
+          "1": 0.4133,
+          "2": 0.4133,
+          "5": 0.4133
+        },
+        "n_movable_features": 61,
+        "classes": [
+          "cryptographic",
+          "packer_obfuscated",
+          "code_based",
+          "self_modifying"
+        ]
+      },
+      {
+        "n_classes": 4,
+        "n_attacked": 150,
+        "closed_accuracy_heldout": 1.0,
+        "unbounded_success_rate": 0.9267,
+        "median_displacement_when_successful": 0.2449,
+        "mean_steps_when_successful": 5.82,
+        "success_by_budget": {
+          "0.5": 0.9267,
+          "1": 0.9267,
+          "2": 0.9267,
+          "5": 0.9267
+        },
+        "n_movable_features": 61,
+        "classes": [
+          "advanced",
+          "cryptographic",
+          "rop_obfuscated",
+          "api_obfuscated"
+        ]
+      },
+      {
+        "n_classes": 4,
+        "n_attacked": 150,
+        "closed_accuracy_heldout": 1.0,
+        "unbounded_success_rate": 0.12,
+        "median_displacement_when_successful": 0.2,
+        "mean_steps_when_successful": 4.44,
+        "success_by_budget": {
+          "0.5": 0.12,
+          "1": 0.12,
+          "2": 0.12,
+          "5": 0.12
+        },
+        "n_movable_features": 61,
+        "classes": [
+          "rop_obfuscated",
+          "advanced_code",
+          "self_modifying",
+          "cryptographic"
+        ]
+      },
+      {
+        "n_classes": 4,
+        "n_attacked": 150,
+        "closed_accuracy_heldout": 0.9926829268292683,
+        "unbounded_success_rate": 0.8333,
+        "median_displacement_when_successful": 0.1732,
+        "mean_steps_when_successful": 5.2,
+        "success_by_budget": {
+          "0.5": 0.82,
+          "1": 0.8333,
+          "2": 0.8333,
+          "5": 0.8333
+        },
+        "n_movable_features": 61,
+        "classes": [
+          "advanced_microcode",
+          "api_obfuscated",
+          "code_based",
+          "advanced"
+        ]
+      },
+      {
+        "n_classes": 4,
+        "n_attacked": 150,
+        "closed_accuracy_heldout": 1.0,
+        "unbounded_success_rate": 0.0,
+        "median_displacement_when_successful": null,
+        "mean_steps_when_successful": null,
+        "success_by_budget": {
+          "0.5": 0.0,
+          "1": 0.0,
+          "2": 0.0,
+          "5": 0.0
+        },
+        "n_movable_features": 61,
+        "classes": [
+          "packer_obfuscated",
+          "advanced",
+          "advanced_code",
+          "self_modifying"
+        ]
+      },
+      {
+        "n_classes": 4,
+        "n_attacked": 150,
+        "closed_accuracy_heldout": 0.9862258953168044,
+        "unbounded_success_rate": 0.8133,
+        "median_displacement_when_successful": 0.1633,
+        "mean_steps_when_successful": 6.1,
+        "success_by_budget": {
+          "0.5": 0.78,
+          "1": 0.8133,
+          "2": 0.8133,
+          "5": 0.8133
+        },
+        "n_movable_features": 61,
+        "classes": [
+          "api_obfuscated",
+          "cryptographic",
+          "advanced_technique",
+          "code_based"
+        ]
+      },
+      {
+        "n_classes": 4,
+        "n_attacked": 150,
+        "closed_accuracy_heldout": 1.0,
+        "unbounded_success_rate": 0.0,
+        "median_displacement_when_successful": null,
+        "mean_steps_when_successful": null,
+        "success_by_budget": {
+          "0.5": 0.0,
+          "1": 0.0,
+          "2": 0.0,
+          "5": 0.0
+        },
+        "n_movable_features": 61,
+        "classes": [
+          "advanced_technique",
+          "cryptographic",
+          "self_modifying",
+          "packer_obfuscated"
+        ]
+      },
+      {
+        "n_classes": 4,
+        "n_attacked": 150,
+        "closed_accuracy_heldout": 1.0,
+        "unbounded_success_rate": 0.2,
+        "median_displacement_when_successful": 0.2236,
+        "mean_steps_when_successful": 5.17,
+        "success_by_budget": {
+          "0.5": 0.2,
+          "1": 0.2,
+          "2": 0.2,
+          "5": 0.2
+        },
+        "n_movable_features": 61,
+        "classes": [
+          "advanced_technique",
+          "packer_obfuscated",
+          "cryptographic",
+          "advanced_code"
+        ]
+      }
+    ]
+  },
+  "restricted": {
+    "narrow": {
+      "n_classes": 4,
+      "n_attacked": 150,
+      "closed_accuracy_heldout": 0.91875,
+      "unbounded_success_rate": 0.0,
+      "median_displacement_when_successful": null,
+      "mean_steps_when_successful": null,
+      "success_by_budget": {
+        "0.5": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "5": 0.0
+      },
+      "n_movable_features": 6
+    },
+    "wide_matched_replicates": [
+      {
+        "n_classes": 4,
+        "n_attacked": 150,
+        "closed_accuracy_heldout": 1.0,
+        "unbounded_success_rate": 0.22,
+        "median_displacement_when_successful": 0.2236,
+        "mean_steps_when_successful": 6.09,
+        "success_by_budget": {
+          "0.5": 0.22,
+          "1": 0.22,
+          "2": 0.22,
+          "5": 0.22
+        },
+        "n_movable_features": 6,
+        "classes": [
+          "advanced_microcode",
+          "self_modifying",
+          "cryptographic",
+          "code_based"
+        ]
+      },
+      {
+        "n_classes": 4,
+        "n_attacked": 150,
+        "closed_accuracy_heldout": 1.0,
+        "unbounded_success_rate": 0.0,
+        "median_displacement_when_successful": null,
+        "mean_steps_when_successful": null,
+        "success_by_budget": {
+          "0.5": 0.0,
+          "1": 0.0,
+          "2": 0.0,
+          "5": 0.0
+        },
+        "n_movable_features": 6,
+        "classes": [
+          "advanced",
+          "rop_obfuscated",
+          "advanced_code",
+          "packer_obfuscated"
+        ]
+      },
+      {
+        "n_classes": 4,
+        "n_attacked": 150,
+        "closed_accuracy_heldout": 1.0,
+        "unbounded_success_rate": 0.14,
+        "median_displacement_when_successful": 0.1583,
+        "mean_steps_when_successful": 4.0,
+        "success_by_budget": {
+          "0.5": 0.14,
+          "1": 0.14,
+          "2": 0.14,
+          "5": 0.14
+        },
+        "n_movable_features": 6,
+        "classes": [
+          "cryptographic",
+          "packer_obfuscated",
+          "code_based",
+          "self_modifying"
+        ]
+      },
+      {
+        "n_classes": 4,
+        "n_attacked": 150,
+        "closed_accuracy_heldout": 1.0,
+        "unbounded_success_rate": 0.0,
+        "median_displacement_when_successful": null,
+        "mean_steps_when_successful": null,
+        "success_by_budget": {
+          "0.5": 0.0,
+          "1": 0.0,
+          "2": 0.0,
+          "5": 0.0
+        },
+        "n_movable_features": 6,
+        "classes": [
+          "advanced",
+          "cryptographic",
+          "rop_obfuscated",
+          "api_obfuscated"
+        ]
+      },
+      {
+        "n_classes": 4,
+        "n_attacked": 150,
+        "closed_accuracy_heldout": 1.0,
+        "unbounded_success_rate": 0.0,
+        "median_displacement_when_successful": null,
+        "mean_steps_when_successful": null,
+        "success_by_budget": {
+          "0.5": 0.0,
+          "1": 0.0,
+          "2": 0.0,
+          "5": 0.0
+        },
+        "n_movable_features": 6,
+        "classes": [
+          "rop_obfuscated",
+          "advanced_code",
+          "self_modifying",
+          "cryptographic"
+        ]
+      },
+      {
+        "n_classes": 4,
+        "n_attacked": 150,
+        "closed_accuracy_heldout": 0.9926829268292683,
+        "unbounded_success_rate": 0.0,
+        "median_displacement_when_successful": null,
+        "mean_steps_when_successful": null,
+        "success_by_budget": {
+          "0.5": 0.0,
+          "1": 0.0,
+          "2": 0.0,
+          "5": 0.0
+        },
+        "n_movable_features": 6,
+        "classes": [
+          "advanced_microcode",
+          "api_obfuscated",
+          "code_based",
+          "advanced"
+        ]
+      },
+      {
+        "n_classes": 4,
+        "n_attacked": 150,
+        "closed_accuracy_heldout": 1.0,
+        "unbounded_success_rate": 0.0,
+        "median_displacement_when_successful": null,
+        "mean_steps_when_successful": null,
+        "success_by_budget": {
+          "0.5": 0.0,
+          "1": 0.0,
+          "2": 0.0,
+          "5": 0.0
+        },
+        "n_movable_features": 6,
+        "classes": [
+          "packer_obfuscated",
+          "advanced",
+          "advanced_code",
+          "self_modifying"
+        ]
+      },
+      {
+        "n_classes": 4,
+        "n_attacked": 150,
+        "closed_accuracy_heldout": 0.9862258953168044,
+        "unbounded_success_rate": 0.2667,
+        "median_displacement_when_successful": 0.1661,
+        "mean_steps_when_successful": 3.98,
+        "success_by_budget": {
+          "0.5": 0.26,
+          "1": 0.2667,
+          "2": 0.2667,
+          "5": 0.2667
+        },
+        "n_movable_features": 6,
+        "classes": [
+          "api_obfuscated",
+          "cryptographic",
+          "advanced_technique",
+          "code_based"
+        ]
+      },
+      {
+        "n_classes": 4,
+        "n_attacked": 150,
+        "closed_accuracy_heldout": 1.0,
+        "unbounded_success_rate": 0.0,
+        "median_displacement_when_successful": null,
+        "mean_steps_when_successful": null,
+        "success_by_budget": {
+          "0.5": 0.0,
+          "1": 0.0,
+          "2": 0.0,
+          "5": 0.0
+        },
+        "n_movable_features": 6,
+        "classes": [
+          "advanced_technique",
+          "cryptographic",
+          "self_modifying",
+          "packer_obfuscated"
+        ]
+      },
+      {
+        "n_classes": 4,
+        "n_attacked": 150,
+        "closed_accuracy_heldout": 1.0,
+        "unbounded_success_rate": 0.0,
+        "median_displacement_when_successful": null,
+        "mean_steps_when_successful": null,
+        "success_by_budget": {
+          "0.5": 0.0,
+          "1": 0.0,
+          "2": 0.0,
+          "5": 0.0
+        },
+        "n_movable_features": 6,
+        "classes": [
+          "advanced_technique",
+          "packer_obfuscated",
+          "cryptographic",
+          "advanced_code"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "label": "AUDIT-GENERATED run:closedset-v3",
+  "definition": "artifact SHA-256 equals SHA-256 of its unmodified input program",
+  "features": "data/features_pilot.csv",
+  "n_rows_in": 2400,
+  "sample_ids_without_input": [],
+  "n_noop": 32,
+  "noop_by_sub_technique": {
+    "ref_ren_long": 16,
+    "ref_ren_hex": 16
+  },
+  "noop_by_sample_id": {
+    "textproc_trim": 16,
+    "bitops_popcount": 16
+  },
+  "noop_by_technique": {
+    "renameidentifiers": 32
+  },
+  "noop_by_domain": {
+    "textproc": 16,
+    "bitops": 16
+  },
+  "noop_paths": [
+    "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_hex_0.c",
+    "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_hex_1.c",
+    "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_hex_2.c",
+    "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_hex_3.c",
+    "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_hex_4.c",
+    "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_hex_5.c",
+    "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_hex_6.c",
+    "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_hex_7.c",
+    "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_long_0.c",
+    "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_long_1.c",
+    "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_long_2.c",
+    "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_long_3.c",
+    "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_long_4.c",
+    "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_long_5.c",
+    "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_long_6.c",
+    "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_long_7.c",
+    "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_hex_0.c",
+    "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_hex_1.c",
+    "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_hex_2.c",
+    "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_hex_3.c",
+    "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_hex_4.c",
+    "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_hex_5.c",
+    "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_hex_6.c",
+    "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_hex_7.c",
+    "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_long_0.c",
+    "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_long_1.c",
+    "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_long_2.c",
+    "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_long_3.c",
+    "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_long_4.c",
+    "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_long_5.c",
+    "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_long_6.c",
+    "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_long_7.c"
+  ],
+  "duplicates_full_table": {
+    "n_rows": 2400,
+    "n_distinct_vectors": 2370,
+    "n_duplicate_clusters": 2,
+    "rows_in_duplicate_clusters": 32,
+    "clusters": [
+      {
+        "size": 16,
+        "sub_techniques": {
+          "ref_ren_long": 8,
+          "ref_ren_hex": 8
+        },
+        "sample_ids": [
+          "textproc_trim"
+        ]
+      },
+      {
+        "size": 16,
+        "sub_techniques": {
+          "ref_ren_long": 8,
+          "ref_ren_hex": 8
+        },
+        "sample_ids": [
+          "bitops_popcount"
+        ]
+      }
+    ]
+  },
+  "duplicates_after_removal": {
+    "n_rows": 2368,
+    "n_distinct_vectors": 2368,
+    "n_duplicate_clusters": 0,
+    "rows_in_duplicate_clusters": 0,
+    "clusters": []
+  },
+  "n_rows_out": 2368,
+  "filtered_csv": "results/v3/closed/noop/features_pilot_no_noop.csv",
+  "filtered_csv_sha256": "d02598341bfb4c399d4cc8884924da81c9a67a823400bf4b8b4bac16406730a0",
+  "class_counts_after_removal": {
+    "technique": {
+      "addopaque": 720,
+      "encodestrings": 480,
+      "encodeliterals": 720,
+      "renameidentifiers": 448
+    },
+    "sub_technique": {
+      "ref_opq_junk": 240,
+      "ref_opq_true": 240,
+      "ref_opq_both": 240,
+      "ref_str_xor": 240,
+      "ref_str_add": 240,
+      "ref_lit_xor": 240,
+      "ref_lit_mixed": 240,
+      "ref_lit_sum": 240,
+      "ref_ren_long": 224,
+      "ref_ren_hex": 224
+    },
+    "domain": {
+      "textproc": 464,
+      "dsalgo": 480,
+      "bitops": 464,
+      "mathlib": 480,
+      "statemach": 480
+    }
+  }
+}

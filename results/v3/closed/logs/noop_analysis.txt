@@ -1,0 +1,84 @@
+family           random_forest MS 0.9542 committed 0.9542 (match True) noop-free 0.9433 sd_fold 0.0360 sd_seed 0.0048 [0.8723,1.0000] diff -0.0109
+   per-domain {'bitops': {'full': 0.9599, 'noop_free': 0.9482, 'diff': -0.0116}, 'dsalgo': {'full': 0.985, 'noop_free': 0.9613, 'diff': -0.0237}, 'mathlib': {'full': 0.9307, 'noop_free': 0.9307, 'diff': 0.0}, 'statemach': {'full': 0.9129, 'noop_free': 0.8929, 'diff': -0.02}, 'textproc': {'full': 0.9825, 'noop_free': 0.9834, 'diff': 0.0009}}
+   renaming F1 {'renameidentifiers': {'full': 0.932, 'noop_free': 0.9038}}
+family           hist_gbdt     MS 0.9480 committed 0.9480 (match True) noop-free 0.9444 sd_fold 0.0368 sd_seed 0.0026 [0.8797,1.0000] diff -0.0036
+   per-domain {'bitops': {'full': 0.9415, 'noop_free': 0.9338, 'diff': -0.0077}, 'dsalgo': {'full': 1.0, 'noop_free': 1.0, 'diff': 0.0}, 'mathlib': {'full': 0.9529, 'noop_free': 0.9529, 'diff': 0.0}, 'statemach': {'full': 0.9074, 'noop_free': 0.8998, 'diff': -0.0077}, 'textproc': {'full': 0.9383, 'noop_free': 0.9354, 'diff': -0.0029}}
+   renaming F1 {'renameidentifiers': {'full': 0.9427, 'noop_free': 0.942}}
+parameterisation random_forest MS 0.8045 committed 0.8045 (match True) noop-free 0.8165 sd_fold 0.0682 sd_seed 0.0038 [0.7454,0.9498] diff +0.0120
+   per-domain {'bitops': {'full': 0.7709, 'noop_free': 0.795, 'diff': 0.0242}, 'dsalgo': {'full': 0.9272, 'noop_free': 0.9343, 'diff': 0.0071}, 'mathlib': {'full': 0.7762, 'noop_free': 0.7896, 'diff': 0.0133}, 'statemach': {'full': 0.8056, 'noop_free': 0.8027, 'diff': -0.0029}, 'textproc': {'full': 0.7424, 'noop_free': 0.7607, 'diff': 0.0183}}
+   renaming F1 {'ref_ren_hex': {'full': 0.8465, 'noop_free': 0.8815}, 'ref_ren_long': {'full': 0.9186, 'noop_free': 0.9523}}
+parameterisation hist_gbdt     MS 0.8124 committed 0.8124 (match True) noop-free 0.8183 sd_fold 0.0795 sd_seed 0.0036 [0.7091,0.9387] diff +0.0059
+   per-domain {'bitops': {'full': 0.7194, 'noop_free': 0.7215, 'diff': 0.002}, 'dsalgo': {'full': 0.9307, 'noop_free': 0.9353, 'diff': 0.0046}, 'mathlib': {'full': 0.8308, 'noop_free': 0.8361, 'diff': 0.0053}, 'statemach': {'full': 0.8222, 'noop_free': 0.817, 'diff': -0.0052}, 'textproc': {'full': 0.7587, 'noop_free': 0.7819, 'diff': 0.0232}}
+   renaming F1 {'ref_ren_hex': {'full': 0.8081, 'noop_free': 0.8329}, 'ref_ren_long': {'full': 0.9297, 'noop_free': 0.9603}}
+{
+ "family|random_forest": {
+  "train_full|test_full": 0.9542,
+  "train_full|test_noopfree": 0.9527,
+  "train_noopfree|test_full": 0.9449,
+  "train_noopfree|test_noopfree": 0.9433
+ },
+ "family|hist_gbdt": {
+  "train_full|test_full": 0.948,
+  "train_full|test_noopfree": 0.946,
+  "train_noopfree|test_full": 0.9464,
+  "train_noopfree|test_noopfree": 0.9444
+ },
+ "parameterisation|random_forest": {
+  "train_full|test_full": 0.8045,
+  "train_full|test_noopfree": 0.8098,
+  "train_noopfree|test_full": 0.811,
+  "train_noopfree|test_noopfree": 0.8165
+ },
+ "parameterisation|hist_gbdt": {
+  "train_full|test_full": 0.8124,
+  "train_full|test_noopfree": 0.8183,
+  "train_noopfree|test_full": 0.8136,
+  "train_noopfree|test_noopfree": 0.8183
+ }
+}
+[
+ {
+  "config": "family|random_forest",
+  "partB_full_full_vs_committed_mean": [
+   0.9542,
+   0.9542
+  ],
+  "partB_nn_nn_vs_noop_cells_mean": [
+   0.9433,
+   0.9433
+  ]
+ },
+ {
+  "config": "family|hist_gbdt",
+  "partB_full_full_vs_committed_mean": [
+   0.948,
+   0.948
+  ],
+  "partB_nn_nn_vs_noop_cells_mean": [
+   0.9444,
+   0.9444
+  ]
+ },
+ {
+  "config": "parameterisation|random_forest",
+  "partB_full_full_vs_committed_mean": [
+   0.8045,
+   0.8045
+  ],
+  "partB_nn_nn_vs_noop_cells_mean": [
+   0.8165,
+   0.8165
+  ]
+ },
+ {
+  "config": "parameterisation|hist_gbdt",
+  "partB_full_full_vs_committed_mean": [
+   0.8124,
+   0.8124
+  ],
+  "partB_nn_nn_vs_noop_cells_mean": [
+   0.8183,
+   0.8183
+  ]
+ }
+]

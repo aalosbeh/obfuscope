@@ -1,0 +1,33 @@
+# path relative to this file<TAB>suite<TAB>functions
+# Benign C programs used as obfuscation inputs. The suite becomes the
+# grouping variable, so holding out a suite holds out unrelated programs.
+bitops/base64.c	bitops	main
+bitops/bitset.c	bitops	main
+bitops/fnvhash.c	bitops	main
+bitops/graycode.c	bitops	main
+bitops/popcount.c	bitops	main
+bitops/xorcipher.c	bitops	main
+dsalgo/bsearch.c	dsalgo	main
+dsalgo/bst.c	dsalgo	main
+dsalgo/graphbfs.c	dsalgo	main
+dsalgo/heap.c	dsalgo	main
+dsalgo/linkedlist.c	dsalgo	main
+dsalgo/quicksort.c	dsalgo	main
+mathlib/fib.c	mathlib	main
+mathlib/gcd.c	mathlib	main
+mathlib/matmul.c	mathlib	main
+mathlib/newton.c	mathlib	main
+mathlib/primes.c	mathlib	main
+mathlib/stats.c	mathlib	main
+statemach/crc.c	statemach	main
+statemach/exprparse.c	statemach	main
+statemach/lexer.c	statemach	main
+statemach/retry.c	statemach	main
+statemach/traffic.c	statemach	main
+statemach/vending.c	statemach	main
+textproc/csvsplit.c	textproc	main
+textproc/rot13.c	textproc	main
+textproc/runlength.c	textproc	main
+textproc/tokenize.c	textproc	main
+textproc/trim.c	textproc	main
+textproc/wordcount.c	textproc	main

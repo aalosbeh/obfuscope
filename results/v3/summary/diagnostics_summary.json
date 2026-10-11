@@ -1,0 +1,638 @@
+{
+  "openset_A_heldout": {
+    "n_folds": 120,
+    "runtime_seconds": 392.9,
+    "runtime_seconds_max_part": null,
+    "fits": {
+      "random_forest": 20,
+      "extra_trees": 20,
+      "logreg": 20,
+      "svm_rbf": 20,
+      "knn": 20,
+      "mlp": 20
+    },
+    "mlp_fits_reaching_max_iter": {
+      "mlp": 0
+    },
+    "convergence_warnings": {
+      "logreg": 0,
+      "mlp": 0
+    },
+    "fits_with_warning_category": {
+      "logreg": {
+        "RuntimeWarning": 20
+      },
+      "mlp": {
+        "RuntimeWarning": 20
+      }
+    },
+    "mlp_fits_with_nonfinite_parameters": {},
+    "weibull": {
+      "extra_trees|posterior": {
+        "fits": 60,
+        "fallback_degenerate": 60
+      },
+      "knn|posterior": {
+        "fits": 60,
+        "fallback_degenerate": 60
+      },
+      "logreg|logit": {
+        "fits": 60
+      },
+      "logreg|posterior": {
+        "fits": 60
+      },
+      "mlp|logit": {
+        "fits": 60
+      },
+      "mlp|posterior": {
+        "fits": 60
+      },
+      "random_forest|posterior": {
+        "fits": 60
+      },
+      "svm_rbf|logit": {
+        "fits": 60
+      },
+      "svm_rbf|posterior": {
+        "fits": 60
+      }
+    },
+    "tail_fallback_lt3_correct_classes": {},
+    "tail_classes_total": {
+      "random_forest": 60,
+      "extra_trees": 60,
+      "logreg": 60,
+      "svm_rbf": 60,
+      "knn": 60,
+      "mlp": 60
+    },
+    "scorer_errors": {}
+  },
+  "openset_B_heldout": {
+    "n_folds": 300,
+    "runtime_seconds": 1280.7,
+    "runtime_seconds_max_part": null,
+    "fits": {
+      "random_forest": 50,
+      "extra_trees": 50,
+      "logreg": 50,
+      "svm_rbf": 50,
+      "knn": 50,
+      "mlp": 50
+    },
+    "mlp_fits_reaching_max_iter": {
+      "mlp": 50
+    },
+    "convergence_warnings": {
+      "logreg": 0,
+      "mlp": 50
+    },
+    "fits_with_warning_category": {
+      "logreg": {
+        "RuntimeWarning": 50
+      },
+      "mlp": {
+        "ConvergenceWarning": 50,
+        "RuntimeWarning": 50
+      }
+    },
+    "mlp_fits_with_nonfinite_parameters": {},
+    "weibull": {
+      "extra_trees|posterior": {
+        "fits": 450,
+        "fallback_degenerate": 410
+      },
+      "knn|posterior": {
+        "fits": 450,
+        "fallback_degenerate": 113
+      },
+      "logreg|logit": {
+        "fits": 450
+      },
+      "logreg|posterior": {
+        "fits": 450
+      },
+      "mlp|logit": {
+        "fits": 450
+      },
+      "mlp|posterior": {
+        "fits": 450
+      },
+      "random_forest|posterior": {
+        "fits": 450
+      },
+      "svm_rbf|logit": {
+        "fits": 450
+      },
+      "svm_rbf|posterior": {
+        "fits": 450
+      }
+    },
+    "tail_fallback_lt3_correct_classes": {},
+    "tail_classes_total": {
+      "random_forest": 450,
+      "extra_trees": 450,
+      "logreg": 450,
+      "svm_rbf": 450,
+      "knn": 450,
+      "mlp": 450
+    },
+    "scorer_errors": {}
+  },
+  "openset_C_heldout": {
+    "n_folds": 120,
+    "runtime_seconds": 327.6,
+    "runtime_seconds_max_part": null,
+    "fits": {
+      "random_forest": 20,
+      "extra_trees": 20,
+      "logreg": 20,
+      "svm_rbf": 20,
+      "knn": 20,
+      "mlp": 20
+    },
+    "mlp_fits_reaching_max_iter": {
+      "mlp": 20
+    },
+    "convergence_warnings": {
+      "logreg": 0,
+      "mlp": 20
+    },
+    "fits_with_warning_category": {
+      "logreg": {
+        "RuntimeWarning": 20
+      },
+      "mlp": {
+        "RuntimeWarning": 20,
+        "ConvergenceWarning": 20
+      }
+    },
+    "mlp_fits_with_nonfinite_parameters": {},
+    "weibull": {
+      "extra_trees|posterior": {
+        "fits": 150,
+        "fallback_degenerate": 135
+      },
+      "knn|posterior": {
+        "fits": 150,
+        "fallback_degenerate": 26
+      },
+      "logreg|logit": {
+        "fits": 150
+      },
+      "logreg|posterior": {
+        "fits": 150
+      },
+      "mlp|logit": {
+        "fits": 150
+      },
+      "mlp|posterior": {
+        "fits": 150
+      },
+      "random_forest|posterior": {
+        "fits": 150
+      },
+      "svm_rbf|logit": {
+        "fits": 150
+      },
+      "svm_rbf|posterior": {
+        "fits": 150
+      }
+    },
+    "tail_fallback_lt3_correct_classes": {},
+    "tail_classes_total": {
+      "random_forest": 150,
+      "extra_trees": 150,
+      "logreg": 150,
+      "svm_rbf": 150,
+      "knn": 150,
+      "mlp": 150
+    },
+    "scorer_errors": {}
+  },
+  "openset_A_all": {
+    "n_folds": 120,
+    "runtime_seconds": 358.8,
+    "runtime_seconds_max_part": null,
+    "fits": {
+      "random_forest": 20,
+      "extra_trees": 20,
+      "logreg": 20,
+      "svm_rbf": 20,
+      "knn": 20,
+      "mlp": 20
+    },
+    "mlp_fits_reaching_max_iter": {
+      "mlp": 0
+    },
+    "convergence_warnings": {
+      "logreg": 0,
+      "mlp": 0
+    },
+    "fits_with_warning_category": {
+      "logreg": {
+        "RuntimeWarning": 20
+      },
+      "mlp": {
+        "RuntimeWarning": 20
+      }
+    },
+    "mlp_fits_with_nonfinite_parameters": {},
+    "weibull": {
+      "extra_trees|posterior": {
+        "fits": 60,
+        "fallback_degenerate": 60
+      },
+      "knn|posterior": {
+        "fits": 60,
+        "fallback_degenerate": 60
+      },
+      "logreg|logit": {
+        "fits": 60
+      },
+      "logreg|posterior": {
+        "fits": 60
+      },
+      "mlp|logit": {
+        "fits": 60
+      },
+      "mlp|posterior": {
+        "fits": 60
+      },
+      "random_forest|posterior": {
+        "fits": 60
+      },
+      "svm_rbf|logit": {
+        "fits": 60
+      },
+      "svm_rbf|posterior": {
+        "fits": 60
+      }
+    },
+    "tail_fallback_lt3_correct_classes": {},
+    "tail_classes_total": {
+      "random_forest": 60,
+      "extra_trees": 60,
+      "logreg": 60,
+      "svm_rbf": 60,
+      "knn": 60,
+      "mlp": 60
+    },
+    "scorer_errors": {}
+  },
+  "openset_B_all": {
+    "n_folds": 300,
+    "runtime_seconds": 1196.5,
+    "runtime_seconds_max_part": null,
+    "fits": {
+      "random_forest": 50,
+      "extra_trees": 50,
+      "logreg": 50,
+      "svm_rbf": 50,
+      "knn": 50,
+      "mlp": 50
+    },
+    "mlp_fits_reaching_max_iter": {
+      "mlp": 50
+    },
+    "convergence_warnings": {
+      "logreg": 0,
+      "mlp": 50
+    },
+    "fits_with_warning_category": {
+      "logreg": {
+        "RuntimeWarning": 50
+      },
+      "mlp": {
+        "RuntimeWarning": 50,
+        "ConvergenceWarning": 50
+      }
+    },
+    "mlp_fits_with_nonfinite_parameters": {},
+    "weibull": {
+      "extra_trees|posterior": {
+        "fits": 450,
+        "fallback_degenerate": 410
+      },
+      "knn|posterior": {
+        "fits": 450,
+        "fallback_degenerate": 113
+      },
+      "logreg|logit": {
+        "fits": 450
+      },
+      "logreg|posterior": {
+        "fits": 450
+      },
+      "mlp|logit": {
+        "fits": 450
+      },
+      "mlp|posterior": {
+        "fits": 450
+      },
+      "random_forest|posterior": {
+        "fits": 450
+      },
+      "svm_rbf|logit": {
+        "fits": 450
+      },
+      "svm_rbf|posterior": {
+        "fits": 450
+      }
+    },
+    "tail_fallback_lt3_correct_classes": {},
+    "tail_classes_total": {
+      "random_forest": 450,
+      "extra_trees": 450,
+      "logreg": 450,
+      "svm_rbf": 450,
+      "knn": 450,
+      "mlp": 450
+    },
+    "scorer_errors": {}
+  },
+  "openset_C_all": {
+    "n_folds": 120,
+    "runtime_seconds": 333.9,
+    "runtime_seconds_max_part": null,
+    "fits": {
+      "random_forest": 20,
+      "extra_trees": 20,
+      "logreg": 20,
+      "svm_rbf": 20,
+      "knn": 20,
+      "mlp": 20
+    },
+    "mlp_fits_reaching_max_iter": {
+      "mlp": 20
+    },
+    "convergence_warnings": {
+      "logreg": 0,
+      "mlp": 20
+    },
+    "fits_with_warning_category": {
+      "logreg": {
+        "RuntimeWarning": 20
+      },
+      "mlp": {
+        "ConvergenceWarning": 20,
+        "RuntimeWarning": 20
+      }
+    },
+    "mlp_fits_with_nonfinite_parameters": {},
+    "weibull": {
+      "extra_trees|posterior": {
+        "fits": 150,
+        "fallback_degenerate": 135
+      },
+      "knn|posterior": {
+        "fits": 150,
+        "fallback_degenerate": 26
+      },
+      "logreg|logit": {
+        "fits": 150
+      },
+      "logreg|posterior": {
+        "fits": 150
+      },
+      "mlp|logit": {
+        "fits": 150
+      },
+      "mlp|posterior": {
+        "fits": 150
+      },
+      "random_forest|posterior": {
+        "fits": 150
+      },
+      "svm_rbf|logit": {
+        "fits": 150
+      },
+      "svm_rbf|posterior": {
+        "fits": 150
+      }
+    },
+    "tail_fallback_lt3_correct_classes": {},
+    "tail_classes_total": {
+      "random_forest": 150,
+      "extra_trees": 150,
+      "logreg": 150,
+      "svm_rbf": 150,
+      "knn": 150,
+      "mlp": 150
+    },
+    "scorer_errors": {}
+  },
+  "openset_A_kfold": {
+    "n_folds": 600,
+    "runtime_seconds": 1898.1,
+    "runtime_seconds_max_part": null,
+    "fits": {
+      "random_forest": 100,
+      "extra_trees": 100,
+      "logreg": 100,
+      "svm_rbf": 100,
+      "knn": 100,
+      "mlp": 100
+    },
+    "mlp_fits_reaching_max_iter": {
+      "mlp": 0
+    },
+    "convergence_warnings": {
+      "logreg": 0,
+      "mlp": 0
+    },
+    "fits_with_warning_category": {
+      "logreg": {
+        "RuntimeWarning": 100
+      },
+      "mlp": {
+        "RuntimeWarning": 100
+      }
+    },
+    "mlp_fits_with_nonfinite_parameters": {},
+    "weibull": {
+      "extra_trees|posterior": {
+        "fits": 300,
+        "fallback_degenerate": 298
+      },
+      "knn|posterior": {
+        "fits": 300,
+        "fallback_degenerate": 300
+      },
+      "logreg|logit": {
+        "fits": 300
+      },
+      "logreg|posterior": {
+        "fits": 300
+      },
+      "mlp|logit": {
+        "fits": 300
+      },
+      "mlp|posterior": {
+        "fits": 300
+      },
+      "random_forest|posterior": {
+        "fits": 300
+      },
+      "svm_rbf|logit": {
+        "fits": 300
+      },
+      "svm_rbf|posterior": {
+        "fits": 300
+      }
+    },
+    "tail_fallback_lt3_correct_classes": {},
+    "tail_classes_total": {
+      "random_forest": 300,
+      "extra_trees": 300,
+      "logreg": 300,
+      "svm_rbf": 300,
+      "knn": 300,
+      "mlp": 300
+    },
+    "scorer_errors": {}
+  },
+  "openset_B_kfold": {
+    "n_folds": 1500,
+    "runtime_seconds": 7924.1,
+    "runtime_seconds_max_part": 1796.6,
+    "fits": {
+      "random_forest": 250,
+      "extra_trees": 250,
+      "logreg": 250,
+      "svm_rbf": 250,
+      "knn": 250,
+      "mlp": 250
+    },
+    "mlp_fits_reaching_max_iter": {
+      "mlp": 250
+    },
+    "convergence_warnings": {
+      "logreg": 0,
+      "mlp": 250
+    },
+    "fits_with_warning_category": {
+      "logreg": {
+        "RuntimeWarning": 250
+      },
+      "mlp": {
+        "ConvergenceWarning": 250,
+        "RuntimeWarning": 250
+      }
+    },
+    "mlp_fits_with_nonfinite_parameters": {},
+    "weibull": {
+      "extra_trees|posterior": {
+        "fits": 2250,
+        "fallback_degenerate": 2058
+      },
+      "knn|posterior": {
+        "fits": 2250,
+        "fallback_degenerate": 529
+      },
+      "logreg|logit": {
+        "fits": 2250
+      },
+      "logreg|posterior": {
+        "fits": 2250
+      },
+      "mlp|logit": {
+        "fits": 2250
+      },
+      "mlp|posterior": {
+        "fits": 2250
+      },
+      "random_forest|posterior": {
+        "fits": 2250
+      },
+      "svm_rbf|logit": {
+        "fits": 2250
+      },
+      "svm_rbf|posterior": {
+        "fits": 2250
+      }
+    },
+    "tail_fallback_lt3_correct_classes": {},
+    "tail_classes_total": {
+      "random_forest": 2250,
+      "extra_trees": 2250,
+      "logreg": 2250,
+      "svm_rbf": 2250,
+      "knn": 2250,
+      "mlp": 2250
+    },
+    "scorer_errors": {}
+  },
+  "openset_C_kfold": {
+    "n_folds": 600,
+    "runtime_seconds": 2584.7,
+    "runtime_seconds_max_part": null,
+    "fits": {
+      "random_forest": 100,
+      "extra_trees": 100,
+      "logreg": 100,
+      "svm_rbf": 100,
+      "knn": 100,
+      "mlp": 100
+    },
+    "mlp_fits_reaching_max_iter": {
+      "mlp": 100
+    },
+    "convergence_warnings": {
+      "logreg": 0,
+      "mlp": 100
+    },
+    "fits_with_warning_category": {
+      "logreg": {
+        "RuntimeWarning": 100
+      },
+      "mlp": {
+        "RuntimeWarning": 100,
+        "ConvergenceWarning": 100
+      }
+    },
+    "mlp_fits_with_nonfinite_parameters": {},
+    "weibull": {
+      "extra_trees|posterior": {
+        "fits": 750,
+        "fallback_degenerate": 678
+      },
+      "knn|posterior": {
+        "fits": 750,
+        "fallback_degenerate": 124
+      },
+      "logreg|logit": {
+        "fits": 750
+      },
+      "logreg|posterior": {
+        "fits": 750
+      },
+      "mlp|logit": {
+        "fits": 750
+      },
+      "mlp|posterior": {
+        "fits": 750
+      },
+      "random_forest|posterior": {
+        "fits": 750
+      },
+      "svm_rbf|logit": {
+        "fits": 750
+      },
+      "svm_rbf|posterior": {
+        "fits": 750
+      }
+    },
+    "tail_fallback_lt3_correct_classes": {},
+    "tail_classes_total": {
+      "random_forest": 750,
+      "extra_trees": 750,
+      "logreg": 750,
+      "svm_rbf": 750,
+      "knn": 750,
+      "mlp": 750
+    },
+    "scorer_errors": {}
+  }
+}

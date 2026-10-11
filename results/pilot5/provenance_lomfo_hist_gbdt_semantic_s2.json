@@ -1,0 +1,289 @@
+{
+  "task": "provenance",
+  "protocol": "lomfo",
+  "model": "hist_gbdt",
+  "feature_set": "semantic",
+  "seed": 2,
+  "n_features": 29,
+  "n_rows": 2400,
+  "runtime_s": 11.85,
+  "per_fold": [
+    {
+      "accuracy": 0.8125,
+      "balanced_accuracy": 0.78125,
+      "macro_f1": 0.7947995213584303,
+      "weighted_f1": 0.80787707268894,
+      "per_class_f1": {
+        "addopaque": 0.7730061349693251,
+        "encodeliterals": 0.9473684210526315,
+        "encodestrings": 0.8,
+        "renameidentifiers": 0.6588235294117647
+      },
+      "confusion": [
+        [
+          126,
+          0,
+          0,
+          18
+        ],
+        [
+          0,
+          144,
+          0,
+          0
+        ],
+        [
+          32,
+          0,
+          64,
+          0
+        ],
+        [
+          24,
+          16,
+          0,
+          56
+        ]
+      ],
+      "labels": [
+        "addopaque",
+        "encodeliterals",
+        "encodestrings",
+        "renameidentifiers"
+      ],
+      "n_test": 480,
+      "fold_id": "famfold0"
+    },
+    {
+      "accuracy": 0.9020833333333333,
+      "balanced_accuracy": 0.9184027777777778,
+      "macro_f1": 0.9098711017798489,
+      "weighted_f1": 0.9025429965544232,
+      "per_class_f1": {
+        "addopaque": 0.8373702422145328,
+        "encodeliterals": 0.9090909090909091,
+        "encodestrings": 1.0,
+        "renameidentifiers": 0.8930232558139535
+      },
+      "confusion": [
+        [
+          121,
+          0,
+          0,
+          23
+        ],
+        [
+          24,
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          96,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          96
+        ]
+      ],
+      "labels": [
+        "addopaque",
+        "encodeliterals",
+        "encodestrings",
+        "renameidentifiers"
+      ],
+      "n_test": 480,
+      "fold_id": "famfold1"
+    },
+    {
+      "accuracy": 0.8166666666666667,
+      "balanced_accuracy": 0.798611111111111,
+      "macro_f1": 0.8148538961038961,
+      "weighted_f1": 0.8193831168831168,
+      "per_class_f1": {
+        "addopaque": 0.8,
+        "encodeliterals": 0.875,
+        "encodestrings": 0.7272727272727273,
+        "renameidentifiers": 0.8571428571428571
+      },
+      "confusion": [
+        [
+          144,
+          0,
+          0,
+          0
+        ],
+        [
+          16,
+          112,
+          16,
+          0
+        ],
+        [
+          32,
+          0,
+          64,
+          0
+        ],
+        [
+          24,
+          0,
+          0,
+          72
+        ]
+      ],
+      "labels": [
+        "addopaque",
+        "encodeliterals",
+        "encodestrings",
+        "renameidentifiers"
+      ],
+      "n_test": 480,
+      "fold_id": "famfold2"
+    },
+    {
+      "accuracy": 0.9,
+      "balanced_accuracy": 0.875,
+      "macro_f1": 0.8809523809523809,
+      "weighted_f1": 0.8904761904761905,
+      "per_class_f1": {
+        "addopaque": 0.8571428571428571,
+        "encodeliterals": 1.0,
+        "encodestrings": 1.0,
+        "renameidentifiers": 0.6666666666666666
+      },
+      "confusion": [
+        [
+          144,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          144,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          96,
+          0
+        ],
+        [
+          48,
+          0,
+          0,
+          48
+        ]
+      ],
+      "labels": [
+        "addopaque",
+        "encodeliterals",
+        "encodestrings",
+        "renameidentifiers"
+      ],
+      "n_test": 480,
+      "fold_id": "famfold3"
+    },
+    {
+      "accuracy": 0.6875,
+      "balanced_accuracy": 0.7118055555555556,
+      "macro_f1": 0.6416125554959056,
+      "weighted_f1": 0.633878279690842,
+      "per_class_f1": {
+        "addopaque": 0.3058823529411765,
+        "encodeliterals": 0.9,
+        "encodestrings": 0.5470085470085471,
+        "renameidentifiers": 0.8135593220338984
+      },
+      "confusion": [
+        [
+          26,
+          0,
+          74,
+          44
+        ],
+        [
+          0,
+          144,
+          0,
+          0
+        ],
+        [
+          0,
+          32,
+          64,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          96
+        ]
+      ],
+      "labels": [
+        "addopaque",
+        "encodeliterals",
+        "encodestrings",
+        "renameidentifiers"
+      ],
+      "n_test": 480,
+      "fold_id": "famfold4"
+    }
+  ],
+  "aggregate": {
+    "accuracy": 0.82375,
+    "balanced_accuracy": 0.8170138888888889,
+    "macro_f1": 0.8197137822078685,
+    "weighted_f1": 0.8242680778110028,
+    "per_class_f1": {
+      "addopaque": 0.7575962187711006,
+      "encodeliterals": 0.9273743016759777,
+      "encodestrings": 0.8050314465408805,
+      "renameidentifiers": 0.7888531618435155
+    },
+    "confusion": [
+      [
+        561,
+        0,
+        74,
+        85
+      ],
+      [
+        40,
+        664,
+        16,
+        0
+      ],
+      [
+        64,
+        32,
+        384,
+        0
+      ],
+      [
+        96,
+        16,
+        0,
+        368
+      ]
+    ],
+    "labels": [
+      "addopaque",
+      "encodeliterals",
+      "encodestrings",
+      "renameidentifiers"
+    ],
+    "n_test": 2400
+  },
+  "macro_f1_mean": 0.8084178911380924,
+  "macro_f1_std": 0.0933861963206745
+}

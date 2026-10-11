@@ -1,0 +1,67 @@
+{
+  "usable_programs": 30,
+  "excluded_programs": [],
+  "per_parameterisation": {
+    "ref_lit_xor": {
+      "attempted": 60,
+      "preserved": 60,
+      "compile_failed": 0,
+      "output_differs": 0
+    },
+    "ref_lit_sum": {
+      "attempted": 60,
+      "preserved": 60,
+      "compile_failed": 0,
+      "output_differs": 0
+    },
+    "ref_lit_mixed": {
+      "attempted": 60,
+      "preserved": 60,
+      "compile_failed": 0,
+      "output_differs": 0
+    },
+    "ref_str_xor": {
+      "attempted": 60,
+      "preserved": 60,
+      "compile_failed": 0,
+      "output_differs": 0
+    },
+    "ref_str_add": {
+      "attempted": 60,
+      "preserved": 60,
+      "compile_failed": 0,
+      "output_differs": 0
+    },
+    "ref_opq_true": {
+      "attempted": 60,
+      "preserved": 60,
+      "compile_failed": 0,
+      "output_differs": 0
+    },
+    "ref_opq_junk": {
+      "attempted": 60,
+      "preserved": 60,
+      "compile_failed": 0,
+      "output_differs": 0
+    },
+    "ref_opq_both": {
+      "attempted": 60,
+      "preserved": 60,
+      "compile_failed": 0,
+      "output_differs": 0
+    },
+    "ref_ren_hex": {
+      "attempted": 60,
+      "preserved": 60,
+      "compile_failed": 0,
+      "output_differs": 0
+    },
+    "ref_ren_long": {
+      "attempted": 60,
+      "preserved": 60,
+      "compile_failed": 0,
+      "output_differs": 0
+    }
+  },
+  "failures": []
+}

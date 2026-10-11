@@ -1,0 +1,24 @@
+grid      results/v3/closed/noop/cells
+cells     20
+configs   4
+
+task         protocol   model          featureset        mean  sd_fold  sd_seed  seeds
+--------------------------------------------------------------------------------------
+provenance   lomfo      hist_gbdt      all             0.9444   0.0368   0.0026      5
+provenance   lomfo      random_forest  all             0.9433   0.0360   0.0048      5
+sub_provenance lomfo      hist_gbdt      all             0.8183   0.0795   0.0036      5
+sub_provenance lomfo      random_forest  all             0.8165   0.0682   0.0038      5
+
+sd_fold is the spread between held out folds within a seed. sd_seed is the spread between per seed means. A result is only reproducible in the sense version 1 claimed if sd_seed is small next to sd_fold.
+
+paired fold level comparisons against the best model in each cell
+
+  provenance / lomfo / all: reference hist_gbdt (0.9444)
+    vs random_forest  diff +0.0011 t   +0.16 wins 13/25 effect 0.032
+       per distinct fold (fold_index): won 2 tied 0 lost 3 of 5  sign p 1.0000  Wilcoxon p 1.0000
+
+  sub_provenance / lomfo / all: reference hist_gbdt (0.8183)
+    vs random_forest  diff +0.0019 t   +0.21 wins 16/25 effect 0.042
+       per distinct fold (fold_index): won 4 tied 0 lost 1 of 5  sign p 0.3750  Wilcoxon p 0.6250
+
+report written to results/v3/closed/noop/noop_aggregate.json

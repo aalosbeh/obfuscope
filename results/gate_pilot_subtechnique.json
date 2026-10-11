@@ -1,0 +1,131 @@
+{
+  "features_path": "data/features_pilot.csv",
+  "label": "sub_technique",
+  "group": "sample_id",
+  "per_class": [
+    {
+      "class": "ref_lit_mixed",
+      "n": 240,
+      "distinct_vectors": 240,
+      "distinct_ratio": 1.0,
+      "constant_features": 18,
+      "constant_fraction": 0.2951
+    },
+    {
+      "class": "ref_lit_sum",
+      "n": 240,
+      "distinct_vectors": 240,
+      "distinct_ratio": 1.0,
+      "constant_features": 18,
+      "constant_fraction": 0.2951
+    },
+    {
+      "class": "ref_lit_xor",
+      "n": 240,
+      "distinct_vectors": 240,
+      "distinct_ratio": 1.0,
+      "constant_features": 18,
+      "constant_fraction": 0.2951
+    },
+    {
+      "class": "ref_opq_both",
+      "n": 240,
+      "distinct_vectors": 240,
+      "distinct_ratio": 1.0,
+      "constant_features": 18,
+      "constant_fraction": 0.2951
+    },
+    {
+      "class": "ref_opq_junk",
+      "n": 240,
+      "distinct_vectors": 240,
+      "distinct_ratio": 1.0,
+      "constant_features": 18,
+      "constant_fraction": 0.2951
+    },
+    {
+      "class": "ref_opq_true",
+      "n": 240,
+      "distinct_vectors": 240,
+      "distinct_ratio": 1.0,
+      "constant_features": 18,
+      "constant_fraction": 0.2951
+    },
+    {
+      "class": "ref_ren_hex",
+      "n": 240,
+      "distinct_vectors": 226,
+      "distinct_ratio": 0.9417,
+      "constant_features": 18,
+      "constant_fraction": 0.2951
+    },
+    {
+      "class": "ref_ren_long",
+      "n": 240,
+      "distinct_vectors": 226,
+      "distinct_ratio": 0.9417,
+      "constant_features": 17,
+      "constant_fraction": 0.2787
+    },
+    {
+      "class": "ref_str_add",
+      "n": 240,
+      "distinct_vectors": 240,
+      "distinct_ratio": 1.0,
+      "constant_features": 19,
+      "constant_fraction": 0.3115
+    },
+    {
+      "class": "ref_str_xor",
+      "n": 240,
+      "distinct_vectors": 240,
+      "distinct_ratio": 1.0,
+      "constant_features": 19,
+      "constant_fraction": 0.3115
+    }
+  ],
+  "cross_group_duplicates": {
+    "group_column": "sample_id",
+    "duplicate_clusters_spanning_groups": 0,
+    "rows_in_those_clusters": 0,
+    "fraction_of_corpus": 0.0,
+    "total_rows": 2400,
+    "distinct_vectors_overall": 2370
+  },
+  "single_feature": {
+    "best_feature": "identifier_digit_ratio",
+    "best_macro_f1": 0.2656,
+    "top_five": [
+      {
+        "feature": "identifier_digit_ratio",
+        "macro_f1": 0.2656
+      },
+      {
+        "feature": "n_xor_op",
+        "macro_f1": 0.2421
+      },
+      {
+        "feature": "obf_xor_key",
+        "macro_f1": 0.2237
+      },
+      {
+        "feature": "hex_to_int_ratio",
+        "macro_f1": 0.2149
+      },
+      {
+        "feature": "size_bytes",
+        "macro_f1": 0.1894
+      }
+    ],
+    "threshold": 0.7
+  },
+  "permuted_labels": {
+    "real_macro_f1": 0.8617,
+    "permuted_macro_f1": 0.0912,
+    "chance_macro_f1": 0.1,
+    "excess_over_chance": -0.0088,
+    "tolerance": 0.08
+  },
+  "failures": [],
+  "passed": true
+}

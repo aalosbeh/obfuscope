@@ -1,0 +1,12 @@
+technique,auroc,n_seeds
+api_obfuscated,0.936±0.013,3
+advanced,0.959±0.005,3
+advanced_technique,0.970±0.007,3
+advanced_code,0.988±0.006,3
+advanced_microcode,0.991±0.005,3
+cryptographic,0.991±0.006,3
+code_based,0.996±0.001,3
+vm_obfuscated,0.997±0.004,3
+packer_obfuscated,1.000±0.000,3
+rop_obfuscated,1.000±0.000,3
+self_modifying,1.000±0.000,3

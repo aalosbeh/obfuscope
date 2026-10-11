@@ -1,0 +1,386 @@
+{
+  "thresholds": {
+    "min_distinct_ratio": 0.8,
+    "max_constant_fraction": 0.5,
+    "max_cross_group_fraction": 0.05,
+    "max_cross_class_fraction": 0.005,
+    "max_single_feature_f1": 0.7,
+    "min_headroom": 0.5,
+    "min_input_dependence": 0.2,
+    "permutation_tolerance": 0.08
+  },
+  "per_run": [
+    {
+      "family": "clean",
+      "seed": 0,
+      "note": "separated classes, input dependent variation, nothing degenerate",
+      "should_pass": true,
+      "passed": true,
+      "correct": true,
+      "checks_fired": [],
+      "n_rows": 960,
+      "failure_messages": []
+    },
+    {
+      "family": "clean",
+      "seed": 1,
+      "note": "separated classes, input dependent variation, nothing degenerate",
+      "should_pass": true,
+      "passed": true,
+      "correct": true,
+      "checks_fired": [],
+      "n_rows": 960,
+      "failure_messages": []
+    },
+    {
+      "family": "clean",
+      "seed": 2,
+      "note": "separated classes, input dependent variation, nothing degenerate",
+      "should_pass": true,
+      "passed": true,
+      "correct": true,
+      "checks_fired": [],
+      "n_rows": 960,
+      "failure_messages": []
+    },
+    {
+      "family": "hard_but_honest",
+      "seed": 0,
+      "note": "genuinely overlapping classes; difficult, not invalid",
+      "should_pass": true,
+      "passed": false,
+      "correct": false,
+      "checks_fired": [
+        "4b_headroom"
+      ],
+      "n_rows": 1440,
+      "failure_messages": [
+        "1. chance corrected headroom R is 0.406 (below 0.50). The best single feature 'f13' recovers 59.4% of the gap between chance and the full feature set, so the remaining features add little and the reported result is close to a one feature rule dressed up as a learned model."
+      ]
+    },
+    {
+      "family": "hard_but_honest",
+      "seed": 1,
+      "note": "genuinely overlapping classes; difficult, not invalid",
+      "should_pass": true,
+      "passed": true,
+      "correct": true,
+      "checks_fired": [],
+      "n_rows": 1440,
+      "failure_messages": []
+    },
+    {
+      "family": "hard_but_honest",
+      "seed": 2,
+      "note": "genuinely overlapping classes; difficult, not invalid",
+      "should_pass": true,
+      "passed": true,
+      "correct": true,
+      "checks_fired": [],
+      "n_rows": 1440,
+      "failure_messages": []
+    },
+    {
+      "family": "near_chance",
+      "seed": 0,
+      "note": "almost no class signal; unlearnable, not invalid",
+      "should_pass": true,
+      "passed": true,
+      "correct": true,
+      "checks_fired": [],
+      "n_rows": 960,
+      "failure_messages": []
+    },
+    {
+      "family": "near_chance",
+      "seed": 1,
+      "note": "almost no class signal; unlearnable, not invalid",
+      "should_pass": true,
+      "passed": true,
+      "correct": true,
+      "checks_fired": [],
+      "n_rows": 960,
+      "failure_messages": []
+    },
+    {
+      "family": "near_chance",
+      "seed": 2,
+      "note": "almost no class signal; unlearnable, not invalid",
+      "should_pass": true,
+      "passed": true,
+      "correct": true,
+      "checks_fired": [],
+      "n_rows": 960,
+      "failure_messages": []
+    },
+    {
+      "family": "leaked_id",
+      "seed": 0,
+      "note": "one column is a deterministic function of the label",
+      "should_pass": false,
+      "passed": false,
+      "correct": true,
+      "checks_fired": [
+        "4_feature_ceiling",
+        "4b_headroom"
+      ],
+      "n_rows": 960,
+      "failure_messages": [
+        "1. single feature 'f_leak' reaches macro F1 1.000 on its own (above 0.70) against a chance level of 0.250. One scalar is carrying the attribution result, so the corpus has an artifact dependent shortcut rather than a transformation signature.",
+        "2. chance corrected headroom R is 0.000 (below 0.50). The best single feature 'f_leak' recovers 100.0% of the gap between chance and the full feature set, so the remaining features add little and the reported result is close to a one feature rule dressed up as a learned model.",
+        "3. the best 2 features together reach macro F1 1.000 (above 0.70) with a depth 6 tree. A 2 feature rule settles the label, so the corpus is separable without the representation the paper is arguing for."
+      ]
+    },
+    {
+      "family": "leaked_id",
+      "seed": 1,
+      "note": "one column is a deterministic function of the label",
+      "should_pass": false,
+      "passed": false,
+      "correct": true,
+      "checks_fired": [
+        "4_feature_ceiling",
+        "4b_headroom"
+      ],
+      "n_rows": 960,
+      "failure_messages": [
+        "1. single feature 'f_leak' reaches macro F1 1.000 on its own (above 0.70) against a chance level of 0.250. One scalar is carrying the attribution result, so the corpus has an artifact dependent shortcut rather than a transformation signature.",
+        "2. chance corrected headroom R is 0.000 (below 0.50). The best single feature 'f_leak' recovers 100.0% of the gap between chance and the full feature set, so the remaining features add little and the reported result is close to a one feature rule dressed up as a learned model.",
+        "3. the best 2 features together reach macro F1 1.000 (above 0.70) with a depth 6 tree. A 2 feature rule settles the label, so the corpus is separable without the representation the paper is arguing for."
+      ]
+    },
+    {
+      "family": "leaked_id",
+      "seed": 2,
+      "note": "one column is a deterministic function of the label",
+      "should_pass": false,
+      "passed": false,
+      "correct": true,
+      "checks_fired": [
+        "4_feature_ceiling",
+        "4b_headroom"
+      ],
+      "n_rows": 960,
+      "failure_messages": [
+        "1. single feature 'f_leak' reaches macro F1 1.000 on its own (above 0.70) against a chance level of 0.250. One scalar is carrying the attribution result, so the corpus has an artifact dependent shortcut rather than a transformation signature.",
+        "2. chance corrected headroom R is 0.000 (below 0.50). The best single feature 'f_leak' recovers 100.0% of the gap between chance and the full feature set, so the remaining features add little and the reported result is close to a one feature rule dressed up as a learned model.",
+        "3. the best 2 features together reach macro F1 1.000 (above 0.70) with a depth 6 tree. A 2 feature rule settles the label, so the corpus is separable without the representation the paper is arguing for."
+      ]
+    },
+    {
+      "family": "seed_jitter_only",
+      "seed": 0,
+      "note": "distinct vectors from noise alone, no input dependence",
+      "should_pass": false,
+      "passed": false,
+      "correct": true,
+      "checks_fired": [
+        "1b_input_dependence"
+      ],
+      "n_rows": 960,
+      "failure_messages": [
+        "1. class 'class_0': the between program share of feature variance is -0.002 after bias correction, against 0.000 when the program labels are shuffled (p = 0.801 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 1.000 is being produced by generator randomness rather than by sensitivity to the material being transformed.",
+        "2. class 'class_1': the between program share of feature variance is -0.002 after bias correction, against 0.000 when the program labels are shuffled (p = 0.776 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 1.000 is being produced by generator randomness rather than by sensitivity to the material being transformed.",
+        "3. class 'class_2': the between program share of feature variance is -0.001 after bias correction, against -0.000 when the program labels are shuffled (p = 0.557 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 1.000 is being produced by generator randomness rather than by sensitivity to the material being transformed.",
+        "4. class 'class_3': the between program share of feature variance is -0.006 after bias correction, against 0.000 when the program labels are shuffled (p = 0.955 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 1.000 is being produced by generator randomness rather than by sensitivity to the material being transformed."
+      ]
+    },
+    {
+      "family": "seed_jitter_only",
+      "seed": 1,
+      "note": "distinct vectors from noise alone, no input dependence",
+      "should_pass": false,
+      "passed": false,
+      "correct": true,
+      "checks_fired": [
+        "1b_input_dependence"
+      ],
+      "n_rows": 960,
+      "failure_messages": [
+        "1. class 'class_0': the between program share of feature variance is -0.001 after bias correction, against -0.000 when the program labels are shuffled (p = 0.592 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 1.000 is being produced by generator randomness rather than by sensitivity to the material being transformed.",
+        "2. class 'class_1': the between program share of feature variance is -0.001 after bias correction, against 0.000 when the program labels are shuffled (p = 0.557 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 1.000 is being produced by generator randomness rather than by sensitivity to the material being transformed.",
+        "3. class 'class_3': the between program share of feature variance is -0.002 after bias correction, against -0.000 when the program labels are shuffled (p = 0.657 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 1.000 is being produced by generator randomness rather than by sensitivity to the material being transformed."
+      ]
+    },
+    {
+      "family": "seed_jitter_only",
+      "seed": 2,
+      "note": "distinct vectors from noise alone, no input dependence",
+      "should_pass": false,
+      "passed": false,
+      "correct": true,
+      "checks_fired": [
+        "1b_input_dependence"
+      ],
+      "n_rows": 960,
+      "failure_messages": [
+        "1. class 'class_0': the between program share of feature variance is 0.002 after bias correction, against -0.000 when the program labels are shuffled (p = 0.318 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 1.000 is being produced by generator randomness rather than by sensitivity to the material being transformed.",
+        "2. class 'class_1': the between program share of feature variance is 0.001 after bias correction, against -0.000 when the program labels are shuffled (p = 0.408 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 1.000 is being produced by generator randomness rather than by sensitivity to the material being transformed.",
+        "3. class 'class_2': the between program share of feature variance is 0.002 after bias correction, against 0.000 when the program labels are shuffled (p = 0.279 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 1.000 is being produced by generator randomness rather than by sensitivity to the material being transformed.",
+        "4. class 'class_3': the between program share of feature variance is 0.001 after bias correction, against -0.000 when the program labels are shuffled (p = 0.393 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 1.000 is being produced by generator randomness rather than by sensitivity to the material being transformed."
+      ]
+    },
+    {
+      "family": "duplicated_rows",
+      "seed": 0,
+      "note": "identical vectors under two different input programs",
+      "should_pass": false,
+      "passed": false,
+      "correct": true,
+      "checks_fired": [
+        "3_cross_group_duplicates"
+      ],
+      "n_rows": 1036,
+      "failure_messages": [
+        "1. 76 duplicate feature vector clusters span more than one 'sample_id', covering 152 rows (14.7% of the corpus, above 5.0%). Grouping by 'sample_id' therefore does not stop feature identical rows appearing in both train and test, so the held out score is optimistic."
+      ]
+    },
+    {
+      "family": "duplicated_rows",
+      "seed": 1,
+      "note": "identical vectors under two different input programs",
+      "should_pass": false,
+      "passed": false,
+      "correct": true,
+      "checks_fired": [
+        "3_cross_group_duplicates"
+      ],
+      "n_rows": 1036,
+      "failure_messages": [
+        "1. 76 duplicate feature vector clusters span more than one 'sample_id', covering 152 rows (14.7% of the corpus, above 5.0%). Grouping by 'sample_id' therefore does not stop feature identical rows appearing in both train and test, so the held out score is optimistic."
+      ]
+    },
+    {
+      "family": "duplicated_rows",
+      "seed": 2,
+      "note": "identical vectors under two different input programs",
+      "should_pass": false,
+      "passed": false,
+      "correct": true,
+      "checks_fired": [
+        "3_cross_group_duplicates"
+      ],
+      "n_rows": 1036,
+      "failure_messages": [
+        "1. 76 duplicate feature vector clusters span more than one 'sample_id', covering 152 rows (14.7% of the corpus, above 5.0%). Grouping by 'sample_id' therefore does not stop feature identical rows appearing in both train and test, so the held out score is optimistic."
+      ]
+    },
+    {
+      "family": "ambiguous_labels",
+      "seed": 0,
+      "note": "identical vectors under two different class labels",
+      "should_pass": false,
+      "passed": false,
+      "correct": true,
+      "checks_fired": [
+        "6_cross_class_duplicates"
+      ],
+      "n_rows": 988,
+      "failure_messages": [
+        "1. 28 duplicate feature vector clusters carry more than one 'technique' label, covering 56 rows (5.67% of the corpus, above 0.50%). 28 of those rows cannot be classified correctly by any model, so the accuracy ceiling for this label is 0.9717 and the feature set does not separate the classes it is being asked to name."
+      ]
+    },
+    {
+      "family": "ambiguous_labels",
+      "seed": 1,
+      "note": "identical vectors under two different class labels",
+      "should_pass": false,
+      "passed": false,
+      "correct": true,
+      "checks_fired": [
+        "6_cross_class_duplicates"
+      ],
+      "n_rows": 988,
+      "failure_messages": [
+        "1. 28 duplicate feature vector clusters carry more than one 'technique' label, covering 56 rows (5.67% of the corpus, above 0.50%). 28 of those rows cannot be classified correctly by any model, so the accuracy ceiling for this label is 0.9717 and the feature set does not separate the classes it is being asked to name."
+      ]
+    },
+    {
+      "family": "ambiguous_labels",
+      "seed": 2,
+      "note": "identical vectors under two different class labels",
+      "should_pass": false,
+      "passed": false,
+      "correct": true,
+      "checks_fired": [
+        "6_cross_class_duplicates"
+      ],
+      "n_rows": 988,
+      "failure_messages": [
+        "1. 28 duplicate feature vector clusters carry more than one 'technique' label, covering 56 rows (5.67% of the corpus, above 0.50%). 28 of those rows cannot be classified correctly by any model, so the accuracy ceiling for this label is 0.9717 and the feature set does not separate the classes it is being asked to name."
+      ]
+    }
+  ],
+  "per_family": {
+    "clean": {
+      "expected": "pass",
+      "observed": "pass",
+      "correct_seeds": 3,
+      "n_seeds": 3,
+      "checks_fired": [],
+      "note": "separated classes, input dependent variation, nothing degenerate"
+    },
+    "hard_but_honest": {
+      "expected": "pass",
+      "observed": "mixed",
+      "correct_seeds": 2,
+      "n_seeds": 3,
+      "checks_fired": [
+        "4b_headroom"
+      ],
+      "note": "genuinely overlapping classes; difficult, not invalid"
+    },
+    "near_chance": {
+      "expected": "pass",
+      "observed": "pass",
+      "correct_seeds": 3,
+      "n_seeds": 3,
+      "checks_fired": [],
+      "note": "almost no class signal; unlearnable, not invalid"
+    },
+    "leaked_id": {
+      "expected": "fail",
+      "observed": "fail",
+      "correct_seeds": 3,
+      "n_seeds": 3,
+      "checks_fired": [
+        "4_feature_ceiling",
+        "4b_headroom"
+      ],
+      "note": "one column is a deterministic function of the label"
+    },
+    "seed_jitter_only": {
+      "expected": "fail",
+      "observed": "fail",
+      "correct_seeds": 3,
+      "n_seeds": 3,
+      "checks_fired": [
+        "1b_input_dependence"
+      ],
+      "note": "distinct vectors from noise alone, no input dependence"
+    },
+    "duplicated_rows": {
+      "expected": "fail",
+      "observed": "fail",
+      "correct_seeds": 3,
+      "n_seeds": 3,
+      "checks_fired": [
+        "3_cross_group_duplicates"
+      ],
+      "note": "identical vectors under two different input programs"
+    },
+    "ambiguous_labels": {
+      "expected": "fail",
+      "observed": "fail",
+      "correct_seeds": 3,
+      "n_seeds": 3,
+      "checks_fired": [
+        "6_cross_class_duplicates"
+      ],
+      "note": "identical vectors under two different class labels"
+    }
+  },
+  "agreement": 0.9524,
+  "sensitivity": 1.0,
+  "specificity": 0.8889
+}

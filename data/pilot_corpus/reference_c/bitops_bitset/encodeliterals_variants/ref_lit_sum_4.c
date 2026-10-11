@@ -1,0 +1,16 @@
+#include <stdio.h>
+#define WORDS 8
+static unsigned set[WORDS];
+static void set_bit(int i) { set[i / (0xA53 - 0xA33)] |= (0xD61u - 0xD60u) << (i % (0x6AF - 0x68F)); }
+static void clr_bit(int i) { set[i / (0x369 - 0x349)] &= ~((0xC99u - 0xC98u) << (i % (0x998 - 0x978))); }
+static int get_bit(int i) { return (set[i / (0x7CA - 0x7AA)] >> (i % (0xBFE - 0xBDE))) & (0xAE2u - 0xAE1u); }
+int main(void) {
+    for (int i = (0x287 - 0x287); i < (0x8F5 - 0x7F5); i++) if (i % (0xB03 - 0xB00) == (0x77A - 0x77A)) set_bit(i);
+    for (int i = (0xFED - 0xFED); i < (0x10EE - 0xFEE); i++) if (i % (0xA57 - 0xA50) == (0xA8 - 0xA8)) clr_bit(i);
+    int count = (0x3D1 - 0x3D1);
+    for (int i = (0x50 - 0x50); i < (0x27D - 0x17D); i++) count += get_bit(i);
+    unsigned fold = (0xA79 - 0xA79);
+    for (int w = (0xB45 - 0xB45); w < WORDS; w++) fold ^= set[w];
+    printf("%d %08x\n", count, fold);
+    return (0x83 - 0x83);
+}

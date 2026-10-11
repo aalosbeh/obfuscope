@@ -1,0 +1,9 @@
+# Environment of record for the article's tables: Python 3.9.6 with exactly
+# these versions (see environment.yml). pyarrow is optional and only needed for
+# the --parquet mirror in obfuscope.build_dataset or for .parquet inputs.
+numpy==2.0.2
+scipy==1.13.1
+pandas==2.3.3
+scikit-learn==1.6.1
+matplotlib==3.9.4
+pytest==8.4.2

@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "obfuscope"
+version = "1.0.0"
+description = "Obfuscation provenance attribution on source-level C transformations: a corpus validity gate and open set protocol design"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Anas Alsobeh"}]
+# Lower bounds only. The environment of record for the article's tables is
+# pinned exactly in requirements.txt and environment.yml (Python 3.9.6).
+dependencies = [
+  "numpy>=2.0", "scipy>=1.13", "pandas>=2.2",
+  "scikit-learn>=1.5", "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+parquet = ["pyarrow>=15"]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

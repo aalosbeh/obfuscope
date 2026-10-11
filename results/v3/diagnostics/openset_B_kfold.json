@@ -1,0 +1,240 @@
+{
+  "runner": "AUDIT-GENERATED results/v3/run_openset_instrumented.py",
+  "merged_from": [
+    [
+      "--data",
+      "data/features_pilot.csv",
+      "--models",
+      "random_forest",
+      "extra_trees",
+      "logreg",
+      "svm_rbf",
+      "knn",
+      "mlp",
+      "--knn-k",
+      "5",
+      "--label",
+      "sub_technique",
+      "--novel-programs",
+      "heldout",
+      "--split",
+      "program_kfold",
+      "--seeds",
+      "0",
+      "--report",
+      "results/v3/parts/openset_B_kfold_s0.json"
+    ],
+    [
+      "--data",
+      "data/features_pilot.csv",
+      "--models",
+      "random_forest",
+      "extra_trees",
+      "logreg",
+      "svm_rbf",
+      "knn",
+      "mlp",
+      "--knn-k",
+      "5",
+      "--label",
+      "sub_technique",
+      "--novel-programs",
+      "heldout",
+      "--split",
+      "program_kfold",
+      "--seeds",
+      "1",
+      "--report",
+      "results/v3/parts/openset_B_kfold_s1.json"
+    ],
+    [
+      "--data",
+      "data/features_pilot.csv",
+      "--models",
+      "random_forest",
+      "extra_trees",
+      "logreg",
+      "svm_rbf",
+      "knn",
+      "mlp",
+      "--knn-k",
+      "5",
+      "--label",
+      "sub_technique",
+      "--novel-programs",
+      "heldout",
+      "--split",
+      "program_kfold",
+      "--seeds",
+      "2",
+      "--report",
+      "results/v3/parts/openset_B_kfold_s2.json"
+    ],
+    [
+      "--data",
+      "data/features_pilot.csv",
+      "--models",
+      "random_forest",
+      "extra_trees",
+      "logreg",
+      "svm_rbf",
+      "knn",
+      "mlp",
+      "--knn-k",
+      "5",
+      "--label",
+      "sub_technique",
+      "--novel-programs",
+      "heldout",
+      "--split",
+      "program_kfold",
+      "--seeds",
+      "3",
+      "--report",
+      "results/v3/parts/openset_B_kfold_s3.json"
+    ],
+    [
+      "--data",
+      "data/features_pilot.csv",
+      "--models",
+      "random_forest",
+      "extra_trees",
+      "logreg",
+      "svm_rbf",
+      "knn",
+      "mlp",
+      "--knn-k",
+      "5",
+      "--label",
+      "sub_technique",
+      "--novel-programs",
+      "heldout",
+      "--split",
+      "program_kfold",
+      "--seeds",
+      "4",
+      "--report",
+      "results/v3/parts/openset_B_kfold_s4.json"
+    ]
+  ],
+  "runtime_seconds_sum": 7924.1,
+  "runtime_seconds_max_part": 1796.6,
+  "fits": {
+    "random_forest": 250,
+    "extra_trees": 250,
+    "logreg": 250,
+    "svm_rbf": 250,
+    "knn": 250,
+    "mlp": 250
+  },
+  "fit_warnings_by_category": {
+    "logreg": {
+      "RuntimeWarning": 1500
+    },
+    "mlp": {
+      "RuntimeWarning": 750,
+      "ConvergenceWarning": 250
+    }
+  },
+  "fits_with_warning_category": {
+    "logreg": {
+      "RuntimeWarning": 250
+    },
+    "mlp": {
+      "ConvergenceWarning": 250,
+      "RuntimeWarning": 250
+    }
+  },
+  "mlp_fits_reaching_max_iter": {
+    "mlp": 250
+  },
+  "mlp_fits_with_nonfinite_parameters": {},
+  "weibull": {
+    "extra_trees|posterior": {
+      "fits": 2250,
+      "fallback_degenerate": 2058
+    },
+    "knn|posterior": {
+      "fits": 2250,
+      "fallback_degenerate": 529
+    },
+    "logreg|logit": {
+      "fits": 2250
+    },
+    "logreg|posterior": {
+      "fits": 2250
+    },
+    "mlp|logit": {
+      "fits": 2250
+    },
+    "mlp|posterior": {
+      "fits": 2250
+    },
+    "random_forest|posterior": {
+      "fits": 2250
+    },
+    "svm_rbf|logit": {
+      "fits": 2250
+    },
+    "svm_rbf|posterior": {
+      "fits": 2250
+    }
+  },
+  "tail_fallback_lt3_correct_classes": {},
+  "tail_classes_total": {
+    "random_forest": 2250,
+    "extra_trees": 2250,
+    "logreg": 2250,
+    "svm_rbf": 2250,
+    "knn": 2250,
+    "mlp": 2250
+  },
+  "mlp_n_iter_summary_parts": [
+    {
+      "mlp": {
+        "n": 50,
+        "min": 200,
+        "median": 200.0,
+        "max": 200
+      }
+    },
+    {
+      "mlp": {
+        "n": 50,
+        "min": 200,
+        "median": 200.0,
+        "max": 200
+      }
+    },
+    {
+      "mlp": {
+        "n": 50,
+        "min": 200,
+        "median": 200.0,
+        "max": 200
+      }
+    },
+    {
+      "mlp": {
+        "n": 50,
+        "min": 200,
+        "median": 200.0,
+        "max": 200
+      }
+    },
+    {
+      "mlp": {
+        "n": 50,
+        "min": 200,
+        "median": 200.0,
+        "max": 200
+      }
+    }
+  ],
+  "env": {
+    "LOKY_MAX_CPU_COUNT": "4",
+    "OMP_NUM_THREADS": "1",
+    "PYTHONPATH": "/Users/anasalsobeh/Downloads/manar/ofuScope/submission_package/code/obfuscope-corrected/src"
+  },
+  "python": "3.9.6"
+}

@@ -1,0 +1,36 @@
+# Sharded feature extraction. Each job builds one partial feature CSV from the
+# artifacts assigned to its shard, reading the corpus from the OSDF cache.
+#
+#   condor_submit features.sub
+#
+# NUM_SHARDS is set here and must match the value passed to make_manifest.py and
+# the DAG.
+
+universe                = container
+container_image         = osdf:///ospool/ap40/data/$ENV(USER)/obfuscope.sif
+
+executable              = features.sh
+arguments               = $(Process) $(num_shards)
+
+# The corpus lives on the OSDF origin; execution points pull it from cache.
+transfer_input_files    = obfuscope_src.tar.gz, osdf:///ospool/ap40/data/$ENV(USER)/obfuscope/corpus.tar.gz
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+
+transfer_output_files   = features_shard_$(Process).csv
+transfer_output_remaps  = "features_shard_$(Process).csv = data/shards/features_shard_$(Process).csv"
+
+request_cpus            = 4
+request_memory          = 4GB
+request_disk            = 6GB
++JobDurationCategory    = "Medium"
+max_retries             = 5
+
+output                  = logs/feat_$(Cluster)_$(Process).out
+error                   = logs/feat_$(Cluster)_$(Process).err
+log                     = logs/feat.log
+
+# num_shards is provided on the command line:
+#   condor_submit features.sub num_shards=64
+num_shards              = 64
+queue $(num_shards)

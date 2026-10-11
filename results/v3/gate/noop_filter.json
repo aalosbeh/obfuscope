@@ -1,0 +1,87 @@
+{
+  "label": "AUDIT-GENERATED no-op filter (run:gate-v3)",
+  "source": "data/features_pilot.csv",
+  "rows_in": 2400,
+  "rows_removed": 32,
+  "rows_out": 2368,
+  "removed_by": [
+    {
+      "sample_id": "bitops_popcount",
+      "sub_technique": "ref_ren_hex",
+      "n": 8
+    },
+    {
+      "sample_id": "bitops_popcount",
+      "sub_technique": "ref_ren_long",
+      "n": 8
+    },
+    {
+      "sample_id": "textproc_trim",
+      "sub_technique": "ref_ren_hex",
+      "n": 8
+    },
+    {
+      "sample_id": "textproc_trim",
+      "sub_technique": "ref_ren_long",
+      "n": 8
+    }
+  ],
+  "output_csv": "/Users/anasalsobeh/Downloads/manar/ofuScope/submission_package/code/obfuscope-corrected/results/v3/gate/features_pilot_no_noop.csv",
+  "output_sha256": "d02598341bfb4c399d4cc8884924da81c9a67a823400bf4b8b4bac16406730a0",
+  "class_counts_after": {
+    "technique": {
+      "addopaque": 720,
+      "encodeliterals": 720,
+      "encodestrings": 480,
+      "renameidentifiers": 448
+    },
+    "sub_technique": {
+      "ref_opq_junk": 240,
+      "ref_opq_true": 240,
+      "ref_opq_both": 240,
+      "ref_str_xor": 240,
+      "ref_str_add": 240,
+      "ref_lit_xor": 240,
+      "ref_lit_mixed": 240,
+      "ref_lit_sum": 240,
+      "ref_ren_long": 224,
+      "ref_ren_hex": 224
+    }
+  },
+  "distinct_vectors_among_noop_rows_per_program": {
+    "bitops_popcount": 1,
+    "textproc_trim": 1
+  },
+  "diag6_clusters_on_full_table": [
+    {
+      "rows": 16,
+      "sub_technique": [
+        "ref_ren_hex",
+        "ref_ren_long"
+      ],
+      "technique": [
+        "renameidentifiers"
+      ],
+      "sample_id": [
+        "bitops_popcount"
+      ],
+      "all_rows_are_noop": true
+    },
+    {
+      "rows": 16,
+      "sub_technique": [
+        "ref_ren_hex",
+        "ref_ren_long"
+      ],
+      "technique": [
+        "renameidentifiers"
+      ],
+      "sample_id": [
+        "textproc_trim"
+      ],
+      "all_rows_are_noop": true
+    }
+  ],
+  "diag6_rows_on_full_table": 32,
+  "diag6_clusters_all_noop": true
+}

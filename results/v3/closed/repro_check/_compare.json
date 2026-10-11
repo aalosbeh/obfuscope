@@ -1,0 +1,96 @@
+{
+  "label": "AUDIT-GENERATED run:closedset-v3",
+  "rows": [
+    {
+      "cell": "provenance_grouped_cv_extra_trees_all_s0.json",
+      "max_abs_fold_diff": 0.0,
+      "identical_confusions": true,
+      "rerun_mean": 0.9495515823126028,
+      "committed_mean": 0.9495515823126028
+    },
+    {
+      "cell": "provenance_grouped_cv_hist_gbdt_all_s0.json",
+      "max_abs_fold_diff": 0.0,
+      "identical_confusions": true,
+      "rerun_mean": 0.9595443789817313,
+      "committed_mean": 0.9595443789817313
+    },
+    {
+      "cell": "provenance_grouped_cv_knn_all_s0.json",
+      "max_abs_fold_diff": 0.0,
+      "identical_confusions": true,
+      "rerun_mean": 0.8356105528074524,
+      "committed_mean": 0.8356105528074524
+    },
+    {
+      "cell": "provenance_grouped_cv_logreg_all_s0.json",
+      "max_abs_fold_diff": 0.0,
+      "identical_confusions": true,
+      "rerun_mean": 0.8858567027749975,
+      "committed_mean": 0.8858567027749975
+    },
+    {
+      "cell": "provenance_grouped_cv_mlp_all_s0.json",
+      "max_abs_fold_diff": 0.0,
+      "identical_confusions": true,
+      "rerun_mean": 0.8456094723157269,
+      "committed_mean": 0.8456094723157269
+    },
+    {
+      "cell": "provenance_grouped_cv_random_forest_all_s0.json",
+      "max_abs_fold_diff": 0.0,
+      "identical_confusions": true,
+      "rerun_mean": 0.9568169083655261,
+      "committed_mean": 0.9568169083655261
+    },
+    {
+      "cell": "provenance_grouped_cv_svm_rbf_all_s0.json",
+      "max_abs_fold_diff": 0.0,
+      "identical_confusions": true,
+      "rerun_mean": 0.9013062477838215,
+      "committed_mean": 0.9013062477838215
+    },
+    {
+      "cell": "provenance_lomfo_hist_gbdt_all_s0.json",
+      "max_abs_fold_diff": 0.0,
+      "identical_confusions": true,
+      "rerun_mean": 0.9490916197100452,
+      "committed_mean": 0.9490916197100452
+    },
+    {
+      "cell": "provenance_lomfo_mlp_all_s0.json",
+      "max_abs_fold_diff": 0.0,
+      "identical_confusions": true,
+      "rerun_mean": 0.7980925082391754,
+      "committed_mean": 0.7980925082391754
+    },
+    {
+      "cell": "provenance_lomfo_random_forest_all_s0.json",
+      "max_abs_fold_diff": 0.0,
+      "identical_confusions": true,
+      "rerun_mean": 0.9475533115378122,
+      "committed_mean": 0.9475533115378122
+    },
+    {
+      "cell": "sub_provenance_lomfo_hist_gbdt_all_s0.json",
+      "max_abs_fold_diff": 0.0,
+      "identical_confusions": true,
+      "rerun_mean": 0.8221976412261368,
+      "committed_mean": 0.8221976412261368
+    },
+    {
+      "cell": "sub_provenance_lomfo_mlp_all_s0.json",
+      "max_abs_fold_diff": 0.0,
+      "identical_confusions": true,
+      "rerun_mean": 0.6980150845379469,
+      "committed_mean": 0.6980150845379469
+    },
+    {
+      "cell": "sub_provenance_lomfo_random_forest_all_s0.json",
+      "max_abs_fold_diff": 0.0,
+      "identical_confusions": true,
+      "rerun_mean": 0.79984161804902,
+      "committed_mean": 0.79984161804902
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "openset_report": "results/openset_v2_subtechnique.json",
+  "scorer": "msp",
+  "positions": {
+    "ref_opq_junk": {
+      "family": "addopaque",
+      "position": "end",
+      "rank_in_family": 0,
+      "n_siblings": 3,
+      "projection": -3.0836,
+      "axis_variance_explained": 0.9892
+    },
+    "ref_opq_both": {
+      "family": "addopaque",
+      "position": "interior",
+      "rank_in_family": 1,
+      "n_siblings": 3,
+      "projection": -0.0626,
+      "axis_variance_explained": 0.9892
+    },
+    "ref_opq_true": {
+      "family": "addopaque",
+      "position": "end",
+      "rank_in_family": 2,
+      "n_siblings": 3,
+      "projection": 3.1463,
+      "axis_variance_explained": 0.9892
+    },
+    "ref_lit_xor": {
+      "family": "encodeliterals",
+      "position": "end",
+      "rank_in_family": 0,
+      "n_siblings": 3,
+      "projection": -2.1615,
+      "axis_variance_explained": 0.9982
+    },
+    "ref_lit_mixed": {
+      "family": "encodeliterals",
+      "position": "interior",
+      "rank_in_family": 1,
+      "n_siblings": 3,
+      "projection": -0.0562,
+      "axis_variance_explained": 0.9982
+    },
+    "ref_lit_sum": {
+      "family": "encodeliterals",
+      "position": "end",
+      "rank_in_family": 2,
+      "n_siblings": 3,
+      "projection": 2.2177,
+      "axis_variance_explained": 0.9982
+    },
+    "ref_str_add": {
+      "family": "encodestrings",
+      "position": "end_of_pair",
+      "rank_in_family": 0,
+      "n_siblings": 2,
+      "projection": -0.1164,
+      "axis_variance_explained": 1.0
+    },
+    "ref_str_xor": {
+      "family": "encodestrings",
+      "position": "end_of_pair",
+      "rank_in_family": 1,
+      "n_siblings": 2,
+      "projection": 0.1164,
+      "axis_variance_explained": 1.0
+    },
+    "ref_ren_hex": {
+      "family": "renameidentifiers",
+      "position": "end_of_pair",
+      "rank_in_family": 0,
+      "n_siblings": 2,
+      "projection": -1.2404,
+      "axis_variance_explained": 1.0
+    },
+    "ref_ren_long": {
+      "family": "renameidentifiers",
+      "position": "end_of_pair",
+      "rank_in_family": 1,
+      "n_siblings": 2,
+      "projection": 1.2404,
+      "axis_variance_explained": 1.0
+    }
+  },
+  "per_class": [
+    {
+      "sub_technique": "ref_opq_both",
+      "position": "interior",
+      "family": "addopaque",
+      "n_folds": 30,
+      "auroc_mean": 0.4129,
+      "auroc_sd": 0.141,
+      "auroc_min": 0.2292,
+      "auroc_max": 0.6781
+    },
+    {
+      "sub_technique": "ref_opq_junk",
+      "position": "end",
+      "family": "addopaque",
+      "n_folds": 30,
+      "auroc_mean": 0.1303,
+      "auroc_sd": 0.1148,
+      "auroc_min": 0.0183,
+      "auroc_max": 0.3476
+    },
+    {
+      "sub_technique": "ref_opq_true",
+      "position": "end",
+      "family": "addopaque",
+      "n_folds": 30,
+      "auroc_mean": 0.2375,
+      "auroc_sd": 0.1074,
+      "auroc_min": 0.0838,
+      "auroc_max": 0.4398
+    },
+    {
+      "sub_technique": "ref_lit_mixed",
+      "position": "interior",
+      "family": "encodeliterals",
+      "n_folds": 30,
+      "auroc_mean": 0.4405,
+      "auroc_sd": 0.1223,
+      "auroc_min": 0.2789,
+      "auroc_max": 0.6567
+    },
+    {
+      "sub_technique": "ref_lit_sum",
+      "position": "end",
+      "family": "encodeliterals",
+      "n_folds": 30,
+      "auroc_mean": 0.2328,
+      "auroc_sd": 0.0893,
+      "auroc_min": 0.1366,
+      "auroc_max": 0.5003
+    },
+    {
+      "sub_technique": "ref_lit_xor",
+      "position": "end",
+      "family": "encodeliterals",
+      "n_folds": 30,
+      "auroc_mean": 0.1541,
+      "auroc_sd": 0.0971,
+      "auroc_min": 0.0495,
+      "auroc_max": 0.3795
+    },
+    {
+      "sub_technique": "ref_str_add",
+      "position": "end_of_pair",
+      "family": "encodestrings",
+      "n_folds": 30,
+      "auroc_mean": 0.2431,
+      "auroc_sd": 0.1116,
+      "auroc_min": 0.0581,
+      "auroc_max": 0.4391
+    },
+    {
+      "sub_technique": "ref_str_xor",
+      "position": "end_of_pair",
+      "family": "encodestrings",
+      "n_folds": 30,
+      "auroc_mean": 0.2261,
+      "auroc_sd": 0.123,
+      "auroc_min": 0.0454,
+      "auroc_max": 0.4158
+    },
+    {
+      "sub_technique": "ref_ren_hex",
+      "position": "end_of_pair",
+      "family": "renameidentifiers",
+      "n_folds": 30,
+      "auroc_mean": 0.5744,
+      "auroc_sd": 0.1374,
+      "auroc_min": 0.3637,
+      "auroc_max": 0.837
+    },
+    {
+      "sub_technique": "ref_ren_long",
+      "position": "end_of_pair",
+      "family": "renameidentifiers",
+      "n_folds": 30,
+      "auroc_mean": 0.3503,
+      "auroc_sd": 0.1377,
+      "auroc_min": 0.1456,
+      "auroc_max": 0.636
+    }
+  ],
+  "grouped": {
+    "interior": {
+      "n": 60,
+      "mean": 0.4267,
+      "sd": 0.1316,
+      "fraction_below_half": 0.6667
+    },
+    "end": {
+      "n": 120,
+      "mean": 0.1887,
+      "sd": 0.1119,
+      "fraction_below_half": 0.9917
+    },
+    "end_of_pair": {
+      "n": 120,
+      "mean": 0.3485,
+      "sd": 0.1881,
+      "fraction_below_half": 0.8083
+    }
+  },
+  "contrast_end_vs_interior": {
+    "mean_a": 0.1887,
+    "mean_b": 0.4267,
+    "difference": -0.238,
+    "n_a": 120,
+    "n_b": 60,
+    "t_statistic": -12.008,
+    "welch_df": 102.7
+  },
+  "verdict": "consistent with the model: ends invert further than interior members"
+}

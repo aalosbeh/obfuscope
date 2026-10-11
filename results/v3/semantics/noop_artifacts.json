@@ -1,0 +1,450 @@
+{
+  "corpus": "data/pilot_corpus",
+  "definitions": {
+    "byte_identical": "artifact bytes equal the input program's bytes",
+    "whitespace_identical": "equal after collapsing every whitespace run to one space and stripping both ends; includes byte_identical",
+    "whitespace_only_difference": "whitespace_identical and not byte_identical"
+  },
+  "artifacts_found": 2400,
+  "artifacts_checked": 2400,
+  "artifacts_unmatched": 0,
+  "unmatched_examples": [],
+  "input_programs": 30,
+  "totals": {
+    "byte_identical": 32,
+    "whitespace_identical": 32,
+    "whitespace_only_difference": 0,
+    "byte_identical_fraction": 0.013333,
+    "whitespace_identical_fraction": 0.013333
+  },
+  "per_parameterisation": {
+    "ref_lit_mixed": {
+      "artifacts": 240,
+      "byte_identical": 0,
+      "whitespace_identical": 0,
+      "whitespace_only_difference": 0
+    },
+    "ref_lit_sum": {
+      "artifacts": 240,
+      "byte_identical": 0,
+      "whitespace_identical": 0,
+      "whitespace_only_difference": 0
+    },
+    "ref_lit_xor": {
+      "artifacts": 240,
+      "byte_identical": 0,
+      "whitespace_identical": 0,
+      "whitespace_only_difference": 0
+    },
+    "ref_opq_both": {
+      "artifacts": 240,
+      "byte_identical": 0,
+      "whitespace_identical": 0,
+      "whitespace_only_difference": 0
+    },
+    "ref_opq_junk": {
+      "artifacts": 240,
+      "byte_identical": 0,
+      "whitespace_identical": 0,
+      "whitespace_only_difference": 0
+    },
+    "ref_opq_true": {
+      "artifacts": 240,
+      "byte_identical": 0,
+      "whitespace_identical": 0,
+      "whitespace_only_difference": 0
+    },
+    "ref_ren_hex": {
+      "artifacts": 240,
+      "byte_identical": 16,
+      "whitespace_identical": 16,
+      "whitespace_only_difference": 0
+    },
+    "ref_ren_long": {
+      "artifacts": 240,
+      "byte_identical": 16,
+      "whitespace_identical": 16,
+      "whitespace_only_difference": 0
+    },
+    "ref_str_add": {
+      "artifacts": 240,
+      "byte_identical": 0,
+      "whitespace_identical": 0,
+      "whitespace_only_difference": 0
+    },
+    "ref_str_xor": {
+      "artifacts": 240,
+      "byte_identical": 0,
+      "whitespace_identical": 0,
+      "whitespace_only_difference": 0
+    }
+  },
+  "per_program": {
+    "bitops_popcount": {
+      "artifacts": 80,
+      "byte_identical": 16,
+      "whitespace_identical": 16,
+      "whitespace_only_difference": 0
+    },
+    "textproc_trim": {
+      "artifacts": 80,
+      "byte_identical": 16,
+      "whitespace_identical": 16,
+      "whitespace_only_difference": 0
+    }
+  },
+  "programs_with_no_identical_artifact": [
+    "bitops_base64",
+    "bitops_bitset",
+    "bitops_fnvhash",
+    "bitops_graycode",
+    "bitops_xorcipher",
+    "dsalgo_bsearch",
+    "dsalgo_bst",
+    "dsalgo_graphbfs",
+    "dsalgo_heap",
+    "dsalgo_linkedlist",
+    "dsalgo_quicksort",
+    "mathlib_fib",
+    "mathlib_gcd",
+    "mathlib_matmul",
+    "mathlib_newton",
+    "mathlib_primes",
+    "mathlib_stats",
+    "statemach_crc",
+    "statemach_exprparse",
+    "statemach_lexer",
+    "statemach_retry",
+    "statemach_traffic",
+    "statemach_vending",
+    "textproc_csvsplit",
+    "textproc_rot13",
+    "textproc_runlength",
+    "textproc_tokenize",
+    "textproc_wordcount"
+  ],
+  "per_program_parameterisation": [
+    {
+      "sample_id": "bitops_popcount",
+      "param": "ref_ren_hex",
+      "artifacts": 8,
+      "byte_identical": 8,
+      "whitespace_identical": 8,
+      "whitespace_only_difference": 0
+    },
+    {
+      "sample_id": "bitops_popcount",
+      "param": "ref_ren_long",
+      "artifacts": 8,
+      "byte_identical": 8,
+      "whitespace_identical": 8,
+      "whitespace_only_difference": 0
+    },
+    {
+      "sample_id": "textproc_trim",
+      "param": "ref_ren_hex",
+      "artifacts": 8,
+      "byte_identical": 8,
+      "whitespace_identical": 8,
+      "whitespace_only_difference": 0
+    },
+    {
+      "sample_id": "textproc_trim",
+      "param": "ref_ren_long",
+      "artifacts": 8,
+      "byte_identical": 8,
+      "whitespace_identical": 8,
+      "whitespace_only_difference": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_hex_0.c",
+      "sample_id": "bitops_popcount",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_hex",
+      "replicate": 0,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_hex_1.c",
+      "sample_id": "bitops_popcount",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_hex",
+      "replicate": 1,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_hex_2.c",
+      "sample_id": "bitops_popcount",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_hex",
+      "replicate": 2,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_hex_3.c",
+      "sample_id": "bitops_popcount",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_hex",
+      "replicate": 3,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_hex_4.c",
+      "sample_id": "bitops_popcount",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_hex",
+      "replicate": 4,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_hex_5.c",
+      "sample_id": "bitops_popcount",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_hex",
+      "replicate": 5,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_hex_6.c",
+      "sample_id": "bitops_popcount",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_hex",
+      "replicate": 6,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_hex_7.c",
+      "sample_id": "bitops_popcount",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_hex",
+      "replicate": 7,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_long_0.c",
+      "sample_id": "bitops_popcount",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_long",
+      "replicate": 0,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_long_1.c",
+      "sample_id": "bitops_popcount",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_long",
+      "replicate": 1,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_long_2.c",
+      "sample_id": "bitops_popcount",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_long",
+      "replicate": 2,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_long_3.c",
+      "sample_id": "bitops_popcount",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_long",
+      "replicate": 3,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_long_4.c",
+      "sample_id": "bitops_popcount",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_long",
+      "replicate": 4,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_long_5.c",
+      "sample_id": "bitops_popcount",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_long",
+      "replicate": 5,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_long_6.c",
+      "sample_id": "bitops_popcount",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_long",
+      "replicate": 6,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/bitops_popcount/renameidentifiers_variants/ref_ren_long_7.c",
+      "sample_id": "bitops_popcount",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_long",
+      "replicate": 7,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_hex_0.c",
+      "sample_id": "textproc_trim",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_hex",
+      "replicate": 0,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_hex_1.c",
+      "sample_id": "textproc_trim",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_hex",
+      "replicate": 1,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_hex_2.c",
+      "sample_id": "textproc_trim",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_hex",
+      "replicate": 2,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_hex_3.c",
+      "sample_id": "textproc_trim",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_hex",
+      "replicate": 3,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_hex_4.c",
+      "sample_id": "textproc_trim",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_hex",
+      "replicate": 4,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_hex_5.c",
+      "sample_id": "textproc_trim",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_hex",
+      "replicate": 5,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_hex_6.c",
+      "sample_id": "textproc_trim",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_hex",
+      "replicate": 6,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_hex_7.c",
+      "sample_id": "textproc_trim",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_hex",
+      "replicate": 7,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_long_0.c",
+      "sample_id": "textproc_trim",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_long",
+      "replicate": 0,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_long_1.c",
+      "sample_id": "textproc_trim",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_long",
+      "replicate": 1,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_long_2.c",
+      "sample_id": "textproc_trim",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_long",
+      "replicate": 2,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_long_3.c",
+      "sample_id": "textproc_trim",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_long",
+      "replicate": 3,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_long_4.c",
+      "sample_id": "textproc_trim",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_long",
+      "replicate": 4,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_long_5.c",
+      "sample_id": "textproc_trim",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_long",
+      "replicate": 5,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_long_6.c",
+      "sample_id": "textproc_trim",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_long",
+      "replicate": 6,
+      "byte_identical": true,
+      "whitespace_identical": true
+    },
+    {
+      "artifact": "reference_c/textproc_trim/renameidentifiers_variants/ref_ren_long_7.c",
+      "sample_id": "textproc_trim",
+      "technique_dir": "renameidentifiers_variants",
+      "param": "ref_ren_long",
+      "replicate": 7,
+      "byte_identical": true,
+      "whitespace_identical": true
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+grid      /Users/anasalsobeh/Downloads/manar/ofuScope/obfuscope-main/results/pilot5sub
+cells     75
+configs   15
+
+task         protocol   model          featureset        mean  sd_fold  sd_seed  seeds
+--------------------------------------------------------------------------------------
+sub_provenance lomfo      extra_trees    all             0.7932   0.0522   0.0069      5
+sub_provenance lomfo      hist_gbdt      all             0.8124   0.0816   0.0073      5
+sub_provenance lomfo      hist_gbdt      lexical_only    0.4869   0.0887   0.0060      5
+sub_provenance lomfo      hist_gbdt      no_obfuscation  0.7881   0.1095   0.0079      5
+sub_provenance lomfo      hist_gbdt      semantic        0.6513   0.0760   0.0062      5
+sub_provenance lomfo      hist_gbdt      structural      0.6932   0.1033   0.0036      5
+sub_provenance lomfo      knn            all             0.5546   0.0663   0.0000      5
+sub_provenance lomfo      logreg         all             0.7312   0.0526   0.0000      5
+sub_provenance lomfo      mlp            all             0.6834   0.0960   0.0131      5
+sub_provenance lomfo      random_forest  all             0.8045   0.0731   0.0042      5
+sub_provenance lomfo      random_forest  lexical_only    0.4831   0.0675   0.0106      5
+sub_provenance lomfo      random_forest  no_obfuscation  0.7937   0.0740   0.0030      5
+sub_provenance lomfo      random_forest  semantic        0.6014   0.0846   0.0163      5
+sub_provenance lomfo      random_forest  structural      0.6789   0.0803   0.0084      5
+sub_provenance lomfo      svm_rbf        all             0.6686   0.0877   0.0000      5
+
+sd_fold is the spread between held out folds within a seed. sd_seed is the spread between per seed means. A result is only reproducible in the sense version 1 claimed if sd_seed is small next to sd_fold.
+
+paired fold level comparisons against the best model in each cell
+
+  sub_provenance / lomfo / all: reference hist_gbdt (0.8124)
+    vs random_forest  diff +0.0079 t   +1.03 wins 15/25 effect 0.205
+       per distinct fold (fold_index): won 4 tied 0 lost 1 of 5  sign p 0.3750  Wilcoxon p 0.4375
+    vs extra_trees    diff +0.0192 t   +1.31 wins 16/25 effect 0.261
+       per distinct fold (fold_index): won 3 tied 0 lost 2 of 5  sign p 1.0000  Wilcoxon p 0.8125
+    vs logreg         diff +0.0812 t   +4.06 wins 20/25 effect 0.812
+       per distinct fold (fold_index): won 4 tied 0 lost 1 of 5  sign p 0.3750  Wilcoxon p 0.1875
+    vs mlp            diff +0.1289 t   +6.16 wins 20/25 effect 1.232
+       per distinct fold (fold_index): won 4 tied 0 lost 1 of 5  sign p 0.3750  Wilcoxon p 0.1250
+    vs svm_rbf        diff +0.1438 t   +6.12 wins 20/25 effect 1.223
+       per distinct fold (fold_index): won 4 tied 0 lost 1 of 5  sign p 0.3750  Wilcoxon p 0.1250
+    vs knn            diff +0.2578 t  +11.69 wins 25/25 effect 2.338
+       per distinct fold (fold_index): won 5 tied 0 lost 0 of 5  sign p 0.0625  Wilcoxon p 0.0625
+
+report written to results/v3/closed/agg_committed_pilot5sub.json

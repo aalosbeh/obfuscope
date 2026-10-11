@@ -1,0 +1,56 @@
+{
+ "label": "AUDIT-GENERATED",
+ "oneway_r2": {
+  "sample_id": {
+   "mean_r2": 0.5508549031326434,
+   "median_r2": 0.5097555208926261,
+   "n_live_features": 44
+  },
+  "sub_technique": {
+   "mean_r2": 0.31493821666079946,
+   "median_r2": 0.33910782085454205,
+   "n_live_features": 44
+  },
+  "technique": {
+   "mean_r2": 0.24141059339780727,
+   "median_r2": 0.25168076718849447,
+   "n_live_features": 44
+  }
+ },
+ "A": {
+  "nearest_fit_row_same_program_frac": {
+   "known_eval": 0.0,
+   "novel_unseen": 0.0,
+   "novel_seen": 0.5810763888888889
+  },
+  "mean_5nn_distance": {
+   "known_eval": 6.079441707225966,
+   "novel_unseen": 14.14758245551445,
+   "novel_seen": 13.81173970430346
+  }
+ },
+ "B": {
+  "nearest_fit_row_same_program_frac": {
+   "known_eval": 0.0,
+   "novel_unseen": 0.0,
+   "novel_seen": 0.9836458333333333
+  },
+  "mean_5nn_distance": {
+   "known_eval": 5.93160914502073,
+   "novel_unseen": 6.216173708488583,
+   "novel_seen": 1.992394611536419
+  }
+ },
+ "C": {
+  "nearest_fit_row_same_program_frac": {
+   "known_eval": 0.0,
+   "novel_unseen": 0.0,
+   "novel_seen": 0.5810763888888889
+  },
+  "mean_5nn_distance": {
+   "known_eval": 6.079441707225966,
+   "novel_unseen": 14.14758245551445,
+   "novel_seen": 13.81173970430346
+  }
+ }
+}

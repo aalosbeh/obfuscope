@@ -1,0 +1,212 @@
+{
+  "features_path": "data/features_pilot.csv",
+  "label": "technique",
+  "group": "sample_id",
+  "per_class": [
+    {
+      "class": "addopaque",
+      "n": 720,
+      "distinct_vectors": 720,
+      "distinct_ratio": 1.0,
+      "constant_features": 18,
+      "constant_fraction": 0.2951,
+      "input_dependence": 0.7553,
+      "dependence_omega2": 0.7448,
+      "n_groups": 30,
+      "seed_sensitivity": 0.2447,
+      "dependence_null_mean": 1e-06,
+      "dependence_z": 157.945,
+      "dependence_p": 0.00498
+    },
+    {
+      "class": "encodeliterals",
+      "n": 720,
+      "distinct_vectors": 720,
+      "distinct_ratio": 1.0,
+      "constant_features": 18,
+      "constant_fraction": 0.2951,
+      "input_dependence": 0.9299,
+      "dependence_omega2": 0.927,
+      "n_groups": 30,
+      "seed_sensitivity": 0.0701,
+      "dependence_null_mean": 0.000106,
+      "dependence_z": 242.571,
+      "dependence_p": 0.00498
+    },
+    {
+      "class": "encodestrings",
+      "n": 480,
+      "distinct_vectors": 480,
+      "distinct_ratio": 1.0,
+      "constant_features": 19,
+      "constant_fraction": 0.3115,
+      "input_dependence": 0.9923,
+      "dependence_omega2": 0.9918,
+      "n_groups": 30,
+      "seed_sensitivity": 0.0077,
+      "dependence_null_mean": -9.6e-05,
+      "dependence_z": 189.073,
+      "dependence_p": 0.00498
+    },
+    {
+      "class": "renameidentifiers",
+      "n": 480,
+      "distinct_vectors": 450,
+      "distinct_ratio": 0.9375,
+      "constant_features": 17,
+      "constant_fraction": 0.2787,
+      "input_dependence": 0.9274,
+      "dependence_omega2": 0.9226,
+      "n_groups": 30,
+      "seed_sensitivity": 0.0726,
+      "dependence_null_mean": -0.000243,
+      "dependence_z": 205.927,
+      "dependence_p": 0.00498
+    }
+  ],
+  "cross_group_duplicates": {
+    "group_column": "sample_id",
+    "duplicate_clusters_spanning_groups": 0,
+    "rows_in_those_clusters": 0,
+    "fraction_of_corpus": 0.0,
+    "total_rows": 2400,
+    "distinct_vectors_overall": 2370
+  },
+  "cross_class_duplicates": {
+    "label_column": "technique",
+    "duplicate_clusters_spanning_labels": 0,
+    "rows_in_those_clusters": 0,
+    "fraction_of_corpus": 0.0,
+    "irreducible_errors": 0,
+    "irreducible_error_rate": 0.0,
+    "accuracy_ceiling": 1.0,
+    "worst_clusters": []
+  },
+  "single_feature": {
+    "n_classes": 4,
+    "chance_macro_f1": 0.25,
+    "best_feature": "n_int_const",
+    "best_macro_f1": 0.6383,
+    "macro_f1_by_k": {
+      "1": 0.6383,
+      "2": 0.813,
+      "3": 0.9154
+    },
+    "greedy_trace": [
+      {
+        "k": 1,
+        "features": [
+          "n_int_const"
+        ],
+        "macro_f1": 0.6383
+      },
+      {
+        "k": 2,
+        "features": [
+          "n_int_const",
+          "identifier_digit_ratio"
+        ],
+        "macro_f1": 0.813
+      },
+      {
+        "k": 3,
+        "features": [
+          "n_int_const",
+          "identifier_digit_ratio",
+          "hex_to_int_ratio"
+        ],
+        "macro_f1": 0.9154
+      }
+    ],
+    "candidate_pool_size": 24,
+    "full_set_shallow_depth3": 0.9455,
+    "full_set_macro_f1": 0.9542,
+    "full_set_source": "supplied",
+    "headroom_R": 0.4486,
+    "top_five": [
+      {
+        "feature": "n_int_const",
+        "macro_f1": 0.6383
+      },
+      {
+        "feature": "hex_to_int_ratio",
+        "macro_f1": 0.6316
+      },
+      {
+        "feature": "n_xor_op",
+        "macro_f1": 0.5697
+      },
+      {
+        "feature": "n_hex_const",
+        "macro_f1": 0.5515
+      },
+      {
+        "feature": "identifier_digit_ratio",
+        "macro_f1": 0.4851
+      }
+    ],
+    "threshold_absolute_f1": 0.7,
+    "threshold_min_headroom": 0.5,
+    "headroom_status": "fail",
+    "headroom_note": "R 0.4486 below 0.50",
+    "headroom_gap": 0.7042,
+    "headroom_reference": {
+      "full_set_source": "supplied",
+      "full_set_value": 0.9542,
+      "full_set_protocol": "supplied by the caller with --full-macro-f1; protocol not stated",
+      "best_k_protocol": "DecisionTreeClassifier(max_depth=6, random_state=0) on the feature subset, mean macro F1 over GroupShuffleSplit(n_splits=3, test_size=0.3, random_state=0) grouped by 'sample_id'",
+      "same_protocol_as_best_k": false
+    },
+    "full_set_probe_macro_f1": 0.9345,
+    "headroom_R_probe_reference": 0.4327,
+    "probe_settings": {
+      "tree_depth": 6,
+      "depth_rule": "min(8, n_classes + 2)",
+      "splitter": "GroupShuffleSplit(n_splits=3, test_size=0.3, random_state=0) grouped by 'sample_id'",
+      "seed": 0,
+      "k_values": [
+        1,
+        2,
+        3
+      ],
+      "k1_search": "exhaustive over all features",
+      "k_above_1_search": "greedy forward selection from the 24 strongest single features",
+      "selection_and_scoring_on_same_splits": true
+    }
+  },
+  "permuted_labels": {
+    "real_macro_f1": 0.9759,
+    "permuted_macro_f1": 0.219,
+    "chance_macro_f1": 0.25,
+    "excess_over_chance": -0.031,
+    "tolerance": 0.08
+  },
+  "failures": [
+    "chance corrected headroom R is 0.449 (below 0.50). The best single feature 'n_int_const' recovers 55.1% of the gap between chance and the full feature set, so the remaining features add little and the reported result is close to a one feature rule dressed up as a learned model.",
+    "the best 2 features together reach macro F1 0.813 (above 0.70) with a depth 6 tree. A 2 feature rule settles the label, so the corpus is separable without the representation the paper is arguing for."
+  ],
+  "passed": false,
+  "inconclusive": [],
+  "gate_settings": {
+    "seed": 0,
+    "repeats": 1,
+    "min_distinct_ratio": 0.8,
+    "max_constant_fraction": 0.5,
+    "max_cross_group_fraction": 0.05,
+    "max_single_feature_f1": 0.7,
+    "permutation_tolerance": 0.08,
+    "max_cross_class_fraction": 0.005,
+    "min_headroom": 0.5,
+    "min_input_dependence": 0.2,
+    "input_dependence_alpha": 0.05,
+    "input_dependence_permutations": 200,
+    "input_dependence_seed": 0,
+    "vector_round_decimals": 9,
+    "probe_depth_rule": "min(8, n_classes + 2)",
+    "greedy_pool_size": 24,
+    "probe_splits": "GroupShuffleSplit(n_splits=3, test_size=0.3, random_state=seed)",
+    "full_macro_f1": 0.9542,
+    "full_macro_f1_protocol": null,
+    "skip_single_feature": false
+  }
+}

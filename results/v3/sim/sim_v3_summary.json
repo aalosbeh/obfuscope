@@ -1,0 +1,1287 @@
+{
+  "note": "AUDIT-GENERATED. See tabulate_sim_v3.py for definitions.",
+  "script": "scripts/holdout_inversion_sim.py",
+  "script_sha256": "46b0e75e9744d17316d5f7052eada4a410d3170e3951ea9ae62199a437a7ca19",
+  "raw_report_sha256": {
+    "inversion_sim_ordered_5seeds.json": "07bef1e9fb2d39c23dedba0b0427daba51093844f2828e63b44f526cbb8b3927",
+    "inversion_sim_ordered_20seeds.json": "2b81a725c957c20896a58143f03d78b1ba75360b73f37f68e3814a8312536be9",
+    "inversion_sim_random_5seeds.json": "c1920ed1549ab17a4a299be5f6390e94fc94d9a7b95f694c416729ff9f6b94ce",
+    "inversion_sim_random_20seeds.json": "57f492b508c0f133325a8646e1ecd8b78fb81f7099b539bbff93a9a265c4d878",
+    "supp_fine_ordered_20seeds.json": "efbaac932a0e6ad9d12d5bb8058f2445fbd6f0c6f0e2e9e2ed6e687dad94f626",
+    "supp_fine_random_20seeds.json": "17764ee926cd6ca5fc6dd38c380bff05bd271647aa7437056ff098df551a658f"
+  },
+  "reproduction_check": {
+    "original_file": "/Users/anasalsobeh/Downloads/manar/ofuScope/obfuscope-main/results/inversion_sim.json",
+    "original_sha256": "99550b8839f227b289a26e76d579ab23c6ae220a872afe5c288bc337bd9a4467",
+    "rows_and_inverting_spreads_leaves_compared": 1576,
+    "rows_and_inverting_spreads_mismatches": [],
+    "settings_original_keys_that_differ": {
+      "report": [
+        "results/inversion_sim.json",
+        "results/v3/sim/inversion_sim_ordered_5seeds.json"
+      ]
+    },
+    "table18_cells_compared": 36,
+    "table18_cells_matching_ms_committed_and_rerun": 36,
+    "table18_cells": [
+      {
+        "ms_line": 641,
+        "sibling_spread": 0.25,
+        "column": "Bayes posterior, end held out",
+        "manuscript": 0.4801,
+        "committed_json": 0.4801,
+        "v3_rerun": 0.4801,
+        "match": true
+      },
+      {
+        "ms_line": 641,
+        "sibling_spread": 0.25,
+        "column": "Bayes maximum score, end held out",
+        "manuscript": 0.5188,
+        "committed_json": 0.5188,
+        "v3_rerun": 0.5188,
+        "match": true
+      },
+      {
+        "ms_line": 641,
+        "sibling_spread": 0.25,
+        "column": "Bayes posterior, interior held out",
+        "manuscript": 0.5039,
+        "committed_json": 0.5039,
+        "v3_rerun": 0.5039,
+        "match": true
+      },
+      {
+        "ms_line": 641,
+        "sibling_spread": 0.25,
+        "column": "Bayes posterior, family held out",
+        "manuscript": 0.1439,
+        "committed_json": 0.1439,
+        "v3_rerun": 0.1439,
+        "match": true
+      },
+      {
+        "ms_line": 641,
+        "sibling_spread": 0.25,
+        "column": "Bayes maximum score, family held out",
+        "manuscript": 1.0,
+        "committed_json": 1.0,
+        "v3_rerun": 1.0,
+        "match": true
+      },
+      {
+        "ms_line": 641,
+        "sibling_spread": 0.25,
+        "column": "Retained class closed accuracy, family holdout",
+        "manuscript": 0.3581,
+        "committed_json": 0.3581,
+        "v3_rerun": 0.3581,
+        "match": true
+      },
+      {
+        "ms_line": 642,
+        "sibling_spread": 0.5,
+        "column": "Bayes posterior, end held out",
+        "manuscript": 0.4273,
+        "committed_json": 0.4273,
+        "v3_rerun": 0.4273,
+        "match": true
+      },
+      {
+        "ms_line": 642,
+        "sibling_spread": 0.5,
+        "column": "Bayes maximum score, end held out",
+        "manuscript": 0.5314,
+        "committed_json": 0.5314,
+        "v3_rerun": 0.5314,
+        "match": true
+      },
+      {
+        "ms_line": 642,
+        "sibling_spread": 0.5,
+        "column": "Bayes posterior, interior held out",
+        "manuscript": 0.5295,
+        "committed_json": 0.5295,
+        "v3_rerun": 0.5295,
+        "match": true
+      },
+      {
+        "ms_line": 642,
+        "sibling_spread": 0.5,
+        "column": "Bayes posterior, family held out",
+        "manuscript": 0.1447,
+        "committed_json": 0.1447,
+        "v3_rerun": 0.1447,
+        "match": true
+      },
+      {
+        "ms_line": 642,
+        "sibling_spread": 0.5,
+        "column": "Bayes maximum score, family held out",
+        "manuscript": 1.0,
+        "committed_json": 1.0,
+        "v3_rerun": 1.0,
+        "match": true
+      },
+      {
+        "ms_line": 642,
+        "sibling_spread": 0.5,
+        "column": "Retained class closed accuracy, family holdout",
+        "manuscript": 0.4246,
+        "committed_json": 0.4246,
+        "v3_rerun": 0.4246,
+        "match": true
+      },
+      {
+        "ms_line": 643,
+        "sibling_spread": 1.0,
+        "column": "Bayes posterior, end held out",
+        "manuscript": 0.278,
+        "committed_json": 0.278,
+        "v3_rerun": 0.278,
+        "match": true
+      },
+      {
+        "ms_line": 643,
+        "sibling_spread": 1.0,
+        "column": "Bayes maximum score, end held out",
+        "manuscript": 0.5706,
+        "committed_json": 0.5706,
+        "v3_rerun": 0.5706,
+        "match": true
+      },
+      {
+        "ms_line": 643,
+        "sibling_spread": 1.0,
+        "column": "Bayes posterior, interior held out",
+        "manuscript": 0.6309,
+        "committed_json": 0.6309,
+        "v3_rerun": 0.6309,
+        "match": true
+      },
+      {
+        "ms_line": 643,
+        "sibling_spread": 1.0,
+        "column": "Bayes posterior, family held out",
+        "manuscript": 0.1864,
+        "committed_json": 0.1864,
+        "v3_rerun": 0.1864,
+        "match": true
+      },
+      {
+        "ms_line": 643,
+        "sibling_spread": 1.0,
+        "column": "Bayes maximum score, family held out",
+        "manuscript": 1.0,
+        "committed_json": 1.0,
+        "v3_rerun": 1.0,
+        "match": true
+      },
+      {
+        "ms_line": 643,
+        "sibling_spread": 1.0,
+        "column": "Retained class closed accuracy, family holdout",
+        "manuscript": 0.5394,
+        "committed_json": 0.5394,
+        "v3_rerun": 0.5394,
+        "match": true
+      },
+      {
+        "ms_line": 644,
+        "sibling_spread": 2.0,
+        "column": "Bayes posterior, end held out",
+        "manuscript": 0.0803,
+        "committed_json": 0.0803,
+        "v3_rerun": 0.0803,
+        "match": true
+      },
+      {
+        "ms_line": 644,
+        "sibling_spread": 2.0,
+        "column": "Bayes maximum score, end held out",
+        "manuscript": 0.682,
+        "committed_json": 0.682,
+        "v3_rerun": 0.682,
+        "match": true
+      },
+      {
+        "ms_line": 644,
+        "sibling_spread": 2.0,
+        "column": "Bayes posterior, interior held out",
+        "manuscript": 0.8598,
+        "committed_json": 0.8598,
+        "v3_rerun": 0.8598,
+        "match": true
+      },
+      {
+        "ms_line": 644,
+        "sibling_spread": 2.0,
+        "column": "Bayes posterior, family held out",
+        "manuscript": 0.3487,
+        "committed_json": 0.3487,
+        "v3_rerun": 0.3487,
+        "match": true
+      },
+      {
+        "ms_line": 644,
+        "sibling_spread": 2.0,
+        "column": "Bayes maximum score, family held out",
+        "manuscript": 1.0,
+        "committed_json": 1.0,
+        "v3_rerun": 1.0,
+        "match": true
+      },
+      {
+        "ms_line": 644,
+        "sibling_spread": 2.0,
+        "column": "Retained class closed accuracy, family holdout",
+        "manuscript": 0.7493,
+        "committed_json": 0.7493,
+        "v3_rerun": 0.7493,
+        "match": true
+      },
+      {
+        "ms_line": 645,
+        "sibling_spread": 4.0,
+        "column": "Bayes posterior, end held out",
+        "manuscript": 0.0023,
+        "committed_json": 0.0023,
+        "v3_rerun": 0.0023,
+        "match": true
+      },
+      {
+        "ms_line": 645,
+        "sibling_spread": 4.0,
+        "column": "Bayes maximum score, end held out",
+        "manuscript": 0.9233,
+        "committed_json": 0.9233,
+        "v3_rerun": 0.9233,
+        "match": true
+      },
+      {
+        "ms_line": 645,
+        "sibling_spread": 4.0,
+        "column": "Bayes posterior, interior held out",
+        "manuscript": 0.9956,
+        "committed_json": 0.9956,
+        "v3_rerun": 0.9956,
+        "match": true
+      },
+      {
+        "ms_line": 645,
+        "sibling_spread": 4.0,
+        "column": "Bayes posterior, family held out",
+        "manuscript": 0.7043,
+        "committed_json": 0.7043,
+        "v3_rerun": 0.7043,
+        "match": true
+      },
+      {
+        "ms_line": 645,
+        "sibling_spread": 4.0,
+        "column": "Bayes maximum score, family held out",
+        "manuscript": 1.0,
+        "committed_json": 1.0,
+        "v3_rerun": 1.0,
+        "match": true
+      },
+      {
+        "ms_line": 645,
+        "sibling_spread": 4.0,
+        "column": "Retained class closed accuracy, family holdout",
+        "manuscript": 0.9546,
+        "committed_json": 0.9546,
+        "v3_rerun": 0.9546,
+        "match": true
+      },
+      {
+        "ms_line": 646,
+        "sibling_spread": 8.0,
+        "column": "Bayes posterior, end held out",
+        "manuscript": 0.1375,
+        "committed_json": 0.1375,
+        "v3_rerun": 0.1375,
+        "match": true
+      },
+      {
+        "ms_line": 646,
+        "sibling_spread": 8.0,
+        "column": "Bayes maximum score, end held out",
+        "manuscript": 1.0,
+        "committed_json": 1.0,
+        "v3_rerun": 1.0,
+        "match": true
+      },
+      {
+        "ms_line": 646,
+        "sibling_spread": 8.0,
+        "column": "Bayes posterior, interior held out",
+        "manuscript": 0.9891,
+        "committed_json": 0.9891,
+        "v3_rerun": 0.9891,
+        "match": true
+      },
+      {
+        "ms_line": 646,
+        "sibling_spread": 8.0,
+        "column": "Bayes posterior, family held out",
+        "manuscript": 0.9525,
+        "committed_json": 0.9525,
+        "v3_rerun": 0.9525,
+        "match": true
+      },
+      {
+        "ms_line": 646,
+        "sibling_spread": 8.0,
+        "column": "Bayes maximum score, family held out",
+        "manuscript": 1.0,
+        "committed_json": 1.0,
+        "v3_rerun": 1.0,
+        "match": true
+      },
+      {
+        "ms_line": 646,
+        "sibling_spread": 8.0,
+        "column": "Retained class closed accuracy, family holdout",
+        "manuscript": 0.9993,
+        "committed_json": 0.9993,
+        "v3_rerun": 0.9993,
+        "match": true
+      }
+    ],
+    "seeds_0_4_of_20seed_run_equal_5seed_run": {
+      "ordered": {
+        "per_seed_leaves_compared": 1530,
+        "mismatches": 0
+      },
+      "random": {
+        "per_seed_leaves_compared": 1530,
+        "mismatches": 0
+      }
+    }
+  },
+  "answers": {
+    "a_end_holdout_inversion_random_layout": {
+      "random_5seeds": [
+        {
+          "sibling_spread": 0.25,
+          "edge_bayes_msp_mean": 0.509,
+          "edge_ci95": [
+            0.5023,
+            0.5158
+          ],
+          "edge_seeds_below_0_5": 1,
+          "interior_bayes_msp_mean": 0.5019,
+          "interior_ci95": [
+            0.4882,
+            0.5156
+          ],
+          "edge_mean_below_0_5": false,
+          "edge_ci_entirely_below_0_5": false
+        },
+        {
+          "sibling_spread": 0.5,
+          "edge_bayes_msp_mean": 0.5224,
+          "edge_ci95": [
+            0.5088,
+            0.5359
+          ],
+          "edge_seeds_below_0_5": 0,
+          "interior_bayes_msp_mean": 0.5164,
+          "interior_ci95": [
+            0.5024,
+            0.5304
+          ],
+          "edge_mean_below_0_5": false,
+          "edge_ci_entirely_below_0_5": false
+        },
+        {
+          "sibling_spread": 1.0,
+          "edge_bayes_msp_mean": 0.5698,
+          "edge_ci95": [
+            0.5359,
+            0.6037
+          ],
+          "edge_seeds_below_0_5": 0,
+          "interior_bayes_msp_mean": 0.5696,
+          "interior_ci95": [
+            0.5553,
+            0.5838
+          ],
+          "edge_mean_below_0_5": false,
+          "edge_ci_entirely_below_0_5": false
+        },
+        {
+          "sibling_spread": 2.0,
+          "edge_bayes_msp_mean": 0.7019,
+          "edge_ci95": [
+            0.643,
+            0.7609
+          ],
+          "edge_seeds_below_0_5": 0,
+          "interior_bayes_msp_mean": 0.7164,
+          "interior_ci95": [
+            0.6928,
+            0.7399
+          ],
+          "edge_mean_below_0_5": false,
+          "edge_ci_entirely_below_0_5": false
+        },
+        {
+          "sibling_spread": 4.0,
+          "edge_bayes_msp_mean": 0.9023,
+          "edge_ci95": [
+            0.8544,
+            0.9502
+          ],
+          "edge_seeds_below_0_5": 0,
+          "interior_bayes_msp_mean": 0.9159,
+          "interior_ci95": [
+            0.8962,
+            0.9356
+          ],
+          "edge_mean_below_0_5": false,
+          "edge_ci_entirely_below_0_5": false
+        },
+        {
+          "sibling_spread": 8.0,
+          "edge_bayes_msp_mean": 0.9654,
+          "edge_ci95": [
+            0.9385,
+            0.9923
+          ],
+          "edge_seeds_below_0_5": 0,
+          "interior_bayes_msp_mean": 0.9512,
+          "interior_ci95": [
+            0.9136,
+            0.9888
+          ],
+          "edge_mean_below_0_5": false,
+          "edge_ci_entirely_below_0_5": false
+        }
+      ],
+      "random_5seeds_paired_edge_minus_interior": [
+        {
+          "sibling_spread": 0.25,
+          "mean": 0.0071,
+          "ci95": [
+            -0.0077,
+            0.022
+          ],
+          "paired_t_p": 0.25125284095470235
+        },
+        {
+          "sibling_spread": 0.5,
+          "mean": 0.006,
+          "ci95": [
+            -0.0079,
+            0.0199
+          ],
+          "paired_t_p": 0.2996593324813444
+        },
+        {
+          "sibling_spread": 1.0,
+          "mean": 0.0003,
+          "ci95": [
+            -0.0214,
+            0.022
+          ],
+          "paired_t_p": 0.9744535159253332
+        },
+        {
+          "sibling_spread": 2.0,
+          "mean": -0.0144,
+          "ci95": [
+            -0.0542,
+            0.0254
+          ],
+          "paired_t_p": 0.3715679106822211
+        },
+        {
+          "sibling_spread": 4.0,
+          "mean": -0.0136,
+          "ci95": [
+            -0.0452,
+            0.018
+          ],
+          "paired_t_p": 0.29912159362859103
+        },
+        {
+          "sibling_spread": 8.0,
+          "mean": 0.0142,
+          "ci95": [
+            -0.048,
+            0.0764
+          ],
+          "paired_t_p": 0.5603214948257589
+        }
+      ],
+      "random_20seeds": [
+        {
+          "sibling_spread": 0.25,
+          "edge_bayes_msp_mean": 0.5041,
+          "edge_ci95": [
+            0.4997,
+            0.5085
+          ],
+          "edge_seeds_below_0_5": 6,
+          "interior_bayes_msp_mean": 0.5005,
+          "interior_ci95": [
+            0.4962,
+            0.5048
+          ],
+          "edge_mean_below_0_5": false,
+          "edge_ci_entirely_below_0_5": false
+        },
+        {
+          "sibling_spread": 0.5,
+          "edge_bayes_msp_mean": 0.5171,
+          "edge_ci95": [
+            0.5123,
+            0.5219
+          ],
+          "edge_seeds_below_0_5": 1,
+          "interior_bayes_msp_mean": 0.5137,
+          "interior_ci95": [
+            0.5095,
+            0.5179
+          ],
+          "edge_mean_below_0_5": false,
+          "edge_ci_entirely_below_0_5": false
+        },
+        {
+          "sibling_spread": 1.0,
+          "edge_bayes_msp_mean": 0.5658,
+          "edge_ci95": [
+            0.5578,
+            0.5737
+          ],
+          "edge_seeds_below_0_5": 0,
+          "interior_bayes_msp_mean": 0.5615,
+          "interior_ci95": [
+            0.5557,
+            0.5674
+          ],
+          "edge_mean_below_0_5": false,
+          "edge_ci_entirely_below_0_5": false
+        },
+        {
+          "sibling_spread": 2.0,
+          "edge_bayes_msp_mean": 0.7029,
+          "edge_ci95": [
+            0.6862,
+            0.7196
+          ],
+          "edge_seeds_below_0_5": 0,
+          "interior_bayes_msp_mean": 0.6969,
+          "interior_ci95": [
+            0.6824,
+            0.7114
+          ],
+          "edge_mean_below_0_5": false,
+          "edge_ci_entirely_below_0_5": false
+        },
+        {
+          "sibling_spread": 4.0,
+          "edge_bayes_msp_mean": 0.8936,
+          "edge_ci95": [
+            0.8687,
+            0.9184
+          ],
+          "edge_seeds_below_0_5": 0,
+          "interior_bayes_msp_mean": 0.8883,
+          "interior_ci95": [
+            0.8663,
+            0.9104
+          ],
+          "edge_mean_below_0_5": false,
+          "edge_ci_entirely_below_0_5": false
+        },
+        {
+          "sibling_spread": 8.0,
+          "edge_bayes_msp_mean": 0.9266,
+          "edge_ci95": [
+            0.8935,
+            0.9597
+          ],
+          "edge_seeds_below_0_5": 0,
+          "interior_bayes_msp_mean": 0.921,
+          "interior_ci95": [
+            0.8876,
+            0.9544
+          ],
+          "edge_mean_below_0_5": false,
+          "edge_ci_entirely_below_0_5": false
+        }
+      ],
+      "random_20seeds_paired_edge_minus_interior": [
+        {
+          "sibling_spread": 0.25,
+          "mean": 0.0036,
+          "ci95": [
+            -0.0022,
+            0.0094
+          ],
+          "paired_t_p": 0.20651733572867928
+        },
+        {
+          "sibling_spread": 0.5,
+          "mean": 0.0034,
+          "ci95": [
+            -0.0021,
+            0.0089
+          ],
+          "paired_t_p": 0.21234551814443964
+        },
+        {
+          "sibling_spread": 1.0,
+          "mean": 0.0042,
+          "ci95": [
+            -0.0032,
+            0.0116
+          ],
+          "paired_t_p": 0.24596310824957981
+        },
+        {
+          "sibling_spread": 2.0,
+          "mean": 0.006,
+          "ci95": [
+            -0.0118,
+            0.0238
+          ],
+          "paired_t_p": 0.4892370504493847
+        },
+        {
+          "sibling_spread": 4.0,
+          "mean": 0.0052,
+          "ci95": [
+            -0.0164,
+            0.0268
+          ],
+          "paired_t_p": 0.6202546994171612
+        },
+        {
+          "sibling_spread": 8.0,
+          "mean": 0.0056,
+          "ci95": [
+            -0.019,
+            0.0302
+          ],
+          "paired_t_p": 0.6412910890321968
+        }
+      ]
+    },
+    "b_family_holdout_vs_bayes_retained_accuracy": {
+      "ordered_20seeds_family": [
+        {
+          "sibling_spread": 0.0,
+          "bayes_retained_acc_mean": 0.3356,
+          "rf_retained_acc_mean": 0.3293,
+          "bayes_posterior_auroc_mean": 0.8583,
+          "bayes_posterior_auroc_ci95": [
+            0.792,
+            0.9247
+          ],
+          "bayes_posterior_seeds_below_0_5": 0,
+          "inverts_mean_below_0_5": false
+        },
+        {
+          "sibling_spread": 0.25,
+          "bayes_retained_acc_mean": 0.4006,
+          "rf_retained_acc_mean": 0.3602,
+          "bayes_posterior_auroc_mean": 0.1564,
+          "bayes_posterior_auroc_ci95": [
+            0.1007,
+            0.2121
+          ],
+          "bayes_posterior_seeds_below_0_5": 20,
+          "inverts_mean_below_0_5": true
+        },
+        {
+          "sibling_spread": 0.5,
+          "bayes_retained_acc_mean": 0.4647,
+          "rf_retained_acc_mean": 0.4199,
+          "bayes_posterior_auroc_mean": 0.1582,
+          "bayes_posterior_auroc_ci95": [
+            0.1029,
+            0.2135
+          ],
+          "bayes_posterior_seeds_below_0_5": 20,
+          "inverts_mean_below_0_5": true
+        },
+        {
+          "sibling_spread": 1.0,
+          "bayes_retained_acc_mean": 0.588,
+          "rf_retained_acc_mean": 0.5449,
+          "bayes_posterior_auroc_mean": 0.194,
+          "bayes_posterior_auroc_ci95": [
+            0.1317,
+            0.2562
+          ],
+          "bayes_posterior_seeds_below_0_5": 20,
+          "inverts_mean_below_0_5": true
+        },
+        {
+          "sibling_spread": 2.0,
+          "bayes_retained_acc_mean": 0.7897,
+          "rf_retained_acc_mean": 0.7447,
+          "bayes_posterior_auroc_mean": 0.3156,
+          "bayes_posterior_auroc_ci95": [
+            0.2315,
+            0.3997
+          ],
+          "bayes_posterior_seeds_below_0_5": 16,
+          "inverts_mean_below_0_5": true
+        },
+        {
+          "sibling_spread": 2.5,
+          "bayes_retained_acc_mean": 0.86,
+          "rf_retained_acc_mean": 0.8229,
+          "bayes_posterior_auroc_mean": 0.3822,
+          "bayes_posterior_auroc_ci95": [
+            0.2869,
+            0.4774
+          ],
+          "bayes_posterior_seeds_below_0_5": 13,
+          "inverts_mean_below_0_5": true
+        },
+        {
+          "sibling_spread": 2.75,
+          "bayes_retained_acc_mean": 0.8891,
+          "rf_retained_acc_mean": 0.855,
+          "bayes_posterior_auroc_mean": 0.4158,
+          "bayes_posterior_auroc_ci95": [
+            0.3152,
+            0.5165
+          ],
+          "bayes_posterior_seeds_below_0_5": 11,
+          "inverts_mean_below_0_5": true
+        },
+        {
+          "sibling_spread": 3.0,
+          "bayes_retained_acc_mean": 0.9135,
+          "rf_retained_acc_mean": 0.8797,
+          "bayes_posterior_auroc_mean": 0.4487,
+          "bayes_posterior_auroc_ci95": [
+            0.3432,
+            0.5542
+          ],
+          "bayes_posterior_seeds_below_0_5": 9,
+          "inverts_mean_below_0_5": true
+        },
+        {
+          "sibling_spread": 3.5,
+          "bayes_retained_acc_mean": 0.9472,
+          "rf_retained_acc_mean": 0.9227,
+          "bayes_posterior_auroc_mean": 0.5107,
+          "bayes_posterior_auroc_ci95": [
+            0.3968,
+            0.6245
+          ],
+          "bayes_posterior_seeds_below_0_5": 7,
+          "inverts_mean_below_0_5": false
+        },
+        {
+          "sibling_spread": 4.0,
+          "bayes_retained_acc_mean": 0.9704,
+          "rf_retained_acc_mean": 0.9514,
+          "bayes_posterior_auroc_mean": 0.5673,
+          "bayes_posterior_auroc_ci95": [
+            0.447,
+            0.6876
+          ],
+          "bayes_posterior_seeds_below_0_5": 6,
+          "inverts_mean_below_0_5": false
+        },
+        {
+          "sibling_spread": 8.0,
+          "bayes_retained_acc_mean": 1.0,
+          "rf_retained_acc_mean": 0.9991,
+          "bayes_posterior_auroc_mean": 0.8589,
+          "bayes_posterior_auroc_ci95": [
+            0.756,
+            0.9617
+          ],
+          "bayes_posterior_seeds_below_0_5": 2,
+          "inverts_mean_below_0_5": false
+        }
+      ],
+      "ordered_5seeds_family": [
+        {
+          "sibling_spread": 0.25,
+          "bayes_retained_acc_mean": 0.4024,
+          "rf_retained_acc_mean": 0.3581,
+          "bayes_posterior_auroc_mean": 0.1439
+        },
+        {
+          "sibling_spread": 0.5,
+          "bayes_retained_acc_mean": 0.4674,
+          "rf_retained_acc_mean": 0.4246,
+          "bayes_posterior_auroc_mean": 0.1447
+        },
+        {
+          "sibling_spread": 1.0,
+          "bayes_retained_acc_mean": 0.5917,
+          "rf_retained_acc_mean": 0.5394,
+          "bayes_posterior_auroc_mean": 0.1864
+        },
+        {
+          "sibling_spread": 2.0,
+          "bayes_retained_acc_mean": 0.8002,
+          "rf_retained_acc_mean": 0.7493,
+          "bayes_posterior_auroc_mean": 0.3487
+        },
+        {
+          "sibling_spread": 4.0,
+          "bayes_retained_acc_mean": 0.9702,
+          "rf_retained_acc_mean": 0.9546,
+          "bayes_posterior_auroc_mean": 0.7043
+        },
+        {
+          "sibling_spread": 8.0,
+          "bayes_retained_acc_mean": 1.0,
+          "rf_retained_acc_mean": 0.9993,
+          "bayes_posterior_auroc_mean": 0.9525
+        }
+      ],
+      "random_20seeds_family": [
+        {
+          "sibling_spread": 0.0,
+          "bayes_retained_acc_mean": 0.3362,
+          "rf_retained_acc_mean": 0.3304,
+          "bayes_posterior_auroc_mean": 0.8584,
+          "bayes_posterior_auroc_ci95": [
+            0.7919,
+            0.9248
+          ],
+          "bayes_posterior_seeds_below_0_5": 0,
+          "inverts_mean_below_0_5": false
+        },
+        {
+          "sibling_spread": 0.25,
+          "bayes_retained_acc_mean": 0.4028,
+          "rf_retained_acc_mean": 0.3623,
+          "bayes_posterior_auroc_mean": 0.097,
+          "bayes_posterior_auroc_ci95": [
+            0.0401,
+            0.1538
+          ],
+          "bayes_posterior_seeds_below_0_5": 20,
+          "inverts_mean_below_0_5": true
+        },
+        {
+          "sibling_spread": 0.5,
+          "bayes_retained_acc_mean": 0.4833,
+          "rf_retained_acc_mean": 0.4305,
+          "bayes_posterior_auroc_mean": 0.1036,
+          "bayes_posterior_auroc_ci95": [
+            0.047,
+            0.1602
+          ],
+          "bayes_posterior_seeds_below_0_5": 20,
+          "inverts_mean_below_0_5": true
+        },
+        {
+          "sibling_spread": 1.0,
+          "bayes_retained_acc_mean": 0.6319,
+          "rf_retained_acc_mean": 0.5844,
+          "bayes_posterior_auroc_mean": 0.1397,
+          "bayes_posterior_auroc_ci95": [
+            0.0755,
+            0.204
+          ],
+          "bayes_posterior_seeds_below_0_5": 20,
+          "inverts_mean_below_0_5": true
+        },
+        {
+          "sibling_spread": 2.0,
+          "bayes_retained_acc_mean": 0.8609,
+          "rf_retained_acc_mean": 0.8225,
+          "bayes_posterior_auroc_mean": 0.2495,
+          "bayes_posterior_auroc_ci95": [
+            0.1648,
+            0.3342
+          ],
+          "bayes_posterior_seeds_below_0_5": 18,
+          "inverts_mean_below_0_5": true
+        },
+        {
+          "sibling_spread": 2.5,
+          "bayes_retained_acc_mean": 0.9252,
+          "rf_retained_acc_mean": 0.8975,
+          "bayes_posterior_auroc_mean": 0.3221,
+          "bayes_posterior_auroc_ci95": [
+            0.2272,
+            0.4169
+          ],
+          "bayes_posterior_seeds_below_0_5": 15,
+          "inverts_mean_below_0_5": true
+        },
+        {
+          "sibling_spread": 2.75,
+          "bayes_retained_acc_mean": 0.9468,
+          "rf_retained_acc_mean": 0.9224,
+          "bayes_posterior_auroc_mean": 0.3604,
+          "bayes_posterior_auroc_ci95": [
+            0.2617,
+            0.459
+          ],
+          "bayes_posterior_seeds_below_0_5": 14,
+          "inverts_mean_below_0_5": true
+        },
+        {
+          "sibling_spread": 3.0,
+          "bayes_retained_acc_mean": 0.9631,
+          "rf_retained_acc_mean": 0.943,
+          "bayes_posterior_auroc_mean": 0.3992,
+          "bayes_posterior_auroc_ci95": [
+            0.2976,
+            0.5007
+          ],
+          "bayes_posterior_seeds_below_0_5": 13,
+          "inverts_mean_below_0_5": true
+        },
+        {
+          "sibling_spread": 3.5,
+          "bayes_retained_acc_mean": 0.9833,
+          "rf_retained_acc_mean": 0.9694,
+          "bayes_posterior_auroc_mean": 0.4765,
+          "bayes_posterior_auroc_ci95": [
+            0.373,
+            0.58
+          ],
+          "bayes_posterior_seeds_below_0_5": 10,
+          "inverts_mean_below_0_5": true
+        },
+        {
+          "sibling_spread": 4.0,
+          "bayes_retained_acc_mean": 0.9935,
+          "rf_retained_acc_mean": 0.9845,
+          "bayes_posterior_auroc_mean": 0.5509,
+          "bayes_posterior_auroc_ci95": [
+            0.4493,
+            0.6525
+          ],
+          "bayes_posterior_seeds_below_0_5": 7,
+          "inverts_mean_below_0_5": false
+        },
+        {
+          "sibling_spread": 8.0,
+          "bayes_retained_acc_mean": 1.0,
+          "rf_retained_acc_mean": 1.0,
+          "bayes_posterior_auroc_mean": 0.8716,
+          "bayes_posterior_auroc_ci95": [
+            0.8152,
+            0.9279
+          ],
+          "bayes_posterior_seeds_below_0_5": 0,
+          "inverts_mean_below_0_5": false
+        }
+      ],
+      "random_5seeds_family": [
+        {
+          "sibling_spread": 0.25,
+          "bayes_retained_acc_mean": 0.4048,
+          "rf_retained_acc_mean": 0.3635,
+          "bayes_posterior_auroc_mean": 0.1053
+        },
+        {
+          "sibling_spread": 0.5,
+          "bayes_retained_acc_mean": 0.4843,
+          "rf_retained_acc_mean": 0.4252,
+          "bayes_posterior_auroc_mean": 0.1193
+        },
+        {
+          "sibling_spread": 1.0,
+          "bayes_retained_acc_mean": 0.6269,
+          "rf_retained_acc_mean": 0.5756,
+          "bayes_posterior_auroc_mean": 0.1684
+        },
+        {
+          "sibling_spread": 2.0,
+          "bayes_retained_acc_mean": 0.8591,
+          "rf_retained_acc_mean": 0.8237,
+          "bayes_posterior_auroc_mean": 0.2791
+        },
+        {
+          "sibling_spread": 4.0,
+          "bayes_retained_acc_mean": 0.993,
+          "rf_retained_acc_mean": 0.9844,
+          "bayes_posterior_auroc_mean": 0.5618
+        },
+        {
+          "sibling_spread": 8.0,
+          "bayes_retained_acc_mean": 1.0,
+          "rf_retained_acc_mean": 1.0,
+          "bayes_posterior_auroc_mean": 0.8717
+        }
+      ]
+    },
+    "c_fitted_rf_family_holdout": {
+      "ordered_5seeds": {
+        "fitted_rf_family_auroc_by_spread": {
+          "0.25": 0.9999,
+          "0.5": 0.9999,
+          "1.0": 0.9998,
+          "2.0": 0.9997,
+          "4.0": 1.0,
+          "8.0": 1.0
+        },
+        "fitted_lr_family_auroc_by_spread": {
+          "0.25": 0.2726,
+          "0.5": 0.2484,
+          "1.0": 0.2711,
+          "2.0": 0.4384,
+          "4.0": 0.7573,
+          "8.0": 0.95
+        },
+        "fitted_rf_family_min_per_seed": 0.9995,
+        "fitted_rf_family_seeds_below_0_5": 0,
+        "n_family_cells_per_seed": 30
+      },
+      "ordered_20seeds": {
+        "fitted_rf_family_auroc_by_spread": {
+          "0.0": 0.9966,
+          "0.25": 0.9991,
+          "0.5": 0.9959,
+          "1.0": 0.9899,
+          "2.0": 0.9769,
+          "2.5": 0.9755,
+          "2.75": 0.9794,
+          "3.0": 0.9797,
+          "3.5": 0.9879,
+          "4.0": 0.9884,
+          "8.0": 0.9993
+        },
+        "fitted_lr_family_auroc_by_spread": {
+          "0.0": 0.4553,
+          "0.25": 0.4382,
+          "0.5": 0.3563,
+          "1.0": 0.3226,
+          "2.0": 0.4165,
+          "2.5": 0.4748,
+          "2.75": 0.5034,
+          "3.0": 0.533,
+          "3.5": 0.5946,
+          "4.0": 0.6482,
+          "8.0": 0.8497
+        },
+        "fitted_rf_family_min_per_seed": 0.7817,
+        "fitted_rf_family_seeds_below_0_5": 0,
+        "n_family_cells_per_seed": 220
+      },
+      "random_5seeds": {
+        "fitted_rf_family_auroc_by_spread": {
+          "0.25": 1.0,
+          "0.5": 1.0,
+          "1.0": 0.9998,
+          "2.0": 0.9993,
+          "4.0": 0.9997,
+          "8.0": 1.0
+        },
+        "fitted_lr_family_auroc_by_spread": {
+          "0.25": 0.4711,
+          "0.5": 0.3457,
+          "1.0": 0.3514,
+          "2.0": 0.4754,
+          "4.0": 0.8352,
+          "8.0": 0.9945
+        },
+        "fitted_rf_family_min_per_seed": 0.9988,
+        "fitted_rf_family_seeds_below_0_5": 0,
+        "n_family_cells_per_seed": 30
+      },
+      "random_20seeds": {
+        "fitted_rf_family_auroc_by_spread": {
+          "0.0": 0.9984,
+          "0.25": 0.9979,
+          "0.5": 0.9926,
+          "1.0": 0.9855,
+          "2.0": 0.9894,
+          "2.5": 0.9914,
+          "2.75": 0.9906,
+          "3.0": 0.9925,
+          "3.5": 0.9936,
+          "4.0": 0.9965,
+          "8.0": 0.9999
+        },
+        "fitted_lr_family_auroc_by_spread": {
+          "0.0": 0.5756,
+          "0.25": 0.5827,
+          "0.5": 0.4648,
+          "1.0": 0.3831,
+          "2.0": 0.4695,
+          "2.5": 0.5409,
+          "2.75": 0.5795,
+          "3.0": 0.6248,
+          "3.5": 0.7088,
+          "4.0": 0.7732,
+          "8.0": 0.9664
+        },
+        "fitted_rf_family_min_per_seed": 0.7632,
+        "fitted_rf_family_seeds_below_0_5": 0,
+        "n_family_cells_per_seed": 220
+      }
+    },
+    "family_holdout_mean_novelty_known_vs_novel": {
+      "ordered_20seeds": [
+        {
+          "sibling_spread": 0.0,
+          "bayes_retained_acc_mean": 0.3356,
+          "mean_novelty_known": 0.6667,
+          "mean_novelty_novel": 0.6723,
+          "bayes_posterior_auroc_mean": 0.8583
+        },
+        {
+          "sibling_spread": 0.25,
+          "bayes_retained_acc_mean": 0.4006,
+          "mean_novelty_known": 0.6005,
+          "mean_novelty_novel": 0.4417,
+          "bayes_posterior_auroc_mean": 0.1564
+        },
+        {
+          "sibling_spread": 0.5,
+          "bayes_retained_acc_mean": 0.4647,
+          "mean_novelty_known": 0.5354,
+          "mean_novelty_novel": 0.3085,
+          "bayes_posterior_auroc_mean": 0.1582
+        },
+        {
+          "sibling_spread": 1.0,
+          "bayes_retained_acc_mean": 0.588,
+          "mean_novelty_known": 0.4118,
+          "mean_novelty_novel": 0.196,
+          "bayes_posterior_auroc_mean": 0.194
+        },
+        {
+          "sibling_spread": 2.0,
+          "bayes_retained_acc_mean": 0.7897,
+          "mean_novelty_known": 0.2116,
+          "mean_novelty_novel": 0.1308,
+          "bayes_posterior_auroc_mean": 0.3156
+        },
+        {
+          "sibling_spread": 2.5,
+          "bayes_retained_acc_mean": 0.86,
+          "mean_novelty_known": 0.1411,
+          "mean_novelty_novel": 0.113,
+          "bayes_posterior_auroc_mean": 0.3822
+        },
+        {
+          "sibling_spread": 2.75,
+          "bayes_retained_acc_mean": 0.8891,
+          "mean_novelty_known": 0.1128,
+          "mean_novelty_novel": 0.1059,
+          "bayes_posterior_auroc_mean": 0.4158
+        },
+        {
+          "sibling_spread": 3.0,
+          "bayes_retained_acc_mean": 0.9135,
+          "mean_novelty_known": 0.089,
+          "mean_novelty_novel": 0.0999,
+          "bayes_posterior_auroc_mean": 0.4487
+        },
+        {
+          "sibling_spread": 3.5,
+          "bayes_retained_acc_mean": 0.9472,
+          "mean_novelty_known": 0.053,
+          "mean_novelty_novel": 0.0884,
+          "bayes_posterior_auroc_mean": 0.5107
+        },
+        {
+          "sibling_spread": 4.0,
+          "bayes_retained_acc_mean": 0.9704,
+          "mean_novelty_known": 0.0299,
+          "mean_novelty_novel": 0.0777,
+          "bayes_posterior_auroc_mean": 0.5673
+        },
+        {
+          "sibling_spread": 8.0,
+          "bayes_retained_acc_mean": 1.0,
+          "mean_novelty_known": 0.0,
+          "mean_novelty_novel": 0.0339,
+          "bayes_posterior_auroc_mean": 0.8589
+        }
+      ],
+      "random_20seeds": [
+        {
+          "sibling_spread": 0.0,
+          "bayes_retained_acc_mean": 0.3362,
+          "mean_novelty_known": 0.6667,
+          "mean_novelty_novel": 0.6723,
+          "bayes_posterior_auroc_mean": 0.8584
+        },
+        {
+          "sibling_spread": 0.25,
+          "bayes_retained_acc_mean": 0.4028,
+          "mean_novelty_known": 0.5939,
+          "mean_novelty_novel": 0.3966,
+          "bayes_posterior_auroc_mean": 0.097
+        },
+        {
+          "sibling_spread": 0.5,
+          "bayes_retained_acc_mean": 0.4833,
+          "mean_novelty_known": 0.5183,
+          "mean_novelty_novel": 0.2439,
+          "bayes_posterior_auroc_mean": 0.1036
+        },
+        {
+          "sibling_spread": 1.0,
+          "bayes_retained_acc_mean": 0.6319,
+          "mean_novelty_known": 0.3686,
+          "mean_novelty_novel": 0.1275,
+          "bayes_posterior_auroc_mean": 0.1397
+        },
+        {
+          "sibling_spread": 2.0,
+          "bayes_retained_acc_mean": 0.8609,
+          "mean_novelty_known": 0.1399,
+          "mean_novelty_novel": 0.0639,
+          "bayes_posterior_auroc_mean": 0.2495
+        },
+        {
+          "sibling_spread": 2.5,
+          "bayes_retained_acc_mean": 0.9252,
+          "mean_novelty_known": 0.0747,
+          "mean_novelty_novel": 0.0528,
+          "bayes_posterior_auroc_mean": 0.3221
+        },
+        {
+          "sibling_spread": 2.75,
+          "bayes_retained_acc_mean": 0.9468,
+          "mean_novelty_known": 0.0529,
+          "mean_novelty_novel": 0.0482,
+          "bayes_posterior_auroc_mean": 0.3604
+        },
+        {
+          "sibling_spread": 3.0,
+          "bayes_retained_acc_mean": 0.9631,
+          "mean_novelty_known": 0.0368,
+          "mean_novelty_novel": 0.0448,
+          "bayes_posterior_auroc_mean": 0.3992
+        },
+        {
+          "sibling_spread": 3.5,
+          "bayes_retained_acc_mean": 0.9833,
+          "mean_novelty_known": 0.0169,
+          "mean_novelty_novel": 0.0397,
+          "bayes_posterior_auroc_mean": 0.4765
+        },
+        {
+          "sibling_spread": 4.0,
+          "bayes_retained_acc_mean": 0.9935,
+          "mean_novelty_known": 0.0071,
+          "mean_novelty_novel": 0.0353,
+          "bayes_posterior_auroc_mean": 0.5509
+        },
+        {
+          "sibling_spread": 8.0,
+          "bayes_retained_acc_mean": 1.0,
+          "mean_novelty_known": 0.0,
+          "mean_novelty_novel": 0.0219,
+          "bayes_posterior_auroc_mean": 0.8716
+        }
+      ]
+    }
+  }
+}

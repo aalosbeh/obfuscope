@@ -1,0 +1,520 @@
+{
+  "label": "AUDIT-GENERATED consistent-protocol headroom (run:gate-v3)",
+  "protocol": "lomfo = StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=seed) over malware_family, seeds 0-4; probe DecisionTreeClassifier(max_depth=min(8, n_classes+2), random_state=seed); macro F1 per fold with all labels, zero_division=0; mean over 25 measurements",
+  "results": {
+    "technique": {
+      "label": "technique",
+      "n_rows": 2400,
+      "n_features": 61,
+      "n_classes": 4,
+      "chance_macro_f1": 0.25,
+      "probe_depth": 6,
+      "lomfo_held_out_domains_by_seed": {
+        "0": [
+          [
+            "bitops"
+          ],
+          [
+            "mathlib"
+          ],
+          [
+            "statemach"
+          ],
+          [
+            "dsalgo"
+          ],
+          [
+            "textproc"
+          ]
+        ],
+        "1": [
+          [
+            "bitops"
+          ],
+          [
+            "mathlib"
+          ],
+          [
+            "statemach"
+          ],
+          [
+            "dsalgo"
+          ],
+          [
+            "textproc"
+          ]
+        ],
+        "2": [
+          [
+            "bitops"
+          ],
+          [
+            "mathlib"
+          ],
+          [
+            "statemach"
+          ],
+          [
+            "dsalgo"
+          ],
+          [
+            "textproc"
+          ]
+        ],
+        "3": [
+          [
+            "bitops"
+          ],
+          [
+            "mathlib"
+          ],
+          [
+            "statemach"
+          ],
+          [
+            "dsalgo"
+          ],
+          [
+            "textproc"
+          ]
+        ],
+        "4": [
+          [
+            "bitops"
+          ],
+          [
+            "mathlib"
+          ],
+          [
+            "statemach"
+          ],
+          [
+            "dsalgo"
+          ],
+          [
+            "textproc"
+          ]
+        ]
+      },
+      "best_feature": "n_int_const",
+      "best_1_macro_f1": 0.6541,
+      "best_1_fold_sd": 0.0894,
+      "best_1_min_fold": 0.5009,
+      "best_1_max_fold": 0.7732,
+      "best_1_per_seed_mean": {
+        "0": 0.6541,
+        "1": 0.6541,
+        "2": 0.6541,
+        "3": 0.6541,
+        "4": 0.6541
+      },
+      "per_seed_best_single": {
+        "0": {
+          "feature": "n_int_const",
+          "macro_f1": 0.6541,
+          "R": 0.4262
+        },
+        "1": {
+          "feature": "n_int_const",
+          "macro_f1": 0.6541,
+          "R": 0.4262
+        },
+        "2": {
+          "feature": "n_int_const",
+          "macro_f1": 0.6541,
+          "R": 0.4262
+        },
+        "3": {
+          "feature": "n_int_const",
+          "macro_f1": 0.6541,
+          "R": 0.4262
+        },
+        "4": {
+          "feature": "n_int_const",
+          "macro_f1": 0.6541,
+          "R": 0.4262
+        }
+      },
+      "top_five": [
+        {
+          "feature": "n_int_const",
+          "macro_f1": 0.6541
+        },
+        {
+          "feature": "hex_to_int_ratio",
+          "macro_f1": 0.5997
+        },
+        {
+          "feature": "n_xor_op",
+          "macro_f1": 0.5554
+        },
+        {
+          "feature": "n_hex_const",
+          "macro_f1": 0.551
+        },
+        {
+          "feature": "identifier_digit_ratio",
+          "macro_f1": 0.4904
+        }
+      ],
+      "greedy_trace": [
+        {
+          "k": 1,
+          "features": [
+            "n_int_const"
+          ],
+          "macro_f1": 0.6541
+        },
+        {
+          "k": 2,
+          "features": [
+            "n_int_const",
+            "n_xor_op"
+          ],
+          "macro_f1": 0.7938
+        },
+        {
+          "k": 3,
+          "features": [
+            "n_int_const",
+            "n_xor_op",
+            "n_hex_const"
+          ],
+          "macro_f1": 0.931
+        }
+      ],
+      "full_set_probe_macro_f1": 0.9051,
+      "full_set_probe_per_seed": {
+        "0": 0.8939,
+        "1": 0.9151,
+        "2": 0.9118,
+        "3": 0.9219,
+        "4": 0.8828
+      },
+      "F1_full_supplied": 0.9542,
+      "F1_full_source": "manuscript random_forest lomfo mean of 25 (MS L664 / L676)",
+      "R_consistent_protocol": 0.4262,
+      "R_vs_probe_full_same_protocol": 0.3832,
+      "all_singles": {
+        "n_int_const": 0.6541,
+        "hex_to_int_ratio": 0.5997,
+        "n_xor_op": 0.5554,
+        "n_hex_const": 0.551,
+        "identifier_digit_ratio": 0.4904,
+        "n_assign_op": 0.4635,
+        "mean_identifier_len": 0.433,
+        "obf_xor_key": 0.4216,
+        "n_arith_op": 0.4168,
+        "mean_line_len": 0.3911,
+        "operator_density": 0.3862,
+        "n_tokens": 0.3778,
+        "size_bytes": 0.3618,
+        "n_lines": 0.3559,
+        "identifier_entropy": 0.3483,
+        "line_len_entropy": 0.3462,
+        "cyclomatic_proxy": 0.3404,
+        "n_unique_identifiers": 0.3366,
+        "n_nonblank_lines": 0.3349,
+        "byte_entropy": 0.3265,
+        "n_if": 0.3215,
+        "max_line_len": 0.3203,
+        "n_string_lit": 0.3157,
+        "unique_identifier_ratio": 0.3139,
+        "mean_string_len": 0.3133,
+        "n_char_lit": 0.3081,
+        "preprocessor_ratio": 0.3031,
+        "n_shift_op": 0.2963,
+        "branch_density": 0.2953,
+        "n_bitwise_op": 0.2598,
+        "n_return": 0.2554,
+        "n_logical_op": 0.2532,
+        "obf_random_name": 0.2495,
+        "n_functions": 0.234,
+        "mean_function_name_len": 0.2299,
+        "n_for": 0.1467,
+        "n_while": 0.1154,
+        "n_switch": 0.1154,
+        "n_case": 0.1154,
+        "n_goto": 0.1154,
+        "n_break": 0.1154,
+        "n_char_array": 0.1154,
+        "api_loader": 0.1154,
+        "api_memory": 0.1154,
+        "api_process": 0.1154,
+        "api_registry": 0.1154,
+        "api_network": 0.1154,
+        "api_crypto": 0.1154,
+        "api_antidebug": 0.1154,
+        "api_timing": 0.1154,
+        "obf_opaque_pred": 0.1154,
+        "obf_always_true": 0.1154,
+        "obf_state_machine": 0.1154,
+        "obf_magic": 0.1154,
+        "obf_junk": 0.1154,
+        "obf_goto": 0.1154,
+        "obf_vm_dispatch": 0.1154,
+        "obf_selfmod": 0.1154,
+        "n_comments": 0.1154,
+        "comment_char_ratio": 0.1154,
+        "n_includes": 0.1154
+      }
+    },
+    "sub_technique": {
+      "label": "sub_technique",
+      "n_rows": 2400,
+      "n_features": 61,
+      "n_classes": 10,
+      "chance_macro_f1": 0.1,
+      "probe_depth": 8,
+      "lomfo_held_out_domains_by_seed": {
+        "0": [
+          [
+            "bitops"
+          ],
+          [
+            "mathlib"
+          ],
+          [
+            "statemach"
+          ],
+          [
+            "dsalgo"
+          ],
+          [
+            "textproc"
+          ]
+        ],
+        "1": [
+          [
+            "bitops"
+          ],
+          [
+            "mathlib"
+          ],
+          [
+            "statemach"
+          ],
+          [
+            "dsalgo"
+          ],
+          [
+            "textproc"
+          ]
+        ],
+        "2": [
+          [
+            "bitops"
+          ],
+          [
+            "mathlib"
+          ],
+          [
+            "statemach"
+          ],
+          [
+            "dsalgo"
+          ],
+          [
+            "textproc"
+          ]
+        ],
+        "3": [
+          [
+            "bitops"
+          ],
+          [
+            "mathlib"
+          ],
+          [
+            "statemach"
+          ],
+          [
+            "dsalgo"
+          ],
+          [
+            "textproc"
+          ]
+        ],
+        "4": [
+          [
+            "bitops"
+          ],
+          [
+            "mathlib"
+          ],
+          [
+            "statemach"
+          ],
+          [
+            "dsalgo"
+          ],
+          [
+            "textproc"
+          ]
+        ]
+      },
+      "best_feature": "identifier_digit_ratio",
+      "best_1_macro_f1": 0.269,
+      "best_1_fold_sd": 0.0331,
+      "best_1_min_fold": 0.2086,
+      "best_1_max_fold": 0.2976,
+      "best_1_per_seed_mean": {
+        "0": 0.269,
+        "1": 0.269,
+        "2": 0.269,
+        "3": 0.269,
+        "4": 0.269
+      },
+      "per_seed_best_single": {
+        "0": {
+          "feature": "identifier_digit_ratio",
+          "macro_f1": 0.269,
+          "R": 0.7601
+        },
+        "1": {
+          "feature": "identifier_digit_ratio",
+          "macro_f1": 0.269,
+          "R": 0.7601
+        },
+        "2": {
+          "feature": "identifier_digit_ratio",
+          "macro_f1": 0.269,
+          "R": 0.7601
+        },
+        "3": {
+          "feature": "identifier_digit_ratio",
+          "macro_f1": 0.269,
+          "R": 0.7601
+        },
+        "4": {
+          "feature": "identifier_digit_ratio",
+          "macro_f1": 0.269,
+          "R": 0.7601
+        }
+      },
+      "top_five": [
+        {
+          "feature": "identifier_digit_ratio",
+          "macro_f1": 0.269
+        },
+        {
+          "feature": "n_xor_op",
+          "macro_f1": 0.2475
+        },
+        {
+          "feature": "obf_xor_key",
+          "macro_f1": 0.2099
+        },
+        {
+          "feature": "hex_to_int_ratio",
+          "macro_f1": 0.2011
+        },
+        {
+          "feature": "mean_line_len",
+          "macro_f1": 0.1732
+        }
+      ],
+      "greedy_trace": [
+        {
+          "k": 1,
+          "features": [
+            "identifier_digit_ratio"
+          ],
+          "macro_f1": 0.269
+        },
+        {
+          "k": 2,
+          "features": [
+            "identifier_digit_ratio",
+            "hex_to_int_ratio"
+          ],
+          "macro_f1": 0.4901
+        },
+        {
+          "k": 3,
+          "features": [
+            "identifier_digit_ratio",
+            "hex_to_int_ratio",
+            "n_xor_op"
+          ],
+          "macro_f1": 0.7567
+        }
+      ],
+      "full_set_probe_macro_f1": 0.7534,
+      "full_set_probe_per_seed": {
+        "0": 0.7456,
+        "1": 0.757,
+        "2": 0.76,
+        "3": 0.7518,
+        "4": 0.7526
+      },
+      "F1_full_supplied": 0.8045,
+      "F1_full_source": "manuscript random_forest lomfo mean of 25 (MS L664 / L676)",
+      "R_consistent_protocol": 0.7601,
+      "R_vs_probe_full_same_protocol": 0.7413,
+      "all_singles": {
+        "identifier_digit_ratio": 0.269,
+        "n_xor_op": 0.2475,
+        "obf_xor_key": 0.2099,
+        "hex_to_int_ratio": 0.2011,
+        "mean_line_len": 0.1732,
+        "mean_identifier_len": 0.1729,
+        "n_int_const": 0.1729,
+        "n_hex_const": 0.1723,
+        "size_bytes": 0.1713,
+        "operator_density": 0.1614,
+        "n_arith_op": 0.149,
+        "line_len_entropy": 0.1488,
+        "n_lines": 0.1459,
+        "identifier_entropy": 0.143,
+        "byte_entropy": 0.1369,
+        "n_shift_op": 0.1348,
+        "n_nonblank_lines": 0.1315,
+        "n_assign_op": 0.1298,
+        "unique_identifier_ratio": 0.1292,
+        "preprocessor_ratio": 0.1199,
+        "n_tokens": 0.118,
+        "branch_density": 0.1171,
+        "max_line_len": 0.1142,
+        "n_unique_identifiers": 0.1072,
+        "n_bitwise_op": 0.1022,
+        "cyclomatic_proxy": 0.0864,
+        "n_string_lit": 0.0727,
+        "mean_string_len": 0.0708,
+        "n_char_lit": 0.07,
+        "obf_random_name": 0.0662,
+        "n_if": 0.066,
+        "n_logical_op": 0.0568,
+        "n_return": 0.0528,
+        "mean_function_name_len": 0.0498,
+        "n_functions": 0.0436,
+        "n_for": 0.0422,
+        "n_while": 0.0182,
+        "n_switch": 0.0182,
+        "n_case": 0.0182,
+        "n_goto": 0.0182,
+        "n_break": 0.0182,
+        "n_char_array": 0.0182,
+        "api_loader": 0.0182,
+        "api_memory": 0.0182,
+        "api_process": 0.0182,
+        "api_registry": 0.0182,
+        "api_network": 0.0182,
+        "api_crypto": 0.0182,
+        "api_antidebug": 0.0182,
+        "api_timing": 0.0182,
+        "obf_opaque_pred": 0.0182,
+        "obf_always_true": 0.0182,
+        "obf_state_machine": 0.0182,
+        "obf_magic": 0.0182,
+        "obf_junk": 0.0182,
+        "obf_goto": 0.0182,
+        "obf_vm_dispatch": 0.0182,
+        "obf_selfmod": 0.0182,
+        "n_comments": 0.0182,
+        "comment_char_ratio": 0.0182,
+        "n_includes": 0.0182
+      }
+    }
+  }
+}

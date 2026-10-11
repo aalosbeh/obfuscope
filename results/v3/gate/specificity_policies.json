@@ -1,0 +1,875 @@
+{
+  "label": "AUDIT-GENERATED specificity re-scoring (run:gate-v3)",
+  "thresholds": {
+    "min_distinct_ratio": 0.8,
+    "max_constant_fraction": 0.5,
+    "max_affected_fraction": 0.05,
+    "max_cross_class_fraction": 0.005,
+    "max_single_feature_f1": 0.7,
+    "min_headroom": 0.5,
+    "min_input_dependence": 0.2,
+    "input_dependence_alpha": 0.05,
+    "permutation_tolerance": 0.08
+  },
+  "per_instance": [
+    {
+      "family": "clean",
+      "seed": 0,
+      "should_pass": true,
+      "n_rows": 960,
+      "exit_code": 0,
+      "passed_policy_i": true,
+      "checks_fired": [],
+      "n_failure_messages": 0,
+      "n_classes": 4,
+      "chance": 0.25,
+      "best_feature": "f29",
+      "best_1": 0.4216,
+      "best_k": {
+        "1": 0.4216,
+        "2": 0.5369,
+        "3": 0.6328
+      },
+      "full_set_probe_macro_f1": 0.6712,
+      "headroom_gap": 0.4212,
+      "headroom_R": 0.5927,
+      "headroom_status": "pass",
+      "permuted_macro_f1": 0.3016,
+      "inconclusive": []
+    },
+    {
+      "family": "clean",
+      "seed": 1,
+      "should_pass": true,
+      "n_rows": 960,
+      "exit_code": 0,
+      "passed_policy_i": true,
+      "checks_fired": [],
+      "n_failure_messages": 0,
+      "n_classes": 4,
+      "chance": 0.25,
+      "best_feature": "f29",
+      "best_1": 0.4053,
+      "best_k": {
+        "1": 0.4053,
+        "2": 0.5836,
+        "3": 0.6227
+      },
+      "full_set_probe_macro_f1": 0.6639,
+      "headroom_gap": 0.4139,
+      "headroom_R": 0.6249,
+      "headroom_status": "pass",
+      "permuted_macro_f1": 0.2485,
+      "inconclusive": []
+    },
+    {
+      "family": "clean",
+      "seed": 2,
+      "should_pass": true,
+      "n_rows": 960,
+      "exit_code": 0,
+      "passed_policy_i": true,
+      "checks_fired": [],
+      "n_failure_messages": 0,
+      "n_classes": 4,
+      "chance": 0.25,
+      "best_feature": "f02",
+      "best_1": 0.4031,
+      "best_k": {
+        "1": 0.4031,
+        "2": 0.5744,
+        "3": 0.6422
+      },
+      "full_set_probe_macro_f1": 0.6683,
+      "headroom_gap": 0.4183,
+      "headroom_R": 0.6341,
+      "headroom_status": "pass",
+      "permuted_macro_f1": 0.2883,
+      "inconclusive": []
+    },
+    {
+      "family": "hard_but_honest",
+      "seed": 0,
+      "should_pass": true,
+      "n_rows": 1440,
+      "exit_code": 1,
+      "passed_policy_i": false,
+      "checks_fired": [
+        "4b_headroom"
+      ],
+      "n_failure_messages": 1,
+      "n_classes": 6,
+      "chance": 0.1667,
+      "best_feature": "f13",
+      "best_1": 0.1771,
+      "best_k": {
+        "1": 0.1771,
+        "2": 0.1842,
+        "3": 0.1874
+      },
+      "full_set_probe_macro_f1": 0.1843,
+      "headroom_gap": 0.0176,
+      "headroom_R": 0.4056,
+      "headroom_status": "fail",
+      "permuted_macro_f1": 0.1855,
+      "inconclusive": []
+    },
+    {
+      "family": "hard_but_honest",
+      "seed": 1,
+      "should_pass": true,
+      "n_rows": 1440,
+      "exit_code": 0,
+      "passed_policy_i": true,
+      "checks_fired": [],
+      "n_failure_messages": 0,
+      "n_classes": 6,
+      "chance": 0.1667,
+      "best_feature": "f04",
+      "best_1": 0.1649,
+      "best_k": {
+        "1": 0.1649,
+        "2": 0.173,
+        "3": 0.1866
+      },
+      "full_set_probe_macro_f1": 0.1806,
+      "headroom_gap": 0.0139,
+      "headroom_R": 1.1267,
+      "headroom_status": "pass",
+      "permuted_macro_f1": 0.1695,
+      "inconclusive": []
+    },
+    {
+      "family": "hard_but_honest",
+      "seed": 2,
+      "should_pass": true,
+      "n_rows": 1440,
+      "exit_code": 0,
+      "passed_policy_i": true,
+      "checks_fired": [],
+      "n_failure_messages": 0,
+      "n_classes": 6,
+      "chance": 0.1667,
+      "best_feature": "f20",
+      "best_1": 0.1812,
+      "best_k": {
+        "1": 0.1812,
+        "2": 0.1974,
+        "3": 0.1794
+      },
+      "full_set_probe_macro_f1": 0.1632,
+      "headroom_gap": -0.0035,
+      "headroom_R": null,
+      "headroom_status": "inconclusive",
+      "permuted_macro_f1": 0.1759,
+      "inconclusive": [
+        "diagnostic 4 headroom INCONCLUSIVE: F1_full (0.1632) - F1_chance (0.1667) = -0.0035 is not above zero, so R is undefined; the headroom sub-check neither passes nor fails on this table"
+      ]
+    },
+    {
+      "family": "near_chance",
+      "seed": 0,
+      "should_pass": true,
+      "n_rows": 960,
+      "exit_code": 0,
+      "passed_policy_i": true,
+      "checks_fired": [],
+      "n_failure_messages": 0,
+      "n_classes": 4,
+      "chance": 0.25,
+      "best_feature": "f23",
+      "best_1": 0.2405,
+      "best_k": {
+        "1": 0.2405,
+        "2": 0.2717,
+        "3": 0.2572
+      },
+      "full_set_probe_macro_f1": 0.23,
+      "headroom_gap": -0.02,
+      "headroom_R": null,
+      "headroom_status": "inconclusive",
+      "permuted_macro_f1": 0.2524,
+      "inconclusive": [
+        "diagnostic 4 headroom INCONCLUSIVE: F1_full (0.2300) - F1_chance (0.2500) = -0.0200 is not above zero, so R is undefined; the headroom sub-check neither passes nor fails on this table"
+      ]
+    },
+    {
+      "family": "near_chance",
+      "seed": 1,
+      "should_pass": true,
+      "n_rows": 960,
+      "exit_code": 0,
+      "passed_policy_i": true,
+      "checks_fired": [],
+      "n_failure_messages": 0,
+      "n_classes": 4,
+      "chance": 0.25,
+      "best_feature": "f09",
+      "best_1": 0.2368,
+      "best_k": {
+        "1": 0.2368,
+        "2": 0.2588,
+        "3": 0.2697
+      },
+      "full_set_probe_macro_f1": 0.2271,
+      "headroom_gap": -0.0229,
+      "headroom_R": null,
+      "headroom_status": "inconclusive",
+      "permuted_macro_f1": 0.2346,
+      "inconclusive": [
+        "diagnostic 4 headroom INCONCLUSIVE: F1_full (0.2271) - F1_chance (0.2500) = -0.0229 is not above zero, so R is undefined; the headroom sub-check neither passes nor fails on this table"
+      ]
+    },
+    {
+      "family": "near_chance",
+      "seed": 2,
+      "should_pass": true,
+      "n_rows": 960,
+      "exit_code": 0,
+      "passed_policy_i": true,
+      "checks_fired": [],
+      "n_failure_messages": 0,
+      "n_classes": 4,
+      "chance": 0.25,
+      "best_feature": "f12",
+      "best_1": 0.2359,
+      "best_k": {
+        "1": 0.2359,
+        "2": 0.2452,
+        "3": 0.2567
+      },
+      "full_set_probe_macro_f1": 0.2182,
+      "headroom_gap": -0.0318,
+      "headroom_R": null,
+      "headroom_status": "inconclusive",
+      "permuted_macro_f1": 0.2528,
+      "inconclusive": [
+        "diagnostic 4 headroom INCONCLUSIVE: F1_full (0.2182) - F1_chance (0.2500) = -0.0318 is not above zero, so R is undefined; the headroom sub-check neither passes nor fails on this table"
+      ]
+    },
+    {
+      "family": "leaked_id",
+      "seed": 0,
+      "should_pass": false,
+      "n_rows": 960,
+      "exit_code": 1,
+      "passed_policy_i": false,
+      "checks_fired": [
+        "4_feature_ceiling",
+        "4b_headroom"
+      ],
+      "n_failure_messages": 3,
+      "n_classes": 4,
+      "chance": 0.25,
+      "best_feature": "f_leak",
+      "best_1": 1.0,
+      "best_k": {
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0
+      },
+      "full_set_probe_macro_f1": 1.0,
+      "headroom_gap": 0.75,
+      "headroom_R": 0.0,
+      "headroom_status": "fail",
+      "permuted_macro_f1": 0.2855,
+      "inconclusive": []
+    },
+    {
+      "family": "leaked_id",
+      "seed": 1,
+      "should_pass": false,
+      "n_rows": 960,
+      "exit_code": 1,
+      "passed_policy_i": false,
+      "checks_fired": [
+        "4_feature_ceiling",
+        "4b_headroom"
+      ],
+      "n_failure_messages": 3,
+      "n_classes": 4,
+      "chance": 0.25,
+      "best_feature": "f_leak",
+      "best_1": 1.0,
+      "best_k": {
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0
+      },
+      "full_set_probe_macro_f1": 1.0,
+      "headroom_gap": 0.75,
+      "headroom_R": 0.0,
+      "headroom_status": "fail",
+      "permuted_macro_f1": 0.2231,
+      "inconclusive": []
+    },
+    {
+      "family": "leaked_id",
+      "seed": 2,
+      "should_pass": false,
+      "n_rows": 960,
+      "exit_code": 1,
+      "passed_policy_i": false,
+      "checks_fired": [
+        "4_feature_ceiling",
+        "4b_headroom"
+      ],
+      "n_failure_messages": 3,
+      "n_classes": 4,
+      "chance": 0.25,
+      "best_feature": "f_leak",
+      "best_1": 1.0,
+      "best_k": {
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0
+      },
+      "full_set_probe_macro_f1": 1.0,
+      "headroom_gap": 0.75,
+      "headroom_R": 0.0,
+      "headroom_status": "fail",
+      "permuted_macro_f1": 0.264,
+      "inconclusive": []
+    },
+    {
+      "family": "seed_jitter_only",
+      "seed": 0,
+      "should_pass": false,
+      "n_rows": 960,
+      "exit_code": 1,
+      "passed_policy_i": false,
+      "checks_fired": [
+        "1b_input_dependence"
+      ],
+      "n_failure_messages": 4,
+      "n_classes": 4,
+      "chance": 0.25,
+      "best_feature": "f29",
+      "best_1": 0.4304,
+      "best_k": {
+        "1": 0.4304,
+        "2": 0.5513,
+        "3": 0.6566
+      },
+      "full_set_probe_macro_f1": 0.7215,
+      "headroom_gap": 0.4715,
+      "headroom_R": 0.6174,
+      "headroom_status": "pass",
+      "permuted_macro_f1": 0.3018,
+      "inconclusive": []
+    },
+    {
+      "family": "seed_jitter_only",
+      "seed": 1,
+      "should_pass": false,
+      "n_rows": 960,
+      "exit_code": 1,
+      "passed_policy_i": false,
+      "checks_fired": [
+        "1b_input_dependence"
+      ],
+      "n_failure_messages": 3,
+      "n_classes": 4,
+      "chance": 0.25,
+      "best_feature": "f29",
+      "best_1": 0.433,
+      "best_k": {
+        "1": 0.433,
+        "2": 0.6126,
+        "3": 0.6479
+      },
+      "full_set_probe_macro_f1": 0.696,
+      "headroom_gap": 0.446,
+      "headroom_R": 0.5897,
+      "headroom_status": "pass",
+      "permuted_macro_f1": 0.244,
+      "inconclusive": []
+    },
+    {
+      "family": "seed_jitter_only",
+      "seed": 2,
+      "should_pass": false,
+      "n_rows": 960,
+      "exit_code": 1,
+      "passed_policy_i": false,
+      "checks_fired": [
+        "1b_input_dependence"
+      ],
+      "n_failure_messages": 4,
+      "n_classes": 4,
+      "chance": 0.25,
+      "best_feature": "f23",
+      "best_1": 0.3952,
+      "best_k": {
+        "1": 0.3952,
+        "2": 0.5754,
+        "3": 0.6542
+      },
+      "full_set_probe_macro_f1": 0.704,
+      "headroom_gap": 0.454,
+      "headroom_R": 0.6802,
+      "headroom_status": "pass",
+      "permuted_macro_f1": 0.281,
+      "inconclusive": []
+    },
+    {
+      "family": "duplicated_rows",
+      "seed": 0,
+      "should_pass": false,
+      "n_rows": 1036,
+      "exit_code": 1,
+      "passed_policy_i": false,
+      "checks_fired": [
+        "3_cross_group_duplicates"
+      ],
+      "n_failure_messages": 1,
+      "n_classes": 4,
+      "chance": 0.25,
+      "best_feature": "f23",
+      "best_1": 0.4259,
+      "best_k": {
+        "1": 0.4259,
+        "2": 0.5291,
+        "3": 0.6298
+      },
+      "full_set_probe_macro_f1": 0.7024,
+      "headroom_gap": 0.4524,
+      "headroom_R": 0.6113,
+      "headroom_status": "pass",
+      "permuted_macro_f1": 0.2245,
+      "inconclusive": []
+    },
+    {
+      "family": "duplicated_rows",
+      "seed": 1,
+      "should_pass": false,
+      "n_rows": 1036,
+      "exit_code": 1,
+      "passed_policy_i": false,
+      "checks_fired": [
+        "3_cross_group_duplicates"
+      ],
+      "n_failure_messages": 1,
+      "n_classes": 4,
+      "chance": 0.25,
+      "best_feature": "f21",
+      "best_1": 0.4509,
+      "best_k": {
+        "1": 0.4509,
+        "2": 0.6071,
+        "3": 0.6443
+      },
+      "full_set_probe_macro_f1": 0.6971,
+      "headroom_gap": 0.4471,
+      "headroom_R": 0.5505,
+      "headroom_status": "pass",
+      "permuted_macro_f1": 0.2294,
+      "inconclusive": []
+    },
+    {
+      "family": "duplicated_rows",
+      "seed": 2,
+      "should_pass": false,
+      "n_rows": 1036,
+      "exit_code": 1,
+      "passed_policy_i": false,
+      "checks_fired": [
+        "3_cross_group_duplicates"
+      ],
+      "n_failure_messages": 1,
+      "n_classes": 4,
+      "chance": 0.25,
+      "best_feature": "f02",
+      "best_1": 0.4117,
+      "best_k": {
+        "1": 0.4117,
+        "2": 0.5757,
+        "3": 0.6531
+      },
+      "full_set_probe_macro_f1": 0.6841,
+      "headroom_gap": 0.4341,
+      "headroom_R": 0.6276,
+      "headroom_status": "pass",
+      "permuted_macro_f1": 0.2472,
+      "inconclusive": []
+    },
+    {
+      "family": "ambiguous_labels",
+      "seed": 0,
+      "should_pass": false,
+      "n_rows": 988,
+      "exit_code": 1,
+      "passed_policy_i": false,
+      "checks_fired": [
+        "6_cross_class_duplicates"
+      ],
+      "n_failure_messages": 1,
+      "n_classes": 4,
+      "chance": 0.25,
+      "best_feature": "f29",
+      "best_1": 0.4145,
+      "best_k": {
+        "1": 0.4145,
+        "2": 0.5234,
+        "3": 0.6186
+      },
+      "full_set_probe_macro_f1": 0.6478,
+      "headroom_gap": 0.3978,
+      "headroom_R": 0.5866,
+      "headroom_status": "pass",
+      "permuted_macro_f1": 0.2201,
+      "inconclusive": []
+    },
+    {
+      "family": "ambiguous_labels",
+      "seed": 1,
+      "should_pass": false,
+      "n_rows": 988,
+      "exit_code": 1,
+      "passed_policy_i": false,
+      "checks_fired": [
+        "6_cross_class_duplicates"
+      ],
+      "n_failure_messages": 1,
+      "n_classes": 4,
+      "chance": 0.25,
+      "best_feature": "f21",
+      "best_1": 0.4402,
+      "best_k": {
+        "1": 0.4402,
+        "2": 0.5766,
+        "3": 0.6068
+      },
+      "full_set_probe_macro_f1": 0.6514,
+      "headroom_gap": 0.4014,
+      "headroom_R": 0.5261,
+      "headroom_status": "pass",
+      "permuted_macro_f1": 0.2595,
+      "inconclusive": []
+    },
+    {
+      "family": "ambiguous_labels",
+      "seed": 2,
+      "should_pass": false,
+      "n_rows": 988,
+      "exit_code": 1,
+      "passed_policy_i": false,
+      "checks_fired": [
+        "6_cross_class_duplicates"
+      ],
+      "n_failure_messages": 1,
+      "n_classes": 4,
+      "chance": 0.25,
+      "best_feature": "f02",
+      "best_1": 0.4103,
+      "best_k": {
+        "1": 0.4103,
+        "2": 0.5777,
+        "3": 0.6202
+      },
+      "full_set_probe_macro_f1": 0.6484,
+      "headroom_gap": 0.3984,
+      "headroom_R": 0.5977,
+      "headroom_status": "pass",
+      "permuted_macro_f1": 0.287,
+      "inconclusive": []
+    }
+  ],
+  "policy_i": {
+    "policy": "(i) every failure disqualifies",
+    "agreement": "20/21",
+    "agreement_rate": 0.9524,
+    "agreement_cp95": [
+      0.7618,
+      0.9988
+    ],
+    "sensitivity": "12/12",
+    "sensitivity_rate": 1.0,
+    "sensitivity_cp95": [
+      0.7354,
+      1.0
+    ],
+    "specificity": "8/9",
+    "specificity_rate": 0.8889,
+    "specificity_cp95": [
+      0.5175,
+      0.9972
+    ],
+    "per_family": {
+      "clean": {
+        "expected": "pass",
+        "failed_seeds": [],
+        "correct_seeds": 3,
+        "n_seeds": 3
+      },
+      "hard_but_honest": {
+        "expected": "pass",
+        "failed_seeds": [
+          0
+        ],
+        "correct_seeds": 2,
+        "n_seeds": 3
+      },
+      "near_chance": {
+        "expected": "pass",
+        "failed_seeds": [],
+        "correct_seeds": 3,
+        "n_seeds": 3
+      },
+      "leaked_id": {
+        "expected": "fail",
+        "failed_seeds": [
+          0,
+          1,
+          2
+        ],
+        "correct_seeds": 3,
+        "n_seeds": 3
+      },
+      "seed_jitter_only": {
+        "expected": "fail",
+        "failed_seeds": [
+          0,
+          1,
+          2
+        ],
+        "correct_seeds": 3,
+        "n_seeds": 3
+      },
+      "duplicated_rows": {
+        "expected": "fail",
+        "failed_seeds": [
+          0,
+          1,
+          2
+        ],
+        "correct_seeds": 3,
+        "n_seeds": 3
+      },
+      "ambiguous_labels": {
+        "expected": "fail",
+        "failed_seeds": [
+          0,
+          1,
+          2
+        ],
+        "correct_seeds": 3,
+        "n_seeds": 3
+      }
+    }
+  },
+  "policy_ii": {
+    "policy": "(ii) diagnostic 4 advisory (4_feature_ceiling and 4b_headroom ignored)",
+    "agreement": "18/21",
+    "agreement_rate": 0.8571,
+    "agreement_cp95": [
+      0.6366,
+      0.9695
+    ],
+    "sensitivity": "9/12",
+    "sensitivity_rate": 0.75,
+    "sensitivity_cp95": [
+      0.4281,
+      0.9451
+    ],
+    "specificity": "9/9",
+    "specificity_rate": 1.0,
+    "specificity_cp95": [
+      0.6637,
+      1.0
+    ],
+    "per_family": {
+      "clean": {
+        "expected": "pass",
+        "failed_seeds": [],
+        "correct_seeds": 3,
+        "n_seeds": 3
+      },
+      "hard_but_honest": {
+        "expected": "pass",
+        "failed_seeds": [],
+        "correct_seeds": 3,
+        "n_seeds": 3
+      },
+      "near_chance": {
+        "expected": "pass",
+        "failed_seeds": [],
+        "correct_seeds": 3,
+        "n_seeds": 3
+      },
+      "leaked_id": {
+        "expected": "fail",
+        "failed_seeds": [],
+        "correct_seeds": 0,
+        "n_seeds": 3
+      },
+      "seed_jitter_only": {
+        "expected": "fail",
+        "failed_seeds": [
+          0,
+          1,
+          2
+        ],
+        "correct_seeds": 3,
+        "n_seeds": 3
+      },
+      "duplicated_rows": {
+        "expected": "fail",
+        "failed_seeds": [
+          0,
+          1,
+          2
+        ],
+        "correct_seeds": 3,
+        "n_seeds": 3
+      },
+      "ambiguous_labels": {
+        "expected": "fail",
+        "failed_seeds": [
+          0,
+          1,
+          2
+        ],
+        "correct_seeds": 3,
+        "n_seeds": 3
+      }
+    }
+  },
+  "policy_ii_b_variant": {
+    "policy": "(ii-b) only headroom 4b advisory, best-k ceiling disqualifying",
+    "agreement": "21/21",
+    "agreement_rate": 1.0,
+    "agreement_cp95": [
+      0.8389,
+      1.0
+    ],
+    "sensitivity": "12/12",
+    "sensitivity_rate": 1.0,
+    "sensitivity_cp95": [
+      0.7354,
+      1.0
+    ],
+    "specificity": "9/9",
+    "specificity_rate": 1.0,
+    "specificity_cp95": [
+      0.6637,
+      1.0
+    ],
+    "per_family": {
+      "clean": {
+        "expected": "pass",
+        "failed_seeds": [],
+        "correct_seeds": 3,
+        "n_seeds": 3
+      },
+      "hard_but_honest": {
+        "expected": "pass",
+        "failed_seeds": [],
+        "correct_seeds": 3,
+        "n_seeds": 3
+      },
+      "near_chance": {
+        "expected": "pass",
+        "failed_seeds": [],
+        "correct_seeds": 3,
+        "n_seeds": 3
+      },
+      "leaked_id": {
+        "expected": "fail",
+        "failed_seeds": [
+          0,
+          1,
+          2
+        ],
+        "correct_seeds": 3,
+        "n_seeds": 3
+      },
+      "seed_jitter_only": {
+        "expected": "fail",
+        "failed_seeds": [
+          0,
+          1,
+          2
+        ],
+        "correct_seeds": 3,
+        "n_seeds": 3
+      },
+      "duplicated_rows": {
+        "expected": "fail",
+        "failed_seeds": [
+          0,
+          1,
+          2
+        ],
+        "correct_seeds": 3,
+        "n_seeds": 3
+      },
+      "ambiguous_labels": {
+        "expected": "fail",
+        "failed_seeds": [
+          0,
+          1,
+          2
+        ],
+        "correct_seeds": 3,
+        "n_seeds": 3
+      }
+    }
+  },
+  "R_undefined": {
+    "count": 4,
+    "of": 21,
+    "instances": [
+      {
+        "family": "hard_but_honest",
+        "seed": 2,
+        "full_set_probe_macro_f1": 0.1632,
+        "chance": 0.1667,
+        "headroom_gap": -0.0035
+      },
+      {
+        "family": "near_chance",
+        "seed": 0,
+        "full_set_probe_macro_f1": 0.23,
+        "chance": 0.25,
+        "headroom_gap": -0.02
+      },
+      {
+        "family": "near_chance",
+        "seed": 1,
+        "full_set_probe_macro_f1": 0.2271,
+        "chance": 0.25,
+        "headroom_gap": -0.0229
+      },
+      {
+        "family": "near_chance",
+        "seed": 2,
+        "full_set_probe_macro_f1": 0.2182,
+        "chance": 0.25,
+        "headroom_gap": -0.0318
+      }
+    ],
+    "note": "R undefined means F1_full (probe tree on all features, no --full-macro-f1 supplied) minus chance <= 1e-9; the gate reports headroom_status 'inconclusive' and the headroom sub-check neither passes nor fails"
+  },
+  "headroom_status_counts": {
+    "fail": 4,
+    "inconclusive": 4,
+    "pass": 13
+  },
+  "cross_check": {
+    "rerun": {
+      "instances": 21,
+      "mismatches": [],
+      "agreement": 0.9524,
+      "sensitivity": 1.0,
+      "specificity": 0.8889
+    },
+    "committed": {
+      "instances": 21,
+      "mismatches": [],
+      "agreement": 0.9524,
+      "sensitivity": 1.0,
+      "specificity": 0.8889
+    }
+  }
+}

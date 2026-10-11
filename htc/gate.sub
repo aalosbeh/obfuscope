@@ -1,0 +1,39 @@
+# Corpus health gate. One job, run between MERGE and GRID.
+#
+#   condor_submit gate.sub
+#
+# A failing gate exits nonzero, DAGMan marks the node failed, and the GRID and
+# AGGREGATE stages never submit. The two JSON reports are returned either way,
+# so a failure arrives with the per-class diagnostics that explain it.
+#
+# There is no max_retries here on purpose. A gate failure is a property of the
+# corpus, not a transient fault, so retrying would only repeat the same verdict
+# at the same cost.
+
+universe                = container
+container_image         = osdf:///ospool/ap40/data/$ENV(USER)/obfuscope.sif
+
+executable              = gate.sh
+arguments               = $(min_distinct_ratio) $(max_single_feature_f1)
+
+transfer_input_files    = obfuscope_src.tar.gz, data/features.csv
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+
+# ON_EXIT_OR_EVICT is not used: the reports are only meaningful once both
+# checks have run to completion.
+transfer_output_files   = gate_technique.json, gate_sub_technique.json
+transfer_output_remaps  = "gate_technique.json = results/gate_technique.json ; gate_sub_technique.json = results/gate_sub_technique.json"
+
+request_cpus            = 4
+request_memory          = 8GB
+request_disk            = 4GB
++JobDurationCategory    = "Medium"
+
+output                  = logs/gate.out
+error                   = logs/gate.err
+log                     = logs/gate.log
+
+min_distinct_ratio      = 0.80
+max_single_feature_f1   = 0.70
+queue

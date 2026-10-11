@@ -1,0 +1,71 @@
+{
+  "mode": "corpus",
+  "corpus": "data/pilot_corpus",
+  "artifacts_found": 2400,
+  "artifacts_unmatched": 0,
+  "usable_programs": 30,
+  "excluded_programs": [],
+  "per_parameterisation": {
+    "ref_opq_both": {
+      "attempted": 240,
+      "preserved": 240,
+      "compile_failed": 0,
+      "output_differs": 0
+    },
+    "ref_opq_junk": {
+      "attempted": 240,
+      "preserved": 240,
+      "compile_failed": 0,
+      "output_differs": 0
+    },
+    "ref_opq_true": {
+      "attempted": 240,
+      "preserved": 240,
+      "compile_failed": 0,
+      "output_differs": 0
+    },
+    "ref_str_add": {
+      "attempted": 240,
+      "preserved": 240,
+      "compile_failed": 0,
+      "output_differs": 0
+    },
+    "ref_str_xor": {
+      "attempted": 240,
+      "preserved": 240,
+      "compile_failed": 0,
+      "output_differs": 0
+    },
+    "ref_ren_hex": {
+      "attempted": 240,
+      "preserved": 240,
+      "compile_failed": 0,
+      "output_differs": 0
+    },
+    "ref_ren_long": {
+      "attempted": 240,
+      "preserved": 240,
+      "compile_failed": 0,
+      "output_differs": 0
+    },
+    "ref_lit_mixed": {
+      "attempted": 240,
+      "preserved": 240,
+      "compile_failed": 0,
+      "output_differs": 0
+    },
+    "ref_lit_sum": {
+      "attempted": 240,
+      "preserved": 240,
+      "compile_failed": 0,
+      "output_differs": 0
+    },
+    "ref_lit_xor": {
+      "attempted": 240,
+      "preserved": 240,
+      "compile_failed": 0,
+      "output_differs": 0
+    }
+  },
+  "failures": []
+}

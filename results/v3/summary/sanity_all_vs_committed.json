@@ -1,0 +1,221 @@
+{
+  "A": {
+    "committed_file": "/Users/anasalsobeh/Downloads/manar/ofuScope/obfuscope-main/results/openset_v2_technique.json",
+    "n_committed_folds": 120,
+    "n_v3_folds": 120,
+    "n_matched": 120,
+    "auroc_max_abs_diff_by_scorer": {
+      "msp": 0.0,
+      "knn_dist": 0.0,
+      "mahalanobis": 0.0,
+      "iforest": 0.0,
+      "evt_posterior": 0.0,
+      "energy": 0.0,
+      "openmax": 0.0
+    },
+    "other_max_abs_diff": {
+      "msp.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "msp.aupr_novel_vs_committed_aupr_novel": 0.0,
+      "msp.oscr_legacy_predict_vs_committed_oscr": 0.0,
+      "knn_dist.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "knn_dist.aupr_novel_vs_committed_aupr_novel": 0.0,
+      "knn_dist.oscr_legacy_predict_vs_committed_oscr": 0.0,
+      "mahalanobis.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "mahalanobis.aupr_novel_vs_committed_aupr_novel": 0.0,
+      "mahalanobis.oscr_legacy_predict_vs_committed_oscr": 0.0,
+      "iforest.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "iforest.aupr_novel_vs_committed_aupr_novel": 0.0,
+      "iforest.oscr_legacy_predict_vs_committed_oscr": 0.0,
+      "evt_posterior.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "evt_posterior.aupr_novel_vs_committed_aupr_novel": 0.002393329001516342,
+      "evt_posterior.oscr_legacy_predict_vs_committed_oscr": 1.1102230246251565e-16,
+      "closed_accuracy_vs_committed_closed_accuracy": 0.0,
+      "ece_legacy_predict_vs_committed_ece": 0.0,
+      "n_novel_vs_committed_n_novel": 0.0,
+      "n_known_eval_vs_committed_n_known_eval": 0.0,
+      "energy.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "energy.aupr_novel_vs_committed_aupr_novel": 0.0,
+      "energy.oscr_legacy_predict_vs_committed_oscr": 0.0,
+      "openmax.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "openmax.aupr_novel_vs_committed_aupr_novel": 0.0,
+      "openmax.oscr_legacy_predict_vs_committed_oscr": 0.0
+    },
+    "auroc_max_abs_diff_overall": 0.0,
+    "msp_auroc_mean_committed_vs_v3": {
+      "random_forest": [
+        0.8923350177744709,
+        0.8923350177744709
+      ],
+      "extra_trees": [
+        0.880802802837715,
+        0.880802802837715
+      ],
+      "logreg": [
+        0.6596554646164021,
+        0.6596554646164021
+      ],
+      "svm_rbf": [
+        0.7548878632399141,
+        0.7548878632399141
+      ],
+      "knn": [
+        0.5156118952029597,
+        0.5156118952029597
+      ],
+      "mlp": [
+        0.6453437990864749,
+        0.6453437990864749
+      ]
+    }
+  },
+  "B": {
+    "committed_file": "/Users/anasalsobeh/Downloads/manar/ofuScope/obfuscope-main/results/openset_v2_subtechnique.json",
+    "n_committed_folds": 300,
+    "n_v3_folds": 300,
+    "n_matched": 300,
+    "auroc_max_abs_diff_by_scorer": {
+      "msp": 0.0,
+      "knn_dist": 0.0,
+      "mahalanobis": 0.0,
+      "iforest": 0.0,
+      "evt_posterior": 5.551115123125783e-17,
+      "energy": 0.0,
+      "openmax": 0.0
+    },
+    "other_max_abs_diff": {
+      "msp.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "msp.aupr_novel_vs_committed_aupr_novel": 0.0,
+      "msp.oscr_legacy_predict_vs_committed_oscr": 0.0,
+      "knn_dist.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "knn_dist.aupr_novel_vs_committed_aupr_novel": 0.0,
+      "knn_dist.oscr_legacy_predict_vs_committed_oscr": 0.0,
+      "mahalanobis.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "mahalanobis.aupr_novel_vs_committed_aupr_novel": 0.0,
+      "mahalanobis.oscr_legacy_predict_vs_committed_oscr": 0.0,
+      "iforest.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "iforest.aupr_novel_vs_committed_aupr_novel": 0.0,
+      "iforest.oscr_legacy_predict_vs_committed_oscr": 0.0,
+      "evt_posterior.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "evt_posterior.aupr_novel_vs_committed_aupr_novel": 0.0,
+      "evt_posterior.oscr_legacy_predict_vs_committed_oscr": 0.0,
+      "closed_accuracy_vs_committed_closed_accuracy": 0.0,
+      "ece_legacy_predict_vs_committed_ece": 5.551115123125783e-17,
+      "n_novel_vs_committed_n_novel": 0.0,
+      "n_known_eval_vs_committed_n_known_eval": 0.0,
+      "energy.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "energy.aupr_novel_vs_committed_aupr_novel": 0.0,
+      "energy.oscr_legacy_predict_vs_committed_oscr": 0.0,
+      "openmax.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "openmax.aupr_novel_vs_committed_aupr_novel": 0.0,
+      "openmax.oscr_legacy_predict_vs_committed_oscr": 0.0
+    },
+    "auroc_max_abs_diff_overall": 5.551115123125783e-17,
+    "msp_auroc_mean_committed_vs_v3": {
+      "random_forest": [
+        0.25282716049382714,
+        0.25282716049382714
+      ],
+      "extra_trees": [
+        0.1913750964506173,
+        0.1913750964506173
+      ],
+      "logreg": [
+        0.3698748070987654,
+        0.3698748070987654
+      ],
+      "svm_rbf": [
+        0.27985744598765433,
+        0.27985744598765433
+      ],
+      "knn": [
+        0.3469003665123456,
+        0.3469003665123456
+      ],
+      "mlp": [
+        0.3603885030864198,
+        0.3603885030864198
+      ]
+    }
+  },
+  "C": {
+    "committed_file": "/Users/anasalsobeh/Downloads/manar/ofuScope/obfuscope-main/results/openset_v2_family.json",
+    "n_committed_folds": 120,
+    "n_v3_folds": 120,
+    "n_matched": 120,
+    "auroc_max_abs_diff_by_scorer": {
+      "msp": 0.0,
+      "knn_dist": 0.0,
+      "mahalanobis": 0.0,
+      "iforest": 0.0,
+      "evt_posterior": 0.0,
+      "energy": 0.0,
+      "openmax": 0.0
+    },
+    "other_max_abs_diff": {
+      "msp.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "msp.aupr_novel_vs_committed_aupr_novel": 5.679752818066319e-07,
+      "msp.oscr_legacy_predict_vs_committed_oscr": 1.1102230246251565e-16,
+      "knn_dist.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "knn_dist.aupr_novel_vs_committed_aupr_novel": 0.0,
+      "knn_dist.oscr_legacy_predict_vs_committed_oscr": 0.0,
+      "mahalanobis.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "mahalanobis.aupr_novel_vs_committed_aupr_novel": 0.0,
+      "mahalanobis.oscr_legacy_predict_vs_committed_oscr": 0.0,
+      "iforest.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "iforest.aupr_novel_vs_committed_aupr_novel": 0.0,
+      "iforest.oscr_legacy_predict_vs_committed_oscr": 0.0,
+      "evt_posterior.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "evt_posterior.aupr_novel_vs_committed_aupr_novel": 0.0,
+      "evt_posterior.oscr_legacy_predict_vs_committed_oscr": 0.0,
+      "closed_accuracy_vs_committed_closed_accuracy": 0.0,
+      "ece_legacy_predict_vs_committed_ece": 0.0,
+      "n_novel_vs_committed_n_novel": 0.0,
+      "n_known_eval_vs_committed_n_known_eval": 0.0,
+      "energy.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "energy.aupr_novel_vs_committed_aupr_novel": 0.0,
+      "energy.oscr_legacy_predict_vs_committed_oscr": 0.0,
+      "openmax.fpr95_novel_pos_vs_committed_fpr_at_95tpr": 0.0,
+      "openmax.aupr_novel_vs_committed_aupr_novel": 0.004768483231707199,
+      "openmax.oscr_legacy_predict_vs_committed_oscr": 0.0
+    },
+    "auroc_max_abs_diff_overall": 0.0,
+    "msp_auroc_mean_committed_vs_v3": {
+      "random_forest": [
+        0.9141601691674932,
+        0.9141601691674932
+      ],
+      "extra_trees": [
+        0.9073403204055058,
+        0.9073403204055058
+      ],
+      "logreg": [
+        0.5743169358672288,
+        0.5743169358672288
+      ],
+      "svm_rbf": [
+        0.7543436879960319,
+        0.7543436879960319
+      ],
+      "knn": [
+        0.6642703037161045,
+        0.6642703037161045
+      ],
+      "mlp": [
+        0.5983349738549935,
+        0.5983349738549935
+      ]
+    }
+  },
+  "A_heldout_vs_all_known_side": {
+    "max_abs_diff_closed_accuracy_and_ece": 0.0,
+    "identical_eval_programs": true
+  },
+  "B_heldout_vs_all_known_side": {
+    "max_abs_diff_closed_accuracy_and_ece": 5.551115123125783e-17,
+    "identical_eval_programs": true
+  },
+  "C_heldout_vs_all_known_side": {
+    "max_abs_diff_closed_accuracy_and_ece": 2.7755575615628914e-17,
+    "identical_eval_programs": true
+  }
+}

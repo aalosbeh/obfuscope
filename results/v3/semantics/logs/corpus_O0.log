@@ -1,0 +1,36 @@
+usable input programs: 30/30
+
+  [200/2400]
+  [400/2400]
+  [600/2400]
+  [800/2400]
+  [1000/2400]
+  [1200/2400]
+  [1400/2400]
+  [1600/2400]
+  [1800/2400]
+  [2000/2400]
+  [2200/2400]
+  [2400/2400]
+parameterisation  attempted  preserved  compile_failed  run_timeout  transform_failed  output_differs  exit_status_differs    rate
+----------------------------------------------------------------------------------------------------------------------------------
+ref_lit_mixed        240        240               0            0                 0               0                    0  100.0%
+ref_lit_sum          240        240               0            0                 0               0                    0  100.0%
+ref_lit_xor          240        240               0            0                 0               0                    0  100.0%
+ref_opq_both         240        240               0            0                 0               0                    0  100.0%
+ref_opq_junk         240        240               0            0                 0               0                    0  100.0%
+ref_opq_true         240        240               0            0                 0               0                    0  100.0%
+ref_ren_hex          240        240               0            0                 0               0                    0  100.0%
+ref_ren_long         240        240               0            0                 0               0                    0  100.0%
+ref_str_add          240        240               0            0                 0               0                    0  100.0%
+ref_str_xor          240        240               0            0                 0               0                    0  100.0%
+----------------------------------------------------------------------------------------------------------------------------------
+overall             2400       2400               0            0                 0               0                    0  100.0%
+  output_differs and exit_status_differs are reported separately and can overlap;
+  0 artifacts differ in both.
+
+report written to results/v3/semantics/semantics_corpus_O0.json
+real 5088.13
+user 195.42
+sys 186.05
+exit=0

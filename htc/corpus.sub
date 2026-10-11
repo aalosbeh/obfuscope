@@ -1,0 +1,45 @@
+# Sharded Tigress corpus generation. Each job produces one tarball of
+# obfuscated C artifacts and a JSONL manifest recording every attempt,
+# successful or not.
+#
+#   condor_submit corpus.sub num_shards=64 replicates=8
+#
+# num_shards must match the value used by the FEATURES stage only if you want
+# the two partitions to coincide; they are independent otherwise, because the
+# assemble step merges the shard tarballs into one corpus before extraction.
+#
+# The container image must carry Tigress on PATH. The driver checks its flag
+# catalogue against the installed binary before generating, so an image built
+# against a different Tigress release fails at the first job rather than
+# producing a corpus with silently missing classes.
+
+universe                = container
+container_image         = osdf:///ospool/ap40/data/$ENV(USER)/obfuscope.sif
+
+executable              = corpus.sh
+arguments               = $(Process) $(num_shards) $(replicates)
+
+# Benign program sources come from the OSDF origin so hundreds of shards read
+# them from cache rather than from the access point.
+transfer_input_files    = obfuscope_src.tar.gz, programs.tsv, osdf:///ospool/ap40/data/$ENV(USER)/obfuscope/programs.tar.gz
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+
+transfer_output_files   = corpus_shard_$(Process).tar.gz, corpus_manifest_$(Process).jsonl
+transfer_output_remaps  = "corpus_shard_$(Process).tar.gz = data/corpus_shards/corpus_shard_$(Process).tar.gz ; corpus_manifest_$(Process).jsonl = data/corpus_shards/corpus_manifest_$(Process).jsonl"
+
+# Virtualize is the cost driver: it synthesises an interpreter, so both runtime
+# and output size grow with function size. Memory is set for that case.
+request_cpus            = 1
+request_memory          = 6GB
+request_disk            = 8GB
++JobDurationCategory    = "Medium"
+max_retries             = 5
+
+output                  = logs/corpus_$(Cluster)_$(Process).out
+error                   = logs/corpus_$(Cluster)_$(Process).err
+log                     = logs/corpus.log
+
+num_shards              = 64
+replicates              = 8
+queue $(num_shards)

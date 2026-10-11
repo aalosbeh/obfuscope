@@ -1,0 +1,292 @@
+{
+  "features_path": "data/features.csv",
+  "label": "technique",
+  "group": "sample_id",
+  "per_class": [
+    {
+      "class": "advanced",
+      "n": 798,
+      "distinct_vectors": 205,
+      "distinct_ratio": 0.2569,
+      "constant_features": 15,
+      "constant_fraction": 0.2459,
+      "input_dependence": 0.0009,
+      "dependence_omega2": -0.1406,
+      "n_groups": 100,
+      "seed_sensitivity": 0.9991,
+      "dependence_null_mean": 0.000247,
+      "dependence_z": -17.664,
+      "dependence_p": 1.0
+    },
+    {
+      "class": "advanced_code",
+      "n": 798,
+      "distinct_vectors": 8,
+      "distinct_ratio": 0.01,
+      "constant_features": 9,
+      "constant_fraction": 0.1475,
+      "input_dependence": 0.0004,
+      "dependence_omega2": -0.1412,
+      "n_groups": 100,
+      "seed_sensitivity": 0.9996,
+      "dependence_null_mean": 0.000396,
+      "dependence_z": -16.396,
+      "dependence_p": 1.0
+    },
+    {
+      "class": "advanced_microcode",
+      "n": 301,
+      "distinct_vectors": 3,
+      "distinct_ratio": 0.01,
+      "constant_features": 17,
+      "constant_fraction": 0.2787,
+      "input_dependence": 0.0033,
+      "dependence_omega2": -0.4926,
+      "n_groups": 101,
+      "seed_sensitivity": 0.9967,
+      "dependence_null_mean": 0.001322,
+      "dependence_z": -11.316,
+      "dependence_p": 1.0
+    },
+    {
+      "class": "advanced_technique",
+      "n": 400,
+      "distinct_vectors": 4,
+      "distinct_ratio": 0.01,
+      "constant_features": 19,
+      "constant_fraction": 0.3115,
+      "input_dependence": 0.0,
+      "dependence_omega2": -0.3289,
+      "n_groups": 100,
+      "seed_sensitivity": 1.0,
+      "dependence_null_mean": -0.001979,
+      "dependence_z": -13.031,
+      "dependence_p": 1.0
+    },
+    {
+      "class": "api_obfuscated",
+      "n": 221,
+      "distinct_vectors": 221,
+      "distinct_ratio": 1.0,
+      "constant_features": 5,
+      "constant_fraction": 0.082,
+      "input_dependence": 0.9662,
+      "dependence_omega2": 0.9492,
+      "n_groups": 74,
+      "seed_sensitivity": 0.0338,
+      "dependence_null_mean": -0.001348,
+      "dependence_z": 35.587,
+      "dependence_p": 0.00498
+    },
+    {
+      "class": "code_based",
+      "n": 799,
+      "distinct_vectors": 740,
+      "distinct_ratio": 0.9262,
+      "constant_features": 3,
+      "constant_fraction": 0.0492,
+      "input_dependence": 0.8271,
+      "dependence_omega2": 0.808,
+      "n_groups": 80,
+      "seed_sensitivity": 0.1729,
+      "dependence_null_mean": -0.000209,
+      "dependence_z": 132.501,
+      "dependence_p": 0.00498
+    },
+    {
+      "class": "cryptographic",
+      "n": 404,
+      "distinct_vectors": 4,
+      "distinct_ratio": 0.0099,
+      "constant_features": 14,
+      "constant_fraction": 0.2295,
+      "input_dependence": 0.0,
+      "dependence_omega2": -0.3289,
+      "n_groups": 101,
+      "seed_sensitivity": 1.0,
+      "dependence_null_mean": 0.000931,
+      "dependence_z": -13.613,
+      "dependence_p": 1.0
+    },
+    {
+      "class": "packer_obfuscated",
+      "n": 100,
+      "distinct_vectors": 1,
+      "distinct_ratio": 0.01,
+      "constant_features": 61,
+      "constant_fraction": 1.0,
+      "input_dependence": 0.0,
+      "dependence_omega2": 0.0,
+      "n_groups": 100,
+      "seed_sensitivity": 1.0,
+      "dependence_null_mean": 0.0,
+      "dependence_z": null,
+      "dependence_p": 1.0
+    },
+    {
+      "class": "rop_obfuscated",
+      "n": 100,
+      "distinct_vectors": 1,
+      "distinct_ratio": 0.01,
+      "constant_features": 61,
+      "constant_fraction": 1.0,
+      "input_dependence": 0.0,
+      "dependence_omega2": 0.0,
+      "n_groups": 100,
+      "seed_sensitivity": 1.0,
+      "dependence_null_mean": 0.0,
+      "dependence_z": null,
+      "dependence_p": 1.0
+    },
+    {
+      "class": "self_modifying",
+      "n": 100,
+      "distinct_vectors": 1,
+      "distinct_ratio": 0.01,
+      "constant_features": 61,
+      "constant_fraction": 1.0,
+      "input_dependence": 0.0,
+      "dependence_omega2": 0.0,
+      "n_groups": 100,
+      "seed_sensitivity": 1.0,
+      "dependence_null_mean": 0.0,
+      "dependence_z": null,
+      "dependence_p": 1.0
+    },
+    {
+      "class": "vm_obfuscated",
+      "n": 100,
+      "distinct_vectors": 1,
+      "distinct_ratio": 0.01,
+      "constant_features": 61,
+      "constant_fraction": 1.0,
+      "input_dependence": 0.0,
+      "dependence_omega2": 0.0,
+      "n_groups": 100,
+      "seed_sensitivity": 1.0,
+      "dependence_null_mean": 0.0,
+      "dependence_z": null,
+      "dependence_p": 1.0
+    }
+  ],
+  "cross_group_duplicates": {
+    "group_column": "sample_id",
+    "duplicate_clusters_spanning_groups": 29,
+    "rows_in_those_clusters": 2902,
+    "fraction_of_corpus": 0.7042,
+    "total_rows": 4121,
+    "distinct_vectors_overall": 1189
+  },
+  "cross_class_duplicates": {
+    "label_column": "technique",
+    "duplicate_clusters_spanning_labels": 0,
+    "rows_in_those_clusters": 0,
+    "fraction_of_corpus": 0.0,
+    "irreducible_errors": 0,
+    "irreducible_error_rate": 0.0,
+    "accuracy_ceiling": 1.0,
+    "worst_clusters": []
+  },
+  "single_feature": {
+    "n_classes": 11,
+    "chance_macro_f1": 0.0909,
+    "best_feature": "n_lines",
+    "best_macro_f1": 0.9102,
+    "macro_f1_by_k": {
+      "1": 0.9102,
+      "2": 0.9636,
+      "3": 0.9706
+    },
+    "greedy_trace": [
+      {
+        "k": 1,
+        "features": [
+          "n_lines"
+        ],
+        "macro_f1": 0.9102
+      },
+      {
+        "k": 2,
+        "features": [
+          "n_lines",
+          "mean_function_name_len"
+        ],
+        "macro_f1": 0.9636
+      },
+      {
+        "k": 3,
+        "features": [
+          "n_lines",
+          "mean_function_name_len",
+          "mean_line_len"
+        ],
+        "macro_f1": 0.9706
+      }
+    ],
+    "candidate_pool_size": 24,
+    "full_set_shallow_depth3": 0.3461,
+    "full_set_macro_f1": 0.9915,
+    "full_set_source": "supplied",
+    "headroom_R": 0.0903,
+    "top_five": [
+      {
+        "feature": "n_lines",
+        "macro_f1": 0.9102
+      },
+      {
+        "feature": "n_nonblank_lines",
+        "macro_f1": 0.9101
+      },
+      {
+        "feature": "line_len_entropy",
+        "macro_f1": 0.9095
+      },
+      {
+        "feature": "size_bytes",
+        "macro_f1": 0.9088
+      },
+      {
+        "feature": "comment_char_ratio",
+        "macro_f1": 0.9036
+      }
+    ],
+    "threshold_absolute_f1": 0.7,
+    "threshold_min_headroom": 0.5
+  },
+  "permuted_labels": {
+    "real_macro_f1": 0.9912,
+    "permuted_macro_f1": 0.0625,
+    "chance_macro_f1": 0.0909,
+    "excess_over_chance": -0.0284,
+    "tolerance": 0.08
+  },
+  "failures": [
+    "class 'advanced': 205 distinct vectors in 798 artifacts (ratio 0.257 below 0.80). The generator is producing near identical output within this class, so the class is separable without any attribution signal.",
+    "class 'advanced': the between program share of feature variance is -0.141 after bias correction, against 0.000 when the program labels are shuffled (p = 1.000 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 0.257 is being produced by generator randomness rather than by sensitivity to the material being transformed.",
+    "class 'advanced_code': 8 distinct vectors in 798 artifacts (ratio 0.010 below 0.80). The generator is producing near identical output within this class, so the class is separable without any attribution signal.",
+    "class 'advanced_code': the between program share of feature variance is -0.141 after bias correction, against 0.000 when the program labels are shuffled (p = 1.000 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 0.010 is being produced by generator randomness rather than by sensitivity to the material being transformed.",
+    "class 'advanced_microcode': 3 distinct vectors in 301 artifacts (ratio 0.010 below 0.80). The generator is producing near identical output within this class, so the class is separable without any attribution signal.",
+    "class 'advanced_microcode': the between program share of feature variance is -0.493 after bias correction, against 0.001 when the program labels are shuffled (p = 1.000 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 0.010 is being produced by generator randomness rather than by sensitivity to the material being transformed.",
+    "class 'advanced_technique': 4 distinct vectors in 400 artifacts (ratio 0.010 below 0.80). The generator is producing near identical output within this class, so the class is separable without any attribution signal.",
+    "class 'advanced_technique': the between program share of feature variance is -0.329 after bias correction, against -0.002 when the program labels are shuffled (p = 1.000 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 0.010 is being produced by generator randomness rather than by sensitivity to the material being transformed.",
+    "class 'cryptographic': 4 distinct vectors in 404 artifacts (ratio 0.010 below 0.80). The generator is producing near identical output within this class, so the class is separable without any attribution signal.",
+    "class 'cryptographic': the between program share of feature variance is -0.329 after bias correction, against 0.001 when the program labels are shuffled (p = 1.000 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 0.010 is being produced by generator randomness rather than by sensitivity to the material being transformed.",
+    "class 'packer_obfuscated': 1 distinct vectors in 100 artifacts (ratio 0.010 below 0.80). The generator is producing near identical output within this class, so the class is separable without any attribution signal.",
+    "class 'packer_obfuscated': 61 of 61 features have zero variance (fraction 1.000 above 0.50). Those features identify the class rather than describe it.",
+    "class 'packer_obfuscated': the between program share of feature variance is 0.000 after bias correction, against 0.000 when the program labels are shuffled (p = 1.000 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 0.010 is being produced by generator randomness rather than by sensitivity to the material being transformed.",
+    "class 'rop_obfuscated': 1 distinct vectors in 100 artifacts (ratio 0.010 below 0.80). The generator is producing near identical output within this class, so the class is separable without any attribution signal.",
+    "class 'rop_obfuscated': 61 of 61 features have zero variance (fraction 1.000 above 0.50). Those features identify the class rather than describe it.",
+    "class 'rop_obfuscated': the between program share of feature variance is 0.000 after bias correction, against 0.000 when the program labels are shuffled (p = 1.000 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 0.010 is being produced by generator randomness rather than by sensitivity to the material being transformed.",
+    "class 'self_modifying': 1 distinct vectors in 100 artifacts (ratio 0.010 below 0.80). The generator is producing near identical output within this class, so the class is separable without any attribution signal.",
+    "class 'self_modifying': 61 of 61 features have zero variance (fraction 1.000 above 0.50). Those features identify the class rather than describe it.",
+    "class 'self_modifying': the between program share of feature variance is 0.000 after bias correction, against 0.000 when the program labels are shuffled (p = 1.000 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 0.010 is being produced by generator randomness rather than by sensitivity to the material being transformed.",
+    "class 'vm_obfuscated': 1 distinct vectors in 100 artifacts (ratio 0.010 below 0.80). The generator is producing near identical output within this class, so the class is separable without any attribution signal.",
+    "class 'vm_obfuscated': 61 of 61 features have zero variance (fraction 1.000 above 0.50). Those features identify the class rather than describe it.",
+    "class 'vm_obfuscated': the between program share of feature variance is 0.000 after bias correction, against 0.000 when the program labels are shuffled (p = 1.000 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 0.010 is being produced by generator randomness rather than by sensitivity to the material being transformed.",
+    "29 duplicate feature vector clusters span more than one 'sample_id', covering 2902 rows (70.4% of the corpus, above 5.0%). Grouping by 'sample_id' therefore does not stop feature identical rows appearing in both train and test, so the held out score is optimistic.",
+    "single feature 'n_lines' reaches macro F1 0.910 on its own (above 0.70) against a chance level of 0.091. One scalar is carrying the attribution result, so the corpus has an artifact dependent shortcut rather than a transformation signature.",
+    "chance corrected headroom R is 0.090 (below 0.50). The best single feature 'n_lines' recovers 91.0% of the gap between chance and the full feature set, so the remaining features add little and the reported result is close to a one feature rule dressed up as a learned model.",
+    "the best 2 features together reach macro F1 0.964 (above 0.70) with a depth 8 tree. A 2 feature rule settles the label, so the corpus is separable without the representation the paper is arguing for."
+  ],
+  "passed": false
+}

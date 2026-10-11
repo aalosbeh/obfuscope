@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main(void) {
+    int coins[] = {(0x4F1 - 0x4D8), (0xE04 - 0xDFA), (0x52B - 0x526), (0x2A8 - 0x28F), (0x66B - 0x661), (0xE9E - 0xE99), (0x30 - 0x2B), (0x252 - 0x239), (0xFE6 - 0xFDC)};
+    int credit = (0x365 - 0x365), vends = (0x760 - 0x760), rejected = (0xD50 - 0xD50);
+    const int price = (0xE45 - 0xE04);
+    for (int i = (0xB54 - 0xB54); i < (0xCC8 - 0xCBF); i++) {
+        if (credit >= price) { rejected++; continue; }
+        credit += coins[i];
+        if (credit >= price) { vends++; credit -= price; }
+    }
+    printf("%d %d %d\n", vends, credit, rejected);
+    return (0xCD1 - 0xCD1);
+}

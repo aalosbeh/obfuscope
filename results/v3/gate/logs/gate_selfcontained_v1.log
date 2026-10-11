@@ -1,0 +1,133 @@
+corpus    data/features.csv
+rows      4121
+features  61
+label     technique  (11 classes)
+group     sample_id  (102 groups)
+
+CHECK 1 and 2  per class distinctness, constant features, input dependence
+class               n    distinct_vectors  distinct_ratio  constant_features  constant_fraction  n_groups  input_dependence  dependence_omega2  dependence_null_mean  dependence_z  dependence_p
+------------------  ---  ----------------  --------------  -----------------  -----------------  --------  ----------------  -----------------  --------------------  ------------  ------------
+advanced            798  205               0.2569          15                 0.2459             100       0.0009            -0.1406            0.000247              -17.664       1.0         
+advanced_code       798  8                 0.01            9                  0.1475             100       0.0004            -0.1412            0.000396              -16.396       1.0         
+advanced_microcode  301  3                 0.01            17                 0.2787             101       0.0033            -0.4926            0.001322              -11.316       1.0         
+advanced_technique  400  4                 0.01            19                 0.3115             100       0.0               -0.3289            -0.001979             -13.031       1.0         
+api_obfuscated      221  221               1.0             5                  0.082              74        0.9662            0.9492             -0.001348             35.587        0.00498     
+code_based          799  740               0.9262          3                  0.0492             80        0.8271            0.808              -0.000209             132.501       0.00498     
+cryptographic       404  4                 0.0099          14                 0.2295             101       0.0               -0.3289            0.000931              -13.613       1.0         
+packer_obfuscated   100  1                 0.01            61                 1.0                100       0.0               0.0                0.0                   None          1.0         
+rop_obfuscated      100  1                 0.01            61                 1.0                100       0.0               0.0                0.0                   None          1.0         
+self_modifying      100  1                 0.01            61                 1.0                100       0.0               0.0                0.0                   None          1.0         
+vm_obfuscated       100  1                 0.01            61                 1.0                100       0.0               0.0                0.0                   None          1.0         
+  distinct_ratio is a necessary condition only. input_dependence is the raw share of within
+  class feature variance lying between input programs; dependence_omega2 is the same quantity
+  with the upward bias from the group count removed, and dependence_null_mean is its value when
+  the program labels are shuffled. The verdict uses dependence_p, not a fixed cut, so a high
+  distinct ratio with variation that does not track the input programs is caught whatever the
+  group count happens to be.
+
+CHECK 3  duplicate feature vectors spanning groups
+  group_column                           sample_id
+  duplicate_clusters_spanning_groups     29
+  rows_in_those_clusters                 2902
+  fraction_of_corpus                     0.7042
+  total_rows                             4121
+  distinct_vectors_overall               1189
+
+CHECK 6  duplicate feature vectors spanning class labels
+  label_column                           technique
+  duplicate_clusters_spanning_labels     0
+  rows_in_those_clusters                 0
+  fraction_of_corpus                     0.0
+  irreducible_errors                     0
+  irreducible_error_rate                 0.0
+  accuracy_ceiling                       1.0
+  accuracy_ceiling is the highest accuracy any model can reach on this feature table and
+  label. Compare every reported accuracy against it.
+
+CHECK 4  best k feature ceiling and chance corrected headroom
+  n_classes                              11
+  chance_macro_f1                        0.0909
+  best_feature                           n_lines
+  best_macro_f1                          0.9102
+  macro_f1_by_k                          {1: 0.9102, 2: 0.9636, 3: 0.9706}
+  greedy_trace
+    k=1  0.9102  n_lines
+    k=2  0.9636  n_lines, mean_function_name_len
+    k=3  0.9706  n_lines, mean_function_name_len, mean_line_len
+  candidate_pool_size                    24
+  full_set_shallow_depth3                0.3461
+  full_set_macro_f1                      0.9426
+  full_set_source                        probe tree on all features
+  headroom_R                             0.0381
+  top_five
+    n_lines                        0.9102
+    n_nonblank_lines               0.9101
+    line_len_entropy               0.9095
+    size_bytes                     0.9088
+    comment_char_ratio             0.9036
+  threshold_absolute_f1                  0.7
+  threshold_min_headroom                 0.5
+  headroom_status                        fail
+  headroom_note                          R 0.0381 below 0.50
+  headroom_gap                           0.8517
+  headroom_reference
+    full_set_source                      probe tree on all features
+    full_set_value                       0.9426
+    full_set_protocol                    DecisionTreeClassifier(max_depth=8, random_state=0) on all 61 features, mean macro F1 over GroupShuffleSplit(n_splits=3, test_size=0.3, random_state=0) grouped by 'sample_id'
+    best_k_protocol                      DecisionTreeClassifier(max_depth=8, random_state=0) on the feature subset, mean macro F1 over GroupShuffleSplit(n_splits=3, test_size=0.3, random_state=0) grouped by 'sample_id'
+    same_protocol_as_best_k              True
+  full_set_probe_macro_f1                0.9426
+  headroom_R_probe_reference             0.0381
+  probe_settings
+    tree_depth                           8
+    depth_rule                           min(8, n_classes + 2)
+    splitter                             GroupShuffleSplit(n_splits=3, test_size=0.3, random_state=0) grouped by 'sample_id'
+    seed                                 0
+    k_values                             [1, 2, 3]
+    k1_search                            exhaustive over all features
+    k_above_1_search                     greedy forward selection from the 24 strongest single features
+    selection_and_scoring_on_same_splits True
+  headroom_R = (full - best_single) / (full - chance). Near zero means one feature
+  already recovers the achievable gap above chance.
+
+CHECK 5  permuted label control
+  real_macro_f1                          0.9912
+  permuted_macro_f1                      0.0625
+  chance_macro_f1                        0.0909
+  excess_over_chance                     -0.0284
+  tolerance                              0.08
+
+report written to /Users/anasalsobeh/Downloads/manar/ofuScope/submission_package/code/obfuscope-corrected/results/v3/gate/gate_selfcontained_v1.json
+
+GATE FAILED
+  1. class 'advanced': 205 distinct vectors in 798 artifacts (ratio 0.257 below 0.80). The generator is producing near identical output within this class, so the class is separable without any attribution signal.
+  2. class 'advanced': the between program share of feature variance is -0.141 after bias correction, against 0.000 when the program labels are shuffled (p = 1.000 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 0.257 is being produced by generator randomness rather than by sensitivity to the material being transformed.
+  3. class 'advanced_code': 8 distinct vectors in 798 artifacts (ratio 0.010 below 0.80). The generator is producing near identical output within this class, so the class is separable without any attribution signal.
+  4. class 'advanced_code': the between program share of feature variance is -0.141 after bias correction, against 0.000 when the program labels are shuffled (p = 1.000 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 0.010 is being produced by generator randomness rather than by sensitivity to the material being transformed.
+  5. class 'advanced_microcode': 3 distinct vectors in 301 artifacts (ratio 0.010 below 0.80). The generator is producing near identical output within this class, so the class is separable without any attribution signal.
+  6. class 'advanced_microcode': the between program share of feature variance is -0.493 after bias correction, against 0.001 when the program labels are shuffled (p = 1.000 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 0.010 is being produced by generator randomness rather than by sensitivity to the material being transformed.
+  7. class 'advanced_technique': 4 distinct vectors in 400 artifacts (ratio 0.010 below 0.80). The generator is producing near identical output within this class, so the class is separable without any attribution signal.
+  8. class 'advanced_technique': the between program share of feature variance is -0.329 after bias correction, against -0.002 when the program labels are shuffled (p = 1.000 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 0.010 is being produced by generator randomness rather than by sensitivity to the material being transformed.
+  9. class 'cryptographic': 4 distinct vectors in 404 artifacts (ratio 0.010 below 0.80). The generator is producing near identical output within this class, so the class is separable without any attribution signal.
+  10. class 'cryptographic': the between program share of feature variance is -0.329 after bias correction, against 0.001 when the program labels are shuffled (p = 1.000 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 0.010 is being produced by generator randomness rather than by sensitivity to the material being transformed.
+  11. class 'packer_obfuscated': 1 distinct vectors in 100 artifacts (ratio 0.010 below 0.80). The generator is producing near identical output within this class, so the class is separable without any attribution signal.
+  12. class 'packer_obfuscated': 61 of 61 features have zero variance (fraction 1.000 above 0.50). Those features identify the class rather than describe it.
+  13. class 'packer_obfuscated': the between program share of feature variance is 0.000 after bias correction, against 0.000 when the program labels are shuffled (p = 1.000 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 0.010 is being produced by generator randomness rather than by sensitivity to the material being transformed.
+  14. class 'rop_obfuscated': 1 distinct vectors in 100 artifacts (ratio 0.010 below 0.80). The generator is producing near identical output within this class, so the class is separable without any attribution signal.
+  15. class 'rop_obfuscated': 61 of 61 features have zero variance (fraction 1.000 above 0.50). Those features identify the class rather than describe it.
+  16. class 'rop_obfuscated': the between program share of feature variance is 0.000 after bias correction, against 0.000 when the program labels are shuffled (p = 1.000 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 0.010 is being produced by generator randomness rather than by sensitivity to the material being transformed.
+  17. class 'self_modifying': 1 distinct vectors in 100 artifacts (ratio 0.010 below 0.80). The generator is producing near identical output within this class, so the class is separable without any attribution signal.
+  18. class 'self_modifying': 61 of 61 features have zero variance (fraction 1.000 above 0.50). Those features identify the class rather than describe it.
+  19. class 'self_modifying': the between program share of feature variance is 0.000 after bias correction, against 0.000 when the program labels are shuffled (p = 1.000 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 0.010 is being produced by generator randomness rather than by sensitivity to the material being transformed.
+  20. class 'vm_obfuscated': 1 distinct vectors in 100 artifacts (ratio 0.010 below 0.80). The generator is producing near identical output within this class, so the class is separable without any attribution signal.
+  21. class 'vm_obfuscated': 61 of 61 features have zero variance (fraction 1.000 above 0.50). Those features identify the class rather than describe it.
+  22. class 'vm_obfuscated': the between program share of feature variance is 0.000 after bias correction, against 0.000 when the program labels are shuffled (p = 1.000 over 200 permutations). The variation within this class does not track the input programs, so the distinct vector ratio of 0.010 is being produced by generator randomness rather than by sensitivity to the material being transformed.
+  23. 29 duplicate feature vector clusters span more than one 'sample_id', covering 2902 rows (70.4% of the corpus, above 5.0%). Grouping by 'sample_id' therefore does not stop feature identical rows appearing in both train and test, so the held out score is optimistic.
+  24. single feature 'n_lines' reaches macro F1 0.910 on its own (above 0.70) against a chance level of 0.091. One scalar is carrying the attribution result, so the corpus has an artifact dependent shortcut rather than a transformation signature.
+  25. chance corrected headroom R is 0.038 (below 0.50). The best single feature 'n_lines' recovers 96.2% of the gap between chance and the full feature set, so the remaining features add little and the reported result is close to a one feature rule dressed up as a learned model.
+  26. the best 2 features together reach macro F1 0.964 (above 0.70) with a depth 8 tree. A 2 feature rule settles the label, so the corpus is separable without the representation the paper is arguing for.
+
+The corpus does not support an attribution claim in its current state. Increase generator variation, widen the input programs, or drop the degenerate classes, then rebuild.
+real 194.82
+user 20.81
+sys 0.96

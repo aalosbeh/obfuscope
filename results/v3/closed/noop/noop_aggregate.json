@@ -1,0 +1,173 @@
+{
+  "results_dir": "results/v3/closed/noop/cells",
+  "cells": [
+    {
+      "task": "provenance",
+      "protocol": "lomfo",
+      "model": "hist_gbdt",
+      "feature_set": "all",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.9444,
+      "sd_total": 0.0338,
+      "sd_fold": 0.0368,
+      "sd_seed": 0.0026,
+      "per_seed_mean": [
+        0.9437,
+        0.9482,
+        0.9443,
+        0.9449,
+        0.9408
+      ],
+      "min_fold": 0.8797,
+      "max_fold": 1.0
+    },
+    {
+      "task": "provenance",
+      "protocol": "lomfo",
+      "model": "random_forest",
+      "feature_set": "all",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.9433,
+      "sd_total": 0.0345,
+      "sd_fold": 0.036,
+      "sd_seed": 0.0048,
+      "per_seed_mean": [
+        0.9373,
+        0.949,
+        0.94,
+        0.947,
+        0.9433
+      ],
+      "min_fold": 0.8723,
+      "max_fold": 1.0
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "model": "hist_gbdt",
+      "feature_set": "all",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.8183,
+      "sd_total": 0.0727,
+      "sd_fold": 0.0795,
+      "sd_seed": 0.0036,
+      "per_seed_mean": [
+        0.8232,
+        0.8205,
+        0.814,
+        0.8179,
+        0.8161
+      ],
+      "min_fold": 0.7091,
+      "max_fold": 0.9387
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "model": "random_forest",
+      "feature_set": "all",
+      "n_seeds": 5,
+      "n_folds_per_seed": 5,
+      "n_measurements": 25,
+      "mean": 0.8165,
+      "sd_total": 0.0626,
+      "sd_fold": 0.0682,
+      "sd_seed": 0.0038,
+      "per_seed_mean": [
+        0.8192,
+        0.8191,
+        0.8194,
+        0.8112,
+        0.8136
+      ],
+      "min_fold": 0.7454,
+      "max_fold": 0.9498
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "task": "provenance",
+      "protocol": "lomfo",
+      "feature_set": "all",
+      "reference": "hist_gbdt",
+      "other": "random_forest",
+      "n_pairs": 25,
+      "mean_difference": 0.0011,
+      "sd_of_differences": 0.0335,
+      "standard_error": 0.0067,
+      "t_statistic": 0.159,
+      "folds_won": 13,
+      "folds_tied": 0,
+      "folds_lost": 12,
+      "win_fraction": 0.52,
+      "paired_effect_size": 0.032,
+      "fold_level": {
+        "fold_identity": "fold_index",
+        "n_distinct_folds": 5,
+        "n_seeds_per_fold": [
+          5
+        ],
+        "seed_averaged_differences": [
+          -0.0113,
+          -0.0045,
+          0.0213,
+          -0.0299,
+          0.0297
+        ],
+        "mean_difference": 0.0011,
+        "folds_won": 2,
+        "folds_tied": 0,
+        "folds_lost": 3,
+        "sign_test_p_two_sided": 1.0,
+        "wilcoxon_w_plus": 7.0,
+        "wilcoxon_n_nonzero": 5,
+        "wilcoxon_p_two_sided_exact": 1.0
+      }
+    },
+    {
+      "task": "sub_provenance",
+      "protocol": "lomfo",
+      "feature_set": "all",
+      "reference": "hist_gbdt",
+      "other": "random_forest",
+      "n_pairs": 25,
+      "mean_difference": 0.0019,
+      "sd_of_differences": 0.0449,
+      "standard_error": 0.009,
+      "t_statistic": 0.209,
+      "folds_won": 16,
+      "folds_tied": 0,
+      "folds_lost": 9,
+      "win_fraction": 0.64,
+      "paired_effect_size": 0.042,
+      "fold_level": {
+        "fold_identity": "fold_index",
+        "n_distinct_folds": 5,
+        "n_seeds_per_fold": [
+          5
+        ],
+        "seed_averaged_differences": [
+          0.0248,
+          -0.0642,
+          0.0351,
+          0.0107,
+          0.003
+        ],
+        "mean_difference": 0.0019,
+        "folds_won": 4,
+        "folds_tied": 0,
+        "folds_lost": 1,
+        "sign_test_p_two_sided": 0.375,
+        "wilcoxon_w_plus": 10.0,
+        "wilcoxon_n_nonzero": 5,
+        "wilcoxon_p_two_sided_exact": 0.625
+      }
+    }
+  ]
+}

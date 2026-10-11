@@ -1,0 +1,14 @@
+grid      results/v3/closed/mlp2000
+cells     10
+configs   2
+
+task         protocol   model          featureset        mean  sd_fold  sd_seed  seeds
+--------------------------------------------------------------------------------------
+provenance   lomfo      mlp_maxiter2000 all             0.8233   0.0629   0.0178      5
+sub_provenance lomfo      mlp_maxiter2000 all             0.6810   0.1013   0.0124      5
+
+sd_fold is the spread between held out folds within a seed. sd_seed is the spread between per seed means. A result is only reproducible in the sense version 1 claimed if sd_seed is small next to sd_fold.
+
+paired fold level comparisons against the best model in each cell
+
+report written to results/v3/closed/mlp2000/mlp2000_aggregate.json

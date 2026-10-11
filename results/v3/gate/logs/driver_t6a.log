@@ -1,0 +1,4 @@
+== gate_noop_free_selfcontained_subtechnique 01:02:56
+   exit=1 01:04:23
+== gate_noop_free_supplied_subtechnique 01:04:23
+   exit=1 01:05:31

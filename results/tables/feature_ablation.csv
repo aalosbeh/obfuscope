@@ -1,0 +1,6 @@
+feature_set,grouped_cv,looo
+all,0.993±0.001,0.984±0.002
+no_obfuscation,0.990±0.000,0.978±0.004
+structural,0.989±0.001,0.970±0.007
+semantic,0.991±0.000,0.988±0.003
+lexical_only,0.983±0.001,0.947±0.008

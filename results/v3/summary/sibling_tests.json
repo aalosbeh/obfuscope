@@ -1,0 +1,311 @@
+{
+  "heldout": {
+    "fold_level_welch_end_vs_interior": {
+      "mean_a": 0.3303381397890946,
+      "mean_b": 0.5214530285493827,
+      "difference": -0.1911148887602881,
+      "n_a": 120,
+      "n_b": 60,
+      "t": -8.027826221777413,
+      "welch_df": 131.8257557034573,
+      "nominal_p_two_sided_NOT_VALID_folds_not_independent": 4.819532064321366e-13
+    },
+    "fold_level_welch_end_vs_pairs_and_interior": {
+      "mean_a": 0.3303381397890946,
+      "mean_b": 0.5041646572788067,
+      "difference": -0.17382651748971206,
+      "n_a": 120,
+      "n_b": 180,
+      "t": -9.460829675653393,
+      "welch_df": 234.31342494675812,
+      "nominal_p_two_sided_NOT_VALID_folds_not_independent": 3.3862788771221186e-18
+    },
+    "fold_level_welch_end_of_pair_vs_interior": {
+      "mean_a": 0.4955204716435185,
+      "mean_b": 0.5214530285493827,
+      "difference": -0.025932556905864212,
+      "n_a": 120,
+      "n_b": 60,
+      "t": -1.1359164436934062,
+      "welch_df": 118.88904242595461,
+      "nominal_p_two_sided_NOT_VALID_folds_not_independent": 0.25827616379745455
+    },
+    "param_level_perm_ends_lt_interiors": {
+      "t_obs_mean_diff": -0.19111488876028804,
+      "n_arrangements": 15,
+      "n_as_or_more_extreme": 1,
+      "p_one_sided": 0.06666666666666667,
+      "min_attainable_p": 0.06666666666666667
+    },
+    "param_level_perm_ends_lt_pairs_and_interiors": {
+      "t_obs_mean_diff": -0.1738265174897119,
+      "n_arrangements": 210,
+      "n_as_or_more_extreme": 2,
+      "p_one_sided": 0.009523809523809525,
+      "min_attainable_p": 0.004761904761904762
+    },
+    "param_level_means": {
+      "ref_lit_mixed": 0.5812668788580246,
+      "ref_lit_sum": 0.4188215342078189,
+      "ref_lit_xor": 0.36186985596707816,
+      "ref_opq_both": 0.4616391782407408,
+      "ref_opq_junk": 0.20455889917695477,
+      "ref_opq_true": 0.3361022698045267,
+      "ref_ren_hex": 0.6600228266460906,
+      "ref_ren_long": 0.48265416023662555,
+      "ref_str_add": 0.4326195987654321,
+      "ref_str_xor": 0.40678530092592585
+    },
+    "positions_match_task_list": true,
+    "sibling_script_report": {
+      "grouped": {
+        "interior": {
+          "n": 60,
+          "mean": 0.5215,
+          "sd": 0.144,
+          "fraction_below_half": 0.4333
+        },
+        "end": {
+          "n": 120,
+          "mean": 0.3303,
+          "sd": 0.1628,
+          "fraction_below_half": 0.8583
+        },
+        "end_of_pair": {
+          "n": 120,
+          "mean": 0.4955,
+          "sd": 0.1451,
+          "fraction_below_half": 0.5667
+        }
+      },
+      "contrast_end_vs_interior": {
+        "mean_a": 0.3303,
+        "mean_b": 0.5215,
+        "difference": -0.1911,
+        "n_a": 120,
+        "n_b": 60,
+        "t_statistic": -8.028,
+        "welch_df": 131.8
+      },
+      "verdict": "consistent with the model: ends invert further than interior members"
+    }
+  },
+  "all": {
+    "fold_level_welch_end_vs_interior": {
+      "mean_a": 0.18867312082047324,
+      "mean_b": 0.42671714248971193,
+      "difference": -0.2380440216692387,
+      "n_a": 120,
+      "n_b": 60,
+      "t": -12.007568513197564,
+      "welch_df": 102.68594781515964,
+      "nominal_p_two_sided_NOT_VALID_folds_not_independent": 2.8166236534256047e-21
+    },
+    "fold_level_welch_end_vs_pairs_and_interior": {
+      "mean_a": 0.18867312082047324,
+      "mean_b": 0.37455774712791495,
+      "difference": -0.1858846263074417,
+      "n_a": 120,
+      "n_b": 180,
+      "t": -11.223253625788335,
+      "welch_df": 297.5474824443117,
+      "nominal_p_two_sided_NOT_VALID_folds_not_independent": 1.3085867671780632e-24
+    },
+    "fold_level_welch_end_of_pair_vs_interior": {
+      "mean_a": 0.3484780494470165,
+      "mean_b": 0.42671714248971193,
+      "difference": -0.07823909304269544,
+      "n_a": 120,
+      "n_b": 60,
+      "t": -3.2386930462104218,
+      "welch_df": 158.89071377569448,
+      "nominal_p_two_sided_NOT_VALID_folds_not_independent": 0.0014621680197705869
+    },
+    "param_level_perm_ends_lt_interiors": {
+      "t_obs_mean_diff": -0.23804402166923866,
+      "n_arrangements": 15,
+      "n_as_or_more_extreme": 1,
+      "p_one_sided": 0.06666666666666667,
+      "min_attainable_p": 0.06666666666666667
+    },
+    "param_level_perm_ends_lt_pairs_and_interiors": {
+      "t_obs_mean_diff": -0.18588462630744162,
+      "n_arrangements": 210,
+      "n_as_or_more_extreme": 4,
+      "p_one_sided": 0.01904761904761905,
+      "min_attainable_p": 0.004761904761904762
+    },
+    "param_level_means": {
+      "ref_lit_mixed": 0.4405119920267489,
+      "ref_lit_sum": 0.2327687757201646,
+      "ref_lit_xor": 0.1541161908436214,
+      "ref_opq_both": 0.4129222929526749,
+      "ref_opq_junk": 0.13028629758230453,
+      "ref_opq_true": 0.23752121913580249,
+      "ref_ren_hex": 0.5744068287037037,
+      "ref_ren_long": 0.35030639146090536,
+      "ref_str_add": 0.24308674125514398,
+      "ref_str_xor": 0.22611223636831276
+    },
+    "positions_match_task_list": true,
+    "sibling_script_report": {
+      "grouped": {
+        "interior": {
+          "n": 60,
+          "mean": 0.4267,
+          "sd": 0.1316,
+          "fraction_below_half": 0.6667
+        },
+        "end": {
+          "n": 120,
+          "mean": 0.1887,
+          "sd": 0.1119,
+          "fraction_below_half": 0.9917
+        },
+        "end_of_pair": {
+          "n": 120,
+          "mean": 0.3485,
+          "sd": 0.1881,
+          "fraction_below_half": 0.8083
+        }
+      },
+      "contrast_end_vs_interior": {
+        "mean_a": 0.1887,
+        "mean_b": 0.4267,
+        "difference": -0.238,
+        "n_a": 120,
+        "n_b": 60,
+        "t_statistic": -12.008,
+        "welch_df": 102.7
+      },
+      "verdict": "consistent with the model: ends invert further than interior members"
+    }
+  },
+  "kfold": {
+    "fold_level_welch_end_vs_interior": {
+      "mean_a": 0.29542824074074076,
+      "mean_b": 0.5025344007201645,
+      "difference": -0.20710615997942378,
+      "n_a": 600,
+      "n_b": 300,
+      "t": -21.853291342611595,
+      "welch_df": 764.625617385675,
+      "nominal_p_two_sided_NOT_VALID_folds_not_independent": 1.2537105622467681e-82
+    },
+    "fold_level_welch_end_vs_pairs_and_interior": {
+      "mean_a": 0.29542824074074076,
+      "mean_b": 0.510421515989369,
+      "difference": -0.21499327524862827,
+      "n_a": 600,
+      "n_b": 900,
+      "t": -26.438869282708165,
+      "welch_df": 1210.355623311331,
+      "nominal_p_two_sided_NOT_VALID_folds_not_independent": 5.843949517106157e-122
+    },
+    "fold_level_welch_end_of_pair_vs_interior": {
+      "mean_a": 0.5143650736239712,
+      "mean_b": 0.5025344007201645,
+      "difference": 0.011830672903806683,
+      "n_a": 600,
+      "n_b": 300,
+      "t": 1.2511188308890113,
+      "welch_df": 761.8953937192186,
+      "nominal_p_two_sided_NOT_VALID_folds_not_independent": 0.21127515906952016
+    },
+    "param_level_perm_ends_lt_interiors": {
+      "t_obs_mean_diff": -0.2071061599794239,
+      "n_arrangements": 15,
+      "n_as_or_more_extreme": 1,
+      "p_one_sided": 0.06666666666666667,
+      "min_attainable_p": 0.06666666666666667
+    },
+    "param_level_perm_ends_lt_pairs_and_interiors": {
+      "t_obs_mean_diff": -0.21499327524862827,
+      "n_arrangements": 210,
+      "n_as_or_more_extreme": 1,
+      "p_one_sided": 0.004761904761904762,
+      "min_attainable_p": 0.004761904761904762
+    },
+    "param_level_means": {
+      "ref_lit_mixed": 0.5267804783950618,
+      "ref_lit_sum": 0.36042181069958845,
+      "ref_lit_xor": 0.27339168595679014,
+      "ref_opq_both": 0.4782883230452675,
+      "ref_opq_junk": 0.2021058384773663,
+      "ref_opq_true": 0.34579362782921813,
+      "ref_ren_hex": 0.7037895447530864,
+      "ref_ren_long": 0.5272694830246913,
+      "ref_str_add": 0.4273821694958847,
+      "ref_str_xor": 0.3990190972222222
+    },
+    "positions_match_task_list": true,
+    "sibling_script_report": {
+      "grouped": {
+        "interior": {
+          "n": 300,
+          "mean": 0.5025,
+          "sd": 0.1195,
+          "fraction_below_half": 0.46
+        },
+        "end": {
+          "n": 600,
+          "mean": 0.2954,
+          "sd": 0.1592,
+          "fraction_below_half": 0.8867
+        },
+        "end_of_pair": {
+          "n": 600,
+          "mean": 0.5144,
+          "sd": 0.1584,
+          "fraction_below_half": 0.53
+        }
+      },
+      "contrast_end_vs_interior": {
+        "mean_a": 0.2954,
+        "mean_b": 0.5025,
+        "difference": -0.2071,
+        "n_a": 600,
+        "n_b": 300,
+        "t_statistic": -21.853,
+        "welch_df": 764.6
+      },
+      "verdict": "consistent with the model: ends invert further than interior members"
+    }
+  },
+  "pc1_recomputed_unrounded": {
+    "addopaque": {
+      "pc1_variance_share": 0.9892059935608822,
+      "n_features_used": 61,
+      "projections": {
+        "ref_opq_both": -0.06264470637915774,
+        "ref_opq_junk": -3.0836158303741983,
+        "ref_opq_true": 3.1462605367533563
+      }
+    },
+    "encodeliterals": {
+      "pc1_variance_share": 0.9981551193768026,
+      "n_features_used": 61,
+      "projections": {
+        "ref_lit_mixed": -0.056170534340569414,
+        "ref_lit_sum": 2.2176523432426842,
+        "ref_lit_xor": -2.161481808902115
+      }
+    },
+    "encodestrings": {
+      "pc1_variance_share": 1.0,
+      "n_features_used": 61,
+      "projections": {
+        "ref_str_add": -0.11643037096215555,
+        "ref_str_xor": 0.11643037096215554
+      }
+    },
+    "renameidentifiers": {
+      "pc1_variance_share": 1.0,
+      "n_features_used": 61,
+      "projections": {
+        "ref_ren_hex": -1.2404251945634317,
+        "ref_ren_long": 1.2404251945634317
+      }
+    }
+  }
+}
