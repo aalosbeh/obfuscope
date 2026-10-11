@@ -67,12 +67,15 @@ RES = ROOT / "results"
 DEFAULT_OUT = ROOT.parents[1] / "latex" / "figures"
 
 # ----------------------------------------------------------------- page geometry
-FULL_W = 5.47          # in; acmsmall text width (395.82 pt = 5.477 in)
+# Defaults are the ACM acmsmall geometry. For other templates set, e.g. for the
+# Springer Nature sn-jnl text width (372 pt = 5.15 in) and 8 pt lettering:
+#   OBF_FIG_WIDTH=5.15 OBF_FIG_MIN_PT=8 python scripts/manuscript_v3/make_figures.py --out DIR
+FULL_W = float(os.environ.get("OBF_FIG_WIDTH", "5.47"))   # in; acmsmall text width (395.82 pt = 5.477 in)
 HALF_W = 2.65          # in
-MIN_PT = 7.0           # smallest permitted text size at final print size
-FS = 7.0               # tick labels, legends, annotations
-FS_LABEL = 7.5         # axis labels
-FS_PANEL = 8.0         # panel letters
+MIN_PT = float(os.environ.get("OBF_FIG_MIN_PT", "7.0"))   # smallest permitted text size at final print size
+FS = MIN_PT            # tick labels, legends, annotations
+FS_LABEL = MIN_PT + 0.5  # axis labels
+FS_PANEL = MIN_PT + 1.0  # panel letters
 
 INK = "#222222"
 INK2 = "#555555"       # secondary text, 7.5:1 on white
@@ -675,7 +678,8 @@ def fig3(out: Path) -> Dict:
             rows.append((lab, m, sc, m))
     for s in ("knn_dist", "mahalanobis", "iforest"):
         rows.append(("Model-free", s, s, None))
-    variants = [("all", "program-overlapping"), ("heldout", "program-matched (primary)"),
+    variants = [("all", "program-overlapping"),
+                ("heldout", "program-matched" if FULL_W < 5.4 else "program-matched (primary)"),
                 ("kfold", "program k-fold")]
     ypos, y = [], 0.0
     prev = None
@@ -739,8 +743,10 @@ def fig3(out: Path) -> Dict:
     hs = [Line2D([], [], marker="o", ms=5.2, mfc="white", mec=INK, mew=1.0, ls="none"),
           Line2D([], [], marker="o", ms=5.2, color=INK, ls="none"),
           Line2D([], [], marker="|", ms=7.0, mew=1.1, color=INK, ls="none")]
-    axb.legend(hs, [lab for _, lab in variants], loc="lower left", bbox_to_anchor=(0.0, 1.0),
-               ncol=3, borderaxespad=0.1)
+    narrow = FULL_W < 5.4   # e.g. Springer sn-jnl width: tighten the one-row legend
+    axb.legend(hs, [lab for _, lab in variants], loc="lower left",
+               bbox_to_anchor=(-0.02 if narrow else 0.0, 1.0), ncol=3, borderaxespad=0.1,
+               columnspacing=0.8 if narrow else 2.0, handletextpad=0.3 if narrow else 0.8)
     panel_letter(axb, "b", x=-0.035, y=1.0)
     PROV.meta(name, sources=[f"results/v3/openset_{c}_heldout.json" for c in CONFIGS]
               + ["results/v3/openset_B_all.json", "results/v3/openset_B_kfold.json",
@@ -780,8 +786,9 @@ def fig4(out: Path) -> Dict:
             if other[p]["position"] != pos[p]["position"]:
                 raise SystemExit(f"position of {p} differs in variant {v}")
 
-    fig = plt.figure(figsize=(FULL_W, 2.6), layout="constrained")
-    gsp = fig.add_gridspec(1, 2, width_ratios=[3.45, 1.5])
+    narrow = FULL_W < 5.4   # e.g. Springer sn-jnl width with 8 pt lettering
+    fig = plt.figure(figsize=(FULL_W, 2.9 if narrow else 2.6), layout="constrained")
+    gsp = fig.add_gridspec(1, 2, width_ratios=[2.9, 1.75] if narrow else [3.45, 1.5])
     ax = fig.add_subplot(gsp[0])
     axk = fig.add_subplot(gsp[1])
     axk.axis("off")
@@ -851,7 +858,7 @@ def fig4(out: Path) -> Dict:
     hs = [Line2D([], [], marker="o", ms=5.4, color=INK, ls="none"),
           Line2D([], [], marker="o", ms=5.4, mfc="white", mec=INK, mew=0.9, ls="none"),
           Line2D([], [], marker="D", ms=4.6, color=INK, ls="none")]
-    fig.legend(hs, ["program-matched (primary)", "program-overlapping",
+    fig.legend(hs, ["program-matched" if FULL_W < 5.4 else "program-matched (primary)", "program-overlapping",
                     "position-class mean \u00b1 1 sd over folds"],
                loc="outside upper left", ncol=3, borderaxespad=0.1,
                handletextpad=0.3, columnspacing=1.2)
@@ -988,7 +995,7 @@ def fig5(out: Path) -> Dict:
                  mfc="white", mec=INK, mew=0.9)]
     fig.legend(ha + hl, ["end held out", "interior held out", "family held out",
                          "ordered layout", "random layout"],
-               loc="outside upper center", ncol=5, borderaxespad=0.1,
+               loc="outside upper center", ncol=3 if FULL_W < 5.4 else 5, borderaxespad=0.1,
                handlelength=2.0, columnspacing=1.0, handletextpad=0.35)
     hb = [Line2D([], [], color=BAYES_COLOR, marker="D", ms=4.2, lw=1.2),
           Line2D([], [], color=EST_COLOR["random_forest"], marker="o", ms=4.2, lw=1.2)]
