@@ -1,12 +1,5 @@
 """
-Ground-truth labelling for the obfuscated C corpora.
-
-Three generators share this labeller: the version 1 corpus (cohorts
-``Testing_trojans_*``, whose sample directories are named after malware
-samples), the Tigress source-to-source corpus (cohort ``tigress_c``) and the
-reference backend used for the released pilot corpus (cohort ``reference_c``).
-The Tigress and reference inputs are the synthetic benign C programs listed in
-``corpus_inputs/programs.tsv``; the pilot corpus contains no malware.
+Ground-truth labelling for the obfuscated-malware corpus.
 
 Every ``.c`` artifact in the corpus is addressed by a path of the form::
 
@@ -23,20 +16,17 @@ Three labels are derived from that path:
                        The stem is stripped of a trailing integer, which is how the
                        replicate index is removed, so a sub-technique name must never
                        end in a digit.
-- ``malware_family`` : a grouping string parsed from the sample directory name. The
-                       column name is version 1 legacy. In the version 1 cohorts
-                       this is a best-effort malware family name. In the Tigress and
-                       reference cohorts the sample directory is ``<suite>_<program>``
-                       (for example ``textproc_trim``), where the suite of
-                       ``corpus_inputs/programs.tsv`` is the program domain, and the
-                       parser cuts at the first underscore, so the column holds the
-                       program domain (five domains on the pilot corpus). Used only as a grouping
-                       variable (the program domain holdout, code name ``lomfo``),
-                       never as a classification target.
+- ``malware_family`` : a grouping string parsed from the sample directory name. In
+                       the malware cohorts this is a best-effort family name; in the
+                       Tigress cohort the sample directory is ``<suite>_<program>``
+                       and the parser cuts at the first underscore, so the suite
+                       becomes the group. Used only as a *grouping* and *robustness*
+                       variable (Leave-One-Malware-Family-Out), never as a primary
+                       classification target.
 
-The ``sample_id`` (the sample directory, i.e. the input program) is the unit
-of grouping for all cross-validation so that no obfuscated sibling of a
-training artifact can leak into the test fold.
+The ``sample_id`` (the sample directory) is the unit of grouping for all
+cross-validation so that no obfuscated sibling of a training artifact can leak
+into the test fold.
 """
 from __future__ import annotations
 
@@ -119,12 +109,7 @@ class Labelled:
 
 
 def parse_family(sample_dir: str) -> str:
-    """Grouping name from a sample directory name.
-
-    For version 1 sample directories this is a best-effort malware family
-    name; for ``<suite>_<program>`` directories (Tigress and reference
-    cohorts) it is the suite, i.e. the program domain.
-    """
+    """Best-effort malware-family name from a sample directory name."""
     s = _MD5_PREFIX.sub("", sample_dir)
     s = _SHA256.sub("", s).strip("_")
     if not s:

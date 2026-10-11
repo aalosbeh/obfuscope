@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# VERSION 1 LEGACY: this file belongs to the version 1 pipeline and does not reproduce the article's tables (see Online Resource 1 (Section S1) of the article for the commands that do).
 # One-command local reproduction of the ObfuScope study.
 #   scripts/run_all.sh /path/to/extracted_corpus
 set -euo pipefail

@@ -12,25 +12,6 @@ Usage
 
 The builder streams rows to disk so that it scales to hundreds of thousands of
 artifacts on a single HTC execution point without exhausting memory.
-
-Row order
----------
-Rows are written in the order in which ``os.walk`` enumerates the corpus,
-whatever the value of ``--jobs``. With ``--jobs > 1`` the workers' results are
-collected with the order-preserving ``Pool.imap``, so a parallel build is
-byte-identical to a serial one. (An earlier version used ``imap_unordered``,
-which wrote rows in completion order; because the tree ensembles and the
-multilayer perceptron are sensitive to row order, a parallel rebuild could not
-reproduce the committed feature tables or the results computed from them.)
-
-``os.walk`` order is a property of the filesystem, not of this code. The row
-order of the committed ``data/features_pilot.csv`` equals the ``os.walk`` order
-of ``data/pilot_corpus`` on an APFS (macOS) checkout, where ``--jobs 1`` and
-``--jobs 8`` both rebuild it byte for byte; a different filesystem may
-enumerate the same files in a different order. The committed CSV, with its
-checksum in ``results/v3/checksums.txt``, is therefore the reference table, and
-a rebuild should be compared against that checksum rather than assumed
-identical.
 """
 from __future__ import annotations
 
@@ -115,9 +96,7 @@ def build(corpus: str, out_csv: str, limit: int = 0, verbose: bool = True,
             writer.writerow(header)
         if jobs > 1:
             with Pool(processes=jobs) as pool:
-                # imap, not imap_unordered: results come back in the order of
-                # ``paths``, so the output is identical for every --jobs value.
-                for row in pool.imap(worker, paths, chunksize=16):
+                for row in pool.imap_unordered(worker, paths, chunksize=16):
                     if row is not None:
                         writer.writerow(row)
                         n += 1

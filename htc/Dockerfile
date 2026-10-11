@@ -1,4 +1,3 @@
-# VERSION 1 LEGACY: this recipe pins a version 1 software stack, not the environment of record in requirements.txt, and does not reproduce the article's tables.
 # ObfuScope execution environment for the OSPool / CHTC.
 #
 # Build locally, push to a registry, then convert to a .sif that is staged on the

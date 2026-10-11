@@ -71,33 +71,8 @@ score keeps the scale and therefore retains signal in the sibling case. That is
 the mechanism behind the measured observation that logit based scorers partially
 escape the inversion while posterior based scorers do not.
 
-Additions made in the revision (defaults leave every earlier value unchanged)
----------------------------------------------------------------------------
-* ``closed_accuracy_bayes``: the exact Bayes classifier's own closed set
-  accuracy on the retained classes, per seed and as a mean and sd per row.
-  Table 18's "retained class closed accuracy" column is
-  ``closed_accuracy_random_forest_mean``, the fitted forest's accuracy, not the
-  Bayes classifier's; both are now reported.
-* ``fitted_estimators``: the logistic regression and random forest AUROCs and
-  closed accuracies that were already computed, grouped and labelled as fitted
-  (not exact) scorers, with their sds.
-* ``--sibling-layout random``: the first model described above, in which each
-  sibling sits at an independent uniformly random direction from its family
-  centre. The radius is ``sibling_spread * sqrt(m / 2)``, where ``m`` is the
-  mean of ``(s - t)**2`` over sibling pairs of the ordered layout, so the
-  expected mean squared distance between siblings equals the ordered layout's
-  at the same spread (radius = spread for three siblings). Under this layout
-  "edge" and "interior" are sibling indices only, with no geometric meaning,
-  which is what lets the end/interior asymmetry be tested against a layout
-  that has no ends. The default is ``ordered``.
-* ``--seed-start`` and ``--seed-list``: the seeds used are
-  ``seed_start .. seed_start + seeds - 1`` (default 0..4) unless an explicit
-  list is given.
-
 Usage
     python3 scripts/holdout_inversion_sim.py --report results/inversion_sim.json
-    python3 scripts/holdout_inversion_sim.py --sibling-layout random \\
-        --report inversion_sim_random.json
 """
 
 from __future__ import annotations
@@ -119,7 +94,6 @@ def class_centres(
     family_spread: float,
     sibling_spread: float,
     rng: np.random.Generator,
-    layout: str = "ordered",
 ) -> Tuple[np.ndarray, List[str], List[str], List[int]]:
     """Centres for every class, with siblings ordered along a per family axis.
 
@@ -129,15 +103,7 @@ def class_centres(
     offsets, centred on the family centre. The ordering is the point: sibling 0
     and sibling S minus one are the two ends of the axis, and the ones between
     them are interior.
-
-    With ``layout="random"`` each sibling is instead placed at an independent
-    uniformly random direction from the family centre, at the radius that gives
-    the same expected mean squared distance between siblings as the ordered
-    layout (see the module docstring). Sibling indices then carry no position.
     """
-    if layout not in ("ordered", "random"):
-        raise ValueError(f"unknown sibling layout {layout!r}")
-
     def sphere(k: int, radius: float) -> np.ndarray:
         v = rng.normal(size=(k, dim))
         v /= np.linalg.norm(v, axis=1, keepdims=True)
@@ -148,16 +114,6 @@ def class_centres(
     # Evenly spaced positions on the axis, centred on zero.
     steps = np.arange(n_siblings, dtype=float) - (n_siblings - 1) / 2.0
 
-    if layout == "random":
-        radius = random_layout_radius(n_siblings, sibling_spread)
-        for f in range(n_families):
-            for s in range(n_siblings):
-                centres.append(fam_centres[f] + sphere(1, 1.0)[0] * radius)
-                cls_names.append(f"f{f}_s{s}")
-                fam_names.append(f"f{f}")
-                positions.append(s)
-        return np.vstack(centres), cls_names, fam_names, positions
-
     for f in range(n_families):
         axis = sphere(1, 1.0)[0]
         for s in range(n_siblings):
@@ -166,23 +122,6 @@ def class_centres(
             fam_names.append(f"f{f}")
             positions.append(s)
     return np.vstack(centres), cls_names, fam_names, positions
-
-
-def random_layout_radius(n_siblings: int, sibling_spread: float) -> float:
-    """Radius for the random layout that matches the ordered layout's expected
-    mean squared distance between siblings.
-
-    Ordered: siblings ``s`` and ``t`` are ``|s - t| * spread`` apart, so the
-    mean squared pairwise distance is ``spread**2 * m`` with ``m`` the mean of
-    ``(s - t)**2`` over pairs. Random: two independent uniform directions at
-    radius ``r`` are on average ``2 r**2`` apart in squared distance, in any
-    dimension. Equating gives ``r = spread * sqrt(m / 2)``.
-    """
-    if n_siblings < 2:
-        return 0.0
-    idx = np.arange(n_siblings, dtype=float)
-    diffs = [(a - b) ** 2 for i, a in enumerate(idx) for b in idx[i + 1:]]
-    return float(sibling_spread * np.sqrt(np.mean(diffs) / 2.0))
 
 
 def draw(centres: np.ndarray, n_per_class: int, rng: np.random.Generator):
@@ -253,10 +192,9 @@ def one_condition(
       ``family``    remove every sibling of the last family
     """
     rng = np.random.default_rng(seed)
-    layout = getattr(args, "sibling_layout", "ordered")
     centres, cls_names, fam_names, positions = class_centres(
         args.n_families, args.n_siblings, args.dim,
-        args.family_spread, sibling_spread, rng, layout=layout)
+        args.family_spread, sibling_spread, rng)
 
     if holdout == "edge":
         novel_cls = {i for i, s in enumerate(positions)
@@ -297,8 +235,7 @@ def one_condition(
 
     # Scorer 1, the exact Bayes posterior. No estimation, so this isolates the
     # geometry.
-    post_k = bayes_posterior(Xk, keep_centres)
-    msp_k = 1.0 - post_k.max(axis=1)
+    msp_k = 1.0 - bayes_posterior(Xk, keep_centres).max(axis=1)
     msp_n = 1.0 - bayes_posterior(X_novel, keep_centres).max(axis=1)
     out["auroc_bayes_msp"] = auroc(msp_k, msp_n)
     out["auroc_bayes_max_logit"] = auroc(-bayes_max_logit(Xk, keep_centres),
@@ -325,45 +262,17 @@ def one_condition(
         sn = 1.0 - clf.predict_proba(X_novel).max(axis=1)
         out[f"auroc_{name}_msp"] = auroc(sk, sn)
         out[f"closed_accuracy_{name}"] = float(clf.score(Xk, yk))
-
-    # Added in the revision: the exact Bayes classifier's own closed set
-    # accuracy on the held out known artifacts of the retained classes. It uses
-    # no random draws, so every other value is unchanged.
-    out["closed_accuracy_bayes"] = float((post_k.argmax(axis=1) == yk).mean())
-    out["sibling_layout"] = layout
     return out
 
 
-def seed_values(args) -> List[int]:
-    """Seeds to run: ``--seed-list`` if given, else seed_start..+seeds-1."""
-    explicit = getattr(args, "seed_list", None)
-    if explicit:
-        return [int(v) for v in explicit]
-    start = int(getattr(args, "seed_start", 0) or 0)
-    return list(range(start, start + int(args.seeds)))
-
-
 def run(args, report_path: Optional[str]) -> int:
-    layout = getattr(args, "sibling_layout", "ordered")
-    seeds = seed_values(args)
     print("Gaussian mixture model of the holdout inversion")
     print(f"  families {args.n_families}  siblings per family {args.n_siblings}"
           f"  artifacts per class {args.n_per_class}  dimension {args.dim}")
-    print(f"  family separation {args.family_spread}  seeds {args.seeds}"
-          f"  seed values {seeds}  sibling layout {layout}")
+    print(f"  family separation {args.family_spread}  seeds {args.seeds}")
     print()
-    if layout == "random":
-        print("Siblings are placed at independent random directions from their "
-              "family centre (the first")
-        print("model, kept for comparison), at a radius that matches the "
-              "ordered layout's mean squared")
-        print("sibling distance. 'edge' and 'interior' below are sibling "
-              "indices only; no sibling is an end.")
     print("Siblings are placed along an ordered axis inside each family, "
-          "because parameterisations"
-          if layout == "ordered" else
-          "Under the ordered layout siblings would lie along an axis inside "
-          "each family, because parameterisations")
+          "because parameterisations")
     print("of a transformation are ordered rather than scattered. The holdout "
           "conditions are:")
     print("  edge      an end of the sibling axis is removed, retained "
@@ -381,7 +290,7 @@ def run(args, report_path: Optional[str]) -> int:
     for spread in spreads:
         for cond in conditions:
             per_seed = [one_condition(cond, spread, args, s)
-                        for s in seeds]
+                        for s in range(args.seeds)]
             per_seed = [r for r in per_seed if "skipped" not in r]
             if not per_seed:
                 continue
@@ -408,37 +317,11 @@ def run(args, report_path: Optional[str]) -> int:
                 "mean_bayes_msp_known": agg("mean_bayes_msp_known")[0],
                 "mean_bayes_msp_novel": agg("mean_bayes_msp_novel")[0],
                 "per_seed": per_seed,
-                # Added in the revision; the keys above are unchanged.
-                "sibling_layout": layout,
-                "closed_accuracy_bayes_mean": agg("closed_accuracy_bayes")[0],
-                "closed_accuracy_bayes_sd": agg("closed_accuracy_bayes")[1],
-                "fitted_estimators": {
-                    "note": ("Fitted on 70% of the retained class draws and "
-                             "scored on the held out 30% and on the novel "
-                             "draws. These are estimates, not the exact Bayes "
-                             "scorer; auroc_*_msp_mean above repeats these "
-                             "AUROC means. Table 18's retained class accuracy "
-                             "column is random_forest.closed_accuracy_mean."),
-                    "logreg": {
-                        "auroc_msp_mean": agg("auroc_logreg_msp")[0],
-                        "auroc_msp_sd": agg("auroc_logreg_msp")[1],
-                        "closed_accuracy_mean": agg("closed_accuracy_logreg")[0],
-                        "closed_accuracy_sd": agg("closed_accuracy_logreg")[1],
-                    },
-                    "random_forest": {
-                        "auroc_msp_mean": agg("auroc_random_forest_msp")[0],
-                        "auroc_msp_sd": agg("auroc_random_forest_msp")[1],
-                        "closed_accuracy_mean":
-                            agg("closed_accuracy_random_forest")[0],
-                        "closed_accuracy_sd":
-                            agg("closed_accuracy_random_forest")[1],
-                    },
-                },
             })
 
     header = (f"{'sib_sep':>8s}  {'holdout':9s}  {'Bayes msp':>17s}  "
-              f"{'Bayes maxlogit':>17s}  {'Bayes acc':>9s}  "
-              f"{'fit LR':>7s}  {'fit RF':>7s}  {'RF acc':>7s}")
+              f"{'Bayes maxlogit':>17s}  {'logreg':>7s}  {'forest':>7s}  "
+              f"{'cl.acc':>7s}")
     print(header)
     print("-" * len(header))
     for r in rows:
@@ -446,43 +329,10 @@ def run(args, report_path: Optional[str]) -> int:
               f"{r['auroc_bayes_msp_mean']:8.4f} {r['auroc_bayes_msp_sd']:8.4f}  "
               f"{r['auroc_bayes_max_logit_mean']:8.4f} "
               f"{r['auroc_bayes_max_logit_sd']:8.4f}  "
-              f"{r['closed_accuracy_bayes_mean']:9.4f}  "
               f"{r['auroc_logreg_msp_mean']:7.4f}  "
               f"{r['auroc_random_forest_msp_mean']:7.4f}  "
               f"{r['closed_accuracy_random_forest_mean']:7.4f}")
-    print("  Bayes msp / maxlogit: novelty AUROC of the exact Bayes scorers "
-          "(mean, sd over seeds).")
-    print("  Bayes acc: closed set accuracy of the exact Bayes classifier on "
-          "the retained classes.")
-    print("  fit LR / fit RF: novelty AUROC of the FITTED logistic regression "
-          "and random forest.")
-    print("  RF acc: closed set accuracy of the fitted random forest (Table "
-          "18's accuracy column).")
     print()
-
-    # Edge against interior, under whichever layout was run. Under the ordered
-    # layout the account predicts edge below interior; under the random layout
-    # the indices carry no position and the account predicts no asymmetry.
-    asym = []
-    for spread in spreads:
-        e = [r for r in rows if r["sibling_spread"] == spread and r["holdout"] == "edge"]
-        i = [r for r in rows if r["sibling_spread"] == spread and r["holdout"] == "interior"]
-        if e and i:
-            asym.append({
-                "sibling_spread": spread,
-                "edge_auroc_bayes_msp_mean": e[0]["auroc_bayes_msp_mean"],
-                "interior_auroc_bayes_msp_mean": i[0]["auroc_bayes_msp_mean"],
-                "edge_minus_interior": round(e[0]["auroc_bayes_msp_mean"]
-                                             - i[0]["auroc_bayes_msp_mean"], 4),
-            })
-    if asym:
-        print(f"Edge minus interior, Bayes posterior AUROC ({layout} layout)")
-        for a in asym:
-            print(f"  spread {a['sibling_spread']:5.2f}  edge "
-                  f"{a['edge_auroc_bayes_msp_mean']:.4f}  interior "
-                  f"{a['interior_auroc_bayes_msp_mean']:.4f}  difference "
-                  f"{a['edge_minus_interior']:+.4f}")
-        print()
 
     def inverts(cond: str) -> List[float]:
         return sorted(r["sibling_spread"] for r in rows
@@ -497,10 +347,6 @@ def run(args, report_path: Optional[str]) -> int:
         if r["holdout"] == "family" and r["auroc_bayes_msp_mean"] < 0.5
         and r["closed_accuracy_random_forest_mean"] < 0.80)
     fam_real = [s for s in fam_inv if s not in fam_unident]
-    fam_unident_bayes = sorted(
-        r["sibling_spread"] for r in rows
-        if r["holdout"] == "family" and r["auroc_bayes_msp_mean"] < 0.5
-        and r["closed_accuracy_bayes_mean"] < 0.80)
 
     print("Reading of the sweep, under the exact Bayes posterior")
     print(f"  edge holdout inverts at sibling separations: "
@@ -511,18 +357,7 @@ def run(args, report_path: Optional[str]) -> int:
           f"below 0.80): {fam_unident if fam_unident else 'none'}")
     print(f"    of which with identifiable retained classes: "
           f"{fam_real if fam_real else 'none'}")
-    print(f"    of which with Bayes classifier closed accuracy below 0.80: "
-          f"{fam_unident_bayes if fam_unident_bayes else 'none'}")
     print()
-    if layout != "ordered":
-        print("  The narrative below was written for the ordered layout at the "
-              "default settings and")
-        print("  does not describe this run; read the tables above instead.")
-        print()
-    else:
-        print("  The numbers quoted in the narrative below describe the default "
-              "settings.")
-        print()
     print("  Removing an end of an ordered sibling axis inverts the posterior "
           "at every separation")
     print("  tested, and the inversion deepens as the separation grows, which "
@@ -578,26 +413,7 @@ def run(args, report_path: Optional[str]) -> int:
             json.dump({"settings": vars(args), "rows": rows,
                        "inverting_spreads": {"edge": edge_inv,
                                              "interior": int_inv,
-                                             "family": fam_inv},
-                       # Added in the revision; the keys above are unchanged.
-                       "seed_values": seeds,
-                       "sibling_layout": layout,
-                       "edge_vs_interior": asym,
-                       "family_inversion_by_retained_accuracy": {
-                           "threshold": 0.80,
-                           "random_forest_accuracy_below": fam_unident,
-                           "bayes_accuracy_below": fam_unident_bayes,
-                       },
-                       "notes": {
-                           "table18_retained_accuracy": (
-                               "closed_accuracy_random_forest_mean: the fitted "
-                               "random forest's accuracy, not the exact Bayes "
-                               "classifier's (closed_accuracy_bayes_mean)"),
-                           "fitted_estimators": (
-                               "auroc_logreg_msp_mean and "
-                               "auroc_random_forest_msp_mean are fitted "
-                               "estimators, grouped under fitted_estimators"),
-                       }}, fh, indent=2)
+                                             "family": fam_inv}}, fh, indent=2)
         print()
         print(f"report written to {report_path}")
     return 0
@@ -615,18 +431,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     ap.add_argument("--family-spread", type=float, default=12.0)
     ap.add_argument("--sibling-spreads", nargs="+",
                     default=[0.25, 0.5, 1.0, 2.0, 4.0, 8.0])
-    ap.add_argument("--seeds", type=int, default=5,
-                    help="number of seeds, starting at --seed-start")
-    ap.add_argument("--seed-start", type=int, default=0,
-                    help="first seed (default 0, so seeds 0..4 by default)")
-    ap.add_argument("--seed-list", type=int, nargs="+", default=None,
-                    help="explicit seeds; overrides --seeds and --seed-start")
-    ap.add_argument("--sibling-layout", choices=["ordered", "random"],
-                    default="ordered",
-                    help="ordered: siblings on an evenly spaced axis (the "
-                         "model of Table 18). random: siblings at independent "
-                         "random directions with matched mean squared spacing "
-                         "(the first, refuted model)")
+    ap.add_argument("--seeds", type=int, default=5)
     ap.add_argument("--report", default=None)
     args = ap.parse_args(argv)
     return run(args, args.report)

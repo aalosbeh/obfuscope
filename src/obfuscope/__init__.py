@@ -1,5 +1,2 @@
-"""ObfuScope: static attribution of source-to-source obfuscating transformations
-(transformation provenance), open set novelty detection, and a corpus validity
-gate. The released pilot corpus is synthetic benign C; it contains no malware.
-"""
+"""ObfuScope: HTC-scale obfuscation-transformation provenance and open-set novelty detection."""
 __version__ = "1.0.0"

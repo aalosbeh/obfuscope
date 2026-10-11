@@ -20,11 +20,7 @@ Feature families
 
 The module is intentionally free of any code execution: only regular-expression
 and character-level statistics are computed over the file text, so it is safe to
-run on untrusted artifacts. (Version 1 applied it to a corpus whose samples
-were named after malware; the released pilot corpus is built from synthetic
-benign C programs.) The ``api`` buckets name Windows and POSIX APIs that the
-pilot programs mostly do not call: six of the eight ``api_*`` columns are
-identically zero on ``data/features_pilot.csv``.
+run on artifacts derived from live malware.
 """
 from __future__ import annotations
 

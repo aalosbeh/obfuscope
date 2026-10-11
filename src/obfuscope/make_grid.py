@@ -1,4 +1,3 @@
-# VERSION 1 LEGACY: this file belongs to the version 1 pipeline and does not reproduce the article's tables (see Online Resource 1 (Section S1) of the article for the commands that do).
 """
 Enumerate the experiment grid.
 

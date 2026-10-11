@@ -1,24 +1,17 @@
 """
-Single-cell experiment runner -- the atomic unit of every closed set result.
+Single-cell experiment runner -- the atomic unit of the HTC grid.
 
 One invocation evaluates exactly one ``(task, protocol, model, feature_set, seed)``
-cell and writes a self-describing JSON result. Every cell is independent, so
-cells can be run locally in a loop (Appendix A.2 of the manuscript drives this
-module directly with explicit seed loops) or dispatched as HTCondor jobs. The
-grid enumeration in ``make_grid.py`` / ``run_grid.py`` is version 1 legacy and
-does not describe the reported grid.
+cell and writes a self-describing JSON result. Because every cell is independent
+and cheap, the full study is an embarrassingly-parallel bag of thousands of such
+invocations dispatched by HTCondor/DAGMan across the OSPool.
 
 Tasks
 -----
-``provenance``      : transformation family classification (``technique``
-                      column; 4 classes on the pilot corpus: addopaque,
-                      encodeliterals, encodestrings, renameidentifiers).
-``sub_provenance``  : parameterisation classification (``sub_technique``
-                      column; 10 classes on the pilot corpus).
+``provenance``      : 11-class coarse transformation classification.
+``sub_provenance``  : fine-grained sub-transformation classification.
 
-Protocols: ``grouped_cv`` | ``lomfo`` (program domain holdout; legacy code
-name) | ``looo`` (see :mod:`obfuscope.protocols`). ``--permute-groups`` is an
-opt-in for ``grouped_cv`` that makes the partition depend on the seed.
+Protocols: ``grouped_cv`` | ``lomfo`` | ``looo`` (see :mod:`obfuscope.protocols`).
 
 Usage
 -----
@@ -71,14 +64,12 @@ def _closed_set_metrics(y_true, y_pred, labels) -> Dict:
     }
 
 
-def _run_closed(df, X, task, protocol, model_name, seed, n_splits,
-                permute_groups: bool = False) -> Dict:
+def _run_closed(df, X, task, protocol, model_name, seed, n_splits) -> Dict:
     y = df[TASK_LABEL[task]].to_numpy()
     groups = df["sample_id"].to_numpy()
     families = df["malware_family"].to_numpy()
     splits = iter_splits(protocol, groups=groups, y=y, families=families,
-                         n_splits=n_splits, seed=seed,
-                         permute_groups=permute_groups)
+                         n_splits=n_splits, seed=seed)
     labels = sorted(set(y.tolist()))
     per_fold, y_all, p_all = [], [], []
     for sp in splits:
@@ -87,12 +78,6 @@ def _run_closed(df, X, task, protocol, model_name, seed, n_splits,
         pred = clf.predict(X[sp.test_idx])
         m = _closed_set_metrics(y[sp.test_idx], pred, labels)
         m["fold_id"] = sp.fold_id
-        if permute_groups:
-            # Partitions differ between seeds under --permute-groups, so the
-            # fold index no longer identifies the same held out programs
-            # across seeds. Record them so that a fold level comparison
-            # (scripts/aggregate_seeds.py) can pair on program identity.
-            m["test_groups"] = sorted(str(g) for g in set(groups[sp.test_idx].tolist()))
         per_fold.append(m)
         y_all.extend(y[sp.test_idx].tolist()); p_all.extend(pred.tolist())
     agg = _closed_set_metrics(np.array(y_all), np.array(p_all), labels)
@@ -102,14 +87,7 @@ def _run_closed(df, X, task, protocol, model_name, seed, n_splits,
 
 
 def _run_looo(df, X, model_name, seed) -> Dict:
-    """Open-set novelty detection: hold out each technique as an unknown class.
-
-    Version 1 legacy, kept unchanged. It scores the maximum class posterior
-    only and, like earlier versions of ``scripts/openset_baselines.py``, takes
-    the novel rows from every input program while the known evaluation rows
-    come from programs held out of fitting. The revised manuscript's open set
-    results come from ``scripts/openset_baselines.py``, not from this function.
-    """
+    """Open-set novelty detection: hold out each technique as an unknown class."""
     from sklearn.model_selection import GroupShuffleSplit
     from sklearn.metrics import roc_auc_score, average_precision_score
     tech = df["technique"].to_numpy()
@@ -151,21 +129,17 @@ def _run_looo(df, X, model_name, seed) -> Dict:
 
 
 def run_cell(data_path, task, protocol, model_name, feature_set, seed=0,
-             n_splits=5, permute_groups: bool = False) -> Dict:
+             n_splits=5) -> Dict:
     t0 = time.time()
     df, X, cols = _load(data_path, feature_set)
     if protocol == "looo":
         body = _run_looo(df, X, model_name, seed)
     else:
-        body = _run_closed(df, X, task, protocol, model_name, seed, n_splits,
-                           permute_groups=permute_groups)
-    # The flag is recorded only when set, so a default cell is unchanged.
-    extra = {"permute_groups": True} if permute_groups else {}
+        body = _run_closed(df, X, task, protocol, model_name, seed, n_splits)
     return {
         "task": task, "protocol": protocol, "model": model_name,
         "feature_set": feature_set, "seed": seed, "n_features": len(cols),
         "n_rows": int(len(df)), "runtime_s": round(time.time() - t0, 2),
-        **extra,
         **body,
     }
 
@@ -180,24 +154,16 @@ def main(argv=None):
     ap.add_argument("--feature-set", default="all", choices=list(FEATURE_SETS))
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--n-splits", type=int, default=5)
-    ap.add_argument("--permute-groups", action="store_true",
-                    help="grouped_cv only: relabel sample_id with a seed "
-                         "dependent permutation before StratifiedGroupKFold, "
-                         "so different seeds give different partitions (in "
-                         "scikit-learn 1.6.1 shuffle=True alone has no effect "
-                         "when every group has the same label counts). Off by "
-                         "default, which reproduces the committed results.")
     ap.add_argument("--out", default="")
     args = ap.parse_args(argv)
     res = run_cell(args.data, args.task, args.protocol, args.model,
-                   args.feature_set, args.seed, args.n_splits,
-                   permute_groups=args.permute_groups)
+                   args.feature_set, args.seed, args.n_splits)
     text = json.dumps(res, indent=2)
     if args.out:
         os.makedirs(os.path.dirname(os.path.abspath(args.out)) or ".", exist_ok=True)
         with open(args.out, "w") as fh:
             fh.write(text)
-    # Always echo a compact summary to stdout (HTC job logs or a local loop).
+    # Always echo a compact summary to stdout for HTC logs.
     key = res.get("macro_f1_mean", res.get("auroc_mean"))
     print(f"[cell] {args.task}/{args.protocol}/{args.model}/{args.feature_set} "
           f"seed={args.seed} -> {key:.4f} ({res['runtime_s']}s)")

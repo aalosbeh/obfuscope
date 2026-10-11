@@ -175,15 +175,14 @@ CATALOGUE: List[Transform] = [
     ),
     Transform(
         name="Split",
-        collberg="control",
+        collberg="layout",
         params=[
             Parameterisation("split_block", {"SplitKinds": "block"}),
             Parameterisation("split_deep", {"SplitKinds": "deep"}),
             Parameterisation("split_recursive", {"SplitKinds": "recursive"}),
         ],
-        notes="Function splitting (outlining). In Collberg, Thomborson and Low (1997) "
-              "this is a control (aggregation) transformation, not a layout one, so "
-              "the specified Tigress catalogue has no layout transformation.",
+        notes="Function splitting. Layout level, included so the corpus spans all "
+              "three Collberg categories rather than only data and control.",
     ),
 ]
 

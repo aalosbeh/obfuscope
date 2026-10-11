@@ -1,14 +1,12 @@
-# Environment of record for the article's tables: Python 3.9.6 with the pinned
-# versions below (identical to requirements.txt).
 name: obfuscope
 channels: [conda-forge]
 dependencies:
-  - python=3.9.6
+  - python=3.11
   - pip
   - pip:
-      - numpy==2.0.2
-      - scipy==1.13.1
-      - pandas==2.3.3
-      - scikit-learn==1.6.1
-      - matplotlib==3.9.4
-      - pytest==8.4.2
+      - numpy==2.2.6
+      - scipy==1.15.3
+      - pandas==2.2.3
+      - scikit-learn==1.7.2
+      - pyarrow==17.0.0
+      - matplotlib==3.9.2

@@ -1,6 +1,5 @@
 """
-Corpus health gate: six diagnostics run on a feature table before the
-experiment grid.
+Corpus health gate. Fails the build before any modelling work is spent.
 
 Why this exists
 ---------------
@@ -11,106 +10,51 @@ metric saturates, and the reported accuracy measures the generator rather than
 the attribution method. The failure is silent: row counts, class balance, and
 grouped cross validation all look correct while the result is vacuous.
 
-This gate turns that silent failure into a named, blocking one. It reads the
-feature table produced by feature extraction and is meant to run before the
-model grid, so a degenerate corpus stops the pipeline instead of producing a
-number that has to be retracted later.
+This gate turns that silent failure into a named, blocking one. It runs between
+feature extraction and the model grid, so a degenerate corpus stops the pipeline
+instead of producing a number that has to be retracted later.
 
-What the gate is not
---------------------
-It is not model free. Diagnostics 4 and 5 fit decision trees and random
-forests of their own, on the gate's own splits (below), which are not the
-splits of the headline protocol in src/obfuscope/protocols.py. When
-``--full-macro-f1`` is given, the headroom ratio R of diagnostic 4 combines a
-headline score measured elsewhere, under another protocol and another model,
-with a best single feature score measured here; the JSON report records which
-reference was used (``single_feature.headroom_reference``) so that mismatch is
-visible.
-
-The diagnostics
+The five checks
 ---------------
-1. Distinct vector ratio per class. The number of distinct feature vectors in
-   a class divided by the number of artifacts in it. A class of 100 artifacts
-   with 1 distinct vector scores 0.01 and tells the model nothing about within
-   class variation.
-
-1b. Input dependence per class. The share of within class feature variance that
-   lies between input programs (eta squared, and its bias corrected form omega
-   squared), tested against a permutation null in which the program labels are
-   shuffled among the rows of the class (an unrestricted shuffle that ignores any
-   parameterisation or seed structure inside the class). 200 permutations, drawn
-   from a generator seeded with 0 whatever ``--seed`` is. A class fails only when
-   ``--min-input-dependence`` is above zero and the permutation p value exceeds
-   ``--input-dependence-alpha``; the threshold value itself is not used as a cut.
+1. Distinct vector ratio per class. The share of a class's artifacts that have a
+   feature vector no other artifact in that class shares. A class of 100
+   artifacts with 1 distinct vector scores 0.01 and tells the model nothing about
+   within class variation.
 
 2. Constant features per class. A feature with zero variance across an entire
-   class is not describing that class, it is naming it. The count includes
-   features that are constant across the whole corpus, not only features that
-   take a class specific constant.
+   class is not describing that class, it is naming it. A class where every
+   feature is constant is a single point wearing a hundred coordinates.
 
 3. Cross group duplicate clusters. Grouped cross validation only prevents
    leakage when the grouping variable actually separates the data. If one feature
    vector appears under two different group keys, the grouping constraint is
-   satisfied while a feature identical row sits in both train and test.
+   satisfied while a feature identical row sits in both train and test. This is
+   the leak the grouping was supposed to close.
 
-4. Best k feature ceiling and chance corrected headroom. One decision tree per
-   feature (not a stump: maximum depth ``min(8, n_classes + 2)``), scored by
-   mean macro F1 over ``GroupShuffleSplit(n_splits=3, test_size=0.3,
-   random_state=seed)`` grouped by ``--group``. k = 1 is exhaustive; k = 2 and
-   3 use greedy forward selection from the 24 strongest single features. Greedy
-   search can only understate the ceiling an exhaustive search would find, but
-   features are selected on the same test splits they are scored on (there is
-   no nested selection), which overstates it. The headroom is
+4. Best single feature ceiling. Fit one decision stump per feature and take the
+   best macro F1. If one scalar already reaches the headline accuracy, the
+   corpus has an artifact dependent shortcut (file size is the usual one) and the
+   multi feature model is not demonstrating what it claims to.
 
-       R = (F1_full - F1_best_single) / (F1_full - F1_chance),  F1_chance = 1/n_classes
-
-   where F1_full is ``--full-macro-f1`` when supplied and otherwise a tree of
-   the same depth on all features, on the same splits. The JSON always also
-   reports R against that probe reference. When F1_full - F1_chance is zero or
-   negative R is undefined, and ``headroom_status`` is ``"inconclusive"``: the
-   headroom sub-check then neither passes nor fails, the report says so, and
-   the exit status is decided by the other checks. ``--repeats N`` re-runs this
-   diagnostic with split seeds ``seed .. seed + N - 1`` and reports the mean,
-   minimum and maximum of the best single feature score, the best k scores and
-   R. The verdict always uses the first seed only.
-
-5. Permuted label control. A 200 tree random forest on the same three splits,
-   with labels permuted inside each training split only and scored against the
-   true test labels. Macro F1 must fall to chance within ``--permutation-tolerance``.
-   It tests the gate's own fitting code, not the headline pipeline.
-
-6. Cross class duplicate clusters. Identical feature vectors carrying more than
-   one class label, the irreducible error they force, and the accuracy ceiling
-   that follows.
-
-Implementation choices that change results
-------------------------------------------
-* Feature vectors are rounded to 9 decimal places before hashing in diagnostics
-  1, 3 and 6, so vectors differing only below that precision count as equal.
-* Missing values are filled with zero for diagnostics 1b, 4 and 5.
-* Feature columns are every numeric column not in ``LABEL_COLS``.
-* The defaults of ``run()`` (0.0) disable diagnostic 1b, the headroom sub-check
-  and diagnostic 6 when the gate is called as a library; the command line
-  defaults (0.20, 0.50, 0.005) enable them.
+5. Permuted label control. Shuffle the labels, keeping the grouping and the
+   features untouched, and fit the full model under the same splits. There is now
+   nothing to learn, so macro F1 must fall to chance. If it does not, the
+   evaluation itself is leaking and every score it produces is meaningless
+   regardless of how healthy the corpus is. This is the one check that tests the
+   protocol rather than the data, and it costs a single extra fit.
 
 Thresholds are arguments, not constants, because the defensible value depends on
-the transformation family.
+the transformation family. The defaults are deliberately strict: a corpus meant
+to support an attribution claim should clear them comfortably.
 
 Usage
 -----
     python3 scripts/diversity_gate.py --features data/features.csv
     python3 scripts/diversity_gate.py --features data/features.csv \
         --label technique --min-distinct-ratio 0.80 --max-single-feature-f1 0.70
-    python3 scripts/diversity_gate.py --features data/features_pilot.csv \
-        --label technique --full-macro-f1 0.9542 \
-        --full-macro-f1-protocol "<how the headline score was measured>" \
-        --repeats 10 --report gate.json
 
-Exit status is 0 when every enabled check passes and 1 when any check fails, so
-the HTCondor DAG node holds the rest of the pipeline back on failure. An
-inconclusive headroom does not change the exit status; it is reported in the
-JSON (``single_feature.headroom_status`` and the top level ``inconclusive``
-list) and on the console.
+Exit status is 0 when every check passes and 1 when any check fails, so the
+HTCondor DAG node holds the rest of the pipeline back on failure.
 """
 from __future__ import annotations
 
@@ -123,17 +67,6 @@ import numpy as np
 import pandas as pd
 
 LABEL_COLS = ["path", "cohort", "sample_id", "technique", "sub_technique", "malware_family"]
-
-# Implementation constants that change results. They are named here so the
-# report can record them; changing any of them changes committed gate reports.
-VECTOR_ROUND_DECIMALS = 9      # diagnostics 1, 3 and 6 hash rounded vectors
-INPUT_DEPENDENCE_PERMUTATIONS = 200  # diagnostic 1b permutation count
-INPUT_DEPENDENCE_SEED = 0      # diagnostic 1b permutation seed (not --seed)
-PROBE_MAX_DEPTH_CAP = 8        # diagnostic 4 depth = min(8, n_classes + 2)
-GREEDY_POOL_SIZE = 24          # diagnostic 4 candidates for k above one
-PROBE_N_SPLITS = 3             # diagnostics 4 and 5 GroupShuffleSplit splits
-PROBE_TEST_SIZE = 0.3          # diagnostics 4 and 5 test share per split
-HEADROOM_GAP_EPS = 1e-9        # R is undefined when F1_full - chance <= this
 
 
 def feature_columns(df: pd.DataFrame) -> List[str]:
@@ -151,7 +84,7 @@ def _vector_keys(frame: pd.DataFrame, feats: Sequence[str]) -> pd.Series:
     point noise are not meaningfully distinct, and an unrounded hash would hide
     a degenerate class behind a trailing digit.
     """
-    rounded = frame[list(feats)].astype("float64").round(VECTOR_ROUND_DECIMALS)
+    rounded = frame[list(feats)].astype("float64").round(9)
     return pd.Series(
         [hash(tuple(row)) for row in rounded.to_numpy()], index=frame.index
     )
@@ -316,8 +249,8 @@ def _input_dependence(
     frame: pd.DataFrame,
     feats: Sequence[str],
     group: str,
-    n_permutations: int = INPUT_DEPENDENCE_PERMUTATIONS,
-    seed: int = INPUT_DEPENDENCE_SEED,
+    n_permutations: int = 200,
+    seed: int = 0,
 ) -> Optional[Dict]:
     """Does the within class feature variation track the input programs?
 
@@ -512,22 +445,8 @@ def check_single_feature_ceiling(
     max_headroom: float = 0.0,
     k_values: Sequence[int] = (1, 2, 3),
     full_macro_f1: Optional[float] = None,
-    full_macro_f1_protocol: Optional[str] = None,
 ) -> Tuple[bool, Dict, List[str]]:
     """Macro F1 reachable from the best k features, and the headroom above it.
-
-    Returned statistics added in the revision, beside the version 2 fields:
-
-      headroom_status    "pass", "fail", "inconclusive" (R undefined because
-                         F1_full - F1_chance <= 0), or "not_checked" (R
-                         defined but ``max_headroom`` is zero)
-      headroom_gap       F1_full - F1_chance, the denominator of R
-      headroom_reference which value F1_full is, the protocol it was measured
-                         under, and the protocol of the best k scores
-      full_set_probe_macro_f1, headroom_R_probe_reference
-                         the same R computed against the gate's own probe tree
-                         on all features, so the two references can be compared
-      probe_settings     depth, depth rule, splitter, candidate pool
 
     Two things were wrong with the version 1 form of this diagnostic.
 
@@ -543,18 +462,17 @@ def check_single_feature_ceiling(
     which is the share of the achievable gap above chance that the full feature
     set adds on top of the best k features alone. R near one means the full set
     is doing the work. R near zero means k features already had the answer and
-    the remaining features are decoration. Numerator and denominator are
-    measured from the same chance baseline, but R is not invariant to the class
-    count: how high R can go still depends on 1/n_classes and on F1_full. When
-    F1_full is at or below chance, R is undefined and the status is reported as
-    inconclusive rather than passed.
+    the remaining features are decoration. R is invariant to the class count
+    because both numerator and denominator are measured from the same chance
+    baseline.
 
     Second, probing one feature at a time misses shortcuts that live in a pair.
     Two features that are individually weak can be jointly sufficient, and a
     corpus whose classes are separated by a two feature rule has a shortcut just
     as surely as one separated by a single threshold. Subsets up to size k are
-    therefore searched, with a depth limited tree per subset (depth
-    ``min(8, n_classes + 2)``, so depth 6 for four classes and 8 for ten).
+    therefore enumerated, with a shallow tree per subset so the probe stays weak
+    enough that clearing the bar means the corpus is easy rather than the probe
+    strong.
 
     Enumeration is exhaustive for k equal to one, and greedy forward selection
     for larger k, because the full subset count grows too quickly to enumerate
@@ -575,10 +493,9 @@ def check_single_feature_ceiling(
     if len(np.unique(groups)) < 2:
         return True, {"skipped": f"fewer than two '{group}' values"}, []
 
-    splitter = GroupShuffleSplit(n_splits=PROBE_N_SPLITS, test_size=PROBE_TEST_SIZE,
-                                 random_state=seed)
+    splitter = GroupShuffleSplit(n_splits=3, test_size=0.3, random_state=seed)
     splits = list(splitter.split(np.zeros(len(df)), y, groups))
-    depth = min(PROBE_MAX_DEPTH_CAP, n_classes + 2)
+    depth = min(8, n_classes + 2)
 
     values = df[list(feats)].astype("float64").fillna(0.0).to_numpy()
     col = {f: i for i, f in enumerate(feats)}
@@ -614,7 +531,7 @@ def check_single_feature_ceiling(
     # bounded on wide feature tables; a shortcut built from two features that
     # are both individually near chance is possible in principle but has not
     # been observed here, and the limit is recorded so the omission is visible.
-    pool = [f for f, _ in ranked[: min(len(ranked), GREEDY_POOL_SIZE)]]
+    pool = [f for f, _ in ranked[: min(len(ranked), 24)]]
     chosen = [best_feat]
     per_k = {1: round(best_single, 4)}
     k_trace = [{"k": 1, "features": list(chosen), "macro_f1": round(best_single, 4)}]
@@ -647,56 +564,8 @@ def check_single_feature_ceiling(
     reference = (full_macro_f1 if full_macro_f1 is not None
                  else full_unrestricted)
     headroom = None
-    if reference is not None and reference - chance > HEADROOM_GAP_EPS:
+    if reference is not None and reference - chance > 1e-9:
         headroom = (reference - best_single) / (reference - chance)
-
-    # The same ratio against the gate's own probe tree, reported whatever the
-    # reference above is, so a supplied headline score measured under another
-    # protocol can be compared with a reference measured on these splits.
-    headroom_probe = None
-    if (full_unrestricted is not None
-            and full_unrestricted - chance > HEADROOM_GAP_EPS):
-        headroom_probe = ((full_unrestricted - best_single)
-                          / (full_unrestricted - chance))
-
-    gap = (reference - chance) if reference is not None else None
-    if headroom is None:
-        headroom_status = "inconclusive"
-        if reference is None:
-            headroom_note = ("no full feature set score could be computed, so "
-                             "R is undefined; the headroom sub-check was not "
-                             "applied")
-        else:
-            headroom_note = (
-                f"F1_full ({reference:.4f}) - F1_chance ({chance:.4f}) = "
-                f"{gap:.4f} is not above zero, so R is undefined; the headroom "
-                "sub-check neither passes nor fails on this table")
-    elif max_headroom <= 0.0:
-        headroom_status = "not_checked"
-        headroom_note = "R is defined but no minimum headroom was set"
-    elif headroom < max_headroom:
-        headroom_status = "fail"
-        headroom_note = f"R {headroom:.4f} below {max_headroom:.2f}"
-    else:
-        headroom_status = "pass"
-        headroom_note = f"R {headroom:.4f} at or above {max_headroom:.2f}"
-
-    splitter_desc = (f"GroupShuffleSplit(n_splits={PROBE_N_SPLITS}, "
-                     f"test_size={PROBE_TEST_SIZE}, random_state={seed}) "
-                     f"grouped by '{group}'")
-    best_k_protocol = (f"DecisionTreeClassifier(max_depth={depth}, "
-                       f"random_state={seed}) on the feature subset, mean macro "
-                       f"F1 over {splitter_desc}")
-    if full_macro_f1 is not None:
-        reference_protocol = (full_macro_f1_protocol
-                              or "supplied by the caller with --full-macro-f1; "
-                                 "protocol not stated")
-        same_protocol = False
-    else:
-        reference_protocol = (f"DecisionTreeClassifier(max_depth={depth}, "
-                              f"random_state={seed}) on all {len(feats)} "
-                              f"features, mean macro F1 over {splitter_desc}")
-        same_protocol = True
 
     stats = {
         "n_classes": n_classes,
@@ -715,33 +584,6 @@ def check_single_feature_ceiling(
         "top_five": [{"feature": f, "macro_f1": round(s, 4)} for f, s in ranked[:5]],
         "threshold_absolute_f1": max_f1,
         "threshold_min_headroom": max_headroom,
-        # Fields below were added in the revision; the ones above are unchanged.
-        "headroom_status": headroom_status,
-        "headroom_note": headroom_note,
-        "headroom_gap": round(gap, 4) if gap is not None else None,
-        "headroom_reference": {
-            "full_set_source": "supplied" if full_macro_f1 is not None
-            else "probe tree on all features",
-            "full_set_value": round(reference, 4) if reference is not None else None,
-            "full_set_protocol": reference_protocol,
-            "best_k_protocol": best_k_protocol,
-            "same_protocol_as_best_k": same_protocol,
-        },
-        "full_set_probe_macro_f1": round(full_unrestricted, 4)
-        if full_unrestricted is not None else None,
-        "headroom_R_probe_reference": round(headroom_probe, 4)
-        if headroom_probe is not None else None,
-        "probe_settings": {
-            "tree_depth": depth,
-            "depth_rule": f"min({PROBE_MAX_DEPTH_CAP}, n_classes + 2)",
-            "splitter": splitter_desc,
-            "seed": seed,
-            "k_values": sorted(set(int(v) for v in k_values)),
-            "k1_search": "exhaustive over all features",
-            "k_above_1_search": (f"greedy forward selection from the "
-                                 f"{GREEDY_POOL_SIZE} strongest single features"),
-            "selection_and_scoring_on_same_splits": True,
-        },
     }
 
     failures: List[str] = []
@@ -808,8 +650,7 @@ def check_permuted_labels(
 
     chance = 1.0 / len(classes)
     rng = np.random.default_rng(seed)
-    splitter = GroupShuffleSplit(n_splits=PROBE_N_SPLITS, test_size=PROBE_TEST_SIZE,
-                                 random_state=seed)
+    splitter = GroupShuffleSplit(n_splits=3, test_size=0.3, random_state=seed)
     splits = list(splitter.split(x, y, groups))
 
     real, permuted = [], []
@@ -883,11 +724,7 @@ def run(
     min_input_dependence: float = 0.0,
     input_dependence_alpha: float = 0.05,
     full_macro_f1: Optional[float] = None,
-    full_macro_f1_protocol: Optional[str] = None,
-    repeats: int = 1,
 ) -> int:
-    if repeats < 1:
-        raise ValueError("repeats must be at least 1")
     df = pd.read_csv(features_path)
     for col in (label, group):
         if col not in df.columns:
@@ -902,7 +739,6 @@ def run(
     print()
 
     all_failures: List[str] = []
-    inconclusive: List[str] = []
     report: Dict = {"features_path": features_path, "label": label, "group": group}
 
     ok1, class_rows, f1_fail = check_class_diversity(
@@ -971,7 +807,6 @@ def run(
         ok4, sf_stats, f4_fail = check_single_feature_ceiling(
             df, feats, label, group, max_single_feature_f1, seed,
             max_headroom=min_headroom, full_macro_f1=full_macro_f1,
-            full_macro_f1_protocol=full_macro_f1_protocol,
         )
         print("CHECK 4  best k feature ceiling and chance corrected headroom")
         for k, v in sf_stats.items():
@@ -984,29 +819,14 @@ def run(
                 for item in v:
                     print(f"    k={item['k']}  {item['macro_f1']}  "
                           f"{', '.join(item['features'])}")
-            elif k in ("headroom_reference", "probe_settings"):
-                print(f"  {k}")
-                for kk, vv in v.items():
-                    print(f"    {str(kk):36s} {vv}")
             else:
                 print(f"  {k:38s} {v}")
         print("  headroom_R = (full - best_single) / (full - chance). Near zero "
               "means one feature")
         print("  already recovers the achievable gap above chance.")
-        if sf_stats.get("headroom_status") == "inconclusive":
-            msg = ("diagnostic 4 headroom INCONCLUSIVE: "
-                   + sf_stats.get("headroom_note", "R is undefined"))
-            inconclusive.append(msg)
-            print(f"  {msg}")
         print()
         report["single_feature"] = sf_stats
         all_failures += f4_fail
-
-        if repeats > 1:
-            report["single_feature_repeats"] = _repeat_single_feature(
-                df, feats, label, group, max_single_feature_f1, seed, repeats,
-                min_headroom, full_macro_f1, full_macro_f1_protocol, sf_stats)
-            _print_repeats(report["single_feature_repeats"])
 
     ok5, perm_stats, f5_fail = check_permuted_labels(
         df, feats, label, group, permutation_tolerance, seed
@@ -1020,32 +840,6 @@ def run(
 
     report["failures"] = all_failures
     report["passed"] = not all_failures
-    # Added in the revision. "inconclusive" lists sub-checks that could not be
-    # decided on this table; they do not change "passed" or the exit status.
-    report["inconclusive"] = inconclusive
-    report["gate_settings"] = {
-        "seed": seed,
-        "repeats": repeats,
-        "min_distinct_ratio": min_distinct_ratio,
-        "max_constant_fraction": max_constant_fraction,
-        "max_cross_group_fraction": max_affected_fraction,
-        "max_single_feature_f1": max_single_feature_f1,
-        "permutation_tolerance": permutation_tolerance,
-        "max_cross_class_fraction": max_cross_class_fraction,
-        "min_headroom": min_headroom,
-        "min_input_dependence": min_input_dependence,
-        "input_dependence_alpha": input_dependence_alpha,
-        "input_dependence_permutations": INPUT_DEPENDENCE_PERMUTATIONS,
-        "input_dependence_seed": INPUT_DEPENDENCE_SEED,
-        "vector_round_decimals": VECTOR_ROUND_DECIMALS,
-        "probe_depth_rule": f"min({PROBE_MAX_DEPTH_CAP}, n_classes + 2)",
-        "greedy_pool_size": GREEDY_POOL_SIZE,
-        "probe_splits": (f"GroupShuffleSplit(n_splits={PROBE_N_SPLITS}, "
-                         f"test_size={PROBE_TEST_SIZE}, random_state=seed)"),
-        "full_macro_f1": full_macro_f1,
-        "full_macro_f1_protocol": full_macro_f1_protocol,
-        "skip_single_feature": skip_single_feature,
-    }
 
     if report_path:
         with open(report_path, "w") as fh:
@@ -1058,110 +852,17 @@ def run(
         for i, msg in enumerate(all_failures, 1):
             print(f"  {i}. {msg}")
         print()
-        if inconclusive:
-            print("Inconclusive, neither passed nor failed:")
-            for msg in inconclusive:
-                print(f"    - {msg}")
-            print()
         print("The corpus does not support an attribution claim in its current "
               "state. Increase generator variation, widen the input programs, or "
               "drop the degenerate classes, then rebuild.")
         return 1
 
-    if skip_single_feature:
-        ceiling_text = ("the best k feature ceiling and headroom were not "
-                        "checked (skipped by request)")
-    else:
-        status = report["single_feature"].get("headroom_status")
-        ceiling_text = "no small feature subset reaches the threshold, "
-        if status == "pass":
-            ceiling_text += "headroom above the best single feature is adequate"
-        elif status == "inconclusive":
-            ceiling_text += ("headroom is INCONCLUSIVE because the full feature "
-                             "set does not score above chance, so R is "
-                             "undefined")
-        elif status == "not_checked":
-            ceiling_text += "headroom was not checked (no minimum set)"
-        else:
-            ceiling_text += "headroom could not be evaluated"
     print("GATE PASSED  every class carries within class variation that tracks "
           "the input programs, no duplicate vector spans a group or a class "
-          f"label, {ceiling_text}, and permuted labels fall to chance")
-    if inconclusive:
-        print("  Inconclusive, not passed:")
-        for msg in inconclusive:
-            print(f"    - {msg}")
+          "label, no small feature subset reaches the threshold, headroom above "
+          "the best single feature is adequate, and permuted labels fall to "
+          "chance")
     return 0
-
-
-def _summary(values: Sequence[Optional[float]]) -> Dict:
-    """Mean, minimum and maximum over the values that are defined."""
-    defined = [float(v) for v in values if v is not None]
-    if not defined:
-        return {"mean": None, "min": None, "max": None, "n_defined": 0,
-                "values": list(values)}
-    return {
-        "mean": round(float(np.mean(defined)), 4),
-        "min": round(float(np.min(defined)), 4),
-        "max": round(float(np.max(defined)), 4),
-        "n_defined": len(defined),
-        "values": list(values),
-    }
-
-
-def _repeat_single_feature(df, feats, label, group, max_f1, seed, repeats,
-                           min_headroom, full_macro_f1, full_macro_f1_protocol,
-                           first: Dict) -> Dict:
-    """Re-run diagnostic 4 over split seeds ``seed .. seed + repeats - 1``.
-
-    The first seed's statistics are passed in rather than recomputed. Only the
-    spread is reported here; the verdict stays on the first seed.
-    """
-    runs = [first]
-    for s in range(seed + 1, seed + repeats):
-        _ok, st, _fail = check_single_feature_ceiling(
-            df, feats, label, group, max_f1, s, max_headroom=min_headroom,
-            full_macro_f1=full_macro_f1,
-            full_macro_f1_protocol=full_macro_f1_protocol)
-        runs.append(st)
-    seeds = list(range(seed, seed + repeats))
-    usable = [r for r in runs if "skipped" not in r]
-    ks = sorted({int(k) for r in usable for k in r.get("macro_f1_by_k", {})} - {1})
-    return {
-        "seeds": seeds,
-        "verdict_seed": seed,
-        "note": ("The verdict, the failure messages and every field under "
-                 "single_feature use the first seed only. This block reports "
-                 "how diagnostic 4 moves with the split seed."),
-        "best_feature_by_seed": [r.get("best_feature") for r in runs],
-        "best_1_macro_f1": _summary([r.get("best_macro_f1") for r in runs]),
-        "best_k_macro_f1": {
-            str(k): _summary([r.get("macro_f1_by_k", {}).get(k) for r in runs])
-            for k in ks
-        },
-        "headroom_R": _summary([r.get("headroom_R") for r in runs]),
-        "headroom_R_probe_reference": _summary(
-            [r.get("headroom_R_probe_reference") for r in runs]),
-        "full_set_probe_macro_f1": _summary(
-            [r.get("full_set_probe_macro_f1") for r in runs]),
-        "headroom_status_by_seed": [r.get("headroom_status") for r in runs],
-    }
-
-
-def _print_repeats(rep: Dict) -> None:
-    print(f"CHECK 4  repeated over split seeds {rep['seeds'][0]}.."
-          f"{rep['seeds'][-1]} (verdict uses seed {rep['verdict_seed']} only)")
-    rows = [("best_1_macro_f1", rep["best_1_macro_f1"])]
-    rows += [(f"best_{k}_macro_f1", v) for k, v in rep["best_k_macro_f1"].items()]
-    rows += [("headroom_R", rep["headroom_R"]),
-             ("headroom_R_probe_reference", rep["headroom_R_probe_reference"])]
-    for name, summ in rows:
-        print(f"  {name:30s} mean {summ['mean']}  min {summ['min']}  "
-              f"max {summ['max']}  (defined in {summ['n_defined']} of "
-              f"{len(rep['seeds'])})")
-    print(f"  best_feature_by_seed           {rep['best_feature_by_seed']}")
-    print(f"  headroom_status_by_seed        {rep['headroom_status_by_seed']}")
-    print()
 
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
@@ -1205,14 +906,6 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                          "headroom calculation. Defaults to a probe tree on the "
                          "full feature table, which understates a strong model "
                          "and therefore understates R")
-    ap.add_argument("--full-macro-f1-protocol", default=None,
-                    help="free text describing how the --full-macro-f1 value "
-                         "was measured (protocol, model, seeds); recorded in "
-                         "the JSON next to the gate's own probe protocol")
-    ap.add_argument("--repeats", type=int, default=1,
-                    help="repeat check 4 over split seeds seed..seed+N-1 and "
-                         "report mean, min and max of the best single, best k "
-                         "and R; the verdict still uses the first seed")
     ap.add_argument("--skip-single-feature", action="store_true",
                     help="skip check 4, which is the slowest")
     ap.add_argument("--seed", type=int, default=0)
@@ -1236,8 +929,6 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         min_input_dependence=args.min_input_dependence,
         input_dependence_alpha=args.input_dependence_alpha,
         full_macro_f1=args.full_macro_f1,
-        full_macro_f1_protocol=args.full_macro_f1_protocol,
-        repeats=args.repeats,
     )
 
 

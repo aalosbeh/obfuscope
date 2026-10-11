@@ -1,17 +1,8 @@
 """
-Figure generation for the version 1 ObfuScope grid (legacy).
+Figure generation for the ObfuScope paper.
 
-The figures of the revised manuscript are produced by
-``scripts/make_manuscript_figures.py``, not by this module. This module is kept
-because ``scripts/run_all.sh`` and ``htc/aggregate.sh`` still call it. Several
-of its hard-coded titles and axis labels state version 1 claims that the
-revised manuscript withdraws ("malware-agnostic", "unseen malware", "novel
-toolchain"); on the present corpus the second protocol is the program domain
-holdout and there is no malware. The strings are left unchanged so that this
-module's output is unchanged; they are marked with comments below.
-
-Renders four figures directly from the per-cell result JSONs and the
-aggregated ``summary.json``:
+Renders four publication figures directly from the per-cell result JSONs and the
+aggregated ``summary.json`` so that every figure is reproducible from artifacts:
 
   fig_protocol_gap.pdf     -- headline: metric per model across the three
                               protocols, exposing the closed-set / open-set gap.
@@ -50,8 +41,6 @@ def fig_protocol_gap(summary, path):
     rows = summary["protocol_comparison"]
     rows = sorted(rows, key=lambda r: -r["grouped_cv"][0])
     models = [r["model"] for r in rows]
-    # Version 1 labels, kept unchanged: "lomfo" is the program domain holdout
-    # on the present corpus, which contains no malware.
     protos = [("grouped_cv", "Grouped-CV\n(unseen samples)"),
               ("lomfo", "LMFO\n(unseen malware)"),
               ("looo", "LOOO\n(novel toolchain, AUROC)")]
@@ -65,7 +54,6 @@ def fig_protocol_gap(summary, path):
     ax.set_ylabel("Score"); ax.set_ylim(0.45, 1.02)
     ax.axhline(0.5, ls=":", c="grey", lw=0.8)
     ax.legend(fontsize=7, ncol=3, loc="lower center", bbox_to_anchor=(0.5, -0.42))
-    # Version 1 claim, withdrawn in the revised manuscript; title kept unchanged.
     ax.set_title("Provenance is malware-agnostic; open-set novelty is model-dependent")
     fig.tight_layout(); fig.savefig(path, bbox_inches="tight"); plt.close(fig)
 

@@ -1,259 +1,170 @@
 # ObfuScope
 
-ObfuScope studies obfuscation provenance attribution on source text: given an
-obfuscated C program, which transformation family and which parameterisation
-produced it, and was that transformation absent from training. The repository
-contains a corpus generator with one in-house backend, a static feature
-extractor (61 feature columns), a corpus validity gate (a standalone check run on
-a feature table before results are interpreted), closed-set and open-set
-evaluation protocols, a mixture simulation, and the scripts that build every
-table and figure of the article and its supplement from the result files. This
-is the corrected release that accompanies the revised manuscript.
+**Fingerprinting the transformation, not the template. Corpus validity and open
+set protocol design for obfuscation provenance attribution.**
 
-## What is measured, and what is not
+Given the static source text of an obfuscated C program, this work asks two
+questions. Which obfuscating transformation produced it, and was that
+transformation one the model has never seen. The main contribution is not an
+accuracy figure. It is a corpus validity gate that runs before any model is
+trained and that refuses a corpus whose accuracy would be meaningless, together
+with a measurement showing that the open set result on a single label space is
+decided by how a novel class is defined.
 
-Measured:
+> **Read this first.** The current manuscript is
+> [`docs/ObfuScope_manuscript_revised_2.docx`](docs/ObfuScope_manuscript_revised_2.docx).
+> It withdraws nine claims made in earlier versions of this work, including the
+> headline accuracy that the previous README advertised. If you have seen an
+> earlier draft or an earlier README, the numbers below supersede it.
 
-- One backend (`scripts/reference_backend.py`): 4 transformation families,
-  10 parameterisations.
-- 30 synthetic benign input programs in 5 domains, 9 to 32 lines each
-  (535 lines in total), in `corpus_inputs/`; 2400 artifacts in
-  `data/pilot_corpus/reference_c/`; feature table `data/features_pilot.csv`.
-- Source text only. Features are computed statically from the C source.
+## Important corrections to earlier descriptions of this project
 
-Not measured:
+| Earlier claim | Status |
+| --- | --- |
+| Macro F1 of 0.9915 over eleven transformation families | Withdrawn. The corpus behind it fails the validity gate on fifteen counts, and the figure measures template reuse rather than transformation signal |
+| The corpus is derived from live malware | False, and corrected here. No malware was collected, executed or analysed at any point. Every artifact derives from a synthetic benign C program written for this study |
+| Results are malware agnostic, shown by a leave malware families out protocol | Withdrawn as stated. The protocol is named `lomfo` and its column is named `malware_family` for version 1 legacy reasons, but the column holds one of five program domains. It is a program domain holdout |
+| Open set AUROC of 0.988 | Withdrawn. It was computed with a scorer that read the logarithm of a vote fraction as a logit |
+| Tree ensembles rank above linear models and k nearest neighbour | Withdrawn. The two strongest models win 8 and 15 of 25 paired folds at the two label granularities, which does not separate them |
+| A feature set ablation shows the result does not rest on obfuscation markers | Withdrawn. The set meant to remove those markers removed 4 live features of 14 declared, and the two sets compared were nested rather than alternative |
 
-- No second obfuscator. The Tigress cohort is specified
-  (`scripts/tigress_spec.py` prints its catalogue) and was not run, so no result
-  is a cross-tool result.
-- No real-world code and no programs longer than 32 lines.
-- No binaries. `decompile/` is present but not exercised.
+Section 9.4 of the manuscript lists all nine withdrawn claims with labels. Section
+9.5 lists six known defects in this artifact.
 
-## Headline numbers
+## What the current measurements are
 
-Copied from the ledger that `scripts/manuscript_v3/make_ledger.py` builds; if this
-list and the ledger disagree, the ledger is right. Open-set protocols:
-**program-matched** (primary; known-evaluation and novel artifacts come from the
-same input programs, none of which is used for fitting), **program-overlapping**
-(the released protocol; novel artifacts come from all 30 programs) and
-**program k-fold** (robustness check). Configurations: A (family label, a family
-held out), B (parameterisation label, one parameterisation held out while its
-siblings stay in training), C (parameterisation label, a whole family held out).
-AUROC values are means over folds and seeds.
+All figures below come from the `reference_c` cohort, which is 2400 artifacts
+generated from 30 synthetic input programs. Every one is reproducible with the
+commands in Appendix A of the manuscript.
 
-| Quantity | Protocol | Value |
+| Question | Protocol | Result |
 | --- | --- | --- |
-| Semantic preservation, stdout and exit status, `cc -std=c99 -O0` | released corpus / regenerated replicates 8 and 9 | 2400/2400; 600/600 |
-| No-op artifacts (renamed copies byte-identical to their input) | corpus audit | 32 (1.33%), 2 programs |
-| Gate, family label: headroom R (threshold 0.50) | self-contained / supplied headline F1 / consistent protocol | 0.4327 / 0.4486 / 0.4262 |
-| Gate failures, family / parameterisation label | self-contained | 2 (diagnostic 4) / 2 (diagnostics 4 and 6) |
-| Gate failures, parameterisation label, no-op-free table | self-contained | 1 (diagnostic 4; diagnostic 6 passes) |
-| Gate on 21 tables with fixed verdicts: sensitivity, specificity | policy (i), all failures disqualify | 12/12, 8/9 |
-| Same | policy (ii), diagnostic 4 advisory | 9/12, 9/9 |
-| Gate on the template-generated table | self-contained | 26 failures; `n_lines` alone: macro F1 0.9102 |
-| Closed set, family label, macro F1 (fold sd) | domain holdout | random_forest 0.9542 (0.0356), hist_gbdt 0.9480 (0.0339) |
-| Closed set, parameterisation label | domain holdout | random_forest 0.8045 (0.0731), hist_gbdt 0.8124 (0.0816) |
-| Closed set, effect of removing the 32 no-op artifacts | domain holdout | at most 0.0120 |
-| Open set B, MSP AUROC, six estimators | program-matched | 0.3831 (knn) to 0.4849 (svm_rbf); random_forest 0.4482 |
-| Open set B, random_forest MSP FPR95 (known-positive convention) | program-matched | 0.9446 |
-| Open set C, random_forest MSP AUROC | program-matched | 0.9073 |
-| B minus C, random_forest MSP, crossed bootstrap 95% CI | program-matched | -0.4591 [-0.5722, -0.3455] |
-| B minus C, logreg MSP | program-matched | -0.0553 [-0.2635, 0.1479] |
-| Open set B, OpenMax AUROC: logreg, mlp, svm_rbf | program-matched | 0.6427, 0.6241, 0.6402 |
-| Open set B / C, random_forest MSP AUROC | program-overlapping | 0.2528 / 0.9142 |
-| Novel rows whose nearest fitting row has the same input program | program-overlapping / program-matched | 98.4% / 0.0% |
-| Mean 5-NN distance: novel (overlapping), novel (matched), known evaluation | | 1.99, 6.22, 5.93 |
-| Sibling axis, MSP AUROC: ends / interiors | program-matched | 0.3303 / 0.5215 |
-| Ends versus interiors; ends versus all others, exact permutation p | program-matched | 0.0667 (minimum attainable); 0.0095 |
-| Simulation, spread 1, end / interior holdout | ordered / random sibling layout, 20 seeds | 0.2798 / 0.6342; 0.5658 / 0.5615 |
+| Which transformation family? | Grouped by input program, 5 folds, 5 seeds | 0.9542 macro F1 |
+| Which parameterisation? | Same, at the finer label granularity | 0.8045 macro F1 |
+| Is the transformation unseen, when a whole family is held out? | Open set, 10 classes | 0.9142 AUROC, FPR95 of 0.3021 |
+| Is the transformation unseen, when a parameterisation is held out and a sibling stays in training? | Open set, same 10 classes | 0.2528 AUROC |
+| Does the validity gate discriminate, or does it just fail hard corpora? | 21 synthetic tables with verdicts fixed by construction | Fails all 12 degenerate instances, passes 8 of 9 sound ones |
 
-Read the open-set rows with their protocol. Under the program-matched protocol,
-near-novelty detection by MSP in configuration B is at or below chance; the B
-minus C interval excludes 0 for random_forest, extra_trees, svm_rbf and knn and
-does not for logreg and mlp. The OpenMax values are an observation, not evidence
-about score scale. The `evt_posterior` scorer is excluded from every comparison
-(it is inverted by construction); six scorers remain.
+The fourth row is the central result. Task, features, models and seeds are
+identical to the third row. Only the definition of a novel class changes, and the
+score inverts to far below chance. The manuscript explains this with a mixture
+model whose prediction was tested and held: a removed class inverts the posterior
+when it sits at an end of an ordered sibling axis, measured at 0.1887 for ends
+against 0.4267 for interior members.
 
-## Environment of record
+The gate also fails this corpus on two checks, and the manuscript reports those
+failures rather than hiding them. Chance corrected headroom is 0.4486 and 0.7671
+against a threshold of 0.50, so attribution here is substantially a matter of
+counting integer constants, hexadecimal constants and XOR operators. Cross class
+duplicate vectors put a ceiling of 0.9933 on accuracy at the parameterisation
+granularity.
 
-Python 3.9.6, numpy 2.0.2, scipy 1.13.1, pandas 2.3.3, scikit-learn 1.6.1,
-matplotlib 3.9.4, pytest 8.4.2. `requirements.txt` and `environment.yml` pin
-exactly these. `pyproject.toml` states lower bounds only, so install the pins
-first.
+## What this work does not cover
 
-```bash
-python3.9 -m venv .venv                      # a Python 3.9.6 interpreter
-.venv/bin/pip install -r requirements.txt
-export PY="$PWD/.venv/bin/python" PYTHONPATH="$PWD/src"
-# alternative to PYTHONPATH: .venv/bin/pip install --no-deps -e .
-export LOKY_MAX_CPU_COUNT=4 OMP_NUM_THREADS=1
-$PY -m pytest -q tests
-```
+Stated here because the vocabulary of the surrounding literature invites the
+opposite assumption.
 
-Run every command from the repository root.
-
-## Reproducing the article's tables and figures
-
-Online Resource 1 (Section S1) of the article (Corrected Runbook) gives every command in dependency order and
-maps each generated table and figure to the result files it reads. No table or
-figure is typed by hand. The key commands:
-
-```bash
-# Open set: configuration B, program-matched (primary)
-$PY scripts/openset_baselines.py --data data/features_pilot.csv \
-    --models random_forest extra_trees logreg svm_rbf knn mlp --knn-k 5 \
-    --seeds 0 1 2 3 4 --label sub_technique \
-    --novel-programs heldout --split gss \
-    --report results/v3/openset_B_heldout.json
-#   A: --label technique;  C: --label sub_technique --holdout-col technique
-#   program-overlapping: --novel-programs all --split gss
-#   program k-fold:      --novel-programs heldout --split program_kfold
-bash results/v3/run_v3.sh                    # all configurations and protocols
-
-# Validity gate (self-contained: omit --full-macro-f1)
-$PY scripts/diversity_gate.py --features data/features_pilot.csv \
-    --label technique --full-macro-f1 0.9542 \
-    --report results/v3/gate/gate_supplied_technique.json
-
-# Semantic preservation (stdout and exit status)
-$PY scripts/verify_semantics.py --programs corpus_inputs/programs.tsv \
-    --corpus data/pilot_corpus --report results/v3/semantics/semantics_corpus_O0.json
-
-# Simulation (ordered and random sibling layouts, 20 seeds)
-bash results/v3/sim/run_sim_v3.sh            # drives scripts/holdout_inversion_sim.py
-
-# Closed-set aggregation, fold and seed variance, fold-level paired summary
-$PY scripts/aggregate_seeds.py --results results/pilot5 \
-    --report results/closed_set_five_seed.json
-
-# Ledger, tables, figures
-export OBFUSCOPE_WORK=<work directory> OBFUSCOPE_TEX=<LaTeX project>
-$PY scripts/manuscript_v3/make_ledger.py
-$PY scripts/manuscript_v3/make_tables.py
-$PY scripts/manuscript_v3/make_figures.py --out "$OBFUSCOPE_TEX/figures"
-```
-
-`results/v3/gate/README.txt`, `results/v3/closed/README.txt` and
-`results/v3/README_openset_v3.txt` list the remaining drivers. The
-nearest-neighbour mechanism and the evasion re-analysis are written by
-`scripts/manuscript_v3/audit/nn_mechanism.py` and
-`scripts/manuscript_v3/audit/evasion_diagnostics.py`. Known limitation: the gate
-driver `results/v3/gate/run_gate_v3.sh` and its helpers set `ROOT` and `PY` to
-absolute paths at their top; edit both before rerunning.
+- **No malware.** The corpus is synthetic benign C.
+- **One backend only.** The licensed obfuscator cohort is specified in the
+  manuscript and was not built. No result here is a cross tool claim.
+- **Synthetic input programs.** No result here covers real code such as coreutils
+  or busybox.
+- **Source text only.** The threat model is narrowed to source level artifacts. A
+  decompiled binary input is not evaluated.
 
 ## Repository layout
 
 ```
-src/obfuscope/            Python package
-  features.py               static feature extraction (61 feature columns)
-  labels.py                 family and parameterisation labels
-  build_dataset.py          corpus to feature table (row order independent of --jobs)
-  models.py                 seven scikit-learn estimators
-  protocols.py, experiment.py  grouped CV, domain holdout (lomfo), --permute-groups
-  aggregate.py, config.py   aggregation; named feature sets
-  make_grid.py, run_grid.py legacy, see below
-scripts/
-  reference_backend.py      the backend that generated the corpus
-  build_corpus_tigress.py   corpus builder (reference backend; Tigress not run)
-  tigress_spec.py           Tigress cohort specification
-  diversity_gate.py         validity gate (diagnostics 1, 1b, 2 to 6)
-  gate_specificity.py       gate on 21 tables with verdicts fixed by construction
-  audit_dead_features.py    declared features without variation
-  audit_noop_artifacts.py   artifacts identical to their input program
-  eta_bias_example.py       raw eta squared bias example
-  openset_baselines.py      open-set protocols and scorers
-  sibling_position_analysis.py  sibling-axis analysis
-  holdout_inversion_sim.py  mixture simulation
-  verify_semantics.py       compile-and-run equivalence check
-  aggregate_seeds.py        fold and seed variance, paired summaries
-  evasion_matched.py        released evasion analysis (supplement only)
-  manuscript_v3/            make_ledger.py, make_tables.py, make_figures.py
-    audit/                  nn_mechanism.py, evasion_diagnostics.py
-tests/                    unit tests, including the corrected behaviour
-corpus_inputs/            30 input programs and programs.tsv
-data/                     pilot_corpus/, features_pilot.csv, template-generated tables
-results/                  released result files (unchanged)
-  v3/                       corrected analyses: openset_{A,B,C}_{heldout,all,kfold}.json,
-                            sibling_position_*.json, summary/, gate/, closed/,
-                            semantics/, sim/, openset_mechanism/, evasion/,
-                            diagnostics/, logs/, drivers and checksums
-docs/                     legacy HTCondor/OSPool runbook (reproduces no table)
-htc/, decompile/          legacy, see below
+obfuscope/
+├── src/obfuscope/         # the Python package
+│   ├── features.py        # static feature extraction, 61 declared features
+│   ├── labels.py          # family and parameterisation labels
+│   ├── build_dataset.py   # corpus to feature table
+│   ├── models.py          # 7 model scikit-learn registry
+│   ├── protocols.py       # grouped CV and open set splits
+│   ├── experiment.py      # one experiment cell
+│   ├── aggregate.py       # per cell JSON to tables
+│   └── config.py          # named feature sets
+├── scripts/               # the validity gate and every analysis in the paper
+│   ├── diversity_gate.py          # the six diagnostics
+│   ├── gate_specificity.py        # the gate measured against known verdicts
+│   ├── audit_dead_features.py     # which declared features carry no variation
+│   ├── openset_baselines.py       # the 7 novelty scorers
+│   ├── sibling_position_analysis.py  # the ordered sibling axis test
+│   ├── holdout_inversion_sim.py   # the mixture simulation
+│   ├── evasion_matched.py         # evasion at matched class count
+│   ├── build_corpus_tigress.py    # corpus generator, both backends
+│   ├── verify_semantics.py        # compile and run equivalence check
+│   └── aggregate_seeds.py         # fold and seed variance decomposition
+├── htc/                   # HTCondor and DAGMan workflow
+├── docs/                  # manuscripts and reviews, see below
+├── data/                  # input programs, generated corpus, feature tables
+├── results/               # every result file behind every table in the paper
+└── requirements.txt, environment.yml, pyproject.toml, LICENSE
 ```
 
-`results/README.md` describes an earlier draft and is not the revised
-manuscript; section and table numbers there do not match it.
+## Documents
 
-## Corrections in this release
+| File | What it is |
+| --- | --- |
+| `docs/ObfuScope_manuscript_revised_2.docx` | **Current manuscript.** 35 tables, 61 references |
+| `docs/ObfuScope_manuscript_revised.docx` | Previous revision, kept for comparison |
+| `docs/review_v1_peer_review.docx` | Peer review of version 1 that prompted the rebuild |
+| `docs/design_multitool_corpus.md` | Design note on the multiple backend corpus |
+| `docs/RUNNING_ON_CHTC_OSPOOL.md` | Running the workflow at scale |
 
-Each correction was made and tested as a separate commit during the revision;
-this repository publishes them as one release, and `CHANGELOG.md` lists every
-entry. The corrections are:
+## Quickstart
 
-- `openset_baselines.py`: novel artifacts restricted to evaluation
-  programs (`--novel-programs heldout`, now the default; `all` reproduces the
-  released reports), program k-fold split, FPR95 in both conventions.
-- `build_dataset.py`: deterministic row order for any `--jobs`.
-- `protocols.py`, `experiment.py`: opt-in `--permute-groups`, so seeds
-  give distinct program partitions in grouped CV.
-- `aggregate_seeds.py`: rejects duplicate (configuration, seed) cells;
-  fold-level paired summary.
-- docstrings and comments in `src/` no longer use stale framing.
-- `diversity_gate.py`: headroom R reported as undefined when the
-  reference does not exceed chance; origin of a supplied reference recorded;
-  `--repeats` for diagnostic 4.
-- environment pinned to the environment of record; legacy run paths
-  marked; `pyproject.toml` accepts Python 3.9.
-- stale build products removed.
-- new `scripts/eta_bias_example.py`.
-- `holdout_inversion_sim.py`: Bayes classifier accuracy on retained
-  classes, labelled fitted scorers, random sibling layout, seed options.
-- `verify_semantics.py`: exit status compared, `-std=c99` pinned,
-  time-outs caught, per-artifact seeds independent of the corpus path.
-- new `scripts/audit_noop_artifacts.py`.
-- `tigress_spec.py`: Split mapped to control (aggregation) in the
-  Collberg taxonomy; legacy notes point to Online Resource 1 (Section S1) of the article.
-- `scripts/manuscript_v3/`: ledger, table and figure generators and
-  the two audit diagnostics.
-- `results/v3/`: corrected open-set runs under all three protocols,
-  gate, closed-set, semantics, simulation, mechanism and evasion re-analyses.
+```bash
+pip install -r requirements.txt
 
-The released result files under `results/` are unchanged; corrected analyses
-are under `results/v3/` with their drivers, logs and digests.
+# 1. Run the validity gate before trusting any accuracy
+python3 scripts/diversity_gate.py \
+    --features data/features_pilot.csv \
+    --label technique --group sample_id \
+    --full-macro-f1 0.9542 \
+    --report results/gate_v2_technique.json
 
-## Legacy components (reproduce nothing)
+# 2. Show that the gate discriminates rather than failing everything
+python3 scripts/gate_specificity.py --report results/gate_specificity.json
 
-`htc/` (scheduler workflow and container recipes, which pin a different software
-stack), `src/obfuscope/make_grid.py`, `src/obfuscope/run_grid.py` and
-`scripts/run_all.sh` belong to an earlier pipeline and reproduce no table or
-figure of the article or supplement; each begins with a note saying so.
-`decompile/` is present and not exercised. No result depends on any of them.
+# 3. Which declared features are actually alive
+python3 scripts/audit_dead_features.py \
+    --features data/features_pilot.csv \
+    --report results/dead_features.json \
+    --set-report results/feature_set_live_counts.json
+```
 
-## Template-generated table: `data/features.csv`
+Point the same gate at the version 1 feature table to reproduce the fifteen
+failures that forced the rebuild:
 
-`data/features.csv` (4121 rows, 11 classes; `data/features_full.csv` is a
-byte-identical copy) is a feature table from an earlier, template-generated
-pipeline. The article uses it only as a negative control for the validity gate,
-and `scripts/evasion_matched.py` reads it for the supplementary evasion
-analysis. Its corpus is not released, so it cannot be rebuilt. SHA-256:
-`a4e3f5022ffb2cade9cd3fd9f75968fefdd697bfb11129cfbf4d5ac23cea027b`.
+```bash
+python3 scripts/diversity_gate.py \
+    --features data/features.csv \
+    --label technique --group sample_id \
+    --full-macro-f1 0.9915 \
+    --report results/gate_original_technique.json
+```
 
-**[TODO-ETH] Provenance unresolved.** The table's sample identifiers and paths
-name malware samples (for example `WannaCrypt0r`), and earlier repository
-documents describe its source samples as live malware. What was handled, by
-whom and under which policy has not been established. Until the authors resolve
-this, make no claim about whether malware-derived material was involved in
-producing this table; whether it stays in the public release is also pending.
-The file holds extracted feature values and path strings, not program text.
+Appendix A.2 of the manuscript gives every command behind every table, in
+dependency order.
+
+## Environment of record
+
+Python 3.9.6, numpy 2.0.2, scipy 1.13.1, pandas 2.3.3, scikit-learn 1.6.1.
+
+Note that `requirements.txt` pins different versions from these. The pins are
+wrong and the versions above are the ones that produced the results. This is
+recorded as a defect in Section 9.5 of the manuscript rather than corrected
+silently, because correcting the pins without rerunning the grid would assert a
+reproduction that has not been performed.
 
 ## Safety
 
-The corpus of the article consists of synthetic benign C programs written for
-this study and their transformed variants. Feature extraction is static and
-executes nothing. `scripts/verify_semantics.py` compiles and runs those
-synthetic programs and their artifacts with the system C compiler; run it in an
-ordinary sandbox if you prefer. For the template-generated table, see the
-provenance note above.
+The pipeline is static and execution free for feature extraction. The semantic
+preservation check compiles and runs the synthetic benign programs in the
+ordinary way. No malware is present in this repository and none was used in the
+study.
 
 ## License
 
